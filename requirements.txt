@@ -26,3 +26,4 @@ numpy>=1.26
 Pillow
 qrcode
 captcha
+arrow
