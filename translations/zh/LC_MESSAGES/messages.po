@@ -1,0 +1,2898 @@
+# Chinese translations for PROJECT.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-01-09 05:55+0630\n"
+"PO-Revision-Date: 2026-01-07 10:08+0630\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: templates/about.html:6 templates/about.html:55 templates/about.html:80
+#: templates/about.html:650 templates/article-1.html:55
+#: templates/article-1.html:80 templates/article-1.html:272
+#: templates/article-2.html:55 templates/article-2.html:80
+#: templates/article-2.html:274 templates/articles.html:55
+#: templates/articles.html:80 templates/articles.html:478
+#: templates/contact.html:163 templates/contact.html:181
+#: templates/contact.html:421 templates/event-1.html:55
+#: templates/event-1.html:80 templates/event-1.html:284
+#: templates/event-2.html:55 templates/event-2.html:80
+#: templates/event-2.html:320 templates/event-7.html:52
+#: templates/event-7.html:75 templates/event-7.html:324
+#: templates/event-8.html:44 templates/event-8.html:67
+#: templates/event-8.html:224 templates/events.html:109
+#: templates/events.html:127 templates/events.html:274 templates/home.html:76
+#: templates/home.html:101 templates/home.html:845 templates/home.html:861
+#: templates/news-1.html:55 templates/news-1.html:80 templates/news-1.html:277
+#: templates/news-2.html:55 templates/news-2.html:80 templates/news-2.html:277
+#: templates/privacy-policy.html:202 templates/register.html:78
+#: templates/register.html:96 templates/register.html:211
+#: templates/reviews.html:184 templates/reviews.html:209
+#: templates/reviews.html:981 templates/smart-assistant.html:55
+#: templates/smart-assistant.html:80 templates/smart-assistant.html:405
+#: templates/solutions.html:78 templates/solutions.html:105
+#: templates/solutions.html:697 templates/task-automation.html:43
+#: templates/task-automation.html:62 templates/task-automation.html:231
+#: templates/virtual-work.html:55 templates/virtual-work.html:80
+#: templates/virtual-work.html:321
+msgid "About"
+msgstr "关于"
+
+#: templates/about.html:49 templates/about.html:74 templates/about.html:615
+#: templates/article-1.html:49 templates/article-1.html:74
+#: templates/article-1.html:237 templates/article-2.html:49
+#: templates/article-2.html:74 templates/article-2.html:239
+#: templates/articles.html:49 templates/articles.html:74
+#: templates/articles.html:443 templates/contact.html:157
+#: templates/contact.html:175 templates/contact.html:408
+#: templates/event-1.html:49 templates/event-1.html:74
+#: templates/event-1.html:249 templates/event-2.html:49
+#: templates/event-2.html:74 templates/event-2.html:285
+#: templates/event-7.html:46 templates/event-7.html:69
+#: templates/event-7.html:291 templates/event-8.html:38
+#: templates/event-8.html:61 templates/event-8.html:213
+#: templates/events.html:103 templates/events.html:121
+#: templates/events.html:264 templates/home.html:6 templates/home.html:70
+#: templates/home.html:95 templates/home.html:827 templates/news-1.html:49
+#: templates/news-1.html:74 templates/news-1.html:242 templates/news-2.html:49
+#: templates/news-2.html:74 templates/news-2.html:242
+#: templates/privacy-policy.html:192 templates/register.html:72
+#: templates/register.html:90 templates/register.html:186
+#: templates/reviews.html:178 templates/reviews.html:203
+#: templates/reviews.html:950 templates/smart-assistant.html:49
+#: templates/smart-assistant.html:74 templates/smart-assistant.html:380
+#: templates/solutions.html:70 templates/solutions.html:97
+#: templates/solutions.html:662 templates/task-automation.html:37
+#: templates/task-automation.html:56 templates/task-automation.html:215
+#: templates/virtual-work.html:49 templates/virtual-work.html:74
+#: templates/virtual-work.html:296
+msgid "Home"
+msgstr "首页"
+
+#: templates/about.html:50 templates/about.html:75 templates/about.html:619
+#: templates/article-1.html:50 templates/article-1.html:75
+#: templates/article-1.html:241 templates/article-2.html:50
+#: templates/article-2.html:75 templates/article-2.html:243
+#: templates/articles.html:50 templates/articles.html:75
+#: templates/articles.html:447 templates/contact.html:158
+#: templates/contact.html:176 templates/contact.html:409
+#: templates/event-1.html:50 templates/event-1.html:75
+#: templates/event-1.html:253 templates/event-2.html:50
+#: templates/event-2.html:75 templates/event-7.html:47
+#: templates/event-7.html:70 templates/event-8.html:39
+#: templates/event-8.html:62 templates/event-8.html:214
+#: templates/events.html:104 templates/events.html:122
+#: templates/events.html:265 templates/home.html:71 templates/home.html:96
+#: templates/home.html:830 templates/news-1.html:50 templates/news-1.html:75
+#: templates/news-1.html:246 templates/news-2.html:50 templates/news-2.html:75
+#: templates/news-2.html:246 templates/privacy-policy.html:193
+#: templates/register.html:73 templates/register.html:91
+#: templates/register.html:189 templates/reviews.html:179
+#: templates/reviews.html:204 templates/reviews.html:954
+#: templates/smart-assistant.html:6 templates/smart-assistant.html:50
+#: templates/smart-assistant.html:75 templates/smart-assistant.html:98
+#: templates/smart-assistant.html:383 templates/solutions.html:6
+#: templates/solutions.html:72 templates/solutions.html:99
+#: templates/solutions.html:666 templates/task-automation.html:7
+#: templates/task-automation.html:38 templates/task-automation.html:57
+#: templates/task-automation.html:217 templates/virtual-work.html:6
+#: templates/virtual-work.html:50 templates/virtual-work.html:75
+#: templates/virtual-work.html:299
+msgid "Solutions"
+msgstr "解决方案"
+
+#: templates/about.html:51 templates/about.html:76 templates/about.html:624
+#: templates/article-1.html:6 templates/article-1.html:51
+#: templates/article-1.html:76 templates/article-1.html:246
+#: templates/article-2.html:6 templates/article-2.html:51
+#: templates/article-2.html:76 templates/article-2.html:248
+#: templates/articles.html:6 templates/articles.html:51
+#: templates/articles.html:76 templates/articles.html:452
+#: templates/contact.html:159 templates/contact.html:177
+#: templates/contact.html:410 templates/event-1.html:51
+#: templates/event-1.html:76 templates/event-1.html:258
+#: templates/event-2.html:51 templates/event-2.html:76
+#: templates/event-7.html:48 templates/event-7.html:71
+#: templates/event-8.html:40 templates/event-8.html:63
+#: templates/event-8.html:215 templates/events.html:105
+#: templates/events.html:123 templates/events.html:266 templates/home.html:72
+#: templates/home.html:97 templates/home.html:833 templates/news-1.html:6
+#: templates/news-1.html:51 templates/news-1.html:76 templates/news-1.html:251
+#: templates/news-2.html:6 templates/news-2.html:51 templates/news-2.html:76
+#: templates/news-2.html:251 templates/privacy-policy.html:194
+#: templates/register.html:74 templates/register.html:92
+#: templates/register.html:192 templates/reviews.html:180
+#: templates/reviews.html:205 templates/reviews.html:959
+#: templates/smart-assistant.html:51 templates/smart-assistant.html:76
+#: templates/smart-assistant.html:386 templates/solutions.html:74
+#: templates/solutions.html:101 templates/solutions.html:671
+#: templates/task-automation.html:39 templates/task-automation.html:58
+#: templates/task-automation.html:220 templates/virtual-work.html:51
+#: templates/virtual-work.html:76 templates/virtual-work.html:302
+msgid "Articles"
+msgstr "文章"
+
+#: templates/about.html:52 templates/about.html:77 templates/about.html:629
+#: templates/article-1.html:52 templates/article-1.html:77
+#: templates/article-1.html:251 templates/article-2.html:52
+#: templates/article-2.html:77 templates/article-2.html:253
+#: templates/articles.html:52 templates/articles.html:77
+#: templates/articles.html:457 templates/contact.html:160
+#: templates/contact.html:178 templates/contact.html:411
+#: templates/event-1.html:52 templates/event-1.html:77
+#: templates/event-1.html:263 templates/event-2.html:52
+#: templates/event-2.html:77 templates/event-7.html:49
+#: templates/event-7.html:72 templates/event-8.html:41
+#: templates/event-8.html:64 templates/event-8.html:216
+#: templates/events.html:106 templates/events.html:124
+#: templates/events.html:267 templates/home.html:73 templates/home.html:98
+#: templates/home.html:836 templates/news-1.html:52 templates/news-1.html:77
+#: templates/news-1.html:256 templates/news-2.html:52 templates/news-2.html:77
+#: templates/news-2.html:256 templates/privacy-policy.html:195
+#: templates/register.html:75 templates/register.html:93
+#: templates/register.html:195 templates/reviews.html:181
+#: templates/reviews.html:206 templates/reviews.html:964
+#: templates/smart-assistant.html:52 templates/smart-assistant.html:77
+#: templates/smart-assistant.html:389 templates/solutions.html:75
+#: templates/solutions.html:102 templates/solutions.html:676
+#: templates/task-automation.html:40 templates/task-automation.html:59
+#: templates/task-automation.html:222 templates/virtual-work.html:52
+#: templates/virtual-work.html:77 templates/virtual-work.html:305
+msgid "Reviews"
+msgstr "评论"
+
+#: templates/about.html:53 templates/about.html:78 templates/about.html:641
+#: templates/article-1.html:53 templates/article-1.html:78
+#: templates/article-1.html:263 templates/article-2.html:53
+#: templates/article-2.html:78 templates/article-2.html:265
+#: templates/articles.html:53 templates/articles.html:78
+#: templates/articles.html:469 templates/contact.html:161
+#: templates/contact.html:179 templates/contact.html:419
+#: templates/event-1.html:53 templates/event-1.html:78
+#: templates/event-1.html:275 templates/event-2.html:53
+#: templates/event-2.html:78 templates/event-7.html:50
+#: templates/event-7.html:73 templates/event-8.html:42
+#: templates/event-8.html:65 templates/event-8.html:222 templates/events.html:6
+#: templates/events.html:107 templates/events.html:125 templates/home.html:74
+#: templates/home.html:99 templates/home.html:839 templates/home.html:855
+#: templates/news-1.html:53 templates/news-1.html:78 templates/news-1.html:268
+#: templates/news-2.html:53 templates/news-2.html:78 templates/news-2.html:268
+#: templates/register.html:76 templates/register.html:94
+#: templates/register.html:205 templates/reviews.html:182
+#: templates/reviews.html:207 templates/reviews.html:975
+#: templates/smart-assistant.html:53 templates/smart-assistant.html:78
+#: templates/smart-assistant.html:399 templates/solutions.html:76
+#: templates/solutions.html:103 templates/solutions.html:688
+#: templates/task-automation.html:41 templates/task-automation.html:60
+#: templates/task-automation.html:229 templates/virtual-work.html:53
+#: templates/virtual-work.html:78 templates/virtual-work.html:315
+msgid "Events"
+msgstr "活动"
+
+#: templates/about.html:54 templates/about.html:79 templates/about.html:646
+#: templates/article-1.html:54 templates/article-1.html:79
+#: templates/article-1.html:268 templates/article-2.html:54
+#: templates/article-2.html:79 templates/article-2.html:270
+#: templates/articles.html:54 templates/articles.html:79
+#: templates/articles.html:474 templates/contact.html:162
+#: templates/contact.html:180 templates/contact.html:420
+#: templates/event-1.html:54 templates/event-1.html:79
+#: templates/event-1.html:280 templates/event-2.html:54
+#: templates/event-2.html:79 templates/event-7.html:51
+#: templates/event-7.html:74 templates/event-8.html:43
+#: templates/event-8.html:66 templates/event-8.html:223
+#: templates/events.html:108 templates/events.html:126
+#: templates/events.html:273 templates/home.html:75 templates/home.html:100
+#: templates/home.html:842 templates/home.html:858 templates/news-1.html:54
+#: templates/news-1.html:79 templates/news-1.html:273 templates/news-2.html:54
+#: templates/news-2.html:79 templates/news-2.html:273
+#: templates/privacy-policy.html:201 templates/register.html:77
+#: templates/register.html:95 templates/register.html:208
+#: templates/reviews.html:183 templates/reviews.html:208
+#: templates/reviews.html:978 templates/smart-assistant.html:54
+#: templates/smart-assistant.html:79 templates/smart-assistant.html:402
+#: templates/solutions.html:77 templates/solutions.html:104
+#: templates/solutions.html:693 templates/task-automation.html:42
+#: templates/task-automation.html:61 templates/task-automation.html:230
+#: templates/virtual-work.html:54 templates/virtual-work.html:79
+#: templates/virtual-work.html:318
+msgid "Contact"
+msgstr "联系我们"
+
+#: templates/about.html:90
+msgid "About AI-Solution"
+msgstr "关于AI-Solution"
+
+#: templates/about.html:92
+msgid ""
+"AI-Solution leverages AI to proactively support industries, delivering "
+"solutions that enhance the digital employee experience, accelerate "
+"innovation, and drive growth."
+msgstr "AI-Solution利用AI主动支持各行业，提供增强数字员工体验、加速创新和推动增长的解决方案。"
+
+#: templates/about.html:109
+msgid "Company Overview"
+msgstr "公司概况"
+
+#: templates/about.html:111
+msgid ""
+"AI-Solution is a start-up based in Sunderland, specializing in AI-powered"
+" software solutions across multiple industries. Our AI-driven virtual "
+"assistant responds to inquiries and provides affordable prototyping "
+"solutions, setting us apart from competitors."
+msgstr ""
+"AI-"
+"Solution是一家位于桑德兰的初创公司，专门从事跨多个行业的AI驱动软件解决方案。我们的AI驱动虚拟助手响应查询并提供经济实惠的原型解决方案，使我们在竞争中脱颖而出。"
+
+#: templates/about.html:114
+msgid ""
+"We focus on addressing issues that impact the digital employee "
+"experience, helping companies accelerate design, engineering, and "
+"innovation processes."
+msgstr "我们专注于解决影响数字员工体验的问题，帮助公司加速设计、工程和创新流程。"
+
+#: templates/about.html:122
+msgid "Vision & Mission"
+msgstr "愿景与使命"
+
+#: templates/about.html:124
+msgid "Guiding principles that define our direction and purpose."
+msgstr "定义我们方向和目标的指导原则。"
+
+#: templates/about.html:145
+msgid "Our Vision"
+msgstr "我们的愿景"
+
+#: templates/about.html:147
+msgid ""
+"To shape the future of the digital employee experience by enabling "
+"organizations worldwide to work smarter, faster, and more efficiently "
+"through AI-driven innovation."
+msgstr "通过AI驱动的创新，让全球组织能够更智能、更快速、更高效地工作，塑造数字员工体验的未来。"
+
+#: templates/about.html:165
+msgid "Our Mission"
+msgstr "我们的使命"
+
+#: templates/about.html:167
+msgid ""
+"To design and deliver AI-powered solutions that proactively support "
+"people at work, enhance productivity, and accelerate innovation across "
+"industries."
+msgstr "设计和提供AI驱动的解决方案，主动支持工作中的人们，提高生产力，并加速各行业的创新。"
+
+#: templates/about.html:176
+msgid "Our Core Values"
+msgstr "我们的核心价值观"
+
+#: templates/about.html:178
+msgid "The principles that drive our technology, culture, and partnerships."
+msgstr "驱动我们的技术、文化和合作伙伴关系的原则。"
+
+#: templates/about.html:195
+msgid "Innovation"
+msgstr "创新"
+
+#: templates/about.html:197
+msgid ""
+"Continuously pushing boundaries to deliver intelligent, forward-thinking "
+"AI solutions."
+msgstr "不断突破界限，提供智能、前瞻性的AI解决方案。"
+
+#: templates/about.html:211
+msgid "Trust & Security"
+msgstr "信任与安全"
+
+#: templates/about.html:213
+msgid "Building secure, reliable solutions with transparency at every stage."
+msgstr "在每个阶段都透明地构建安全、可靠的解决方案。"
+
+#: templates/about.html:227
+msgid "People First"
+msgstr "以人为本"
+
+#: templates/about.html:229
+msgid ""
+"Designing AI that empowers people, enhances work, and supports "
+"collaboration."
+msgstr "设计能够赋能人们、改善工作并支持协作的AI。"
+
+#: templates/about.html:243
+msgid "AI Excellence"
+msgstr "AI卓越"
+
+#: templates/about.html:245
+msgid "Applying deep AI expertise to deliver measurable, real-world impact."
+msgstr "应用深厚的AI专业知识，提供可衡量的现实世界影响。"
+
+#: templates/about.html:255
+msgid "Meet Our Team"
+msgstr "认识我们的团队"
+
+#: templates/about.html:257
+msgid ""
+"A team of AI experts, engineers, and strategists driving innovation and "
+"measurable impact."
+msgstr "一支由AI专家、工程师和战略家组成的团队，推动创新和可衡量的影响。"
+
+#: templates/about.html:264
+msgid "Leadership"
+msgstr "领导团队"
+
+#: templates/about.html:284
+msgid "Chief Executive Officer"
+msgstr "首席执行官"
+
+#: templates/about.html:287
+msgid "Leading AI-driven strategy, growth, and innovation across industries."
+msgstr "领导跨行业的AI驱动战略、增长和创新。"
+
+#: templates/about.html:311
+msgid "Chief Technology Officer"
+msgstr "首席技术官"
+
+#: templates/about.html:314
+msgid "Architecting scalable, secure AI platforms and engineering excellence."
+msgstr "构建可扩展、安全的AI平台和工程卓越。"
+
+#: templates/about.html:338
+msgid "Chief AI Officer"
+msgstr "首席AI官"
+
+#: templates/about.html:341
+msgid "Driving AI research, model strategy, and applied intelligence solutions."
+msgstr "推动AI研究、模型策略和应用智能解决方案。"
+
+#: templates/about.html:365
+msgid "Chief People Officer"
+msgstr "首席人事官"
+
+#: templates/about.html:368
+msgid ""
+"Leading talent strategy, culture, and employee experience to build high-"
+"performing teams."
+msgstr "领导人才战略、文化和员工体验，构建高绩效团队。"
+
+#: templates/about.html:381
+msgid "Core Team"
+msgstr "核心团队"
+
+#: templates/about.html:398
+msgid "AI Project Manager"
+msgstr "AI项目经理"
+
+#: templates/about.html:414
+msgid "Lead AI Engineer"
+msgstr "首席AI工程师"
+
+#: templates/about.html:429
+msgid "Product Manager"
+msgstr "产品经理"
+
+#: templates/about.html:444
+msgid "Head of Growth"
+msgstr "增长主管"
+
+#: templates/about.html:459
+msgid "AI Solutions Architect"
+msgstr "AI解决方案架构师"
+
+#: templates/about.html:578
+msgid "Ready to transform your workplace?"
+msgstr "准备好改变您的工作场所了吗？"
+
+#: templates/about.html:580
+msgid "Contact us today to discover how AI-Solution can empower your team."
+msgstr "立即联系我们，了解AI-Solution如何赋能您的团队。"
+
+#: templates/about.html:586 templates/contact.html:205
+#: templates/events.html:246
+msgid "Contact Us"
+msgstr "联系我们"
+
+#: templates/about.html:606 templates/article-1.html:228
+#: templates/article-2.html:230 templates/articles.html:434
+#: templates/contact.html:400 templates/event-1.html:240
+#: templates/event-2.html:276 templates/event-7.html:284
+#: templates/event-8.html:207 templates/news-1.html:233
+#: templates/news-2.html:233 templates/reviews.html:941
+#: templates/virtual-work.html:287
+msgid ""
+"Innovating the future of the digital employee experience with AI-powered "
+"solutions."
+msgstr "通过AI驱动的解决方案创新数字员工体验的未来。"
+
+#: templates/about.html:612 templates/article-1.html:234
+#: templates/article-2.html:236 templates/articles.html:440
+#: templates/contact.html:406 templates/event-1.html:246
+#: templates/event-2.html:280 templates/event-2.html:282
+#: templates/event-7.html:288 templates/event-8.html:211
+#: templates/events.html:262 templates/home.html:824 templates/news-1.html:239
+#: templates/news-2.html:239 templates/privacy-policy.html:190
+#: templates/register.html:183 templates/reviews.html:947
+#: templates/smart-assistant.html:377 templates/solutions.html:659
+#: templates/task-automation.html:213 templates/virtual-work.html:293
+msgid "Quick Links"
+msgstr "快速链接"
+
+#: templates/about.html:637 templates/article-1.html:259
+#: templates/article-2.html:261 templates/articles.html:465
+#: templates/contact.html:417 templates/event-1.html:271
+#: templates/event-2.html:305 templates/event-2.html:307
+#: templates/event-7.html:311 templates/event-8.html:220
+#: templates/events.html:271 templates/home.html:852 templates/news-1.html:264
+#: templates/news-2.html:264 templates/privacy-policy.html:199
+#: templates/register.html:202 templates/reviews.html:972
+#: templates/smart-assistant.html:396 templates/solutions.html:684
+#: templates/task-automation.html:227 templates/virtual-work.html:312
+msgid "Pages"
+msgstr "页面"
+
+#: templates/about.html:657 templates/article-1.html:279
+#: templates/article-2.html:281 templates/articles.html:485
+#: templates/contact.html:427 templates/event-1.html:291
+#: templates/event-2.html:327 templates/event-7.html:329
+#: templates/event-8.html:228 templates/events.html:279 templates/home.html:868
+#: templates/news-1.html:284 templates/news-2.html:284
+#: templates/privacy-policy.html:207 templates/register.html:218
+#: templates/reviews.html:988 templates/smart-assistant.html:412
+#: templates/solutions.html:704 templates/task-automation.html:236
+#: templates/virtual-work.html:328
+msgid "Follow Us"
+msgstr "关注我们"
+
+#: templates/about.html:677 templates/article-1.html:299
+#: templates/article-2.html:301 templates/articles.html:505
+#: templates/contact.html:440 templates/event-1.html:311
+#: templates/event-2.html:347 templates/event-7.html:348
+#: templates/event-8.html:239 templates/home.html:888 templates/news-1.html:304
+#: templates/news-2.html:304 templates/register.html:230
+#: templates/smart-assistant.html:432 templates/solutions.html:724
+#: templates/task-automation.html:247 templates/virtual-work.html:348
+msgid "AI-Solution. All rights reserved."
+msgstr "2025 AI-Solution. 保留所有权利。"
+
+#: templates/article-1.html:6 templates/article-1.html:96
+#: templates/article-2.html:173 templates/articles.html:118
+#: templates/articles.html:155
+msgid "AI Transforming Digital Workplaces"
+msgstr "AI改变数字工作场所"
+
+#: templates/article-1.html:43 templates/article-1.html:223
+#: templates/article-2.html:43 templates/article-2.html:225
+#: templates/news-2.html:43 templates/news-2.html:228
+#: templates/reviews.html:936 templates/solutions.html:648
+msgid "AI-Solution Logo"
+msgstr "AI-Solution 标志"
+
+#: templates/article-1.html:62 templates/article-2.html:62
+#: templates/events.html:113 templates/news-2.html:62
+#: templates/privacy-policy.html:52 templates/reviews.html:191
+msgid "Toggle menu"
+msgstr "切换菜单"
+
+#: templates/article-1.html:89 templates/article-2.html:89
+msgid "Article Hero"
+msgstr "文章英雄"
+
+#: templates/article-1.html:98 templates/articles.html:153
+msgid "By John Doe | Jan 12, 2025"
+msgstr "作者：John Doe | 2025年1月12日"
+
+#: templates/article-1.html:107
+msgid "John Doe"
+msgstr "John Doe"
+
+#: templates/article-2.html:98 templates/articles.html:180
+msgid "By Jane Smith | Feb 5, 2025"
+msgstr "作者：Jane Smith | 2025年2月5日"
+
+#: templates/article-2.html:107
+msgid "Jane Smith"
+msgstr "Jane Smith"
+
+#: templates/articles.html:116
+msgid "By John Doe | Dec 15, 2025"
+msgstr "作者：John Doe | 2025年12月15日"
+
+#: templates/articles.html:121
+msgid "John Doe"
+msgstr "John Doe"
+
+#: templates/articles.html:207
+msgid "By Alice Green | Mar 20, 2025"
+msgstr "作者：Alice Green | 2025年3月20日"
+
+#: templates/articles.html:212
+msgid "Alice Green"
+msgstr "Alice Green"
+
+#: templates/articles.html:234
+msgid "By Michael Brown | Apr 1, 2025"
+msgstr "作者：Michael Brown | 2025年4月1日"
+
+#: templates/articles.html:237
+msgid "Michael Brown"
+msgstr "Michael Brown"
+
+#: templates/articles.html:259
+msgid "By Sarah White | May 18, 2025"
+msgstr "作者：Sarah White | 2025年5月18日"
+
+#: templates/articles.html:261
+msgid "Sarah White"
+msgstr "Sarah White"
+
+#: templates/articles.html:286
+msgid "By David Lee | Jun 10, 2025"
+msgstr "作者：David Lee | 2025年6月10日"
+
+#: templates/articles.html:288
+msgid "David Lee"
+msgstr "David Lee"
+
+#: templates/articles.html:123
+msgid "Dec 15, 2025"
+msgstr "2025年12月15日"
+
+#: templates/articles.html:169
+msgid "Jan 12, 2025"
+msgstr "2025年1月12日"
+
+#: templates/articles.html:205
+msgid "Feb 5, 2025"
+msgstr "2025年2月5日"
+
+#: templates/articles.html:241
+msgid "Mar 20, 2025"
+msgstr "2025年3月20日"
+
+#: templates/articles.html:277
+msgid "Apr 1, 2025"
+msgstr "2025年4月1日"
+
+#: templates/articles.html:311
+msgid "May 18, 2025"
+msgstr "2025年5月18日"
+
+#: templates/articles.html:347
+msgid "Jun 10, 2025"
+msgstr "2025年6月10日"
+
+#: templates/articles.html:388
+msgid "Jan 5, 2025"
+msgstr "2025年1月5日"
+
+#: templates/articles.html:412
+msgid "Feb 10, 2025"
+msgstr "2025年2月10日"
+
+#: templates/articles.html:438
+msgid "Mar 22, 2025"
+msgstr "2025年3月22日"
+
+#: templates/articles.html:464
+msgid "Nov 20, 2025"
+msgstr "2025年11月20日"
+
+#: templates/register.html:121
+msgid "Please fill out the form in English"
+msgstr "请用英文填写表格"
+msgid ""
+"AI-Solution is revolutionizing how businesses operate by integrating "
+"cutting-edge artificial intelligence into everyday workflows. Our AI-"
+"driven tools empower teams to work smarter, faster, and more efficiently,"
+" while ensuring a seamless digital employee experience."
+msgstr ""
+"AI-"
+"Solution通过将尖端人工智能集成到日常工作流程中，正在彻底改变企业的运营方式。我们AI驱动的工具使团队能够更智能、更快速、更高效地工作，同时确保无缝的数字员工体验。"
+
+#: templates/article-1.html:112
+msgid "Transforming Workplaces with AI"
+msgstr "用AI改变工作场所"
+
+#: templates/article-1.html:115
+msgid ""
+"Our AI-powered solutions, including smart assistants and proactive issue "
+"resolution tools, help organizations streamline operations, automate "
+"repetitive tasks, and accelerate innovation. By leveraging AI-Solution's "
+"expertise, companies can achieve measurable improvements in productivity "
+"and employee satisfaction."
+msgstr ""
+"我们AI驱动的解决方案，包括智能助手和主动问题解决工具，帮助组织简化运营、自动化重复任务并加速创新。通过利用AI-"
+"Solution的专业知识，公司可以在生产力和员工满意度方面实现可衡量的改进。"
+
+#: templates/article-1.html:120
+msgid "AI in workplace"
+msgstr "工作场所中的AI"
+
+#: templates/article-1.html:126
+msgid "Real Success Across Industries"
+msgstr "跨行业的真实成功"
+
+#: templates/article-1.html:129
+msgid ""
+"From education to healthcare, manufacturing to IT, AI-Solution's "
+"innovative tools are already transforming industries. Healthcare "
+"providers reduce patient wait times, manufacturers optimize predictive "
+"maintenance, and IT companies accelerate software prototyping. Our AI "
+"solutions are tailored to each industry's unique challenges."
+msgstr ""
+"从教育到医疗保健，从制造业到IT，AI-"
+"Solution的创新工具已经在改变各个行业。医疗保健提供者减少患者等待时间，制造商优化预测性维护，IT公司加速软件原型制作。我们的AI解决方案针对每个行业的独特挑战量身定制。"
+
+#: templates/article-1.html:134
+msgid "The Future of Intelligent Work"
+msgstr "智能工作的未来"
+
+#: templates/article-1.html:137
+msgid ""
+"As AI continues to evolve, organizations adopting intelligent solutions "
+"will gain a competitive edge. AI-Solution is committed to driving this "
+"transformation, providing affordable and practical AI tools that enhance "
+"decision-making, automate routine tasks, and empower employees to focus "
+"on innovation and creativity."
+msgstr ""
+"随着AI的不断发展，采用智能解决方案的组织将获得竞争优势。AI-"
+"Solution致力于推动这一转型，提供经济实惠且实用的AI工具，增强决策制定、自动化例行任务，并使员工能够专注于创新和创造力。"
+
+#: templates/article-1.html:146 templates/article-2.html:146
+msgid "Discover How AI Can Transform Your Business"
+msgstr "发现AI如何改变您的业务"
+
+#: templates/article-1.html:156 templates/article-2.html:156
+msgid "Related Articles"
+msgstr "相关文章"
+
+#: templates/article-1.html:167 templates/article-1.html:184
+#: templates/article-1.html:201 templates/article-2.html:167
+#: templates/article-2.html:186 templates/article-2.html:203
+msgid "Related Article"
+msgstr "相关文章"
+
+#: templates/article-1.html:172 templates/article-2.html:6
+#: templates/article-2.html:96 templates/articles.html:182
+msgid "Proactive AI Issue Resolution"
+msgstr "主动AI问题解决"
+
+#: templates/article-1.html:189 templates/article-2.html:191
+#: templates/articles.html:209 templates/home.html:326
+#: templates/solutions.html:233
+msgid "Industry-Specific AI Solutions"
+msgstr "行业特定AI解决方案"
+
+#: templates/article-1.html:206 templates/article-2.html:208
+#: templates/articles.html:235
+msgid "AI in Finance Sector"
+msgstr "金融领域的AI"
+
+#: templates/article-2.html:98 templates/articles.html:180
+msgid "By Jane Smith | Feb 5, 2025"
+msgstr "作者：Jane Smith | 2025年2月5日"
+
+#: templates/article-2.html:107
+msgid ""
+"Modern organizations can no longer afford to react to workplace issues "
+"after they disrupt operations. Proactive AI Issue Resolution enables "
+"businesses to identify, predict, and resolve problems before they impact "
+"employees, productivity, or customer experience. At AI-Solution, we "
+"deliver intelligent systems that continuously monitor, analyze, and act "
+"in real time to keep digital workplaces running smoothly."
+msgstr ""
+"现代组织再也负担不起在工作场所问题中断运营后才做出反应。主动AI问题解决使企业能够在问题影响员工、生产力或客户体验之前识别、预测和解决问题"
+"。在AI-Solution，我们交付智能系统，持续监控、分析和实时行动，以保持数字工作场所平稳运行。"
+
+#: templates/article-2.html:112
+msgid "What Is Proactive AI Issue Resolution?"
+msgstr "什么是主动AI问题解决？"
+
+#: templates/article-2.html:115
+msgid ""
+"Proactive AI Issue Resolution leverages machine learning, behavioral "
+"analytics, and system monitoring to detect anomalies and emerging issues "
+"before they escalate. Instead of relying on reactive support tickets, AI-"
+"Solution's platform identifies patterns across applications, "
+"infrastructure, and user interactions to resolve issues automatically or "
+"alert teams with actionable insights."
+msgstr ""
+"主动AI问题解决利用机器学习、行为分析和系统监控来检测异常和新兴问题，在它们升级之前。AI-"
+"Solution的平台不是依赖反应式支持票据，而是识别应用程序、基础设施和用户交互中的模式，以自动解决问题或向团队提供可操作的见解。"
+
+#: templates/article-2.html:120
+msgid "Proactive AI issue detection and resolution"
+msgstr "主动AI问题检测和解决"
+
+#: templates/article-2.html:126
+msgid "How AI-Solution Delivers Proactive Resolution"
+msgstr "AI-Solution如何提供主动解决"
+
+#: templates/article-2.html:129
+msgid ""
+"AI-Solution's Proactive Issue Resolution continuously analyzes system "
+"performance, employee behavior, and historical incident data to prevent "
+"recurring problems. From automatically resolving IT service disruptions "
+"to flagging workflow bottlenecks, our solution reduces downtime, improves"
+" employee satisfaction, and lowers operational costs across industries "
+"such as healthcare, finance, manufacturing, and enterprise IT."
+msgstr ""
+"AI-"
+"Solution的主动问题解决持续分析系统性能、员工行为和历史事件数据，以防止重复问题。从自动解决IT服务中断到标记工作流程瓶颈，我们的解决方案减少停机时间、提高员工满意度，并降低包括医疗保健、金融、制造和企业IT在内的行业的运营成本。"
+
+#: templates/article-2.html:134
+msgid "Why Proactive AI Is the Future of Workplace Support"
+msgstr "为什么主动AI是工作场所支持的未来"
+
+#: templates/article-2.html:137
+msgid ""
+"Reactive support models are no longer sufficient in fast-paced digital "
+"environments. Organizations that adopt proactive AI-driven issue "
+"resolution gain a strategic advantage by minimizing disruptions, "
+"enhancing operational resilience, and empowering employees to focus on "
+"meaningful work. AI-Solution is committed to helping businesses move from"
+" firefighting problems to preventing them altogether."
+msgstr ""
+"在快节奏的数字环境中，反应式支持模型已不再足够。采用主动AI驱动的问题解决的组织通过最小化中断、增强运营弹性并使员工能够专注于有意义的工作而获得战略优势"
+"。AI-Solution致力于帮助企业从救火式解决问题转向完全预防问题。"
+
+#: templates/articles.html:91
+msgid "Latest Articles & Insights"
+msgstr "最新文章与见解"
+
+#: templates/articles.html:94
+msgid ""
+"Discover how AI-Solution is transforming workplaces with cutting-edge AI "
+"technology."
+msgstr "发现AI-Solution如何通过尖端AI技术改变工作场所。"
+
+#: templates/articles.html:103
+msgid "Featured Article"
+msgstr "精选文章"
+
+#: templates/articles.html:116
+msgid "By John Doe | Dec 15, 2025"
+msgstr "作者：John Doe | 2025年12月15日"
+
+#: templates/articles.html:121
+msgid ""
+"Explore how AI-driven tools enhance productivity, streamline operations, "
+"and improve employee experience across industries."
+msgstr "探索AI驱动的工具如何提高生产力、简化运营并改善各行业的员工体验。"
+
+#: templates/articles.html:126 templates/articles.html:163
+#: templates/articles.html:190 templates/articles.html:217
+#: templates/articles.html:242 templates/articles.html:269
+#: templates/articles.html:296 templates/articles.html:333
+#: templates/articles.html:359 templates/articles.html:385
+#: templates/articles.html:411 templates/home.html:765 templates/home.html:779
+#: templates/news-1.html:164 templates/news-1.html:187
+#: templates/news-1.html:210 templates/news-2.html:164
+#: templates/news-2.html:187 templates/news-2.html:210
+msgid "Read More"
+msgstr "阅读更多"
+
+#: templates/articles.html:137 templates/home.html:734
+msgid "Latest Articles"
+msgstr "最新文章"
+
+#: templates/articles.html:158
+msgid "How AI-driven tools enhance productivity and streamline operations."
+msgstr "AI驱动的工具如何提高生产力并简化运营。"
+
+#: templates/articles.html:185
+msgid "Reducing downtime and optimizing workflow with intelligent AI solutions."
+msgstr "通过智能AI解决方案减少停机时间并优化工作流程。"
+
+#: templates/articles.html:207
+msgid "By Alice Green | Mar 20, 2025"
+msgstr "作者：Alice Green | 2025年3月20日"
+
+#: templates/articles.html:212
+msgid "Tailored AI software solutions for healthcare, finance, and IT sectors."
+msgstr "为医疗、金融和IT部门量身定制的AI软件解决方案。"
+
+#: templates/articles.html:234
+msgid "By Michael Brown | Apr 1, 2025"
+msgstr "作者：Michael Brown | 2025年4月1日"
+
+#: templates/articles.html:237
+msgid ""
+"Revolutionizing risk management and intelligent decision-making in "
+"finance."
+msgstr "革新金融风险管理和智能决策。"
+
+#: templates/articles.html:259
+msgid "By Sarah White | May 18, 2025"
+msgstr "作者：Sarah White | 2025年5月18日"
+
+#: templates/articles.html:261
+msgid "AI-Powered Learning Platforms"
+msgstr "AI驱动的学习平台"
+
+#: templates/articles.html:264
+msgid "Enhancing education and training experiences with adaptive AI tools."
+msgstr "通过自适应AI工具增强教育和培训体验。"
+
+#: templates/articles.html:286
+msgid "By David Lee | Jun 10, 2025"
+msgstr "作者：David Lee | 2025年6月10日"
+
+#: templates/articles.html:288
+msgid "AI Enhancing Workplace Productivity"
+msgstr "AI提升工作场所生产力"
+
+#: templates/articles.html:291
+msgid ""
+"How intelligent virtual assistants optimize employee performance across "
+"industries."
+msgstr "智能虚拟助手如何优化各行业员工表现。"
+
+#: templates/articles.html:308
+msgid "Latest News"
+msgstr "最新消息"
+
+#: templates/articles.html:323
+msgid "Jan 5, 2025"
+msgstr "2025年1月5日"
+
+#: templates/articles.html:325 templates/news-1.html:6 templates/news-1.html:91
+#: templates/news-2.html:159
+msgid "AI-Solution Partners with Leading Tech Firm"
+msgstr "AI-Solution与领先科技公司合作"
+
+#: templates/articles.html:328
+msgid "A new collaboration aims to accelerate AI adoption across industries."
+msgstr "新的合作旨在加速各行业的AI采用。"
+
+#: templates/articles.html:349
+msgid "Feb 10, 2025"
+msgstr "2025年2月10日"
+
+#: templates/articles.html:351 templates/news-1.html:159
+#: templates/news-2.html:6 templates/news-2.html:91
+msgid "AI-Solution Launches Smart Assistant Upgrade"
+msgstr "AI-Solution推出智能助手升级"
+
+#: templates/articles.html:354
+msgid "Enhanced AI capabilities help businesses improve workflow automation."
+msgstr "增强的AI功能帮助企业改善工作流程自动化。"
+
+#: templates/articles.html:375 templates/news-2.html:180
+msgid "Mar 22, 2025"
+msgstr "2025年3月22日"
+
+#: templates/articles.html:377 templates/news-1.html:182
+#: templates/news-2.html:182
+msgid "AI-Solution Recognised as Top AI Innovator"
+msgstr "AI-Solution被评为顶级AI创新者"
+
+#: templates/articles.html:380
+msgid "Awarded for driving AI transformation in digital workplaces."
+msgstr "因推动数字工作场所AI转型而获奖。"
+
+#: templates/articles.html:401 templates/news-2.html:203
+msgid "Nov 20, 2025"
+msgstr "2025年11月20日"
+
+#: templates/articles.html:403 templates/news-1.html:205
+#: templates/news-2.html:205
+msgid "AI - a massive weapon in business growth"
+msgstr "AI - 商业增长的强大武器"
+
+#: templates/articles.html:406
+msgid "AI has fulfilled the role of business growth in modern era."
+msgstr "AI在现代时代已实现了商业增长的作用。"
+
+#: templates/contact.html:7
+msgid "AI-Solution | Contact"
+msgstr "AI-Solution | 联系方式"
+
+#: templates/contact.html:189
+msgid "Get in Touch with AI-Solution"
+msgstr "与AI-Solution取得联系"
+
+#: templates/contact.html:191
+msgid ""
+"Share your requirements or inquiries, and our team will get back to you "
+"promptly."
+msgstr "分享您的要求或咨询，我们的团队将尽快回复您。"
+
+#: templates/contact.html:207
+msgid "Tell us about your inquiry & requirements"
+msgstr "告诉我们关于您的咨询和要求"
+
+#: templates/contact.html:215 templates/reviews.html:321
+msgid "Please fill out the form in English"
+msgstr "请用英文填写表格"
+
+#: templates/contact.html:224
+msgid "Your Contact Details"
+msgstr "您的联系详情"
+
+#: templates/contact.html:228 templates/register.html:127
+#: templates/reviews.html:329
+msgid "Full Name"
+msgstr "全名"
+
+#: templates/contact.html:229 templates/register.html:128
+#: templates/reviews.html:335
+msgid "Enter your full name"
+msgstr "输入您的全名"
+
+#: templates/contact.html:233
+msgid "Business Email"
+msgstr "商务邮箱"
+
+#: templates/contact.html:234
+msgid "Enter your business email"
+msgstr "输入您的商务邮箱"
+
+#: templates/contact.html:239
+msgid "Phone Number"
+msgstr "电话号码"
+
+#: templates/contact.html:240
+msgid "Enter your phone number (optional)"
+msgstr "输入您的电话号码（可选）"
+
+#: templates/contact.html:242
+msgid "Phone number cannot exceed 20 characters."
+msgstr "电话号码不能超过20个字符。"
+
+#: templates/contact.html:257 templates/reviews.html:363
+msgid "Company Name"
+msgstr "公司名称"
+
+#: templates/contact.html:258 templates/reviews.html:368
+msgid "Enter your company name"
+msgstr "输入您的公司名称"
+
+#: templates/contact.html:263 templates/register.html:143
+#: templates/reviews.html:347
+msgid "Job Title"
+msgstr "职位"
+
+#: templates/contact.html:264 templates/register.html:144
+#: templates/reviews.html:352
+msgid "Your role / position"
+msgstr "您的角色/职位"
+
+#: templates/contact.html:270 templates/reviews.html:378
+msgid "Industry"
+msgstr "行业"
+
+#: templates/contact.html:274 templates/reviews.html:383
+msgid "Select industry"
+msgstr "选择行业"
+
+#: templates/contact.html:285 templates/reviews.html:408
+msgid "Please specify your industry"
+msgstr "请指定您的行业"
+
+#: templates/contact.html:289
+msgid "Country"
+msgstr "国家"
+
+#: templates/contact.html:291
+msgid "Select your country"
+msgstr "选择您的国家"
+
+#: templates/contact.html:306
+msgid "Job / Requirement Details"
+msgstr "工作/要求详情"
+
+#: templates/contact.html:309
+msgid "Requirement Type"
+msgstr "要求类型"
+
+#: templates/contact.html:312
+msgid "Select requirement type"
+msgstr "选择要求类型"
+
+#: templates/contact.html:328
+msgid "Please specify your requirement"
+msgstr "请指定您的要求"
+
+#: templates/contact.html:331
+msgid "Requirement Summary"
+msgstr "要求摘要"
+
+#: templates/contact.html:332
+msgid "One sentence describing the goal"
+msgstr "一句话描述目标"
+
+#: templates/contact.html:337
+msgid "Brief Description"
+msgstr "简要描述"
+
+#: templates/contact.html:339
+msgid "Describe your business problem, features, and constraints briefly"
+msgstr "简要描述您的业务问题、功能和约束"
+
+#: templates/contact.html:341
+msgid "Minimum 50 characters."
+msgstr "最少50个字符。"
+
+#: templates/contact.html:344
+msgid "Optional Information"
+msgstr "可选信息"
+
+#: templates/contact.html:347
+msgid "Expected Timeline"
+msgstr "预期时间线"
+
+#: templates/contact.html:350
+msgid "Flexible"
+msgstr "灵活"
+
+#: templates/contact.html:361
+msgid "Budget Range"
+msgstr "预算范围"
+
+#: templates/contact.html:364
+msgid "Select budget"
+msgstr "选择预算"
+
+#: templates/contact.html:380
+msgid "Submit"
+msgstr "提交"
+
+#: templates/event-1.html:6
+msgid "AI-Solution | Events | AI Transforming Workplaces"
+msgstr "AI-Solution | 活动 | AI改变工作场所"
+
+#: templates/event-1.html:99
+msgid "AI Transforming Workplaces"
+msgstr "AI 转型工作场所"
+
+#: templates/event-1.html:102
+msgid ""
+"Join the exclusive online workshop which will deliver practical insights "
+"and hands-on demonstrations of AI tools transforming modern corporate "
+"work environments."
+msgstr "参加独家在线研讨会，获取实用见解和AI工具的实践演示，这些工具正在改变现代企业工作环境。"
+
+
+
+#: templates/event-1.html:106 templates/event-2.html:106
+#: templates/event-7.html:101 templates/event-8.html:91
+#: templates/register.html:108
+#, fuzzy
+msgid "Location"
+msgstr "教育"
+
+#: templates/event-1.html:106
+msgid "INNSiDE By Melia Newcastle Venue Hire | Newcastle upon Tyne"
+msgstr "INNSiDE By Melia Newcastle 场地租赁 | 泰恩河畔纽卡斯尔"
+
+#: templates/event-1.html:112 templates/event-2.html:112
+#: templates/events.html:296
+msgid "Register Now"
+msgstr "立即注册"
+
+#: templates/event-1.html:121 templates/event-2.html:121
+#: templates/event-7.html:115 templates/event-8.html:103
+msgid "Event Overview"
+msgstr "活动概述"
+
+#: templates/event-1.html:124
+msgid ""
+"The AI in Digital Workplaces brings the productivity revolution to your "
+"organization. This exclusive online workshop is designed for "
+"professionals eager to harness the power of AI to enhance workplace "
+"efficiency and employee satisfaction. Attendees will gain hands-on "
+"experience with cutting-edge AI tools that streamline tasks, improve "
+"communication, and foster collaboration in corporate environments."
+msgstr "数字工作场所中的AI为您的组织带来生产力革命。这个独家在线研讨会专为渴望利用AI力量来提高工作场所效率和员工满意度的专业人士设计。与会者将获得使用尖端AI工具的实践经验，这些工具可以简化任务、改善沟通并在企业环境中促进协作。"
+
+#: templates/event-1.html:128 templates/event-2.html:139
+#: templates/event-7.html:122 templates/event-8.html:110
+msgid "Agenda"
+msgstr "议程"
+
+#: templates/event-1.html:131
+msgid "09:00 AM - Welcome Session by AI-Solution CEO"
+msgstr "09:00 上午 - AI-Solution CEO欢迎会"
+
+#: templates/event-1.html:132
+msgid "10:00 AM - AI Tools Workshop"
+msgstr "10:00 上午 - AI工具工作坊"
+
+#: templates/event-1.html:133
+msgid "11:30 AM - Professional Workspace AI tools Demonstration"
+msgstr "11:30 上午 - 专业工作场所AI工具演示"
+
+#: templates/event-1.html:134
+msgid "01:00 PM - Networking & Lunch Break"
+msgstr "01:00 下午 - 网络交流与午餐休息"
+
+#: templates/event-1.html:135
+msgid "02:00 PM - AI Use Case Activities"
+msgstr "02:00 下午 - AI用例活动"
+
+#: templates/event-1.html:136
+msgid "04:00 PM - Discussion & Q&A"
+msgstr "04:00 下午 - 讨论与问答"
+
+#: templates/event-1.html:140 templates/event-2.html:151
+#: templates/event-2.html:305 templates/event-7.html:134
+#: templates/event-8.html:123
+msgid "Resources"
+msgstr "资源"
+
+#: templates/event-1.html:143
+msgid "Laptop"
+msgstr "笔记本电脑"
+
+#: templates/event-1.html:147 templates/event-2.html:159
+#: templates/event-7.html:141 templates/event-8.html:130
+msgid "Speakers"
+msgstr "演讲嘉宾"
+
+#: templates/event-1.html:159
+msgid "Michael Brown"
+msgstr "Michael Brown"
+
+
+#: templates/event-1.html:194 templates/event-2.html:230
+#: templates/event-7.html:187 templates/event-8.html:158
+msgid "Event Gallery"
+msgstr "活动画廊"
+
+#: templates/event-2.html:6
+msgid "AI-Solution | Events | Corporate AI Summit"
+msgstr "AI-Solution | 活动 | 企业AI峰会"
+
+#: templates/event-2.html:99
+msgid "Corporate AI Summit"
+msgstr "企业AI峰会"
+
+#: templates/event-2.html:102
+msgid ""
+"Join AI-Solution in partnership with TechCorp to explore how AI is "
+"transforming business operations across industries."
+msgstr "加入AI-Solution与TechCorp的合作，探索AI如何跨行业改变业务运营。"
+
+#: templates/event-2.html:104
+msgid "Feb 6, 2026"
+msgstr "2026年02月06日"
+
+#: templates/event-2.html:106
+msgid "Manchester Conference Centre | Manchester"
+msgstr "曼彻斯特会议中心 | 曼彻斯特"
+
+#: templates/event-2.html:124
+msgid ""
+"The Corporate AI Summit, hosted by AI-Solution in partnership with "
+"TechCorp, is a one-day executive-focused event exploring real-world "
+"business applications of artificial intelligence. Designed for decision-"
+"makers, managers, and digital leaders, the summit delivers strategic "
+"insights, practical frameworks, and case studies demonstrating how AI is "
+"transforming finance, HR, marketing, operations, and customer experience."
+msgstr ""
+"企业AI峰会由AI-"
+"Solution与TechCorp合作主办，是一个为期一天的高管专注活动，探索人工智能的现实世界商业应用。专为决策者、管理者和数字领导者设计，峰会提供战略洞察、实用框架和案例研究，展示AI如何改变金融、人力资源、营销、运营和客户体验。"
+
+#: templates/event-2.html:129
+msgid "In Partnership With TechCorp"
+msgstr "与TechCorp合作"
+
+#: templates/event-2.html:142
+msgid "09:00 AM – Registration & Welcome Coffee"
+msgstr "09:00 上午 – 注册登记与欢迎咖啡"
+
+#: templates/event-2.html:143
+msgid "09:30 AM – Opening Keynote: AI in Modern Enterprises"
+msgstr "09:30 上午 – 开场主题演讲：现代企业中的AI"
+
+#: templates/event-2.html:144
+msgid "10:30 AM – Business Process Automation with AI"
+msgstr "10:30 上午 – AI业务流程自动化"
+
+#: templates/event-2.html:145 templates/event-7.html:128
+#: templates/event-8.html:116
+msgid "12:00 PM – Lunch & Networking"
+msgstr "12:00 下午 – 午餐与社交交流"
+
+#: templates/event-2.html:146
+msgid "01:30 PM – Industry Case Studies & Success Stories"
+msgstr "01:30 下午 – 行业案例研究与成功故事"
+
+#: templates/event-2.html:147
+msgid "03:30 PM – Panel Discussion & Executive Q&A"
+msgstr "03:30 下午 – 小组讨论与高管问答"
+
+#: templates/event-2.html:154 templates/event-7.html:137
+msgid "Laptop or Tablet"
+msgstr "笔记本电脑或平板电脑"
+
+#: templates/event-2.html:155
+msgid "Access to Corporate Email"
+msgstr "企业邮箱访问权限"
+
+#: templates/event-2.html:171
+msgid "Sarah White"
+msgstr "Sarah White"
+
+#: templates/event-2.html:172
+msgid "AI Solutions Architect, AI-Solution"
+msgstr "AI解决方案架构师, AI-Solution"
+
+#: templates/event-2.html:183
+msgid "Rose Mitchell"
+msgstr "Rose Mitchell"
+
+#: templates/event-2.html:185
+msgid "Head of Digital Transformation, TechCorp"
+msgstr "数字化转型主管, TechCorp"
+
+#: templates/event-2.html:208
+msgid "Emily Ross"
+msgstr "Emily Ross"
+
+#: templates/event-2.html:209
+msgid "AI Business Consultant, TechCorp"
+msgstr "AI业务顾问, TechCorp"
+
+#: templates/event-2.html:219
+msgid "Jackson Morello"
+msgstr "Jackson Morello"
+
+#: templates/event-2.html:220
+msgid "AI Strategy Lead, TechCorp"
+msgstr "AI战略主管, TechCorp"
+
+#: templates/event-7.html:6
+msgid "AI-Solution | Events | AI Kickoff Seminar"
+msgstr "AI-Solution | 活动 | AI启动研讨会"
+
+#: templates/event-7.html:94
+msgid "AI Kickoff Seminar"
+msgstr "AI启动研讨会"
+
+#: templates/event-7.html:97
+msgid ""
+"An introductory seminar on AI hosted by AI-Solution, covering key "
+"concepts and real-world applications for beginners."
+msgstr "由AI-Solution主办的AI入门研讨会，涵盖关键概念和面向初学者的实际应用。"
+
+#: templates/event-7.html:99
+msgid "Dec 25, 2025"
+msgstr "2025年12月25日"
+
+#: templates/event-7.html:101
+msgid "Uncommon | Liverpool Street | London"
+msgstr "非凡 | 利物浦街 | 伦敦"
+
+#: templates/event-7.html:106 templates/event-8.html:94
+msgid "Past Event"
+msgstr "已结束活动"
+
+#: templates/event-7.html:118
+msgid ""
+"The AI Kickoff Seminar was designed for professionals and enthusiasts who"
+" are new to artificial intelligence. Participants learned the basics of "
+"AI, including key concepts, terminology, and introductory applications "
+"across various business functions. The seminar provided an excellent "
+"foundation for future AI initiatives."
+msgstr "AI启动研讨会专为对人工智能陌生的专业人士和爱好者设计。参与者学习了AI的基础知识，包括关键概念、术语和跨各种业务功能的入门应用。该研讨会为未来的AI计划提供了良好的基础。"
+
+#: templates/event-7.html:125
+msgid "09:00 AM – Welcome & Introduction"
+msgstr "09:00 上午 – 欢迎与介绍"
+
+#: templates/event-7.html:126
+msgid "09:30 AM – AI Fundamentals Overview"
+msgstr "09:30 上午 – AI基础概述"
+
+#: templates/event-7.html:127
+msgid "10:30 AM – Case Studies of AI Applications"
+msgstr "10:30 上午 – AI应用案例研究"
+
+#: templates/event-7.html:129
+msgid "01:00 PM – Hands-On Demo Session"
+msgstr "01:00 下午 – 实践演示环节"
+
+#: templates/event-7.html:130
+msgid "03:00 PM – Q&A and Closing Remarks"
+msgstr "03:00 下午 – 问答与闭幕致辞"
+
+#: templates/event-7.html:152 templates/event-8.html:141
+msgid "Janah Inido"
+msgstr "Janah Inido"
+
+#: templates/event-7.html:153 templates/event-8.html:142
+msgid "Chief AI Officer, AI-Solution"
+msgstr "首席AI官, AI-Solution"
+
+#: templates/event-7.html:176
+msgid "Nolan Obinou"
+msgstr "Nolan Obinou"
+
+#: templates/event-7.html:177
+msgid "AI Project Manager, AI-Solution"
+msgstr "AI项目经理, AI-Solution"
+
+#: templates/event-7.html:252 templates/event-8.html:183
+msgid "Load More"
+msgstr "加载更多"
+
+#: templates/event-8.html:6
+msgid "AI-Solution | Events | Data Science Bootcamp"
+msgstr "AI-Solution | 活动 | 数据科学训练营"
+
+#: templates/event-8.html:84
+msgid "Data Science Bootcamp"
+msgstr "数据科学训练营"
+
+#: templates/event-8.html:87
+msgid ""
+"Practical data science skills workshop hosted by AI-Solution, with hands-"
+"on exercises to build real-world data expertise."
+msgstr "由AI-Solution主办的实用数据科学技能工作坊，通过实践练习构建真实世界的数据专业知识。"
+
+#: templates/event-8.html:89
+msgid "Dec 20, 2025"
+msgstr "2025年12月20日"
+
+#: templates/event-8.html:91
+msgid "Innovation Hub | Manchester"
+msgstr "创新中心 | 曼彻斯特"
+
+#: templates/event-8.html:106
+msgid ""
+"The Data Science Bootcamp provided participants with practical skills to "
+"analyze, visualize, and derive insights from data. Attendees worked with "
+"real datasets and learned industry-standard tools to implement effective "
+"data-driven solutions."
+msgstr "数据科学训练营为参与者提供了分析、可视化和从数据中获取见解的实践技能。参与者使用真实数据集工作，并学习了行业标准工具来实施有效的数据驱动解决方案。"
+
+#: templates/event-8.html:113
+msgid "09:00 AM – Registration & Welcome"
+msgstr "09:00 上午 – 注册与欢迎"
+
+#: templates/event-8.html:114
+msgid "09:30 AM – Introduction to Data Science"
+msgstr "09:30 上午 – 数据科学介绍"
+
+#: templates/event-8.html:115
+msgid "10:30 AM – Hands-On Data Cleaning"
+msgstr "10:30 上午 – 实践数据清理"
+
+#: templates/event-8.html:117
+msgid "01:00 PM – Data Analysis & Visualization"
+msgstr "01:00 下午 – 数据分析与可视化"
+
+#: templates/event-8.html:118
+msgid "03:00 PM – Real-World Case Studies"
+msgstr "03:00 下午 – 真实世界案例研究"
+
+#: templates/event-8.html:119
+msgid "04:30 PM – Q&A and Closing Remarks"
+msgstr "04:30 下午 – 问答与闭幕致辞"
+
+#: templates/event-8.html:126
+msgid "Laptop with Python / R installed"
+msgstr "安装了Python / R的笔记本电脑"
+
+#: templates/event-8.html:135
+msgid "Mark Nilen"
+msgstr "Mark Nilen"
+
+#: templates/event-8.html:136
+msgid "Chief Technology Officer, AI-Solution"
+msgstr "首席技术官, AI-Solution"
+
+#: templates/event-8.html:147
+msgid "Robert Wilson"
+msgstr "Robert Wilson"
+
+#: templates/event-8.html:148
+msgid "Senior Data Analyst, AI-Solution"
+msgstr "高级数据分析师, AI-Solution"
+
+#: templates/events.html:151
+msgid "View and Join our events"
+msgstr "查看并参加我们的活动"
+
+#: templates/events.html:155
+msgid ""
+"Join us for workshops, webinars, and conferences on AI solutions and "
+"digital transformation."
+msgstr "参加我们关于AI解决方案和数字转型的研讨会、网络研讨会和会议。"
+
+#: templates/events.html:162
+msgid "Explore Events"
+msgstr "探索活动"
+
+#: templates/events.html:171 templates/events.html:295
+msgid "Featured Event"
+msgstr "特色活动"
+
+#: templates/events.html:192
+msgid "Upcoming"
+msgstr "即将举行"
+
+#: templates/events.html:202
+msgid "Past"
+msgstr "过去的"
+
+#: templates/events.html:221 templates/events.html:297
+msgid "Loading events..."
+msgstr "正在加载活动..."
+
+#: templates/events.html:228 templates/events.html:303
+msgid "Load More Events"
+msgstr "加载更多活动"
+
+#: templates/events.html:237
+msgid "Learn More About AI-Solution"
+msgstr "了解更多关于AI-Solution"
+
+#: templates/events.html:239
+msgid ""
+"Discover how AI-Solution can transform your business with innovative AI-"
+"powered solutions and digital workplace enhancements."
+msgstr "了解AI-Solution如何通过创新的AI驱动解决方案和数字工作场所增强来改变您的业务。"
+
+#: templates/events.html:243 templates/events.html:304
+msgid "Learn More"
+msgstr "了解更多"
+
+#: templates/events.html:259
+msgid "AI-powered solutions to enhance digital employee experience."
+msgstr "AI驱动的解决方案以增强数字员工体验。"
+
+#: templates/events.html:275 templates/privacy-policy.html:74
+#: templates/privacy-policy.html:203 templates/reviews.html:457
+msgid "Privacy Policy"
+msgstr "隐私政策"
+
+#: templates/events.html:288 templates/privacy-policy.html:216
+msgid "All rights reserved."
+msgstr "保留所有权利。"
+
+#: templates/events.html:298
+msgid "No upcoming events found."
+msgstr "未找到即将举行的活动。"
+
+#: templates/events.html:299
+msgid "No past events found."
+msgstr "未找到过去的活动。"
+
+#: templates/events.html:300
+msgid "Check back soon for new events and workshops."
+msgstr "请稍后回来查看新的活动和研讨会。"
+
+#: templates/events.html:301
+msgid "Error loading events. Please try again later."
+msgstr "加载活动时出错。请稍后再试。"
+
+#: templates/events.html:302
+msgid "Loading..."
+msgstr "加载中..."
+
+#: templates/events.html:305
+#, python-format
+msgid "%(count)s upcoming events"
+msgstr "%(count)s 即将举行的活动"
+
+#: templates/events.html:306
+#, python-format
+msgid "%(count)s past events"
+msgstr "%(count)s 过去的活动"
+
+#: templates/events.html:307
+msgid "TBD"
+msgstr "待定"
+
+#: templates/home.html:117 templates/solutions.html:132
+msgid "AI Solutions for the Future of Work"
+msgstr "面向未来工作的AI解决方案"
+
+#: templates/home.html:120 templates/solutions.html:136
+msgid ""
+"AI-Solution leverages intelligent software to proactively support "
+"employees, accelerate innovation, and improve digital workplace "
+"experiences."
+msgstr "AI-Solution利用智能软件主动支持员工、加速创新并改善数字工作场所体验。"
+
+#: templates/home.html:126 templates/solutions.html:143
+#: templates/task-automation.html:157 templates/virtual-work.html:209
+msgid "Contact us now"
+msgstr "立即联系我们"
+
+#: templates/home.html:145 templates/solutions.html:499
+msgid "Industries We Transform with AI"
+msgstr "我们用AI转型的行业"
+
+#: templates/home.html:162 templates/solutions.html:513
+msgid "Education"
+msgstr "教育"
+
+#: templates/home.html:163
+msgid "Smarter learning systems"
+msgstr "更智能的学习系统"
+
+#: templates/home.html:178 templates/solutions.html:521
+msgid "Healthcare"
+msgstr "医疗保健"
+
+#: templates/home.html:179
+msgid "AI-driven patient support"
+msgstr "AI驱动的患者支持"
+
+#: templates/home.html:194 templates/solutions.html:529
+msgid "Manufacturing"
+msgstr "制造业"
+
+#: templates/home.html:195
+msgid "Predictive operations"
+msgstr "预测性运营"
+
+#: templates/home.html:210 templates/solutions.html:537
+msgid "IT & Software"
+msgstr "IT与软件"
+
+#: templates/home.html:211
+msgid "Enhanced digital experience"
+msgstr "增强的数字体验"
+
+#: templates/home.html:226 templates/solutions.html:545
+msgid "Finance"
+msgstr "金融"
+
+#: templates/home.html:227
+msgid "Secure, intelligent systems"
+msgstr "安全智能系统"
+
+#: templates/home.html:238 templates/solutions.html:152
+msgid "Our Solutions"
+msgstr "我们的解决方案"
+
+#: templates/home.html:253 templates/smart-assistant.html:6
+#: templates/smart-assistant.html:98 templates/solutions.html:172
+msgid "Smart Assistant"
+msgstr "智能助手"
+
+#: templates/home.html:255 templates/solutions.html:174
+msgid "Enhances employee productivity with AI-driven assistance."
+msgstr "通过AI驱动的协助提高员工生产力。"
+
+#: templates/home.html:260 templates/home.html:284 templates/home.html:308
+#: templates/home.html:332 templates/solutions.html:177
+#: templates/solutions.html:197 templates/solutions.html:217
+#: templates/solutions.html:239
+msgid "Explore more"
+msgstr "探索更多"
+
+#: templates/home.html:277 templates/solutions.html:192
+#: templates/solutions.html:375
+msgid "Proactive Issue Resolution"
+msgstr "主动问题解决"
+
+#: templates/home.html:279 templates/solutions.html:194
+msgid "Identify and resolve workplace issues before they impact operations."
+msgstr "在影响运营之前识别并解决工作场所问题。"
+
+#: templates/home.html:301 templates/solutions.html:212
+msgid "AI Prototyping Solutions"
+msgstr "AI原型解决方案"
+
+#: templates/home.html:303 templates/solutions.html:214
+msgid "Rapid and affordable prototyping for innovative software solutions."
+msgstr "为创新软件解决方案提供快速且实惠的原型设计。"
+
+#: templates/home.html:329 templates/solutions.html:236
+msgid "Tailored AI solutions for sectors like healthcare, finance, and IT."
+msgstr "为医疗保健、金融和IT等行业量身定制的AI解决方案。"
+
+#: templates/home.html:354
+msgid "Customer Trust"
+msgstr "客户信任"
+
+#: templates/home.html:357
+msgid "Trusted by professionals across industries"
+msgstr "受到各行业专业人士的信赖"
+
+#: templates/home.html:360
+msgid "Verified feedback from customers who use AI-Solution in real workflows."
+msgstr "来自在真实工作流程中使用AI-Solution的客户的验证反馈。"
+
+#: templates/home.html:371
+msgid "Average customer rating"
+msgstr "平均客户评分"
+
+#: templates/home.html:393
+msgid "Based on"
+msgstr "基于"
+
+#: templates/home.html:393
+msgid "verified reviews"
+msgstr "已验证评论"
+
+#: templates/home.html:398
+msgid "Reviews collected from verified professionals across multiple industries."
+msgstr "来自多个行业的验证专业人士收集的评论。"
+
+#: templates/home.html:431
+msgid "Verified customer"
+msgstr "验证客户"
+
+#: templates/home.html:753
+msgid "No articles available."
+msgstr "没有可用的文章。"
+
+#: templates/home.html:818 templates/smart-assistant.html:371
+#: templates/solutions.html:653
+msgid ""
+"Innovating the future of digital employee experience with AI-powered "
+"solutions."
+msgstr "创新数字员工体验的未来，由AI驱动的解决方案。"
+
+#: templates/news-1.html:6 templates/news-2.html:6
+#, fuzzy
+msgid "News"
+msgstr "新闻4"
+
+#: templates/news-1.html:94
+msgid "Published on Dec 15, 2025 | Reported by TechRadar"
+msgstr "发表于2025年12月15日 | TechRadar报道"
+
+#: templates/news-1.html:104
+msgid ""
+"AI-Solution has formed a strategic partnership with a leading technology "
+"firm to drive adoption of advanced AI tools across industries. This "
+"collaboration will deliver intelligent solutions that boost efficiency, "
+"enhance productivity, and elevate employee experiences in modern digital "
+"workplaces."
+msgstr ""
+"AI-"
+"Solution与一家领先的科技公司建立了战略合作伙伴关系，以推动先进AI工具在各行业的采用。此次合作将提供智能解决方案，提高效率，增强生产力，并在现代数字工作场所提升员工体验。"
+
+#: templates/news-1.html:109
+msgid "Collaboration Overview"
+msgstr "合作概述"
+
+#: templates/news-1.html:112
+msgid ""
+"The partnership focuses on deploying AI-powered assistants, proactive "
+"issue resolution tools, and industry-specific solutions within enterprise"
+" workflows. Both companies aim to deliver seamless and scalable AI "
+"experiences that enhance operational efficiency and empower employees to "
+"focus on strategic initiatives."
+msgstr "该合作伙伴关系专注于在企业工作流程中部署AI驱动的助手、主动问题解决工具和行业特定解决方案。两家公司旨在提供无缝且可扩展的AI体验，提高运营效率，并使员工能够专注于战略举措。"
+
+#: templates/news-1.html:123
+msgid "Impact on Businesses"
+msgstr "对企业的影响"
+
+#: templates/news-1.html:126
+msgid ""
+"Companies adopting these AI solutions can expect faster task automation, "
+"reduced errors, and improved employee engagement. Solutions are tailored "
+"for industries including healthcare, finance, manufacturing, and IT, "
+"ensuring measurable results and meaningful transformation."
+msgstr "采用这些AI解决方案的公司可以期待更快的任务自动化、减少错误和改善员工参与度。解决方案专为包括医疗保健、金融、制造和IT在内的行业量身定制，确保可衡量的结果和有意义的转型。"
+
+#: templates/news-1.html:131
+msgid "Future Prospects"
+msgstr "未来前景"
+
+#: templates/news-1.html:134
+msgid ""
+"As artificial intelligence continues to evolve, organizations will "
+"increasingly rely on intelligent solutions to drive digital "
+"transformation. AI-Solution remains dedicated to innovation, delivering "
+"practical, cutting-edge AI tools that empower companies to stay "
+"competitive and forward-thinking."
+msgstr ""
+"随着人工智能的不断发展，组织将越来越依赖智能解决方案来推动数字化转型。AI-"
+"Solution始终致力于创新，提供实用、尖端的AI工具，使公司保持竞争力和前瞻性思维。"
+
+#: templates/news-1.html:143 templates/news-2.html:143
+msgid "Other News"
+msgstr "其他新闻"
+
+#: templates/news-2.html:94
+msgid "Published on Feb 10, 2025 | Reported by AI-Solution News Team"
+msgstr "发表于2025年2月10日 | AI-Solution新闻团队报道"
+
+#: templates/news-2.html:104
+msgid ""
+"AI-Solution has officially launched a major upgrade to its Smart "
+"Assistant platform, delivering enhanced intelligence, faster response "
+"times, and deeper integration across enterprise workflows. This upgrade "
+"reinforces AI-Solution's commitment to building practical, scalable AI "
+"tools that elevate the digital employee experience."
+msgstr ""
+"AI-Solution正式推出了其智能助手平台的重大升级，提供增强的智能、更快的响应时间以及与企业工作流程的更深层次集成。此次升级加强了AI-"
+"Solution构建实用、可扩展AI工具的承诺，以提升数字员工体验。"
+
+#: templates/news-2.html:109
+msgid "What's New in Smart Assistant Upgrade"
+msgstr "智能助手升级有什么新功能"
+
+#: templates/news-2.html:112
+msgid ""
+"The upgraded Smart Assistant introduces advanced natural language "
+"understanding, improved contextual awareness, and seamless integration "
+"with internal systems such as HR platforms, IT service tools, and "
+"enterprise knowledge bases. These enhancements allow employees to "
+"complete tasks, retrieve information, and resolve issues faster than ever"
+" before."
+msgstr "升级后的智能助手引入了先进的自然语言理解、改进的上下文感知以及与内部系统（如HR平台、IT服务工具和企业知识库）的无缝集成。这些增强功能使员工能够比以往更快地完成任务、检索信息和解决问题。"
+
+#: templates/news-2.html:117
+msgid "AI-Solution Smart Assistant Upgrade Interface"
+msgstr "AI-Solution智能助手升级界面"
+
+#: templates/news-2.html:123
+msgid "How Businesses Benefit from Upgrade"
+msgstr "企业如何从升级中受益"
+
+#: templates/news-2.html:126
+msgid ""
+"Organizations using the upgraded Smart Assistant benefit from faster "
+"issue resolution, reduced manual workload, and improved employee "
+"productivity. By automating repetitive interactions and providing real-"
+"time assistance, AI-Solution helps teams focus on strategic work while "
+"maintaining consistent and reliable support across departments."
+msgstr ""
+"使用升级版智能助手的组织受益于更快的问题解决、减少手动工作负载和提高员工生产力。通过自动化重复性交互并提供实时协助，AI-"
+"Solution帮助团队专注于战略工作，同时在各部门间保持一致可靠的支持。"
+
+#: templates/news-2.html:131
+msgid "AI-Solution's Vision for Intelligent Assistance"
+msgstr "AI-Solution的智能协助愿景"
+
+#: templates/news-2.html:134
+msgid ""
+"This Smart Assistant upgrade represents another step in AI-Solution's "
+"long-term vision to deliver proactive, intelligent workplace support. As "
+"AI capabilities continue to advance, AI-Solution remains focused on "
+"developing user-centric solutions that adapt to business needs, scale "
+"with growth, and enable smarter ways of working."
+msgstr ""
+"此次智能助手升级代表了AI-Solution长期愿景的又一步，即提供主动、智能的工作场所支持。随着AI能力的不断进步，AI-"
+"Solution仍然专注于开发以用户为中心的解决方案，以适应业务需求、随业务增长而扩展，并实现更智能的工作方式。"
+
+#: templates/news-2.html:153
+msgid "News 1"
+msgstr "新闻1"
+
+#: templates/news-2.html:157
+msgid "Dec 15, 2025"
+msgstr "2025年12月15日"
+
+#: templates/news-2.html:176
+msgid "News 3"
+msgstr "新闻3"
+
+#: templates/news-2.html:199
+msgid "News 4"
+msgstr "新闻4"
+
+#: templates/privacy-policy.html:7
+#, fuzzy
+msgid "AI-Solution | Privacy Policy"
+msgstr "AI-Solution | 评论"
+
+#: templates/privacy-policy.html:76
+msgid ""
+"At AI-Solution, we value your privacy and are committed to protecting "
+"your personal information."
+msgstr "在AI-Solution，我们重视您的隐私并致力于保护您的个人信息。"
+
+#: templates/privacy-policy.html:77
+msgid ""
+"This page explains how we collect, use, and safeguard data you provide, "
+"including reviews."
+msgstr "本页面解释了我们如何收集、使用和保护您提供的数据，包括评论。"
+
+#: templates/privacy-policy.html:87
+msgid "1. Overview"
+msgstr "1. 概述"
+
+#: templates/privacy-policy.html:89
+msgid ""
+"This Privacy Policy explains how AI-Solution collects, processes, and "
+"protects your personal data,"
+msgstr "本隐私政策解释了AI-Solution如何收集、处理和保护您的个人数据，"
+
+#: templates/privacy-policy.html:90
+msgid ""
+"including information you provide when submitting reviews, inquiries, or "
+"registrations."
+msgstr "包括您在提交评论、咨询或注册时提供的信息。"
+
+#: templates/privacy-policy.html:96
+msgid "2. Information We Collect"
+msgstr "2. 我们收集的信息"
+
+#: templates/privacy-policy.html:98
+msgid "Personal details like name, email, job title, and company."
+msgstr "姓名、电子邮件、职位和公司等个人详细信息。"
+
+#: templates/privacy-policy.html:99
+msgid "Review content, rating, and industry information."
+msgstr "评论内容、评级和行业信息。"
+
+#: templates/privacy-policy.html:100
+msgid "Usage data and analytics to improve our website and services."
+msgstr "使用数据和分析来改进我们的网站和服务。"
+
+#: templates/privacy-policy.html:101
+msgid "Consent records when you agree to data processing."
+msgstr "当您同意数据处理时的同意记录。"
+
+#: templates/privacy-policy.html:107
+msgid "3. How We Use Your Data"
+msgstr "3. 我们如何使用您的数据"
+
+#: templates/privacy-policy.html:109
+msgid "To display and manage customer reviews on our website."
+msgstr "在我们的网站上显示和管理客户评论。"
+
+#: templates/privacy-policy.html:110
+msgid "To respond to inquiries and provide requested services."
+msgstr "回应咨询并提供请求的服务。"
+
+#: templates/privacy-policy.html:111
+msgid "To improve our products, services, and website functionality."
+msgstr "改进我们的产品、服务和网站功能。"
+
+#: templates/privacy-policy.html:112
+msgid "To comply with legal obligations and protect our rights."
+msgstr "遵守法律义务并保护我们的权利。"
+
+#: templates/privacy-policy.html:118
+msgid "4. Review Submissions"
+msgstr "4. 评论提交"
+
+#: templates/privacy-policy.html:120
+msgid ""
+"When you submit a review, you may choose to display your personal "
+"information or submit anonymously."
+msgstr "当您提交评论时，您可以选择显示您的个人信息或匿名提交。"
+
+#: templates/privacy-policy.html:121
+msgid "Your review content, rating, and industry may be published on our website."
+msgstr "您的评论内容、评级和行业可能会发布在我们的网站上。"
+
+#: templates/privacy-policy.html:124
+msgid ""
+"By checking consent box when submitting a review, you explicitly agree to"
+" the processing and"
+msgstr "通过在提交评论时勾选同意框，您明确同意处理和"
+
+#: templates/privacy-policy.html:125
+msgid "display of your review in accordance with this Privacy Policy."
+msgstr "根据本隐私政策显示您的评论。"
+
+#: templates/privacy-policy.html:128
+msgid ""
+"You can submit your review anonymously, in which case your personal "
+"details will not be displayed."
+msgstr "您可以匿名提交评论，在这种情况下您的个人详细信息将不会显示。"
+
+#: templates/privacy-policy.html:129
+msgid ""
+"Your review may be used for testimonials, analytics, and marketing "
+"purposes."
+msgstr "您的评论可能用于推荐、分析和营销目的。"
+
+#: templates/privacy-policy.html:130
+msgid "You can contact us to request deletion of your review at any time."
+msgstr "您可以随时联系我们请求删除您的评论。"
+
+#: templates/privacy-policy.html:136
+msgid "5. Sharing Your Information"
+msgstr "5. 分享您的信息"
+
+#: templates/privacy-policy.html:138
+msgid ""
+"We do not sell your personal data. Information may be shared with trusted"
+" service providers for website"
+msgstr "我们不出售您的个人数据。信息可能与值得信赖的服务提供商共享用于网站"
+
+#: templates/privacy-policy.html:139
+msgid "management or legal compliance purposes only."
+msgstr "管理或法律合规目的仅限。"
+
+#: templates/privacy-policy.html:145
+msgid "6. Data Retention"
+msgstr "6. 数据保留"
+
+#: templates/privacy-policy.html:147
+msgid ""
+"Personal information and reviews are retained only as long as necessary "
+"to fulfill the purposes outlined"
+msgstr "个人信息和评论仅在必要时保留以完成所述目的"
+
+#: templates/privacy-policy.html:148
+msgid "above or as required by law."
+msgstr "上述或法律要求。"
+
+#: templates/privacy-policy.html:154
+msgid "7. Your Rights"
+msgstr "7. 您的权利"
+
+#: templates/privacy-policy.html:156
+msgid "You can request access, correction, or deletion of your personal data."
+msgstr "您可以请求访问、更正或删除您的个人数据。"
+
+#: templates/privacy-policy.html:157
+msgid "You can withdraw consent for review processing at any time."
+msgstr "您可以随时撤回评论处理的同意。"
+
+#: templates/privacy-policy.html:158
+msgid "Contact us at"
+msgstr "联系我们"
+
+#: templates/privacy-policy.html:159
+msgid "for privacy-related requests."
+msgstr "进行隐私相关请求。"
+
+#: templates/privacy-policy.html:165
+msgid "8. Updates to This Policy"
+msgstr "8. 本政策更新"
+
+#: templates/privacy-policy.html:167
+msgid ""
+"We may update this Privacy Policy periodically. We recommend checking "
+"this page regularly to stay"
+msgstr "我们可能会定期更新本隐私政策。我们建议您定期查看本页面以保持"
+
+#: templates/privacy-policy.html:168
+msgid "informed"
+msgstr "了解"
+
+#: templates/privacy-policy.html:169
+msgid "about how we process your data."
+msgstr "关于我们如何处理您的数据。"
+
+#: templates/privacy-policy.html:176
+msgid "Back to Reviews"
+msgstr "返回评论"
+
+#: templates/privacy-policy.html:187
+msgid "AI-powered solutions to enhance the digital employee experience."
+msgstr "增强数字员工体验的人工智能解决方案。"
+
+#: templates/register.html:105
+msgid "Join"
+msgstr "加入"
+
+#: templates/register.html:108
+msgid "Date"
+msgstr "日期"
+
+#: templates/register.html:108
+msgid "Location"
+msgstr "地点"
+
+#: templates/register.html:118
+msgid "Event Registration"
+msgstr "活动注册"
+
+#: templates/register.html:176
+msgid "Innovating the future of digital employee experience with"
+msgstr "创新数字员工体验的未来"
+
+#: templates/register.html:177
+msgid "AI-powered solutions."
+msgstr "人工智能驱动的解决方案。"
+
+#: templates/register.html:131
+msgid "Email"
+msgstr "电子邮件"
+
+#: templates/register.html:132
+msgid "Enter your email"
+msgstr "输入您的电子邮件"
+
+#: templates/register.html:139
+msgid "Company"
+msgstr "公司"
+
+#: templates/register.html:140
+msgid "Enter your company name"
+msgstr "输入您的公司名称"
+
+#: templates/register.html:150
+msgid "Message"
+msgstr "留言"
+
+#: templates/register.html:151
+msgid "Any questions or expectations?"
+msgstr "有任何问题或期望吗？"
+
+#: templates/register.html:159
+msgid "Confirm Registration"
+msgstr "确认注册"
+
+#: templates/register.html:176
+msgid "Innovating the future of digital employee experience with"
+msgstr "创新数字员工体验的未来"
+
+#: templates/register.html:177
+msgid "AI-powered solutions."
+msgstr "人工智能驱动的解决方案。"
+
+#: templates/reviews.html:6
+msgid "AI-Solution | Reviews"
+msgstr "AI-Solution | 评论"
+
+#: templates/reviews.html:222
+msgid "Customer Reviews & Feedback"
+msgstr "客户评论与反馈"
+
+#: templates/reviews.html:225
+msgid ""
+"See how AI-Solution transforms workplaces with intelligent AI tools. View"
+" customer experiences or share your own feedback."
+msgstr "了解AI-Solution如何通过智能AI工具改变工作场所。查看客户体验或分享您自己的反馈。"
+
+#: templates/reviews.html:231
+msgid "Give a Review"
+msgstr "发表评论"
+
+#: templates/reviews.html:239
+msgid "Reviews Hero"
+msgstr "评论英雄"
+
+#: templates/reviews.html:250
+msgid "Customer Reviews"
+msgstr "客户评论"
+
+#: templates/reviews.html:262
+msgid "Load More Reviews"
+msgstr "加载更多评论"
+
+#: templates/reviews.html:275
+msgid "Submit Your Review"
+msgstr "提交您的评论"
+
+#: templates/reviews.html:278
+msgid "Share your experience with AI-Solution"
+msgstr "分享您与AI-Solution的体验"
+
+#: templates/reviews.html:287
+msgid "Review Visibility"
+msgstr "评论可见性"
+
+#: templates/reviews.html:299
+msgid "Public"
+msgstr "公开"
+
+#: templates/reviews.html:309
+msgid "Anonymous"
+msgstr "匿名"
+
+#: templates/reviews.html:316
+msgid "Your name and job title will be displayed."
+msgstr "您的姓名和职位将被显示。"
+
+#: templates/reviews.html:414
+msgid "Rating"
+msgstr "评分"
+
+#: templates/reviews.html:431
+msgid "Feedback"
+msgstr "反馈"
+
+#: templates/reviews.html:438
+msgid "Please share how your experience with AI-Solution has been"
+msgstr "请分享您与AI-Solution的体验如何"
+
+#: templates/reviews.html:441
+msgid "Minimum 30 characters."
+msgstr "最少30个字符。"
+
+#: templates/reviews.html:452
+msgid "I consent to the processing of my review in accordance with the"
+msgstr "我同意根据"
+
+#: templates/reviews.html:467
+msgid "Submit Feedback"
+msgstr "提交反馈"
+
+#: templates/reviews.html:636
+msgid "Your identity will not be displayed with this review."
+msgstr "您的身份不会与此评论一起显示。"
+
+#: templates/reviews.html:639
+msgid "Your name, job title, and company name will be displayed."
+msgstr "您的姓名、职位和公司名称将被显示。"
+
+#: templates/smart-assistant.html:100
+msgid "Smart Assistant Solutions"
+msgstr "智能助手解决方案"
+
+#: templates/smart-assistant.html:103
+msgid ""
+"Intelligent AI assistants designed to support employees, automate tasks, "
+"and improve productivity across digital workplaces."
+msgstr "专为支持员工、自动化任务和提高数字工作场所生产力而设计的智能AI助手。"
+
+#: templates/smart-assistant.html:112
+msgid "What Are Smart Assistant Solutions?"
+msgstr "什么是智能助手解决方案？"
+
+#: templates/smart-assistant.html:115
+msgid ""
+"Our Smart Assistant solutions use artificial intelligence to proactively "
+"support employees in their daily workflows. These tools reduce manual "
+"effort, streamline communication, and enhance the overall digital "
+"employee experience."
+msgstr "我们的智能助手解决方案使用人工智能主动支持员工的日常工作流程。这些工具减少手动工作量，简化沟通，并增强整体数字员工体验。"
+
+#: templates/smart-assistant.html:125
+msgid "Available Smart Assistant Solutions"
+msgstr "可用的智能助手解决方案"
+
+#: templates/smart-assistant.html:128
+msgid "Explore our AI-powered assistant solutions designed for modern teams."
+msgstr "探索我们为现代团队设计的AI驱动助手解决方案。"
+
+#: templates/smart-assistant.html:146 templates/task-automation.html:173
+#: templates/virtual-work.html:6 templates/virtual-work.html:95
+msgid "Virtual Work Assistant"
+msgstr "虚拟工作助手"
+
+#: templates/smart-assistant.html:148
+msgid "AI assistant for managing tasks, schedules, and workplace queries."
+msgstr "用于管理任务、日程和工作场所查询的AI助手。"
+
+#: templates/smart-assistant.html:166 templates/task-automation.html:7
+#: templates/task-automation.html:73 templates/virtual-work.html:231
+msgid "Task Automation Assistant"
+msgstr "任务自动化助手"
+
+#: templates/smart-assistant.html:168
+msgid "Automates repetitive workflows to focus on high-value work."
+msgstr "自动化重复性工作流程，专注于高价值工作。"
+
+#: templates/smart-assistant.html:186 templates/task-automation.html:184
+#: templates/virtual-work.html:248
+msgid "Knowledge Assistant"
+msgstr "知识助手"
+
+#: templates/smart-assistant.html:188
+msgid "Provides instant access to company knowledge and documentation."
+msgstr "提供对公司知识和文档的即时访问。"
+
+#: templates/smart-assistant.html:206 templates/task-automation.html:194
+#: templates/virtual-work.html:265
+msgid "Email Assistant"
+msgstr "邮件助手"
+
+#: templates/smart-assistant.html:208
+msgid "AI-powered email triage and response suggestions to save time."
+msgstr "AI驱动的邮件分类和响应建议，节省时间。"
+
+#: templates/smart-assistant.html:226
+msgid "Meeting Assistant"
+msgstr "会议助手"
+
+#: templates/smart-assistant.html:228
+msgid "AI summarizes meetings, tracks action items, and sends reminders."
+msgstr "AI总结会议，跟踪行动项目并发送提醒。"
+
+#: templates/smart-assistant.html:246
+msgid "Personal Coach Assistant"
+msgstr "个人教练助手"
+
+#: templates/smart-assistant.html:248
+msgid ""
+"Provides AI-driven tips for productivity, skill improvement, and workflow"
+" optimization."
+msgstr "提供AI驱动的生产力、技能提升和工作流程优化技巧。"
+
+#: templates/smart-assistant.html:266
+msgid "AI Scheduler Assistant"
+msgstr "AI调度助手"
+
+#: templates/smart-assistant.html:268
+msgid ""
+"Intelligently schedules meetings, tasks, and reminders to optimize "
+"workflow."
+msgstr "智能安排会议、任务和提醒，优化工作流程。"
+
+#: templates/smart-assistant.html:286
+msgid "Voice Assistant"
+msgstr "语音助手"
+
+#: templates/smart-assistant.html:288
+msgid ""
+"Hands-free AI assistant that manages tasks and commands via voice "
+"interaction."
+msgstr "通过语音交互管理任务和命令的免提AI助手。"
+
+#: templates/smart-assistant.html:306
+msgid "Analytics Assistant"
+msgstr "分析助手"
+
+#: templates/smart-assistant.html:308
+msgid "AI-powered insights and recommendations to optimize business processes."
+msgstr "AI驱动的洞察和建议，优化业务流程。"
+
+#: templates/smart-assistant.html:321
+msgid "Benefits of Smart Assistant Solutions"
+msgstr "智能助手解决方案的优势"
+
+#: templates/smart-assistant.html:328
+msgid "Increased Productivity"
+msgstr "提高生产力"
+
+#: templates/smart-assistant.html:331 templates/task-automation.html:208
+msgid ""
+"Reduce time spent on repetitive tasks and enable employees to focus on "
+"meaningful work."
+msgstr "减少在重复任务上花费的时间，让员工专注于有意义的工作。"
+
+#: templates/smart-assistant.html:337
+msgid "Proactive Support"
+msgstr "主动支持"
+
+#: templates/smart-assistant.html:340
+msgid ""
+"AI-driven assistance that anticipates needs and provides support before "
+"issues arise."
+msgstr "AI驱动的协助，预测需求并在问题出现之前提供支持。"
+
+#: templates/smart-assistant.html:346
+msgid "Improved Employee Experience"
+msgstr "改善员工体验"
+
+#: templates/smart-assistant.html:349
+msgid ""
+"Create a smoother, more intuitive digital workplace for employees across "
+"teams."
+msgstr "为各团队员工创建更流畅、更直观的数字工作场所。"
+
+#: templates/solutions.html:155
+msgid "Click on a category to explore more specific solutions."
+msgstr "点击类别以探索更具体的解决方案。"
+
+#: templates/solutions.html:250
+msgid "How Our Solutions Work"
+msgstr "我们的解决方案如何工作"
+
+#: templates/solutions.html:253
+msgid "A structured, AI-driven approach to solving digital workplace challenges."
+msgstr "一种结构化的、AI驱动的方法来解决数字工作场所的挑战。"
+
+#: templates/solutions.html:266
+msgid "Understand Challenge"
+msgstr "理解挑战"
+
+#: templates/solutions.html:269
+msgid ""
+"We analyse digital workplace challenges and identify opportunities for "
+"AI-driven improvement."
+msgstr "我们分析数字工作场所的挑战，并识别AI驱动改进的机会。"
+
+#: templates/solutions.html:279
+msgid "Design Intelligent Solutions"
+msgstr "设计智能解决方案"
+
+#: templates/solutions.html:282
+msgid ""
+"AI-powered solutions are designed to proactively support employees and "
+"systems."
+msgstr "AI驱动的解决方案旨在主动支持员工和系统。"
+
+#: templates/solutions.html:292
+msgid "Rapid Prototyping"
+msgstr "快速原型设计"
+
+#: templates/solutions.html:295
+msgid ""
+"Affordable and fast AI prototyping validates ideas before full-scale "
+"implementation."
+msgstr "经济实惠的AI原型设计在全规模实施前验证想法。"
+
+#: templates/solutions.html:305
+msgid "Continuous Improvement"
+msgstr "持续改进"
+
+#: templates/solutions.html:308
+msgid "Solutions evolve through feedback, monitoring, and AI-driven insights."
+msgstr "解决方案通过反馈、监控和AI驱动的洞察不断演进。"
+
+#: templates/solutions.html:317
+msgid "Why Choose AI-Solution"
+msgstr "为什么选择AI-Solution"
+
+#: templates/solutions.html:319
+msgid ""
+"Our AI solutions are designed to deliver measurable value for your "
+"business."
+msgstr "我们的AI解决方案旨在为您的业务提供可衡量的价值。"
+
+#: templates/solutions.html:347
+msgid "Enhanced Employee Experience"
+msgstr "增强员工体验"
+
+#: templates/solutions.html:350
+msgid "AI-driven tools proactively support employees in their daily workflows."
+msgstr "AI驱动的工具主动支持员工的日常工作流程。"
+
+#: templates/solutions.html:378
+msgid "Identify and resolve issues before they impact productivity or operations."
+msgstr "在影响生产力或运营之前识别和解决问题。"
+
+#: templates/solutions.html:403
+msgid "Rapid Innovation"
+msgstr "快速创新"
+
+#: templates/solutions.html:406
+msgid "Affordable AI prototyping accelerates design, engineering, and innovation."
+msgstr "经济实惠的AI原型设计加速设计、工程和创新。"
+
+#: templates/solutions.html:431
+msgid "Scalable Architecture"
+msgstr "可扩展架构"
+
+#: templates/solutions.html:434
+msgid "Solutions that grow with your organization and evolving digital needs."
+msgstr "与您的组织和不断发展的数字需求一起成长的解决方案。"
+
+#: templates/solutions.html:459
+msgid "Industry-Focused Design"
+msgstr "行业专注设计"
+
+#: templates/solutions.html:462
+msgid "Tailored AI solutions aligned with industry-specific requirements."
+msgstr "符合行业特定要求的定制AI解决方案。"
+
+#: templates/solutions.html:487
+msgid "Secure & Reliable"
+msgstr "安全可靠"
+
+#: templates/solutions.html:490
+msgid "Built with security, reliability, and data protection at core."
+msgstr "以安全、可靠和数据保护为核心构建。"
+
+#: templates/solutions.html:501
+msgid "Our AI solutions are adaptable across multiple industries."
+msgstr "我们的AI解决方案适用于多个行业。"
+
+#: templates/solutions.html:554
+msgid "Built on Trust & Expertise"
+msgstr "基于信任和专业知识构建"
+
+#: templates/solutions.html:557
+msgid ""
+"Our solutions are designed with reliability, transparency, and real-world"
+" impact in mind."
+msgstr "我们的解决方案以可靠性、透明度和现实世界影响为设计理念。"
+
+#: templates/solutions.html:579
+msgid "Human-Centered AI"
+msgstr "以人为本的AI"
+
+#: templates/solutions.html:582
+msgid "Solutions built to support people at work, not replace them."
+msgstr "构建解决方案以支持工作中的人们，而不是取代他们。"
+
+#: templates/solutions.html:603
+msgid "Security by Design"
+msgstr "安全设计"
+
+#: templates/solutions.html:606
+msgid "Data protection and secure architecture are embedded at every stage."
+msgstr "数据保护和安全架构嵌入在每个阶段。"
+
+#: templates/solutions.html:627
+msgid "Scalable & Future-Ready"
+msgstr "可扩展且面向未来"
+
+#: templates/solutions.html:630
+msgid "AI solutions designed to grow alongside evolving business needs."
+msgstr "AI解决方案设计用于与不断发展的业务需求一起成长。"
+
+#: templates/task-automation.html:76
+msgid ""
+"Automate repetitive workflows and operational tasks with intelligent AI "
+"agents."
+msgstr "使用智能AI代理自动化重复性工作流程和操作任务。"
+
+#: templates/task-automation.html:87 templates/virtual-work.html:113
+msgid "Overview"
+msgstr "概述"
+
+#: templates/task-automation.html:89
+msgid ""
+"The Task Automation Assistant is designed to eliminate manual, repetitive"
+" work by automating routine business processes across departments."
+msgstr "任务自动化助手旨在通过自动化各部门的常规业务流程来消除手动重复工作。"
+
+#: templates/task-automation.html:92
+msgid ""
+"From approvals and data entry to workflow orchestration, it enables teams"
+" to operate faster, reduce errors, and focus on high-value initiatives."
+msgstr "从审批和数据输入到工作流程编排，它使团队能够更快地操作，减少错误，并专注于高价值计划。"
+
+#: templates/task-automation.html:101 templates/virtual-work.html:126
+msgid "Key Features"
+msgstr "关键功能"
+
+#: templates/task-automation.html:111
+msgid "Workflow Automation"
+msgstr "工作流程自动化"
+
+#: templates/task-automation.html:113
+msgid ""
+"Automates end-to-end workflows including approvals, escalations, and "
+"notifications."
+msgstr "自动化端到端工作流程，包括审批、升级和通知。"
+
+#: templates/task-automation.html:124
+msgid "System Integration"
+msgstr "系统集成"
+
+#: templates/task-automation.html:126
+msgid ""
+"Seamlessly integrates with enterprise systems, CRMs, ERPs, and internal "
+"tools."
+msgstr "与企业系统、CRM、ERP和内部工具无缝集成。"
+
+#: templates/task-automation.html:137
+msgid "Intelligent Rule Engine"
+msgstr "智能规则引擎"
+
+#: templates/task-automation.html:139
+msgid ""
+"Executes business rules dynamically based on conditions, priorities, and "
+"data inputs."
+msgstr "基于条件、优先级和数据输入动态执行业务规则。"
+
+#: templates/task-automation.html:149
+msgid "Automate More. Work Smarter."
+msgstr "自动化更多。更智能地工作。"
+
+#: templates/task-automation.html:152
+msgid ""
+"Discover how task automation can streamline operations and scale "
+"productivity."
+msgstr "发现任务自动化如何简化运营并扩展生产力。"
+
+#: templates/task-automation.html:163 templates/virtual-work.html:215
+msgid "Explore Other Smart Assistant Solutions"
+msgstr "探索其他智能助手解决方案"
+
+#: templates/virtual-work.html:98
+msgid ""
+"Streamline tasks, schedules, and queries with an AI-powered virtual "
+"assistant."
+msgstr "通过AI驱动的虚拟助手简化任务、日程和查询。"
+
+#: templates/virtual-work.html:115
+msgid ""
+"The Virtual Work Assistant helps employees manage their daily tasks, "
+"schedule meetings, and retrieve company knowledge efficiently using AI-"
+"powered tools."
+msgstr "虚拟工作助手帮助员工管理日常任务、安排会议，并使用AI驱动的工具高效检索公司知识。"
+
+#: templates/virtual-work.html:118
+msgid ""
+"It increases productivity, reduces errors, and automates repetitive tasks"
+" to free up valuable time for strategic work."
+msgstr "它提高生产力，减少错误，并自动化重复性任务，为战略工作腾出宝贵时间。"
+
+#: templates/virtual-work.html:144
+msgid "Task Management"
+msgstr "任务管理"
+
+#: templates/virtual-work.html:146
+msgid ""
+"Automates daily task assignments and tracking to save time and improve "
+"efficiency."
+msgstr "自动化日常任务分配和跟踪，节省时间并提高效率。"
+
+#: templates/virtual-work.html:163
+msgid "Scheduling"
+msgstr "日程安排"
+
+#: templates/virtual-work.html:165
+msgid ""
+"Optimizes meetings and appointments, integrating with calendars "
+"automatically."
+msgstr "优化会议和约会，自动与日历集成。"
+
+#: templates/virtual-work.html:182
+msgid "Knowledge Retrieval"
+msgstr "知识检索"
+
+#: templates/virtual-work.html:184
+msgid "Instantly retrieves company documentation and guidelines using AI search."
+msgstr "使用AI搜索即时检索公司文档和指南。"
+
+#: templates/virtual-work.html:197
+msgid "Ready to Transform Your Workplace?"
+msgstr "准备好改变您的工作场所了吗？"
+
+#: templates/virtual-work.html:200
+msgid ""
+"Contact us today to implement this AI solution and boost productivity in "
+"your organization."
+msgstr "今天联系我们实施此AI解决方案，提高您组织的生产力。"
+
+#~ msgid "Based on 0 verified reviews →"
+#~ msgstr "基于0条验证评论 →"
+
+#~ msgid "AI Solutions Built for Future of Work"
+#~ msgstr "为未来工作构建的AI解决方案"
+
+#~ msgid ""
+#~ "Discover intelligent, scalable AI solutions"
+#~ " designed to enhance productivity, resolve"
+#~ " issues proactively, and support digital"
+#~ " employees across industries."
+#~ msgstr "发现智能、可扩展的AI解决方案，旨在提高生产力、主动解决问题，并支持跨行业的数字员工。"
+
+#~ msgid "Contact us"
+#~ msgstr "联系我们"
+
+#~ msgid "Our Solution Categories"
+#~ msgstr "我们的解决方案类别"
+
+#~ msgid "AI tools to streamline daily tasks and enhance productivity."
+#~ msgstr "AI工具用于简化日常任务和提高生产力。"
+
+#~ msgid "Prevent and resolve issues before they impact your operations."
+#~ msgstr "在影响您的运营之前预防并解决问题。"
+
+#~ msgid "Rapid and affordable prototyping for innovative AI software."
+#~ msgstr "为创新AI软件提供快速且实惠的原型设计。"
+
+#~ msgid "Customized AI solutions tailored for your industry needs."
+#~ msgstr "为您的行业需求定制的AI解决方案。"
+
+#~ msgid "Industries We Support"
+#~ msgstr "我们支持的行业"
+
+#~ msgid "No reviews yet."
+#~ msgstr "还没有评论。"
+
+#~ msgid "review"
+#~ msgstr "评论"
+
+#~ msgid "s"
+#~ msgstr "条"
+
+#~ msgid "→"
+#~ msgstr ""
+
+#~ msgid "Benefits of Task Automation Solutions"
+#~ msgstr "任务自动化解决方案的优势"
+
+#~ msgid "Improved Accuracy"
+#~ msgstr "提高准确性"
+
+#~ msgid "Enhanced Customer Experience"
+#~ msgstr "增强客户体验"
+
+#~ msgid "Partnership AI"
+#~ msgstr "合作伙伴AI"
+
+#~ msgid "News 2"
+#~ msgstr "新闻2"
+
+#~ msgid "No reviews yet. Be the first to share your experience!"
+#~ msgstr "还没有评论。成为第一个分享您体验的人！"
+
+#~ msgid "verified review"
+#~ msgstr "已验证评论"
+
+#~ msgid "January"
+#~ msgstr "一月"
+
+#~ msgid "February"
+#~ msgstr "二月"
+
+#~ msgid "March"
+#~ msgstr "三月"
+
+#~ msgid "April"
+#~ msgstr "四月"
+
+#~ msgid "May"
+#~ msgstr "五月"
+
+#~ msgid "June"
+#~ msgstr "六月"
+
+#~ msgid "July"
+#~ msgstr "七月"
+
+#~ msgid "August"
+#~ msgstr "八月"
+
+#~ msgid "September"
+#~ msgstr "九月"
+
+#~ msgid "October"
+#~ msgstr "十月"
+
+#~ msgid "November"
+#~ msgstr "十一月"
+
+#~ msgid "December"
+#~ msgstr "十二月"
+
+#~ msgid ""
+#~ "Join AI-Solution for an exciting "
+#~ "kickoff seminar introducing the latest "
+#~ "AI innovations for digital workplaces."
+#~ msgstr "参加AI-Solution的激动人心的启动研讨会，介绍数字工作场所的最新AI创新。"
+
+#~ msgid ""
+#~ "Join AI-Solution for an intensive "
+#~ "hands-on bootcamp covering essential data"
+#~ " science techniques and AI applications."
+#~ msgstr "参加AI-Solution的强化实践训练营，涵盖基本的数据科学技术和AI应用。"
+
+#~ msgid "09:00 AM - Registration & Welcome Coffee"
+#~ msgstr "09:00 上午 - 注册登记与欢迎咖啡"
+
+#~ msgid "09:30 AM - Opening Keynote: AI in Modern Enterprises"
+#~ msgstr "09:30 上午 - 开场主题演讲：现代企业中的AI"
+
+#~ msgid "10:30 AM - Business Process Automation with AI"
+#~ msgstr "10:30 上午 - AI业务流程自动化"
+
+#~ msgid "12:00 PM - Lunch & Networking"
+#~ msgstr "12:00 下午 - 午餐与社交交流"
+
+#~ msgid "01:30 PM - Industry Case Studies & Success Stories"
+#~ msgstr "01:30 下午 - 行业案例研究与成功故事"
+
+#~ msgid "CEO, AI-Solution"
+#~ msgstr "CEO, AI-Solution"
+
+#~ msgid "Michael Chen"
+#~ msgstr "Michael Chen"
+
+#~ msgid "CTO, TechCorp"
+#~ msgstr "CTO, TechCorp"
+
+#~ msgid "Emily Rodriguez"
+#~ msgstr "Emily Rodriguez"
+
+#~ msgid "VP of Operations, AI-Solution"
+#~ msgstr "运营副总裁, AI-Solution"
+
+#~ msgid "David Kim"
+#~ msgstr "David Kim"
+
+#~ msgid "Head of AI Research, TechCorp"
+#~ msgstr "AI研究主管, TechCorp"
+
+#~ msgid "Lisa Thompson"
+#~ msgstr "Lisa Thompson"
+
+#~ msgid "Director of Digital Transformation"
+#~ msgstr "数字化转型总监"
+
+#~ msgid "James Wilson"
+#~ msgstr "James Wilson"
+
+#~ msgid "Senior Data Scientist"
+#~ msgstr "高级数据科学家"
+
+#~ msgid "Sarah Chen"
+#~ msgstr "Sarah Chen"
+
+#~ msgid "Robert Martinez"
+#~ msgstr "Robert Martinez"
+
+#~ msgid "Emily Davis"
+#~ msgstr "Emily Davis"
+
+#~ msgid "Liam Roberts"
+#~ msgstr "Liam Roberts"
+
+#~ msgid "Sophia Martinez"
+#~ msgstr "Sophia Martinez"
+
+#~ msgid "Data Science Lead, TechCorp"
+#~ msgstr "数据科学主管, TechCorp"
+
+#~ msgid "Senior AI Consultant"
+#~ msgstr "高级AI顾问"
+
+#~ msgid "Machine Learning Engineer"
+#~ msgstr "机器学习工程师"
+
+#~ msgid "Data Scientist, AI-Solution"
+#~ msgstr "数据科学家, AI-Solution"
+
+#~ msgid "A certain company"
+#~ msgstr "某家公司"
+
+#~ msgid "Data Analyst"
+#~ msgstr "数据分析师"
+
+#~ msgid "HR Specialist"
+#~ msgstr "人力资源专员"
+
+#~ msgid "IT Manager"
+#~ msgstr "IT经理"
+
+#~ msgid "Marketing Lead"
+#~ msgstr "营销主管"
+
+#~ msgid "Operations Manager"
+#~ msgstr "运营经理"
+
+#~ msgid "Sales Executive"
+#~ msgstr "销售主管"
+
+#~ msgid "Senior HR Officer"
+#~ msgstr "高级人力资源官员"
+
+#~ msgid "Software Engineer"
+#~ msgstr "软件工程师"
+
+#~ msgid "Someone"
+#~ msgstr "某人"
+
+#~ msgid "Logistics & Supply Chain"
+#~ msgstr "物流与供应链"
+
+#~ msgid "Retail & E-commerce"
+#~ msgstr "零售与电子商务"
+
+#~ msgid "Technology"
+#~ msgstr "技术"
+
+msgid "Please specify your industry."
+msgstr "请指定您的行业。"
+
+msgid "Please specify your requirement."
+msgstr "请指定您的需求。"
+
+msgid "Thanks for your inquiry! We will get back to you within 4 working days."
+msgstr "感谢您的咨询！我们将在4个工作日内与您联系。"
+
+msgid "Registration successful! You will be informed with event details in your email. Thank you."
+msgstr "注册成功！我们将在您的电子邮件中通知您活动详情。谢谢。"
+
+msgid "Oops! Something went wrong. Please try again later."
+msgstr "糟糕！出了点问题。请稍后再试。"
+
+msgid "Please provide your consent to submit a review."
+msgstr "请提供您的同意以提交评论。"
+
+msgid "Please select a rating."
+msgstr "请选择评分。"
+
+msgid "Failed to submit review."
+msgstr "提交评论失败。"
+
+msgid "Thank you for your review! It has been submitted successfully."
+msgstr "感谢您的评论！已成功提交。"
+
+msgid "Feb 10, 2025"
+msgstr "2025年2月10日"
+
+msgid "Mar 22, 2025"
+msgstr "2025年3月22日"
+
+msgid "Jan 21, 2026"
+msgstr "2026年1月21日"
+
+msgid "Product Manager, AI-Solution"
+msgstr "产品经理, AI-Solution"
+
+msgid "AI Product Designer, AI-Solutions"
+msgstr "AI产品设计师, AI-Solutions"
+
+msgid "Lead AI Engineer, AI-Solution"
+msgstr "首席AI工程师, AI-Solution"
+
+msgid "Software Engineer"
+msgstr "软件工程师"
+
+msgid "UX/UI Designer"
+msgstr "UX/UI设计师"
+
+msgid "Senior Data Analyst"
+msgstr "高级数据分析师"
+
+msgid "Marketing Lead"
+msgstr "营销主管"
+
+msgid "Business Analyst"
+msgstr "业务分析师"
+
+msgid "HR Manager"
+msgstr "人力资源经理"
+
+msgid "AI Product Designer"
+msgstr "AI产品设计师"
+
+msgid "Our Location"
+msgstr "我们的位置"
+
+msgid "Visit our headquarters in Sunderland, where innovation meets excellence."
+msgstr "参观我们在桑德兰的总部，在这里创新与卓越相遇。"
+
+msgid "Headquarters"
+msgstr "总部"
+
+msgid "Sunderland, United Kingdom"
+msgstr "桑德兰，英国"
+
+msgid "Strategically located in heart of Sunderland's innovation district."
+msgstr "战略性地位于桑德兰创新区的中心。"
+
+msgid "Office Hours"
+msgstr "办公时间"
+
+msgid "Monday - Friday"
+msgstr "周一 - 周五"
+
+msgid "Saturday"
+msgstr "周六"
+
+msgid "Sunday"
+msgstr "周日"
+
+msgid "Closed"
+msgstr "关闭"
+
+msgid "Find Us in Sunderland"
+msgstr "在桑德兰找到我们"
+
+msgid "Our modern office space is designed to foster collaboration and innovation."
+msgstr "我们的现代化办公空间旨在促进协作和创新。"
+
+msgid "Get Directions"
+msgstr "获取路线"
+
+msgid "9:00 AM"
+msgstr "上午9:00"
+
+msgid "6:00 PM"
+msgstr "下午6:00"
+
+msgid "10:00 AM"
+msgstr "上午10:00"
+
+msgid "2:00 PM"
+msgstr "下午2:00"

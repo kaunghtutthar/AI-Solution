@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="{{ get_locale() }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-Solution | {{ _('Solutions') }}</title>
+
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#015486",
+              secondary: "#EF3451",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      
+      html {
+        height: 100%;
+      }
+      body {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      main {
+        flex: 1;
+      }
+      footer {
+        flex-shrink: 0;
+      }
+    </style>
+
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body class="bg-white text-[#383838] font-sans min-h-screen flex flex-col">
+    <header class="bg-white shadow sticky top-0 z-50 flex-shrink-0">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        
+        <img
+          src="/static/images/logo-fit.png"
+          alt="AI-Solution Logo"
+          class="h-10"
+        />
+
+        
+        {% include 'components/language-switcher.html' %}
+
+        
+        <nav class="hidden md:flex space-x-8 font-medium">
+          <a href="/" class="hover:text-secondary">{{ _('Home') }}</a>
+          <a href="/solutions" class="text-secondary font-semibold"
+            >{{ _('Solutions') }}</a
+          >
+          <a href="/articles" class="hover:text-secondary">{{ _('Articles') }}</a>
+          <a href="/reviews" class="hover:text-secondary">{{ _('Reviews') }}</a>
+          <a href="/events" class="hover:text-secondary">{{ _('Events') }}</a>
+          <a href="/contact" class="hover:text-secondary">{{ _('Contact') }}</a>
+          <a href="/about" class="hover:text-secondary">{{ _('About') }}</a>
+        </nav>
+
+        
+        <button
+          id="menu-btn"
+          class="md:hidden text-2xl text-gray-700 focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      
+      <nav
+        id="mobile-menu"
+        class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t z-50"
+      >
+        <div class="flex flex-col px-6 py-6 space-y-4 font-medium">
+          <a href="/" class="hover:text-secondary">{{ _('Home') }}</a>
+          <a href="/solutions" class="text-secondary font-semibold"
+            >{{ _('Solutions') }}</a
+          >
+          <a href="/articles" class="hover:text-secondary">{{ _('Articles') }}</a>
+          <a href="/reviews" class="hover:text-secondary">{{ _('Reviews') }}</a>
+          <a href="/events" class="hover:text-secondary">{{ _('Events') }}</a>
+          <a href="/contact" class="hover:text-secondary">{{ _('Contact') }}</a>
+          <a href="/about" class="hover:text-secondary">{{ _('About') }}</a>
+        </div>
+      </nav>
+    </header>
+
+    
+    <main class="flex-grow">
+
+    <section
+      class="relative h-[75vh] min-h-[500px] flex items-center justify-center"
+    >
+      
+      <img
+        src="/static/images/solutions-hero-image.jpg"
+        alt="AI Solutions"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+
+      
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"
+      ></div>
+
+      
+      <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          {{ _('AI Solutions for the Future of Work') }}
+        </h1>
+
+        <p class="text-lg md:text-xl text-gray-200 mb-8">
+          {{ _('AI-Solution leverages intelligent software to proactively support employees, accelerate innovation, and improve digital workplace experiences.') }}
+        </p>
+
+        <a
+          href="/contact"
+          class="inline-block bg-gradient-to-r from-[#015486] to-[#EF3451] px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition"
+        >
+          {{ _('Contact us now') }}
+        </a>
+      </div>
+    </section>
+
+    <section class="bg-gray-50 py-24">
+      <div class="max-w-7xl mx-auto px-6 text-center mb-12">
+        <h2 class="text-3xl font-bold text-[#015486]">
+          {{ _('Our Solutions') }}
+        </h2>
+        <p class="text-gray-600 mt-4">
+          {{ _('Click on a category to explore more specific solutions.') }}
+        </p>
+      </div>
+
+      <div
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+      >
+        
+        <div class="group relative rounded-3xl overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+          <img
+            src="/static/images/smart-assistant.jpg"
+            class="w-full h-64 object-cover"
+            alt="Smart Assistant"
+          />
+          <div
+            class="absolute bottom-0 left-0 bg-gradient-to-t from-black/60 to-transparent p-6 w-full text-white group-hover:opacity-100 transition"
+          >
+            <h3 class="text-xl font-bold mb-1">{{ _('Smart Assistant') }}</h3>
+            <p class="text-sm mb-3">
+              {{ _('Enhances employee productivity with AI-driven assistance.') }}
+            </p>
+            <a href="/solutions/smart-assistant" class="inline-block text-[#EF3451] font-semibold underline text-sm">
+              {{ _('Explore more') }}
+            </a>
+          </div>
+        </div>
+
+        
+        <div class="group relative rounded-3xl overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+          <img
+            src="/static/images/proactive-issue-resolution.jpg"
+            class="w-full h-64 object-cover"
+            alt="Proactive Issue Resolution"
+          />
+          <div
+            class="absolute bottom-0 left-0 bg-gradient-to-t from-black/60 to-transparent p-6 w-full text-white group-hover:opacity-100 transition"
+          >
+            <h3 class="text-xl font-bold mb-1">{{ _('Proactive Issue Resolution') }}</h3>
+            <p class="text-sm mb-3">
+              {{ _('Identify and resolve workplace issues before they impact operations.') }}
+            </p>
+            <a href="/solutions/proactive-issue" class="inline-block text-[#EF3451] font-semibold underline text-sm">
+              {{ _('Explore more') }}
+            </a>
+          </div>
+        </div>
+
+        
+        <div class="group relative rounded-3xl overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+          <img
+            src="/static/images/ai-prototyping.jpg"
+            class="w-full h-64 object-cover"
+            alt="AI Prototyping Solutions"
+          />
+          <div
+            class="absolute bottom-0 left-0 bg-gradient-to-t from-black/60 to-transparent p-6 w-full text-white group-hover:opacity-100 transition"
+          >
+            <h3 class="text-xl font-bold mb-1">{{ _('AI Prototyping Solutions') }}</h3>
+            <p class="text-sm mb-3">
+              {{ _('Rapid and affordable prototyping for innovative software solutions.') }}
+            </p>
+            <a href="/solutions/ai-prototyping" class="inline-block text-[#EF3451] font-semibold underline text-sm">
+              {{ _('Explore more') }}
+            </a>
+          </div>
+        </div>
+
+        
+        <div class="group relative rounded-3xl overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+          <img
+            src="/static/images/industry-specific-ai.jpg"
+            class="w-full h-64 object-cover"
+            alt="Industry-Specific AI Solutions"
+          />
+          <div
+            class="absolute bottom-0 left-0 bg-gradient-to-t from-black/60 to-transparent p-6 w-full text-white group-hover:opacity-100 transition"
+          >
+            <h3 class="text-xl font-bold mb-1">
+              {{ _('Industry-Specific AI Solutions') }}
+            </h3>
+            <p class="text-sm mb-3">
+              {{ _('Tailored AI solutions for sectors like healthcare, finance, and IT.') }}
+            </p>
+            <a href="/solutions/industry-ai" class="inline-block text-[#EF3451] font-semibold underline text-sm">
+              {{ _('Explore more') }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+        <h2 class="text-3xl font-bold text-[#015486]">
+          {{ _('How Our Solutions Work') }}
+        </h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          {{ _('A structured, AI-driven approach to solving digital workplace challenges.') }}
+        </p>
+      </div>
+
+      <div
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8"
+      >
+        <div
+          class="bg-gray-50 rounded-2xl py-8 font-medium text-gray-700 flex flex-col items-center justify-center shadow-lg hover:shadow-2xl hover:bg-gradient-to-r from-primary/20 to-secondary/20 transition duration-500 cursor-pointer group"
+        >
+          <span class="text-[#EF3451] text-sm font-semibold mb-3 group-hover:text-white transition duration-500">01</span>
+          <i class="fas fa-search text-3xl text-primary mb-3 group-hover:text-secondary transition duration-500"></i>
+          <h3 class="text-lg font-bold text-primary text-center group-hover:text-white transition duration-500 px-4">
+            {{ _('Understand Challenge') }}
+          </h3>
+          <p class="text-gray-600 text-sm text-center mt-2 group-hover:text-white/90 transition duration-500 px-4">
+            {{ _('We analyse digital workplace challenges and identify opportunities for AI-driven improvement.') }}
+          </p>
+        </div>
+
+        <div
+          class="bg-gray-50 rounded-2xl py-8 font-medium text-gray-700 flex flex-col items-center justify-center shadow-lg hover:shadow-2xl hover:bg-gradient-to-r from-primary/20 to-secondary/20 transition duration-500 cursor-pointer group"
+        >
+          <span class="text-[#EF3451] text-sm font-semibold mb-3 group-hover:text-white transition duration-500">02</span>
+          <i class="fas fa-pencil-ruler text-3xl text-primary mb-3 group-hover:text-secondary transition duration-500"></i>
+          <h3 class="text-lg font-bold text-primary text-center group-hover:text-white transition duration-500 px-4">
+            {{ _('Design Intelligent Solutions') }}
+          </h3>
+          <p class="text-gray-600 text-sm text-center mt-2 group-hover:text-white/90 transition duration-500 px-4">
+            {{ _('AI-powered solutions are designed to proactively support employees and systems.') }}
+          </p>
+        </div>
+
+        <div
+          class="bg-gray-50 rounded-2xl py-8 font-medium text-gray-700 flex flex-col items-center justify-center shadow-lg hover:shadow-2xl hover:bg-gradient-to-r from-primary/20 to-secondary/20 transition duration-500 cursor-pointer group"
+        >
+          <span class="text-[#EF3451] text-sm font-semibold mb-3 group-hover:text-white transition duration-500">03</span>
+          <i class="fas fa-rocket text-3xl text-primary mb-3 group-hover:text-secondary transition duration-500"></i>
+          <h3 class="text-lg font-bold text-primary text-center group-hover:text-white transition duration-500 px-4">
+            {{ _('Rapid Prototyping') }}
+          </h3>
+          <p class="text-gray-600 text-sm text-center mt-2 group-hover:text-white/90 transition duration-500 px-4">
+            {{ _('Affordable and fast AI prototyping validates ideas before full-scale implementation.') }}
+          </p>
+        </div>
+
+        <div
+          class="bg-gray-50 rounded-2xl py-8 font-medium text-gray-700 flex flex-col items-center justify-center shadow-lg hover:shadow-2xl hover:bg-gradient-to-r from-primary/20 to-secondary/20 transition duration-500 cursor-pointer group"
+        >
+          <span class="text-[#EF3451] text-sm font-semibold mb-3 group-hover:text-white transition duration-500">04</span>
+          <i class="fas fa-sync text-3xl text-primary mb-3 group-hover:text-secondary transition duration-500"></i>
+          <h3 class="text-lg font-bold text-primary text-center group-hover:text-white transition duration-500 px-4">
+            {{ _('Continuous Improvement') }}
+          </h3>
+          <p class="text-gray-600 text-sm text-center mt-2 group-hover:text-white/90 transition duration-500 px-4">
+            {{ _('Solutions evolve through feedback, monitoring, and AI-driven insights.') }}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-28 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+        <h2 class="text-4xl font-bold text-primary">{{ _('Why Choose AI-Solution') }}</h2>
+        <p class="text-gray-600 mt-4 max-w-3xl mx-auto text-lg">
+          {{ _('Our AI solutions are designed to deliver measurable value for your business.') }}
+        </p>
+      </div>
+
+      <div
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
+        
+        <div
+          class="group relative bg-white rounded-3xl p-8 text-center shadow-xl hover:shadow-2xl transform transition-all duration-500 hover:-translate-y-3 overflow-hidden"
+        >
+          <div
+            class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-secondary rounded-t-3xl"
+          ></div>
+          <div
+            class="absolute -top-6 left-1/2 -translate-x-1/2 w-28 h-28 bg-primary/10 rounded-full blur-3xl"
+          ></div>
+
+          <div class="flex items-center justify-center mb-4 relative z-10">
+            <div
+              class="w-16 h-16 bg-white/50 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-500"
+            >
+              <i
+                class="fas fa-user-check text-3xl text-primary group-hover:text-secondary transition-all duration-500"
+              ></i>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-primary mb-2 relative z-10">
+            {{ _('Enhanced Employee Experience') }}
+          </h3>
+          <p class="text-gray-600 text-sm relative z-10">
+            {{ _('AI-driven tools proactively support employees in their daily workflows.') }}
+          </p>
+        </div>
+
+        
+        <div
+          class="group relative bg-white rounded-3xl p-8 text-center shadow-xl hover:shadow-2xl transform transition-all duration-500 hover:-translate-y-3 overflow-hidden"
+        >
+          <div
+            class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-secondary rounded-t-3xl"
+          ></div>
+          <div
+            class="absolute -top-6 left-1/2 -translate-x-1/2 w-28 h-28 bg-primary/10 rounded-full blur-3xl"
+          ></div>
+
+          <div class="flex items-center justify-center mb-4 relative z-10">
+            <div
+              class="w-16 h-16 bg-white/50 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-500"
+            >
+              <i
+                class="fas fa-bolt text-3xl text-primary group-hover:text-secondary transition-all duration-500"
+              ></i>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-primary mb-2 relative z-10">
+            {{ _('Proactive Issue Resolution') }}
+          </h3>
+          <p class="text-gray-600 text-sm relative z-10">
+            {{ _('Identify and resolve issues before they impact productivity or operations.') }}
+          </p>
+        </div>
+
+        
+        <div
+          class="group relative bg-white rounded-3xl p-8 text-center shadow-xl hover:shadow-2xl transform transition-all duration-500 hover:-translate-y-3 overflow-hidden"
+        >
+          <div
+            class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-secondary rounded-t-3xl"
+          ></div>
+          <div
+            class="absolute -top-6 left-1/2 -translate-x-1/2 w-28 h-28 bg-primary/10 rounded-full blur-3xl"
+          ></div>
+
+          <div class="flex items-center justify-center mb-4 relative z-10">
+            <div
+              class="w-16 h-16 bg-white/50 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-500"
+            >
+              <i
+                class="fas fa-rocket text-3xl text-primary group-hover:text-secondary transition-all duration-500"
+              ></i>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-primary mb-2 relative z-10">
+            {{ _('Rapid Innovation') }}
+          </h3>
+          <p class="text-gray-600 text-sm relative z-10">
+            {{ _('Affordable AI prototyping accelerates design, engineering, and innovation.') }}
+          </p>
+        </div>
+
+        
+        <div
+          class="group relative bg-white rounded-3xl p-8 text-center shadow-xl hover:shadow-2xl transform transition-all duration-500 hover:-translate-y-3 overflow-hidden"
+        >
+          <div
+            class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-secondary rounded-t-3xl"
+          ></div>
+          <div
+            class="absolute -top-6 left-1/2 -translate-x-1/2 w-28 h-28 bg-primary/10 rounded-full blur-3xl"
+          ></div>
+
+          <div class="flex items-center justify-center mb-4 relative z-10">
+            <div
+              class="w-16 h-16 bg-white/50 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-500"
+            >
+              <i
+                class="fas fa-layer-group text-3xl text-primary group-hover:text-secondary transition-all duration-500"
+              ></i>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-primary mb-2 relative z-10">
+            {{ _('Scalable Architecture') }}
+          </h3>
+          <p class="text-gray-600 text-sm relative z-10">
+            {{ _('Solutions that grow with your organization and evolving digital needs.') }}
+          </p>
+        </div>
+
+        
+        <div
+          class="group relative bg-white rounded-3xl p-8 text-center shadow-xl hover:shadow-2xl transform transition-all duration-500 hover:-translate-y-3 overflow-hidden"
+        >
+          <div
+            class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-secondary rounded-t-3xl"
+          ></div>
+          <div
+            class="absolute -top-6 left-1/2 -translate-x-1/2 w-28 h-28 bg-primary/10 rounded-full blur-3xl"
+          ></div>
+
+          <div class="flex items-center justify-center mb-4 relative z-10">
+            <div
+              class="w-16 h-16 bg-white/50 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-500"
+            >
+              <i
+                class="fas fa-industry text-3xl text-primary group-hover:text-secondary transition-all duration-500"
+              ></i>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-primary mb-2 relative z-10">
+            {{ _('Industry-Focused Design') }}
+          </h3>
+          <p class="text-gray-600 text-sm relative z-10">
+            {{ _('Tailored AI solutions aligned with industry-specific requirements.') }}
+          </p>
+        </div>
+
+        
+        <div
+          class="group relative bg-white rounded-3xl p-8 text-center shadow-xl hover:shadow-2xl transform transition-all duration-500 hover:-translate-y-3 overflow-hidden"
+        >
+          <div
+            class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-secondary rounded-t-3xl"
+          ></div>
+          <div
+            class="absolute -top-6 left-1/2 -translate-x-1/2 w-28 h-28 bg-primary/10 rounded-full blur-3xl"
+          ></div>
+
+          <div class="flex items-center justify-center mb-4 relative z-10">
+            <div
+              class="w-16 h-16 bg-white/50 rounded-full flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-500"
+            >
+              <i
+                class="fas fa-shield-alt text-3xl text-primary group-hover:text-secondary transition-all duration-500"
+              ></i>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-primary mb-2 relative z-10">
+            {{ _('Secure & Reliable') }}
+          </h3>
+          <p class="text-gray-600 text-sm relative z-10">
+            {{ _('Built with security, reliability, and data protection at core.') }}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 text-center mb-14">
+        <h2 class="text-3xl font-bold text-primary">{{ _('Industries We Transform with AI') }}</h2>
+        <p class="text-gray-600 mt-4">
+          {{ _('Our AI solutions are adaptable across multiple industries.') }}
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-8">
+        
+        <div
+          class="bg-gray-50 rounded-2xl py-6 font-medium text-gray-700 flex flex-col items-center justify-center shadow-lg hover:shadow-2xl hover:bg-gradient-to-r from-primary/20 to-secondary/20 transition duration-500 cursor-pointer group"
+        >
+          <i
+            class="fas fa-graduation-cap text-3xl text-primary mb-2 group-hover:text-secondary transition duration-500"
+          ></i>
+          <span>{{ _('Education') }}</span>
+        </div>
+        <div
+          class="bg-gray-50 rounded-2xl py-6 font-medium text-gray-700 flex flex-col items-center justify-center shadow-lg hover:shadow-2xl hover:bg-gradient-to-r from-primary/20 to-secondary/20 transition duration-500 cursor-pointer group"
+        >
+          <i
+            class="fas fa-hospital-user text-3xl text-primary mb-2 group-hover:text-secondary transition duration-500"
+          ></i>
+          <span>{{ _('Healthcare') }}</span>
+        </div>
+        <div
+          class="bg-gray-50 rounded-2xl py-6 font-medium text-gray-700 flex flex-col items-center justify-center shadow-lg hover:shadow-2xl hover:bg-gradient-to-r from-primary/20 to-secondary/20 transition duration-500 cursor-pointer group"
+        >
+          <i
+            class="fas fa-industry text-3xl text-primary mb-2 group-hover:text-secondary transition duration-500"
+          ></i>
+          <span>{{ _('Manufacturing') }}</span>
+        </div>
+        <div
+          class="bg-gray-50 rounded-2xl py-6 font-medium text-gray-700 flex flex-col items-center justify-center shadow-lg hover:shadow-2xl hover:bg-gradient-to-r from-primary/20 to-secondary/20 transition duration-500 cursor-pointer group"
+        >
+          <i
+            class="fas fa-laptop-code text-3xl text-primary mb-2 group-hover:text-secondary transition duration-500"
+          ></i>
+          <span>{{ _('IT & Software') }}</span>
+        </div>
+        <div
+          class="bg-gray-50 rounded-2xl py-6 font-medium text-gray-700 flex flex-col items-center justify-center shadow-lg hover:shadow-2xl hover:bg-gradient-to-r from-primary/20 to-secondary/20 transition duration-500 cursor-pointer group"
+        >
+          <i
+            class="fas fa-dollar-sign text-3xl text-primary mb-2 group-hover:text-secondary transition duration-500"
+          ></i>
+          <span>{{ _('Finance') }}</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-28 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-6 text-center mb-16">
+        <h2 class="text-4xl font-bold text-primary">
+          {{ _('Built on Trust & Expertise') }}
+        </h2>
+        <p class="text-gray-600 mt-4 max-w-3xl mx-auto text-lg">
+          {{ _('Our solutions are designed with reliability, transparency, and real-world impact in mind.') }}
+        </p>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div
+          class="group relative bg-white rounded-3xl p-10 text-center shadow-xl hover:shadow-2xl transform transition-all duration-500 hover:-translate-y-3 overflow-hidden"
+        >
+          <div
+            class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-secondary rounded-t-3xl"
+          ></div>
+          <div
+            class="absolute -top-6 left-1/2 -translate-x-1/2 w-28 h-28 bg-primary/10 rounded-full blur-3xl"
+          ></div>
+
+          <div class="flex items-center justify-center mb-4 relative z-10">
+            <i
+              class="fas fa-user-friends text-4xl text-primary group-hover:text-secondary transition-all duration-500"
+            ></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-2 relative z-10">
+            {{ _('Human-Centered AI') }}
+          </h3>
+          <p class="text-gray-600 text-sm relative z-10">
+            {{ _('Solutions built to support people at work, not replace them.') }}
+          </p>
+        </div>
+
+        
+        <div
+          class="group relative bg-white rounded-3xl p-10 text-center shadow-xl hover:shadow-2xl transform transition-all duration-500 hover:-translate-y-3 overflow-hidden"
+        >
+          <div
+            class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-secondary rounded-t-3xl"
+          ></div>
+          <div
+            class="absolute -top-6 left-1/2 -translate-x-1/2 w-28 h-28 bg-primary/10 rounded-full blur-3xl"
+          ></div>
+
+          <div class="flex items-center justify-center mb-4 relative z-10">
+            <i
+              class="fas fa-shield-alt text-4xl text-primary group-hover:text-secondary transition-all duration-500"
+            ></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-2 relative z-10">
+            {{ _('Security by Design') }}
+          </h3>
+          <p class="text-gray-600 text-sm relative z-10">
+            {{ _('Data protection and secure architecture are embedded at every stage.') }}
+          </p>
+        </div>
+
+        
+        <div
+          class="group relative bg-white rounded-3xl p-10 text-center shadow-xl hover:shadow-2xl transform transition-all duration-500 hover:-translate-y-3 overflow-hidden"
+        >
+          <div
+            class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-secondary rounded-t-3xl"
+          ></div>
+          <div
+            class="absolute -top-6 left-1/2 -translate-x-1/2 w-28 h-28 bg-primary/10 rounded-full blur-3xl"
+          ></div>
+
+          <div class="flex items-center justify-center mb-4 relative z-10">
+            <i
+              class="fas fa-cogs text-4xl text-primary group-hover:text-secondary transition-all duration-500"
+            ></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary mb-2 relative z-10">
+            {{ _('Scalable & Future-Ready') }}
+          </h3>
+          <p class="text-gray-600 text-sm relative z-10">
+            {{ _('AI solutions designed to grow alongside evolving business needs.') }}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    </main>
+
+    <footer class="bg-gray-100 py-20 mt-auto">
+      <div
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10"
+      >
+        
+        <div>
+          <h3 class="mb-4 flex items-start">
+            <img
+              src="/static/images/logo-transparent-bg-fit.png"
+              alt="{{ _('AI-Solution Logo') }}"
+              class="h-12"
+            />
+          </h3>
+          <p class="text-gray-600">
+            {{ _('Innovating the future of digital employee experience with AI-powered solutions.') }}
+          </p>
+        </div>
+
+        
+        <div>
+          <h3 class="text-[#015486] font-bold mb-4">{{ _('Quick Links') }}</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li>
+              <a href="/" class="hover:text-[#EF3451] transition">{{ _('Home') }}</a>
+            </li>
+            <li>
+              <a href="/solutions" class="hover:text-[#EF3451] transition"
+                >{{ _('Solutions') }}</a
+              >
+            </li>
+            <li>
+              <a href="/articles" class="hover:text-[#EF3451] transition"
+                >{{ _('Articles') }}</a
+              >
+            </li>
+            <li>
+              <a href="/reviews" class="hover:text-[#EF3451] transition"
+                >{{ _('Reviews') }}</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        
+        <div>
+          <h3 class="text-[#015486] font-bold mb-4">{{ _('Pages') }}</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li>
+              <a href="/events" class="hover:text-[#EF3451] transition"
+                >{{ _('Events') }}</a
+              >
+            </li>
+            <li>
+              <a href="/contact" class="hover:text-[#EF3451] transition"
+                >{{ _('Contact') }}</a
+              >
+            </li>
+            <li>
+              <a href="/about" class="hover:text-[#EF3451] transition">{{ _('About') }}</a>
+            </li>
+          </ul>
+        </div>
+
+        
+        <div>
+          <h3 class="text-[#015486] font-bold mb-4">{{ _('Follow Us') }}</h3>
+          <div class="flex gap-4 text-gray-700">
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="text-center text-gray-500 mt-10">
+        © 2025 {{ _('AI-Solution. All rights reserved.') }}
+      </div>
+    </footer>
+  </body>
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const icon = menuBtn.querySelector("i");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      icon.classList.toggle("fa-bars");
+      icon.classList.toggle("fa-times");
+    });
+  </script>
+
+  
+  {% include 'components/chatbot.html' %}
+  <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+</html>

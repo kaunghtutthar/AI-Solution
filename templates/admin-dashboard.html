@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#015486",
+            secondary: "#EF3451",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    /* Generic select styling for all filter dropdowns on this page */
+    .app-select {
+      border-radius: 9999px;
+      /* pill shape to match status pills */
+      padding: 0.25rem 1.5rem 0.25rem 0.75rem;
+      border: none;
+      font-size: 0.75rem;
+      /* text-xs */
+      background-color: #ffffff;
+      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(15, 23, 42, 0.02));
+      cursor: pointer;
+      transition: box-shadow 150ms ease, transform 150ms ease, background-color 150ms ease;
+      min-width: 6rem;
+      text-align: left;
+    }
+
+    .app-select:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(1, 84, 134, 0.4);
+      /* blue-500 ring */
+    }
+
+    .app-select:hover {
+      transform: translateY(-0.5px);
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+    }
+
+    /* Custom styling specifically for the status dropdown in Recent Inquiries */
+    .status-select {
+      border-radius: 9999px;
+      /* pill shape */
+      padding: 0.25rem 1rem 0.25rem 0.75rem;
+      border: none;
+      cursor: pointer;
+      font-size: 0.75rem;
+      /* text-xs */
+      font-weight: 600;
+      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(15, 23, 42, 0.02));
+      transition: box-shadow 150ms ease, transform 150ms ease, border-color 150ms ease;
+      min-width: 5rem;
+      /* equal but more compact width for all status pills */
+      text-align: left;
+    }
+
+    .status-select:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(1, 84, 134, 0.4);
+      /* blue-500 ring */
+    }
+
+    .status-select:hover {
+      transform: translateY(-0.5px);
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+    }
+
+    .status-select option {
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    /* Ensure dropdown menu roughly matches the pill width */
+    .status-dropdown-menu {
+      min-width: 5rem;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+  <!-- Inquiry Detail Modal -->
+  <div id="inquiryModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+    <div class="bg-white w-full max-w-2xl rounded-lg shadow-lg p-6 relative">
+      <button onclick="closeInquiryModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
+        ✕
+      </button>
+
+      <h3 class="text-lg font-semibold mb-4">Inquiry Details</h3>
+
+      <div id="inquiryModalContent" class="grid grid-cols-2 gap-4 text-sm">
+        <!-- Filled dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Review Detail Modal -->
+  <div id="reviewModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+    <div class="bg-white w-full max-w-2xl rounded-lg shadow-lg p-6 relative">
+      <button onclick="closeReviewModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">✕</button>
+      <h3 class="text-lg font-semibold mb-4">Review Details</h3>
+      <div id="reviewModalContent" class="grid grid-cols-1 gap-4 text-sm"></div>
+    </div>
+  </div>
+
+  <!-- Event Detail Modal -->
+  <div id="eventModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+    <div class="bg-white w-full max-w-2xl rounded-lg shadow-lg p-6 relative">
+      <button onclick="closeEventModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">✕</button>
+      <h3 class="text-lg font-semibold mb-4">Event Registration Details</h3>
+      <div id="eventModalContent" class="grid grid-cols-2 gap-4 text-sm"></div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <img src="{{ url_for('static', filename='images/logo-fit.png') }}" alt="Company Logo" class="h-10 w-auto" />
+        <span class="text-xl font-semibold text-gray-800">
+          Admin Dashboard
+        </span>
+      </div>
+
+      <a href="{{ url_for('admin_logout') }}" class="text-sm text-red-600 hover:underline">
+        Logout
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="max-w-7xl mx-auto px-6 py-8 space-y-10">
+
+    <!-- KPI CARDS -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Total Inquiries -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition hover:scale-105">
+        <div class="bg-gradient-to-r from-primary to-primary/80 h-1 w-full"></div>
+        <div class="p-6 flex items-center gap-4">
+          <div class="p-3 bg-primary/10 rounded-full">
+            <!-- User Group Icon -->
+            <svg class="h-6 w-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 00-3-3.87M7 21v-2a4 4 0 013-3.87M12 7a4 4 0 100-8 4 4 0 000 8z"></path>
+            </svg>
+          </div>
+          <div>
+            <p class="text-sm font-medium text-gray-500">Total Inquiries</p>
+            <p class="text-3xl font-bold text-primary">{{ total_inquiries }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pending Inquiries -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition hover:scale-105">
+        <div class="bg-gradient-to-r from-secondary to-secondary/80 h-1 w-full"></div>
+        <div class="p-6 flex items-center gap-4">
+          <div class="p-3 bg-secondary/10 rounded-full">
+            <!-- Clock Icon -->
+            <svg class="h-6 w-6 text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 6v6l4 2"></path>
+            </svg>
+          </div>
+          <div>
+            <p class="text-sm font-medium text-gray-500">Pending Inquiries</p>
+            <p class="text-3xl font-bold text-secondary">{{ pending_inquiries }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contacted Inquiries -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition hover:scale-105">
+        <div class="bg-gradient-to-r from-primary to-primary/80 h-1 w-full"></div>
+        <div class="p-6 flex items-center gap-4">
+          <div class="p-3 bg-primary/10 rounded-full">
+            <!-- Check Icon -->
+            <svg class="h-6 w-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <div>
+            <p class="text-sm font-medium text-gray-500">Contacted Inquiries</p>
+            <p class="text-3xl font-bold text-primary">{{ contacted_inquiries }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANALYTICS -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+      <!-- Left Column: Review Ratings Chart -->
+      <div class="bg-white p-6 rounded shadow">
+        <h2 class="text-lg font-semibold mb-4">Review Ratings Distribution</h2>
+        <div class="w-full max-w-xs mx-auto">
+          <canvas id="ratingChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Right Column: Inquiry Chart + Upcoming Event Card -->
+      <div class="flex flex-col gap-6 h-full">
+
+        <!-- Monthly Inquiries Chart -->
+        <div class="bg-white p-6 rounded shadow flex-1">
+          <h2 class="text-lg font-semibold mb-4">Inquiries (Last 6 Months)</h2>
+          <canvas id="inquiryChart" height="120"></canvas>
+        </div>
+
+        <!-- Upcoming Event Registration Card -->
+        <div class="bg-white p-6 rounded shadow flex-1 flex flex-col justify-between">
+          <h2 class="text-lg font-semibold mb-4">Upcoming Event</h2>
+          {% if upcoming_event %}
+          <div class="flex flex-col space-y-2">
+            <p class="font-medium">{{ upcoming_event.title }}</p>
+            <p class="text-sm text-gray-500">{{ upcoming_event.date }} | {{ upcoming_event.location }}</p>
+            <p class="text-sm">Registrations: <span class="font-semibold">{{ upcoming_event.registrations }}</span></p>
+          </div>
+          {% else %}
+          <p class="text-gray-500">No upcoming events.</p>
+          {% endif %}
+        </div>
+
+      </div>
+
+    </section>
+
+    <div class="border-b mb-6">
+      <nav class="flex gap-6 text-sm font-medium">
+        <button data-tab="inquiries" class="tab-btn relative text-primary pb-2">
+          Inquiries
+          <span class="absolute left-0 bottom-0 w-full h-0.5 bg-primary tab-underline"></span>
+        </button>
+        <button data-tab="reviews" class="tab-btn text-gray-500 pb-2 relative">
+          Reviews
+          <span class="absolute left-0 bottom-0 w-full h-0.5 bg-primary hidden tab-underline"></span>
+        </button>
+        <button data-tab="events" class="tab-btn text-gray-500 pb-2 relative">
+          Event Registrations
+          <span class="absolute left-0 bottom-0 w-full h-0.5 bg-primary hidden tab-underline"></span>
+        </button>
+      </nav>
+    </div>
+
+    <section id="tab-inquiries" class="tab-content">
+      <section class="bg-white rounded shadow">
+        <div class="p-6 border-b space-y-4">
+          <div class="flex justify-between items-center">
+            <h2 class="text-lg font-semibold">Recent Inquiries</h2>
+
+            <a href="{{ url_for('admin_all_inquiries') }}" class="text-sm text-primary hover:underline">
+              View All
+            </a>
+          </div>
+
+          <!-- Filters & sorting for inquiries -->
+          <div class="flex flex-col md:flex-row gap-3 md:items-center md:justify-between text-xs">
+            <div class="flex items-center gap-2 w-full md:w-1/2">
+              <label for="inquiryKeyword" class="text-gray-500 whitespace-nowrap">Name / Email / Company:</label>
+              <input id="inquiryKeyword" type="text" placeholder="Filter by name, email, or company"
+                class="w-full border border-gray-200 rounded-md px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-primary" />
+            </div>
+
+            <div class="flex flex-wrap gap-3 w-full md:w-1/2 justify-end">
+              <!-- Status filter dropdown -->
+              <div class="flex items-center gap-2">
+                <span class="text-gray-500">Status:</span>
+                <div class="filter-dropdown relative inline-block text-left" data-select="inquiryStatusFilter"
+                  data-filter-type="inquiries">
+                  <button type="button"
+                    class="status-select bg-gray-100 text-gray-700 inline-flex justify-start items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold"
+                    onclick="toggleFilterDropdown(this)">
+                    <span class="filter-dropdown-label">All</span>
+                    <svg class="-mr-1 ml-1 h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div
+                    class="filter-dropdown-menu hidden absolute right-0 mt-1 w-40 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 z-20">
+                  </div>
+                </div>
+                <select id="inquiryStatusFilter" class="hidden">
+                  <option value="all">All</option>
+                  <option value="Pending">Pending</option>
+                  <option value="Contacted">Contacted</option>
+                </select>
+              </div>
+
+              <!-- Industry filter dropdown -->
+              <div class="flex items-center gap-2">
+                <span class="text-gray-500">Industry:</span>
+                <div class="filter-dropdown relative inline-block text-left" data-select="inquiryIndustryFilter"
+                  data-filter-type="inquiries">
+                  <button type="button"
+                    class="status-select bg-gray-100 text-gray-700 inline-flex justify-start items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold"
+                    onclick="toggleFilterDropdown(this)">
+                    <span class="filter-dropdown-label">All</span>
+                    <svg class="-mr-1 ml-1 h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div
+                    class="filter-dropdown-menu hidden absolute right-0 mt-1 w-40 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 z-20">
+                  </div>
+                </div>
+                <select id="inquiryIndustryFilter" class="hidden">
+                  <option value="all">All</option>
+                </select>
+              </div>
+
+              <!-- Sort dropdown -->
+              <div class="flex items-center gap-2">
+                <span class="text-gray-500">Sort by:</span>
+                <div class="filter-dropdown relative inline-block text-left" data-select="inquirySort"
+                  data-filter-type="inquiries">
+                  <button type="button"
+                    class="status-select bg-gray-100 text-gray-700 inline-flex justify-start items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold"
+                    onclick="toggleFilterDropdown(this)">
+                    <span class="filter-dropdown-label">Newest</span>
+                    <svg class="-mr-1 ml-1 h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div
+                    class="filter-dropdown-menu hidden absolute right-0 mt-1 w-40 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 z-20">
+                  </div>
+                </div>
+                <select id="inquirySort" class="hidden">
+                  <option value="newest">Newest</option>
+                  <option value="oldest">Oldest</option>
+                  <option value="name-asc">Name A–Z</option>
+                  <option value="name-desc">Name Z–A</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="min-w-full text-sm">
+            <thead class="bg-gray-50 text-gray-600">
+              <tr>
+                <th class="px-4 py-3 text-left">Name</th>
+                <th class="px-4 py-3 text-left">Email</th>
+                <th class="px-4 py-3 text-left">Company</th>
+                <th class="px-4 py-3 text-left">Industry</th>
+                <th class="px-4 py-3 text-left">Status</th>
+                <th class="px-4 py-3 text-left">Date</th>
+              </tr>
+            </thead>
+
+            <tbody id="inquiriesContainer">
+              {% for q in recent_inquiries %}
+              <tr class="border-t hover:bg-gray-50 cursor-pointer inquiry-row" data-inquiry='{{ q | tojson | safe }}'>
+                <td class="px-4 py-3 font-medium">{{ q.name }}</td>
+                <td class="px-4 py-3">{{ q.email }}</td>
+                <td class="px-4 py-3">{{ q.company }}</td>
+                <td class="px-4 py-3">{{ q.industry }}</td>
+
+                <td class="px-4 py-3">
+                  <!-- Custom dropdown, keeps same POST route and "status" field -->
+                  <form method="POST" action="{{ url_for('update_inquiry_status', inquiry_id=q.id) }}">
+                    <input type="hidden" name="status" value="{{ q.status }}">
+
+                    <div class="relative inline-block text-left" onclick="event.stopPropagation()">
+                      <button type="button" class="status-select inline-flex justify-start items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold
+                        {% if q.status == 'Pending' %}
+                          bg-yellow-100 text-yellow-800
+                        {% else %}
+                          bg-green-100 text-green-800
+                        {% endif %}"
+                        onclick="const menu=this.nextElementSibling; document.querySelectorAll('.status-dropdown-menu').forEach(m=>{ if(m!==menu) m.classList.add('hidden'); }); menu.classList.toggle('hidden');">
+                        {{ q.status }}
+                        <svg class="-mr-1 ml-1 h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none"
+                          viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+
+                      <div
+                        class="status-dropdown-menu hidden absolute right-0 mt-1 w-32 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 z-20">
+                        <div class="py-1 text-xs">
+                          <button type="button"
+                            class="block w-full text-left px-3 py-1.5 hover:bg-yellow-50 text-gray-800"
+                            onclick="const f1=this.closest('form'); f1.querySelector('input[name=status]').value='Pending'; f1.submit();">
+                            Pending
+                          </button>
+                          <button type="button"
+                            class="block w-full text-left px-3 py-1.5 hover:bg-green-50 text-gray-800"
+                            onclick="const f2=this.closest('form'); f2.querySelector('input[name=status]').value='Contacted'; f2.submit();">
+                            Contacted
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </td>
+
+                <td class="px-4 py-3 text-gray-500">{{ q.created_at }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+    <section id="tab-reviews" class="tab-content hidden">
+      <section class="bg-white rounded shadow">
+        <div class="p-6 border-b space-y-4">
+          <div class="flex justify-between items-center">
+            <h2 class="text-lg font-semibold">Customer Reviews</h2>
+            <div class="text-sm text-gray-600">
+              Avg Rating: <strong>{{ avg_rating }}</strong> / 5
+            </div>
+          </div>
+
+          <!-- Filters & sorting for reviews -->
+          <div class="flex flex-col md:flex-row gap-3 md:items-center md:justify-between text-xs">
+            <div class="flex items-center gap-2 w-full md:w-1/2">
+              <label for="reviewKeyword" class="text-gray-500 whitespace-nowrap">Name / Company / Feedback:</label>
+              <input id="reviewKeyword" type="text" placeholder="Filter by name, company, or feedback"
+                class="w-full border border-gray-200 rounded-md px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-primary" />
+            </div>
+
+            <div class="flex gap-3 w-full md:w-1/2 justify-end">
+              <!-- Rating filter dropdown -->
+              <div class="flex items-center gap-2">
+                <span class="text-gray-500">Rating:</span>
+                <div class="filter-dropdown relative inline-block text-left" data-select="reviewRatingFilter"
+                  data-filter-type="reviews">
+                  <button type="button"
+                    class="status-select bg-gray-100 text-gray-700 inline-flex justify-start items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold"
+                    onclick="toggleFilterDropdown(this)">
+                    <span class="filter-dropdown-label">All</span>
+                    <svg class="-mr-1 ml-1 h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div
+                    class="filter-dropdown-menu hidden absolute right-0 mt-1 w-40 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 z-20">
+                  </div>
+                </div>
+                <select id="reviewRatingFilter" class="hidden">
+                  <option value="all">All</option>
+                  <option value="5">5 ★</option>
+                  <option value="4">4 ★</option>
+                  <option value="3">3 ★</option>
+                  <option value="2">2 ★</option>
+                  <option value="1">1 ★</option>
+                </select>
+              </div>
+
+              <!-- Industry filter dropdown -->
+              <div class="flex items-center gap-2">
+                <span class="text-gray-500">Industry:</span>
+                <div class="filter-dropdown relative inline-block text-left" data-select="reviewIndustryFilter"
+                  data-filter-type="reviews">
+                  <button type="button"
+                    class="status-select bg-gray-100 text-gray-700 inline-flex justify-start items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold"
+                    onclick="toggleFilterDropdown(this)">
+                    <span class="filter-dropdown-label">All</span>
+                    <svg class="-mr-1 ml-1 h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div
+                    class="filter-dropdown-menu hidden absolute right-0 mt-1 w-40 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 z-20">
+                  </div>
+                </div>
+                <select id="reviewIndustryFilter" class="hidden">
+                  <option value="all">All</option>
+                  <option value="Manufacturing">Manufacturing</option>
+                  <option value="Healthcare">Healthcare</option>
+                  <option value="Logistics & Supply Chain">Logistics & Supply Chain</option>
+                  <option value="Technology">Technology</option>
+                  <option value="Retail & E-commerce">Retail & E-commerce</option>
+                  <option value="Finance">Finance</option>
+                </select>
+              </div>
+
+              <!-- Sort dropdown -->
+              <div class="flex items-center gap-2">
+                <span class="text-gray-500">Sort by:</span>
+                <div class="filter-dropdown relative inline-block text-left" data-select="reviewSort"
+                  data-filter-type="reviews">
+                  <button type="button"
+                    class="status-select bg-gray-100 text-gray-700 inline-flex justify-start items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold"
+                    onclick="toggleFilterDropdown(this)">
+                    <span class="filter-dropdown-label">Newest</span>
+                    <svg class="-mr-1 ml-1 h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div
+                    class="filter-dropdown-menu hidden absolute right-0 mt-1 w-40 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 z-20">
+                  </div>
+                </div>
+                <select id="reviewSort" class="hidden">
+                  <option value="newest">Newest</option>
+                  <option value="oldest">Oldest</option>
+                  <option value="rating-high">Rating high to low</option>
+                  <option value="rating-low">Rating low to high</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="min-w-full text-sm">
+            <thead class="bg-gray-50 text-gray-600">
+              <tr>
+                <th class="px-4 py-3 text-left">Name</th>
+                <th class="px-4 py-3 text-left">Job Title</th>
+                <th class="px-4 py-3 text-left">Company</th>
+                <th class="px-4 py-3 text-left">Industry</th>
+                <th class="px-4 py-3 text-left">Rating</th>
+                <th class="px-4 py-3 text-left">Feedback</th>
+                <th class="px-4 py-3 text-left">Date</th>
+              </tr>
+            </thead>
+            <tbody id="reviewsContainer">
+              {% for r in reviews %}
+              <tr class="border-t hover:bg-gray-50 cursor-pointer review-row" data-review='{{ r | tojson | safe }}'>
+                <td class="px-4 py-3 font-medium">{{ r.name }}</td>
+                <td class="px-4 py-3">{{ r.job_title }}</td>
+                <td class="px-4 py-3">{{ r.company }}</td>
+                <td class="px-4 py-3">{{ r.industry }}</td>
+                <td class="px-4 py-3 text-yellow-500 font-semibold">{{ r.rating }} ★</td>
+                <td class="px-4 py-3 truncate max-w-xs">{{ r.feedback }}</td>
+                <td class="px-4 py-3 text-gray-500">{{ r.created_at }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+          {% if total_reviews > 10 %}
+          <div class="text-center py-4">
+            <button id="loadMoreReviews" class="px-5 py-2 bg-primary text-white rounded hover:bg-primary/90 transition">
+              Load More
+            </button>
+          </div>
+          {% endif %}
+        </div>
+      </section>
+    </section>
+
+    <section id="tab-events" class="tab-content hidden">
+      <section class="bg-white rounded shadow">
+        <div class="p-6 border-b space-y-4">
+          <div class="flex justify-between items-center">
+            <h2 class="text-lg font-semibold">Recent Event Registrations</h2>
+          </div>
+
+          <!-- Filters & sorting for events -->
+          <div class="flex flex-col md:flex-row gap-3 md:items-center md:justify-between text-xs">
+            <div class="flex items-center gap-2 w-full md:w-1/2">
+              <label for="eventKeyword" class="text-gray-500 whitespace-nowrap">Name / Email / Company:</label>
+              <input id="eventKeyword" type="text" placeholder="Filter by name, email, or company"
+                class="w-full border border-gray-200 rounded-md px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-primary" />
+            </div>
+
+            <div class="flex gap-3 w-full md:w-1/2 justify-end">
+              <!-- Event filter dropdown -->
+              <div class="flex items-center gap-2">
+                <span class="text-gray-500">Event:</span>
+                <div class="filter-dropdown relative inline-block text-left" data-select="eventEventFilter"
+                  data-filter-type="events">
+                  <button type="button"
+                    class="status-select bg-gray-100 text-gray-700 inline-flex justify-start items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold"
+                    onclick="toggleFilterDropdown(this)">
+                    <span class="filter-dropdown-label">All</span>
+                    <svg class="-mr-1 ml-1 h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div
+                    class="filter-dropdown-menu hidden absolute right-0 mt-1 w-40 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 z-20">
+                  </div>
+                </div>
+                <select id="eventEventFilter" class="hidden">
+                  <option value="all">All</option>
+                </select>
+              </div>
+
+              <!-- Sort dropdown -->
+              <div class="flex items-center gap-2">
+                <span class="text-gray-500">Sort by:</span>
+                <div class="filter-dropdown relative inline-block text-left" data-select="eventSort"
+                  data-filter-type="events">
+                  <button type="button"
+                    class="status-select bg-gray-100 text-gray-700 inline-flex justify-start items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold"
+                    onclick="toggleFilterDropdown(this)">
+                    <span class="filter-dropdown-label">Newest</span>
+                    <svg class="-mr-1 ml-1 h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div
+                    class="filter-dropdown-menu hidden absolute right-0 mt-1 w-40 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 z-20">
+                  </div>
+                </div>
+                <select id="eventSort" class="hidden">
+                  <option value="newest">Newest</option>
+                  <option value="oldest">Oldest</option>
+                  <option value="name-asc">Name A–Z</option>
+                  <option value="name-desc">Name Z–A</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="min-w-full text-sm">
+            <thead class="bg-gray-50 text-gray-600">
+              <tr>
+                <th class="px-4 py-3 text-left">Name</th>
+                <th class="px-4 py-3 text-left">Email</th>
+                <th class="px-4 py-3 text-left">Company</th>
+                <th class="px-4 py-3 text-left">Job Title</th>
+                <th class="px-4 py-3 text-left">Event</th>
+                <th class="px-4 py-3 text-left">Date</th>
+              </tr>
+            </thead>
+
+            <tbody id="eventsContainer">
+              {% for e in event_registrations %}
+              <tr class="border-t hover:bg-gray-50 cursor-pointer event-row" data-event='{{ e | tojson | safe }}'>
+                <td class="px-4 py-3 font-medium">{{ e.name }}</td>
+                <td class="px-4 py-3">{{ e.email }}</td>
+                <td class="px-4 py-3">{{ e.company }}</td>
+                <td class="px-4 py-3">{{ e.job_title }}</td>
+                <td class="px-4 py-3">{{ e.event.title }}</td>
+                <td class="px-4 py-3 text-gray-500">{{ e.created_at }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+          {% if total_events > 10 %}
+          <div class="text-center py-4">
+            <button id="loadMoreEvents" class="px-5 py-2 bg-primary text-white rounded hover:bg-primary/90 transition">
+              Load More
+            </button>
+          </div>
+          {% endif %}
+        </div>
+      </section>
+    </section>
+  </main>
+  <script>
+    document.querySelectorAll(".tab-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tab-btn").forEach(b => {
+          b.classList.remove("text-primary");
+          b.classList.add("text-gray-500");
+          b.querySelector(".tab-underline").classList.add("hidden");
+        });
+
+        btn.classList.remove("text-gray-500");
+        btn.classList.add("text-primary");
+        btn.querySelector(".tab-underline").classList.remove("hidden");
+
+        document.querySelectorAll(".tab-content").forEach(tab => tab.classList.add("hidden"));
+        document.getElementById(`tab-${btn.dataset.tab}`).classList.remove("hidden");
+      });
+    });
+
+    function switchTab(tabId) {
+      document.querySelectorAll(".tab-content").forEach(tab => {
+        tab.classList.add("hidden");
+      });
+
+      document.getElementById(tabId).classList.remove("hidden");
+    }
+    /* Generic function to load more items */
+    async function loadMore(buttonId, containerId, apiUrl, offsetVarName, createRowCallback, afterAppendCallback) {
+      const button = document.getElementById(buttonId);
+      const container = document.getElementById(containerId);
+
+      window[offsetVarName] = window[offsetVarName] || 10;
+
+      button.disabled = true;
+
+      try {
+        const res = await fetch(`${apiUrl}?offset=${window[offsetVarName]}&limit=10`);
+        const data = await res.json();
+
+        const rows = data.reviews || data.inquiries || data.events || [];
+
+        if (!rows.length) {
+          button.style.display = "none";
+          return;
+        }
+
+        rows.forEach(row => container.appendChild(createRowCallback(row)));
+        window[offsetVarName] += rows.length;
+
+        // IMPORTANT FIX: Only show "Load More" if there are more rows to load
+        if (window[offsetVarName] >= data.total) {
+          button.style.display = "none";
+        } else {
+          button.style.display = "";
+        }
+
+      } catch (err) {
+        // Handle error silently
+      } finally {
+        button.disabled = false;
+      }
+      if (afterAppendCallback) {
+        afterAppendCallback();
+      }
+
+    }
+
+    /* Functions to create DOM elements */
+    function createInquiryRow(q) {
+      const tr = document.createElement("tr");
+      tr.className = "border-t hover:bg-gray-50 cursor-pointer inquiry-row";
+      tr.dataset.inquiry = JSON.stringify(q);
+
+      const statusClasses = q.status === "Pending"
+        ? "bg-yellow-100 text-yellow-800"
+        : "bg-green-100 text-green-800";
+
+      tr.innerHTML = `
+    <td class="px-4 py-3">${q.name}</td>
+    <td class="px-4 py-3">${q.email}</td>
+    <td class="px-4 py-3">${q.company}</td>
+    <td class="px-4 py-3">${q.industry}</td>
+    <td class="px-4 py-3">
+      <div class="relative inline-block text-left">
+        <button onclick="toggleDropdown(this)" class="inline-flex justify-center w-full rounded-full px-3 py-1 text-xs font-semibold ${statusClasses} hover:ring-1 hover:ring-gray-300 focus:outline-none">
+          ${q.status}
+          <svg class="-mr-1 ml-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        <div class="dropdown-menu hidden absolute mt-1 w-full rounded-md bg-white shadow-lg z-10">
+          <div class="py-1">
+            <a href="#" onclick="updateStatus(${q.id}, 'Pending', this)" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pending</a>
+            <a href="#" onclick="updateStatus(${q.id}, 'Contacted', this)" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Contacted</a>
+          </div>
+        </div>
+      </div>
+    </td>
+    <td class="px-4 py-3">${q.created_at}</td>
+  `;
+      return tr;
+    }
+
+    function createReviewRow(r) {
+      const tr = document.createElement("tr");
+      tr.className = "border-t hover:bg-gray-50 cursor-pointer review-row";
+      tr.dataset.review = JSON.stringify(r);
+
+      tr.innerHTML = `
+    <td class="px-4 py-3 font-medium">${r.name}</td>
+    <td class="px-4 py-3">${r.job_title || '-'}</td>
+    <td class="px-4 py-3">${r.company}</td>
+    <td class="px-4 py-3">${r.industry}</td>
+    <td class="px-4 py-3 text-yellow-500 font-semibold">${r.rating} ★</td>
+    <td class="px-4 py-3 truncate max-w-xs">${r.feedback}</td>
+    <td class="px-4 py-3 text-gray-500">${r.created_at}</td>
+  `;
+      return tr;
+    }
+
+    function createEventRow(e) {
+      const tr = document.createElement("tr");
+      tr.className = "border-t hover:bg-gray-50 cursor-pointer event-row";
+      tr.dataset.event = JSON.stringify(e);
+
+      tr.innerHTML = `
+    <td class="px-4 py-3">${e.name}</td>
+    <td class="px-4 py-3">${e.email}</td>
+    <td class="px-4 py-3">${e.company}</td>
+    <td class="px-4 py-3">${e.job_title || '-'}</td>
+    <td class="px-4 py-3">${e.event?.title || '-'}</td>
+    <td class="px-4 py-3 text-gray-500">${e.created_at}</td>
+  `;
+      return tr;
+    }
+
+    /* Filtering and sorting helpers */
+    function parseDateSafe(s) {
+      const d = new Date(s);
+      return isNaN(d.getTime()) ? 0 : d.getTime();
+    }
+
+    function populateIndustryFilter() {
+      const select = document.getElementById("inquiryIndustryFilter");
+      const tbody = document.getElementById("inquiriesContainer");
+      if (!select || !tbody) return;
+
+      const currentValue = select.value || "all";
+      const existing = new Set();
+      Array.from(select.options).forEach(opt => {
+        if (opt.value && opt.value !== "all") existing.add(opt.value);
+      });
+
+      const rows = Array.from(tbody.querySelectorAll("tr"));
+      rows.forEach(row => {
+        let data = {};
+        try {
+          data = JSON.parse(row.dataset.inquiry || "{}");
+        } catch (_) {
+          data = {};
+        }
+        const industry = data.industry;
+        if (industry && !existing.has(industry)) {
+          const opt = document.createElement("option");
+          opt.value = industry;
+          opt.textContent = industry;
+          select.appendChild(opt);
+          existing.add(industry);
+        }
+      });
+
+      // restore previous selection if still present
+      if (Array.from(select.options).some(o => o.value === currentValue)) {
+        select.value = currentValue;
+      } else {
+        select.value = "all";
+      }
+    }
+
+    function populateReviewIndustryFilter() {
+      const select = document.getElementById("reviewIndustryFilter");
+      const tbody = document.getElementById("reviewsContainer");
+      if (!select || !tbody) return;
+
+      const currentValue = select.value || "all";
+      const existing = new Set();
+      Array.from(select.options).forEach(opt => {
+        if (opt.value && opt.value !== "all") existing.add(opt.value);
+      });
+
+      const rows = Array.from(tbody.querySelectorAll("tr"));
+      rows.forEach(row => {
+        let data = {};
+        try {
+          data = JSON.parse(row.dataset.review || "{}");
+        } catch (_) {
+          data = {};
+        }
+        const industry = data.industry;
+        if (industry && !existing.has(industry)) {
+          const opt = document.createElement("option");
+          opt.value = industry;
+          opt.textContent = industry;
+          select.appendChild(opt);
+          existing.add(industry);
+        }
+      });
+
+      // restore previous selection if still present
+      if (Array.from(select.options).some(o => o.value === currentValue)) {
+        select.value = currentValue;
+      } else {
+        select.value = "all";
+      }
+    }
+
+    async function populateAllIndustriesFromDatabase() {
+      try {
+        // First try to get industries from current table data (works without authentication)
+        const inquirySelect = document.getElementById("inquiryIndustryFilter");
+        const reviewSelect = document.getElementById("reviewIndustryFilter");
+        
+        // Populate from current table data first
+        if (inquirySelect) {
+          const inquiryCurrentValue = inquirySelect.value || "all";
+          const inquiryExisting = new Set();
+          Array.from(inquirySelect.options).forEach(opt => {
+            if (opt.value && opt.value !== "all") inquiryExisting.add(opt.value);
+          });
+
+          // Get industries from current inquiry rows
+          const inquiryRows = Array.from(document.querySelectorAll("#inquiriesContainer tr"));
+          inquiryRows.forEach(row => {
+            let data = {};
+            try {
+              data = JSON.parse(row.dataset.inquiry || "{}");
+            } catch (_) {
+              data = {};
+            }
+            const industry = data.industry;
+            if (industry && !inquiryExisting.has(industry)) {
+              const opt = document.createElement("option");
+              opt.value = industry;
+              opt.textContent = industry;
+              inquirySelect.appendChild(opt);
+              inquiryExisting.add(industry);
+            }
+          });
+
+          if (Array.from(inquirySelect.options).some(o => o.value === inquiryCurrentValue)) {
+            inquirySelect.value = inquiryCurrentValue;
+          } else {
+            inquirySelect.value = "all";
+          }
+        }
+
+        if (reviewSelect) {
+          const reviewCurrentValue = reviewSelect.value || "all";
+          const reviewExisting = new Set();
+          Array.from(reviewSelect.options).forEach(opt => {
+            if (opt.value && opt.value !== "all") reviewExisting.add(opt.value);
+          });
+
+          // Get industries from current review rows
+          const reviewRows = Array.from(document.querySelectorAll("#reviewsContainer tr"));
+          reviewRows.forEach(row => {
+            let data = {};
+            try {
+              data = JSON.parse(row.dataset.review || "{}");
+            } catch (_) {
+              data = {};
+            }
+            const industry = data.industry;
+            if (industry && !reviewExisting.has(industry)) {
+              const opt = document.createElement("option");
+              opt.value = industry;
+              opt.textContent = industry;
+              reviewSelect.appendChild(opt);
+              reviewExisting.add(industry);
+            }
+          });
+
+          if (Array.from(reviewSelect.options).some(o => o.value === reviewCurrentValue)) {
+            reviewSelect.value = reviewCurrentValue;
+          } else {
+            reviewSelect.value = "all";
+          }
+        }
+
+        // Then try to get additional industries from API (if authentication works)
+        try {
+          const [inquiryResponse, reviewResponse] = await Promise.all([
+            fetch('/api/inquiry-industries'),
+            fetch('/api/review-industries')
+          ]);
+          
+          if (inquiryResponse.ok && reviewResponse.ok) {
+            const inquiryData = await inquiryResponse.json();
+            const reviewData = await reviewResponse.json();
+            
+            // Add any missing industries from API
+            if (inquirySelect && inquiryData.industries) {
+              inquiryData.industries.forEach(industry => {
+                if (industry && !Array.from(inquirySelect.options).some(opt => opt.value === industry)) {
+                  const opt = document.createElement("option");
+                  opt.value = industry;
+                  opt.textContent = industry;
+                  inquirySelect.appendChild(opt);
+                }
+              });
+            }
+
+            if (reviewSelect && reviewData.industries) {
+              reviewData.industries.forEach(industry => {
+                if (industry && !Array.from(reviewSelect.options).some(opt => opt.value === industry)) {
+                  const opt = document.createElement("option");
+                  opt.value = industry;
+                  opt.textContent = industry;
+                  reviewSelect.appendChild(opt);
+                }
+              });
+            }
+          }
+        } catch (apiError) {
+          // API endpoints not available, using table data only
+        }
+        
+      } catch (error) {
+        // Fallback to hardcoded industries if everything fails
+        const fallbackIndustries = ['Education & EdTech', 'Finance', 'Healthcare', 'Logistics & Supply Chain', 'Manufacturing', 'Nature and Environment', 'Retail & E-commerce', 'Technology'];
+        
+        const inquirySelect = document.getElementById("inquiryIndustryFilter");
+        const reviewSelect = document.getElementById("reviewIndustryFilter");
+        
+        [inquirySelect, reviewSelect].forEach(select => {
+          if (select) {
+            const currentValue = select.value || "all";
+            const existing = new Set();
+            Array.from(select.options).forEach(opt => {
+              if (opt.value && opt.value !== "all") existing.add(opt.value);
+            });
+
+            fallbackIndustries.forEach(industry => {
+              if (industry && !existing.has(industry)) {
+                const opt = document.createElement("option");
+                opt.value = industry;
+                opt.textContent = industry;
+                select.appendChild(opt);
+                existing.add(industry);
+              }
+            });
+
+            if (Array.from(select.options).some(o => o.value === currentValue)) {
+              select.value = currentValue;
+            } else {
+              select.value = "all";
+            }
+          }
+        });
+      }
+    }
+
+    async function populateEventFilter() {
+      const select = document.getElementById("eventEventFilter");
+      const tbody = document.getElementById("eventsContainer");
+      if (!select || !tbody) return;
+
+      const currentValue = select.value || "all";
+      const existing = new Set();
+      Array.from(select.options).forEach(opt => {
+        if (opt.value && opt.value !== "all") existing.add(opt.value);
+      });
+
+      const rows = Array.from(tbody.querySelectorAll("tr"));
+      rows.forEach(row => {
+        let data = {};
+        try {
+          data = JSON.parse(row.dataset.event || "{}");
+        } catch (_) {
+          data = {};
+        }
+        const eventTitle = data.event && data.event.title;
+        if (eventTitle && !existing.has(eventTitle)) {
+          const opt = document.createElement("option");
+          opt.value = eventTitle;
+          opt.textContent = eventTitle;
+          select.appendChild(opt);
+          existing.add(eventTitle);
+        }
+      });
+
+      // Then try to get additional events from API (if authentication works)
+      try {
+        const response = await fetch('/api/registered-events');
+        
+        if (response.ok) {
+          const eventData = await response.json();
+          
+          // Add any missing events from API
+          if (eventData.events) {
+            eventData.events.forEach(eventTitle => {
+              if (eventTitle && !Array.from(select.options).some(opt => opt.value === eventTitle)) {
+                const opt = document.createElement("option");
+                opt.value = eventTitle;
+                opt.textContent = eventTitle;
+                select.appendChild(opt);
+                existing.add(eventTitle);
+              }
+            });
+          }
+        }
+      } catch (apiError) {
+        // API endpoints not available, using table data only
+      }
+
+      if (Array.from(select.options).some(o => o.value === currentValue)) {
+        select.value = currentValue;
+      } else {
+        select.value = "all";
+      }
+    }
+
+    function filterAndSortInquiries() {
+      const tbody = document.getElementById("inquiriesContainer");
+      if (!tbody) return;
+
+      const keyword = (document.getElementById("inquiryKeyword")?.value || "").toLowerCase();
+      const statusFilter = document.getElementById("inquiryStatusFilter")?.value || "all";
+      const industryFilter = document.getElementById("inquiryIndustryFilter")?.value || "all";
+      const sort = document.getElementById("inquirySort")?.value || "newest";
+
+      const rows = Array.from(tbody.querySelectorAll("tr"));
+      const visibleRows = [];
+      const hiddenRows = [];
+
+      rows.forEach(row => {
+        let data = {};
+        try {
+          data = JSON.parse(row.dataset.inquiry || "{}");
+        } catch (_) {
+          data = {};
+        }
+
+        const name = (data.name || "").toLowerCase();
+        const email = (data.email || "").toLowerCase();
+        const company = (data.company || "").toLowerCase();
+        const industry = (data.industry || "").toLowerCase();
+
+        const matchesKeyword = !keyword || [name, email, company].some(field => field.includes(keyword));
+
+        const rowStatus = data.status || "";
+        const matchesStatus = statusFilter === "all" || rowStatus === statusFilter;
+
+        const matchesIndustry = industryFilter === "all" || industry === industryFilter.toLowerCase();
+
+        const matches = matchesKeyword && matchesStatus && matchesIndustry;
+        row.style.display = matches ? "" : "none";
+        (matches ? visibleRows : hiddenRows).push(row);
+      });
+
+      const sortedVisible = [...visibleRows].sort((a, b) => {
+        const aData = JSON.parse(a.dataset.inquiry || "{}");
+        const bData = JSON.parse(b.dataset.inquiry || "{}");
+
+        if (sort === "name-asc" || sort === "name-desc") {
+          const nameA = (aData.name || "").toLowerCase();
+          const nameB = (bData.name || "").toLowerCase();
+          if (nameA < nameB) return sort === "name-asc" ? -1 : 1;
+          if (nameA > nameB) return sort === "name-asc" ? 1 : -1;
+          return 0;
+        }
+
+        // default: sort by created_at date
+        const dateA = parseDateSafe(aData.created_at || "");
+        const dateB = parseDateSafe(bData.created_at || "");
+        return sort === "oldest" ? dateA - dateB : dateB - dateA;
+      });
+
+      tbody.innerHTML = "";
+      [...sortedVisible, ...hiddenRows].forEach(row => tbody.appendChild(row));
+    }
+
+    function filterAndSortReviews() {
+      const tbody = document.getElementById("reviewsContainer");
+      if (!tbody) return;
+
+      const keyword = (document.getElementById("reviewKeyword")?.value || "").toLowerCase();
+      const ratingFilter = document.getElementById("reviewRatingFilter")?.value || "all";
+      const industryFilter = document.getElementById("reviewIndustryFilter")?.value || "all";
+      const sort = document.getElementById("reviewSort")?.value || "newest";
+
+      const rows = Array.from(tbody.querySelectorAll("tr"));
+      const visibleRows = [];
+      const hiddenRows = [];
+
+      rows.forEach(row => {
+        let data = {};
+        try {
+          data = JSON.parse(row.dataset.review || "{}");
+        } catch (_) {
+          data = {};
+        }
+
+        const name = (data.name || "").toLowerCase();
+        const job = (data.job_title || "").toLowerCase();
+        const company = (data.company || "").toLowerCase();
+        const industry = (data.industry || "").toLowerCase();
+        const feedback = (data.feedback || "").toLowerCase();
+
+        const matchesKeyword = !keyword || [name, job, company, feedback].some(field => field.includes(keyword));
+
+        const rating = Number(data.rating || 0);
+        const matchesRating = ratingFilter === "all" || rating === Number(ratingFilter);
+
+        const matchesIndustry = industryFilter === "all" || industry.toLowerCase() === industryFilter.toLowerCase();
+
+        const matches = matchesKeyword && matchesRating && matchesIndustry;
+
+        row.style.display = matches ? "" : "none";
+        (matches ? visibleRows : hiddenRows).push(row);
+      });
+
+      const sortedVisible = [...visibleRows].sort((a, b) => {
+        const aData = JSON.parse(a.dataset.review || "{}");
+        const bData = JSON.parse(b.dataset.review || "{}");
+
+        if (sort === "rating-high" || sort === "rating-low") {
+          const ratingA = Number(aData.rating || 0);
+          const ratingB = Number(bData.rating || 0);
+          return sort === "rating-low" ? ratingA - ratingB : ratingB - ratingA;
+        }
+
+        const dateA = parseDateSafe(aData.created_at || "");
+        const dateB = parseDateSafe(bData.created_at || "");
+        return sort === "oldest" ? dateA - dateB : dateB - dateA;
+      });
+
+      tbody.innerHTML = "";
+      [...sortedVisible, ...hiddenRows].forEach(row => tbody.appendChild(row));
+
+      // keep rating chart in sync with current visible rows
+      if (typeof updateReviewChart === "function") {
+        updateReviewChart();
+      }
+    }
+
+    function filterAndSortEvents() {
+      const tbody = document.getElementById("eventsContainer");
+      if (!tbody) return;
+
+      const keyword = (document.getElementById("eventKeyword")?.value || "").toLowerCase();
+      const eventFilter = document.getElementById("eventEventFilter")?.value || "all";
+      const sort = document.getElementById("eventSort")?.value || "newest";
+
+      const rows = Array.from(tbody.querySelectorAll("tr"));
+      const visibleRows = [];
+      const hiddenRows = [];
+
+      rows.forEach(row => {
+        let data = {};
+        try {
+          data = JSON.parse(row.dataset.event || "{}");
+        } catch (_) {
+          data = {};
+        }
+
+        const name = (data.name || "").toLowerCase();
+        const email = (data.email || "").toLowerCase();
+        const company = (data.company || "").toLowerCase();
+        const eventTitle = (data.event && data.event.title ? data.event.title : "").toLowerCase();
+
+        const matchesKeyword = !keyword || [name, email, company].some(field => field.includes(keyword));
+        const matchesEvent = eventFilter === "all" || eventTitle === eventFilter.toLowerCase();
+
+        const matches = matchesKeyword && matchesEvent;
+
+        row.style.display = matches ? "" : "none";
+        (matches ? visibleRows : hiddenRows).push(row);
+      });
+
+      const sortedVisible = [...visibleRows].sort((a, b) => {
+        const aData = JSON.parse(a.dataset.event || "{}");
+        const bData = JSON.parse(b.dataset.event || "{}");
+
+        if (sort === "name-asc" || sort === "name-desc") {
+          const nameA = (aData.name || "").toLowerCase();
+          const nameB = (bData.name || "").toLowerCase();
+          if (nameA < nameB) return sort === "name-asc" ? -1 : 1;
+          if (nameA > nameB) return sort === "name-asc" ? 1 : -1;
+          return 0;
+        }
+
+        const dateA = parseDateSafe(aData.created_at || "");
+        const dateB = parseDateSafe(bData.created_at || "");
+        return sort === "oldest" ? dateA - dateB : dateB - dateA;
+      });
+
+      tbody.innerHTML = "";
+      [...sortedVisible, ...hiddenRows].forEach(row => tbody.appendChild(row));
+    }
+
+    /* Custom filter dropdown helpers (visual style matches status dropdowns) */
+    function toggleFilterDropdown(button) {
+      const wrapper = button.closest(".filter-dropdown");
+      const menu = wrapper?.querySelector(".filter-dropdown-menu");
+      if (!menu) return;
+
+      // Close all others
+      document.querySelectorAll(".filter-dropdown-menu").forEach(m => {
+        if (m !== menu) m.classList.add("hidden");
+      });
+
+      menu.classList.toggle("hidden");
+    }
+
+    function initFilterDropdown(selectId, filterType) {
+      const select = document.getElementById(selectId);
+      const wrapper = document.querySelector(`.filter-dropdown[data-select="${selectId}"]`);
+      if (!select || !wrapper) return;
+
+      const labelSpan = wrapper.querySelector(".filter-dropdown-label");
+      const menu = wrapper.querySelector(".filter-dropdown-menu");
+      if (!menu) return;
+
+      menu.innerHTML = "";
+
+      Array.from(select.options).forEach(opt => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "block w-full text-left px-3 py-1.5 hover:bg-gray-100 text-xs text-gray-800";
+        btn.textContent = opt.textContent;
+        btn.dataset.value = opt.value;
+
+        btn.addEventListener("click", () => {
+          select.value = opt.value;
+          if (labelSpan) labelSpan.textContent = opt.textContent;
+          document.querySelectorAll(".filter-dropdown-menu").forEach(m => m.classList.add("hidden"));
+
+          if (filterType === "inquiries") filterAndSortInquiries();
+          else if (filterType === "reviews") filterAndSortReviews();
+          else if (filterType === "events") filterAndSortEvents();
+        });
+
+        menu.appendChild(btn);
+      });
+
+      const selected = select.options[select.selectedIndex] || select.options[0];
+      if (selected && labelSpan) {
+        labelSpan.textContent = selected.textContent;
+      }
+    }
+
+    function initAllFilterDropdowns() {
+      initFilterDropdown("inquiryStatusFilter", "inquiries");
+      initFilterDropdown("inquiryIndustryFilter", "inquiries");
+      initFilterDropdown("inquirySort", "inquiries");
+
+      initFilterDropdown("reviewRatingFilter", "reviews");
+      initFilterDropdown("reviewIndustryFilter", "reviews");
+      initFilterDropdown("reviewSort", "reviews");
+
+      initFilterDropdown("eventEventFilter", "events");
+      initFilterDropdown("eventSort", "events");
+    }
+
+    /* Load More button event listeners */
+    document.getElementById("loadMoreInquiries")?.addEventListener("click", () =>
+      loadMore("loadMoreInquiries", "inquiriesContainer", "/api/inquiries", "inquiryOffset", createInquiryRow, () => {
+        populateIndustryFilter();
+        initAllFilterDropdowns();
+        filterAndSortInquiries();
+      })
+    );
+
+    document.getElementById("loadMoreReviews")?.addEventListener("click", () =>
+      loadMore(
+        "loadMoreReviews",
+        "reviewsContainer",
+        "/api/reviews",
+        "reviewOffset",
+        createReviewRow,
+        () => {
+          populateIndustryFilter();
+          initAllFilterDropdowns();
+          filterAndSortReviews();
+        }
+      )
+    );
+
+    document.getElementById("loadMoreEvents")?.addEventListener("click", () =>
+      loadMore(
+        "loadMoreEvents",
+        "eventsContainer",
+        "/api/event-registrations",
+        "eventOffset",
+        createEventRow,
+        () => {
+          populateEventFilter();
+          initAllFilterDropdowns();
+          filterAndSortEvents();
+        }
+      )
+    );
+  </script>
+
+  <script id="inquiries-data" type="application/json">
+{{ inquiries_per_month | tojson }}
+</script>
+
+  <script id="reviews-data" type="application/json">
+{{ reviews | tojson }}
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      // Parse injected data
+      const inquiriesData = JSON.parse(document.getElementById("inquiries-data").textContent);
+      const reviewsData = JSON.parse(document.getElementById("reviews-data").textContent);
+
+      // --- Monthly Inquiries Chart ---
+      const inquiryCtx = document.getElementById("inquiryChart");
+      if (inquiryCtx) {
+        new Chart(inquiryCtx, {
+          type: "line",
+          data: {
+            labels: inquiriesData.map(item => item.month),
+            datasets: [{
+              label: "Inquiries",
+              data: inquiriesData.map(item => item.count),
+              borderWidth: 2,
+              tension: 0.4,
+              borderColor: "#3B82F6",
+              backgroundColor: "rgba(59, 130, 246, 0.2)",
+              fill: true
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: {
+              y: { beginAtZero: true, stepSize: 1 }
+            }
+          }
+        });
+      }
+
+      // --- Review Rating Distribution Chart ---
+      const ratingCtx = document.getElementById("ratingChart");
+      let ratingChart;
+
+      window.updateReviewChart = function () {
+        const rows = Array.from(document.querySelectorAll("#reviewsContainer > tr"))
+          .filter(tr => tr.style.display !== "none");
+        
+        const counts = [1, 2, 3, 4, 5].map(rating =>
+          rows.filter(tr => {
+            const td = tr.querySelector("td:nth-child(5)"); // 5th td has rating (after Industry column)
+            if (!td) return false;
+            const text = td.textContent.trim(); // e.g., "5 ★"
+            const num = parseInt(text); // gets 5
+            return num === rating;
+          }).length
+        );
+        
+        if (ratingChart) {
+          ratingChart.data.datasets[0].data = counts;
+          ratingChart.update();
+        } else {
+          const ratingCtxInner = document.getElementById("ratingChart");
+          if (ratingCtxInner) {
+            ratingChart = new Chart(ratingCtxInner, {
+              type: "doughnut",
+              data: {
+                labels: ["1★", "2★", "3★", "4★", "5★"],
+                datasets: [{
+                  data: counts,
+                  backgroundColor: ["#F87171", "#FBBF24", "#FACC15", "#34D399", "#60A5FA"]
+                }]
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: { legend: { position: "bottom" } }
+              }
+            });
+            ratingChart.update();
+          }
+        }
+      };
+
+      // Initialize review chart
+      window.updateReviewChart();
+
+      // Initialize dynamic dropdown options + custom dropdown UIs
+      populateAllIndustriesFromDatabase();
+      populateEventFilter();
+      initAllFilterDropdowns();
+
+      // Hook up filter/sort controls (keyword inputs)
+      document.getElementById("inquiryKeyword")?.addEventListener("input", filterAndSortInquiries);
+      document.getElementById("reviewKeyword")?.addEventListener("input", filterAndSortReviews);
+      document.getElementById("eventKeyword")?.addEventListener("input", filterAndSortEvents);
+
+      // Initial application of filters/sorts with defaults
+      filterAndSortInquiries();
+      filterAndSortReviews();
+      filterAndSortEvents();
+    });
+
+    // Country code to full name mapping
+    const countryNames = {
+      'AF': 'Afghanistan',
+      'AL': 'Albania',
+      'DZ': 'Algeria',
+      'AD': 'Andorra',
+      'AO': 'Angola',
+      'AG': 'Antigua and Barbuda',
+      'AR': 'Argentina',
+      'AM': 'Armenia',
+      'AU': 'Australia',
+      'AT': 'Austria',
+      'AZ': 'Azerbaijan',
+      'BS': 'Bahamas',
+      'BH': 'Bahrain',
+      'BD': 'Bangladesh',
+      'BB': 'Barbados',
+      'BY': 'Belarus',
+      'BE': 'Belgium',
+      'BZ': 'Belize',
+      'BJ': 'Benin',
+      'BT': 'Bhutan',
+      'BO': 'Bolivia',
+      'BA': 'Bosnia and Herzegovina',
+      'BW': 'Botswana',
+      'BR': 'Brazil',
+      'BN': 'Brunei',
+      'BG': 'Bulgaria',
+      'BF': 'Burkina Faso',
+      'BI': 'Burundi',
+      'CV': 'Cabo Verde',
+      'KH': 'Cambodia',
+      'CM': 'Cameroon',
+      'CA': 'Canada',
+      'CF': 'Central African Republic',
+      'TD': 'Chad',
+      'CL': 'Chile',
+      'CN': 'China',
+      'CO': 'Colombia',
+      'KM': 'Comoros',
+      'CG': 'Congo',
+      'CR': 'Costa Rica',
+      'HR': 'Croatia',
+      'CU': 'Cuba',
+      'CY': 'Cyprus',
+      'CZ': 'Czech Republic',
+      'DK': 'Denmark',
+      'DJ': 'Djibouti',
+      'DM': 'Dominica',
+      'DO': 'Dominican Republic',
+      'EC': 'Ecuador',
+      'EG': 'Egypt',
+      'SV': 'El Salvador',
+      'GQ': 'Equatorial Guinea',
+      'ER': 'Eritrea',
+      'EE': 'Estonia',
+      'SZ': 'Eswatini',
+      'ET': 'Ethiopia',
+      'FJ': 'Fiji',
+      'FI': 'Finland',
+      'FR': 'France',
+      'GA': 'Gabon',
+      'GM': 'Gambia',
+      'GE': 'Georgia',
+      'DE': 'Germany',
+      'GH': 'Ghana',
+      'GR': 'Greece',
+      'GD': 'Grenada',
+      'GT': 'Guatemala',
+      'GN': 'Guinea',
+      'GW': 'Guinea-Bissau',
+      'GY': 'Guyana',
+      'HT': 'Haiti',
+      'HN': 'Honduras',
+      'HU': 'Hungary',
+      'IS': 'Iceland',
+      'IN': 'India',
+      'ID': 'Indonesia',
+      'IR': 'Iran',
+      'IQ': 'Iraq',
+      'IE': 'Ireland',
+      'IL': 'Israel',
+      'IT': 'Italy',
+      'JM': 'Jamaica',
+      'JP': 'Japan',
+      'JO': 'Jordan',
+      'KZ': 'Kazakhstan',
+      'KE': 'Kenya',
+      'KI': 'Kiribati',
+      'KW': 'Kuwait',
+      'KG': 'Kyrgyzstan',
+      'LA': 'Laos',
+      'LV': 'Latvia',
+      'LB': 'Lebanon',
+      'LS': 'Lesotho',
+      'LR': 'Liberia',
+      'LY': 'Libya',
+      'LI': 'Liechtenstein',
+      'LT': 'Lithuania',
+      'LU': 'Luxembourg',
+      'MG': 'Madagascar',
+      'MW': 'Malawi',
+      'MY': 'Malaysia',
+      'MV': 'Maldives',
+      'ML': 'Mali',
+      'MT': 'Malta',
+      'MH': 'Marshall Islands',
+      'MR': 'Mauritania',
+      'MU': 'Mauritius',
+      'MX': 'Mexico',
+      'FM': 'Micronesia',
+      'MD': 'Moldova',
+      'MC': 'Monaco',
+      'MN': 'Mongolia',
+      'ME': 'Montenegro',
+      'MA': 'Morocco',
+      'MZ': 'Mozambique',
+      'MM': 'Myanmar',
+      'NA': 'Namibia',
+      'NR': 'Nauru',
+      'NP': 'Nepal',
+      'NL': 'Netherlands',
+      'NZ': 'New Zealand',
+      'NI': 'Nicaragua',
+      'NE': 'Niger',
+      'NG': 'Nigeria',
+      'MK': 'North Macedonia',
+      'NO': 'Norway',
+      'OM': 'Oman',
+      'PK': 'Pakistan',
+      'PW': 'Palau',
+      'PA': 'Panama',
+      'PG': 'Papua New Guinea',
+      'PY': 'Paraguay',
+      'PE': 'Peru',
+      'PH': 'Philippines',
+      'PL': 'Poland',
+      'PT': 'Portugal',
+      'QA': 'Qatar',
+      'RO': 'Romania',
+      'RU': 'Russia',
+      'RW': 'Rwanda',
+      'WS': 'Samoa',
+      'SM': 'San Marino',
+      'ST': 'Sao Tome and Principe',
+      'SA': 'Saudi Arabia',
+      'SN': 'Senegal',
+      'RS': 'Serbia',
+      'SC': 'Seychelles',
+      'SL': 'Sierra Leone',
+      'SG': 'Singapore',
+      'SK': 'Slovakia',
+      'SI': 'Slovenia',
+      'SB': 'Solomon Islands',
+      'SO': 'Somalia',
+      'ZA': 'South Africa',
+      'KR': 'South Korea',
+      'SS': 'South Sudan',
+      'ES': 'Spain',
+      'LK': 'Sri Lanka',
+      'SD': 'Sudan',
+      'SR': 'Suriname',
+      'SE': 'Sweden',
+      'CH': 'Switzerland',
+      'SY': 'Syria',
+      'TW': 'Taiwan',
+      'TJ': 'Tajikistan',
+      'TZ': 'Tanzania',
+      'TH': 'Thailand',
+      'TL': 'Timor-Leste',
+      'TG': 'Togo',
+      'TO': 'Tonga',
+      'TT': 'Trinidad and Tobago',
+      'TN': 'Tunisia',
+      'TR': 'Turkey',
+      'TM': 'Turkmenistan',
+      'TV': 'Tuvalu',
+      'UG': 'Uganda',
+      'UA': 'Ukraine',
+      'AE': 'United Arab Emirates',
+      'GB': 'United Kingdom',
+      'US': 'United States',
+      'UY': 'Uruguay',
+      'UZ': 'Uzbekistan',
+      'VU': 'Vanuatu',
+      'VE': 'Venezuela',
+      'VN': 'Vietnam',
+      'YE': 'Yemen',
+      'ZM': 'Zambia',
+      'ZW': 'Zimbabwe'
+    };
+
+    // Helper function to convert country code to full name
+    function getCountryName(countryCode) {
+      if (!countryCode) return countryCode;
+      return countryNames[countryCode.toUpperCase()] || countryCode;
+    }
+
+    function toggleDropdown(button) {
+      const menu = button.nextElementSibling;
+      menu.classList.toggle("hidden");
+    }
+
+    function updateStatus(inquiryId, status, link) {
+      // Close dropdown
+      link.closest(".dropdown-menu").classList.add("hidden");
+
+      // Send POST request to update status
+      fetch(`/admin/inquiry/${inquiryId}/status`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status }),
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            // Update button text and styling
+            const button = link.closest("td").querySelector("button");
+            button.textContent = status;
+            if (status === "Pending") {
+              button.classList.remove("bg-green-100", "text-green-800");
+              button.classList.add("bg-yellow-100", "text-yellow-800");
+            } else {
+              button.classList.remove("bg-yellow-100", "text-yellow-800");
+              button.classList.add("bg-green-100", "text-green-800");
+            }
+          }
+        });
+    }
+
+    function openInquiryModal(data) {
+      const modal = document.getElementById("inquiryModal");
+      const content = document.getElementById("inquiryModalContent");
+
+      content.innerHTML = `
+      <div><strong>Name:</strong> ${data.name}</div>
+      <div><strong>Email:</strong> ${data.email}</div>
+      <div><strong>Phone:</strong> ${data.phone}</div>
+      <div><strong>Company:</strong> ${data.company}</div>
+      <div><strong>Job Title:</strong> ${data.job_title}</div>
+      <div><strong>Industry:</strong> ${data.industry}</div>
+      <div><strong>Country:</strong> ${getCountryName(data.country)}</div>
+      <div><strong>Requirement Type:</strong> ${data.requirement_type}</div>
+      <div><strong>Summary:</strong> ${data.requirement_summary}</div>
+      <div><strong>Details:</strong><br>${data.detailed_requirements}</div>
+      <div><strong>Timeline:</strong> ${data.timeline}</div>
+      <div><strong>Budget:</strong> ${data.budget_range}</div>
+      <div><strong>Status:</strong> ${data.status}</div>
+      <div class="text-xs text-gray-500 mt-2">
+        Submitted on ${data.created_at}
+      </div>
+    `;
+
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closeInquiryModal() {
+      const modal = document.getElementById("inquiryModal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    // Attach click listeners safely
+    document.getElementById("inquiriesContainer").addEventListener("click", function (e) {
+      const row = e.target.closest(".inquiry-row");
+      if (!row) return;
+      const data = JSON.parse(row.dataset.inquiry);
+      openInquiryModal(data);
+    });
+
+    function openReviewModal(data) {
+      const modal = document.getElementById("reviewModal");
+      const content = document.getElementById("reviewModalContent");
+
+      content.innerHTML = `
+    <div><strong>Name:</strong> ${data.name}</div>
+    <div><strong>Job Title:</strong> ${data.job_title || '-'}</div>
+    <div><strong>Company:</strong> ${data.company}</div>
+    <div><strong>Rating:</strong> ${data.rating} ★</div>
+    <div><strong>Feedback:</strong><br>${data.feedback}</div>
+    <div class="text-xs text-gray-500 mt-2">Submitted on ${data.created_at}</div>
+  `;
+
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closeReviewModal() {
+      const modal = document.getElementById("reviewModal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    document.getElementById("reviewsContainer").addEventListener("click", function (e) {
+      const row = e.target.closest(".review-row");
+      if (!row) return;
+      const data = JSON.parse(row.dataset.review);
+      openReviewModal(data);
+    });
+
+    function openEventModal(data) {
+      const modal = document.getElementById("eventModal");
+      const content = document.getElementById("eventModalContent");
+
+      content.innerHTML = `
+    <div><strong>Name:</strong> ${data.name}</div>
+    <div><strong>Email:</strong> ${data.email}</div>
+    <div><strong>Company:</strong> ${data.company}</div>
+    <div><strong>Job Title:</strong> ${data.job_title || '-'}</div>
+    <div><strong>Event:</strong> ${data.event.title}</div>
+    <div class="col-span-2"><strong>Message:</strong><br>${data.message || '-'}</div>
+    <div class="col-span-2 text-xs text-gray-500 mt-2">Registered on ${data.created_at}</div>
+  `;
+
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closeEventModal() {
+      const modal = document.getElementById("eventModal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    document.getElementById("eventsContainer").addEventListener("click", function (e) {
+      const row = e.target.closest(".event-row");
+      if (!row) return;
+      const data = JSON.parse(row.dataset.event);
+      openEventModal(data);
+    });
+  </script>
+</body>
+<footer class="mt-16 border-t bg-white text-gray-600 shadow-inner">
+  <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center text-sm">
+    <span>© {{ current_year }} AI-Solution. Internal Use Only.</span>
+    <span class="mt-2 md:mt-0">Admin System v1.0 · <a href="#" class="underline hover:text-gray-700">Support</a></span>
+    <span class="mt-2 md:mt-0">Server Time: {{ current_year }}</span>
+  </div>
+</footer>
+
+</html>

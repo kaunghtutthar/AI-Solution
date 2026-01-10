@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login | AI-Solution</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#015486",
+            secondary: "#EF3451",
+          },
+          keyframes: {
+            pulseSlow: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(10px)' },
+            },
+            fadeIn: {
+              '0%': { opacity: 0 },
+              '100%': { opacity: 1 },
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulseSlow 10s ease-in-out infinite',
+            'fade-in': 'fadeIn 0.5s ease-in-out',
+          }
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .input-error {
+      border-color: #ef4444 !important;
+    }
+  </style>
+
+</head>
+
+<body
+  class="bg-gradient-to-br from-primary/20 to-secondary/10 flex items-center justify-center min-h-screen font-sans relative overflow-hidden">
+  <!-- Floating Shapes -->
+  <div class="absolute -top-32 -left-32 w-72 h-72 bg-primary/20 rounded-full filter blur-3xl animate-pulse-slow"></div>
+  <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-secondary/20 rounded-full filter blur-3xl animate-pulse-slow">
+  </div>
+
+  <!-- Login Card -->
+  <div
+    class="bg-white rounded-3xl shadow-2xl w-full max-w-md p-10 relative z-10 transform transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(1,84,134,0.2)]">
+
+    <!-- Logo -->
+    <div class="flex justify-center mb-6">
+      <img src="/static/images/logo-fit.png" alt="AI-Solution Logo" class="h-10" />
+    </div>
+
+    <!-- Heading -->
+    <h1 class="text-4xl font-bold text-primary mb-8 text-center">Admin Login</h1>
+
+    <!-- Flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="mb-6 space-y-2">
+      {% for category, message in messages %}
+      <div
+        class="animate-fade-in text-white px-4 py-2 rounded-2xl {% if category == 'danger' %} bg-gradient-to-r from-red-500 to-red-600 {% else %} bg-gradient-to-r from-green-500 to-green-600 {% endif %}">
+        {{ message }}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <!-- Form -->
+    <form class="space-y-6" autocomplete="off" method="POST" action="{{ url_for('admin_login') }}">
+      <!-- Staff ID -->
+      <div class="relative space-y-1">
+        <input type="text" id="staff-id" name="staff_id" placeholder="Staff ID" autocomplete="off" class="w-full border border-gray-200 rounded-2xl px-4 py-3 pl-12
+           focus:ring-2 focus:ring-primary/50 focus:outline-none shadow-sm" />
+        <i class="fas fa-user absolute left-4 text-gray-400" style="top: 1.25rem; transform: translateY(-50%);"></i>
+        <p id="staff-id-error" class="text-xs text-red-500 hidden">
+          Staff ID is required.
+        </p>
+      </div>
+
+
+      <!-- Password -->
+      <div class="relative space-y-1">
+        <input type="password" id="password" name="password" placeholder="Password" autocomplete="new-password" class="w-full border border-gray-200 rounded-2xl px-4 py-3 pl-12 pr-12
+           focus:ring-2 focus:ring-primary/50 focus:outline-none shadow-sm" />
+        <i class="fas fa-lock absolute left-4 text-gray-400" style="top: 1.25rem; transform: translateY(-50%);"></i>
+
+        <button type="button" id="toggle-password" class="absolute right-3 text-gray-500 hover:text-gray-700" style="top: 1.25rem; transform: translateY(-50%);">
+          <i class="fas fa-eye"></i>
+        </button>
+
+        <p id="password-error" class="text-xs text-red-500 hidden">
+          Password is required.
+        </p>
+      </div>
+
+
+      <!-- Submit Button -->
+      <button type="submit"
+        class="w-full bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition-transform duration-300">
+        Login
+      </button>
+
+      <!-- Forgot Password -->
+      <div class="text-center mt-6">
+        <p class="text-gray-600 text-xs">
+          Forgot your password? Please contact
+          <span class="font-semibold text-primary">AI-Solution IT Help Desk</span>.
+        </p>
+      </div>
+    </form>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Password toggle
+    const passwordField = document.getElementById("password");
+    const toggleBtn = document.getElementById("toggle-password");
+    const eyeIcon = toggleBtn.querySelector("i");
+
+    toggleBtn.addEventListener("click", () => {
+      if (passwordField.type === "password") {
+        passwordField.type = "text";
+        eyeIcon.classList.remove("fa-eye");
+        eyeIcon.classList.add("fa-eye-slash");
+      } else {
+        passwordField.type = "password";
+        eyeIcon.classList.remove("fa-eye-slash");
+        eyeIcon.classList.add("fa-eye");
+      }
+    });
+    const loginForm = document.querySelector("form");
+    const staffIdInput = document.getElementById("staff-id");
+    const passwordInput = document.getElementById("password");
+
+    const staffIdError = document.getElementById("staff-id-error");
+    const passwordError = document.getElementById("password-error");
+
+    loginForm.addEventListener("submit", (e) => {
+      let isValid = true;
+
+      // Reset states
+      staffIdError.classList.add("hidden");
+      passwordError.classList.add("hidden");
+      staffIdInput.classList.remove("input-error");
+      passwordInput.classList.remove("input-error");
+
+      // Staff ID validation
+      if (!staffIdInput.value.trim()) {
+        staffIdError.classList.remove("hidden");
+        staffIdInput.classList.add("input-error");
+        isValid = false;
+      }
+
+      // Password validation
+      if (!passwordInput.value.trim()) {
+        passwordError.classList.remove("hidden");
+        passwordInput.classList.add("input-error");
+        isValid = false;
+      }
+
+      if (!isValid) {
+        e.preventDefault();
+      }
+    });
+    [staffIdInput, passwordInput].forEach((input) => {
+      input.addEventListener("input", () => {
+        input.classList.remove("input-error");
+
+        if (input === staffIdInput) {
+          staffIdError.classList.add("hidden");
+        }
+        if (input === passwordInput) {
+          passwordError.classList.add("hidden");
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

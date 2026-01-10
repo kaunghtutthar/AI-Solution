@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="60" height="30">
+  <!-- Spanish Flag -->
+  <rect width="60" height="30" fill="#AA151B"/>
+  <rect y="10" width="60" height="10" fill="#F1BF00"/>
+  <rect width="60" height="10" fill="#AA151B"/>
+  <rect y="20" width="60" height="10" fill="#AA151B"/>
+</svg>

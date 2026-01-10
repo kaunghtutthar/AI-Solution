@@ -1,0 +1,3254 @@
+# Spanish translations for PROJECT.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-01-09 05:55+0630\n"
+"PO-Revision-Date: 2026-01-07 10:08+0630\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: templates/about.html:6 templates/about.html:55 templates/about.html:80
+#: templates/about.html:650 templates/article-1.html:55
+#: templates/article-1.html:80 templates/article-1.html:272
+#: templates/article-2.html:55 templates/article-2.html:80
+#: templates/article-2.html:274 templates/articles.html:55
+#: templates/articles.html:80 templates/articles.html:478
+#: templates/contact.html:163 templates/contact.html:181
+#: templates/contact.html:421 templates/event-1.html:55
+#: templates/event-1.html:80 templates/event-1.html:284
+#: templates/event-2.html:55 templates/event-2.html:80
+#: templates/event-2.html:320 templates/event-7.html:52
+#: templates/event-7.html:75 templates/event-7.html:324
+#: templates/event-8.html:44 templates/event-8.html:67
+#: templates/event-8.html:224 templates/events.html:109
+#: templates/events.html:127 templates/events.html:274 templates/home.html:76
+#: templates/home.html:101 templates/home.html:845 templates/home.html:861
+#: templates/news-1.html:55 templates/news-1.html:80 templates/news-1.html:277
+#: templates/news-2.html:55 templates/news-2.html:80 templates/news-2.html:277
+#: templates/privacy-policy.html:202 templates/register.html:78
+#: templates/register.html:96 templates/register.html:211
+#: templates/reviews.html:184 templates/reviews.html:209
+#: templates/reviews.html:981 templates/smart-assistant.html:55
+#: templates/smart-assistant.html:80 templates/smart-assistant.html:405
+#: templates/solutions.html:78 templates/solutions.html:105
+#: templates/solutions.html:697 templates/task-automation.html:43
+#: templates/task-automation.html:62 templates/task-automation.html:231
+#: templates/virtual-work.html:55 templates/virtual-work.html:80
+#: templates/virtual-work.html:321
+msgid "About"
+msgstr "Acerca de"
+
+#: templates/about.html:49 templates/about.html:74 templates/about.html:615
+#: templates/article-1.html:49 templates/article-1.html:74
+#: templates/article-1.html:237 templates/article-2.html:49
+#: templates/article-2.html:74 templates/article-2.html:239
+#: templates/articles.html:49 templates/articles.html:74
+#: templates/articles.html:443 templates/contact.html:157
+#: templates/contact.html:175 templates/contact.html:408
+#: templates/event-1.html:49 templates/event-1.html:74
+#: templates/event-1.html:249 templates/event-2.html:49
+#: templates/event-2.html:74 templates/event-2.html:285
+#: templates/event-7.html:46 templates/event-7.html:69
+#: templates/event-7.html:291 templates/event-8.html:38
+#: templates/event-8.html:61 templates/event-8.html:213
+#: templates/events.html:103 templates/events.html:121
+#: templates/events.html:264 templates/home.html:6 templates/home.html:70
+#: templates/home.html:95 templates/home.html:827 templates/news-1.html:49
+#: templates/news-1.html:74 templates/news-1.html:242 templates/news-2.html:49
+#: templates/news-2.html:74 templates/news-2.html:242
+#: templates/privacy-policy.html:192 templates/register.html:72
+#: templates/register.html:90 templates/register.html:186
+#: templates/reviews.html:178 templates/reviews.html:203
+#: templates/reviews.html:950 templates/smart-assistant.html:49
+#: templates/smart-assistant.html:74 templates/smart-assistant.html:380
+#: templates/solutions.html:70 templates/solutions.html:97
+#: templates/solutions.html:662 templates/task-automation.html:37
+#: templates/task-automation.html:56 templates/task-automation.html:215
+#: templates/virtual-work.html:49 templates/virtual-work.html:74
+#: templates/virtual-work.html:296
+msgid "Home"
+msgstr "Inicio"
+
+#: templates/about.html:50 templates/about.html:75 templates/about.html:619
+#: templates/article-1.html:50 templates/article-1.html:75
+#: templates/article-1.html:241 templates/article-2.html:50
+#: templates/article-2.html:75 templates/article-2.html:243
+#: templates/articles.html:50 templates/articles.html:75
+#: templates/articles.html:447 templates/contact.html:158
+#: templates/contact.html:176 templates/contact.html:409
+#: templates/event-1.html:50 templates/event-1.html:75
+#: templates/event-1.html:253 templates/event-2.html:50
+#: templates/event-2.html:75 templates/event-7.html:47
+#: templates/event-7.html:70 templates/event-8.html:39
+#: templates/event-8.html:62 templates/event-8.html:214
+#: templates/events.html:104 templates/events.html:122
+#: templates/events.html:265 templates/home.html:71 templates/home.html:96
+#: templates/home.html:830 templates/news-1.html:50 templates/news-1.html:75
+#: templates/news-1.html:246 templates/news-2.html:50 templates/news-2.html:75
+#: templates/news-2.html:246 templates/privacy-policy.html:193
+#: templates/register.html:73 templates/register.html:91
+#: templates/register.html:189 templates/reviews.html:179
+#: templates/reviews.html:204 templates/reviews.html:954
+#: templates/smart-assistant.html:6 templates/smart-assistant.html:50
+#: templates/smart-assistant.html:75 templates/smart-assistant.html:98
+#: templates/smart-assistant.html:383 templates/solutions.html:6
+#: templates/solutions.html:72 templates/solutions.html:99
+#: templates/solutions.html:666 templates/task-automation.html:7
+#: templates/task-automation.html:38 templates/task-automation.html:57
+#: templates/task-automation.html:217 templates/virtual-work.html:6
+#: templates/virtual-work.html:50 templates/virtual-work.html:75
+#: templates/virtual-work.html:299
+msgid "Solutions"
+msgstr "Soluciones"
+
+#: templates/about.html:51 templates/about.html:76 templates/about.html:624
+#: templates/article-1.html:6 templates/article-1.html:51
+#: templates/article-1.html:76 templates/article-1.html:246
+#: templates/article-2.html:6 templates/article-2.html:51
+#: templates/article-2.html:76 templates/article-2.html:248
+#: templates/articles.html:6 templates/articles.html:51
+#: templates/articles.html:76 templates/articles.html:452
+#: templates/contact.html:159 templates/contact.html:177
+#: templates/contact.html:410 templates/event-1.html:51
+#: templates/event-1.html:76 templates/event-1.html:258
+#: templates/event-2.html:51 templates/event-2.html:76
+#: templates/event-7.html:48 templates/event-7.html:71
+#: templates/event-8.html:40 templates/event-8.html:63
+#: templates/event-8.html:215 templates/events.html:105
+#: templates/events.html:123 templates/events.html:266 templates/home.html:72
+#: templates/home.html:97 templates/home.html:833 templates/news-1.html:6
+#: templates/news-1.html:51 templates/news-1.html:76 templates/news-1.html:251
+#: templates/news-2.html:6 templates/news-2.html:51 templates/news-2.html:76
+#: templates/news-2.html:251 templates/privacy-policy.html:194
+#: templates/register.html:74 templates/register.html:92
+#: templates/register.html:192 templates/reviews.html:180
+#: templates/reviews.html:205 templates/reviews.html:959
+#: templates/smart-assistant.html:51 templates/smart-assistant.html:76
+#: templates/smart-assistant.html:386 templates/solutions.html:74
+#: templates/solutions.html:101 templates/solutions.html:671
+#: templates/task-automation.html:39 templates/task-automation.html:58
+#: templates/task-automation.html:220 templates/virtual-work.html:51
+#: templates/virtual-work.html:76 templates/virtual-work.html:302
+msgid "Articles"
+msgstr "Artículos"
+
+#: templates/about.html:52 templates/about.html:77 templates/about.html:629
+#: templates/article-1.html:52 templates/article-1.html:77
+#: templates/article-1.html:251 templates/article-2.html:52
+#: templates/article-2.html:77 templates/article-2.html:253
+#: templates/articles.html:52 templates/articles.html:77
+#: templates/articles.html:457 templates/contact.html:160
+#: templates/contact.html:178 templates/contact.html:411
+#: templates/event-1.html:52 templates/event-1.html:77
+#: templates/event-1.html:263 templates/event-2.html:52
+#: templates/event-2.html:77 templates/event-7.html:49
+#: templates/event-7.html:72 templates/event-8.html:41
+#: templates/event-8.html:64 templates/event-8.html:216
+#: templates/events.html:106 templates/events.html:124
+#: templates/events.html:267 templates/home.html:73 templates/home.html:98
+#: templates/home.html:836 templates/news-1.html:52 templates/news-1.html:77
+#: templates/news-1.html:256 templates/news-2.html:52 templates/news-2.html:77
+#: templates/news-2.html:256 templates/privacy-policy.html:195
+#: templates/register.html:75 templates/register.html:93
+#: templates/register.html:195 templates/reviews.html:181
+#: templates/reviews.html:206 templates/reviews.html:964
+#: templates/smart-assistant.html:52 templates/smart-assistant.html:77
+#: templates/smart-assistant.html:389 templates/solutions.html:75
+#: templates/solutions.html:102 templates/solutions.html:676
+#: templates/task-automation.html:40 templates/task-automation.html:59
+#: templates/task-automation.html:222 templates/virtual-work.html:52
+#: templates/virtual-work.html:77 templates/virtual-work.html:305
+msgid "Reviews"
+msgstr "Reseñas"
+
+#: templates/about.html:53 templates/about.html:78 templates/about.html:641
+#: templates/article-1.html:53 templates/article-1.html:78
+#: templates/article-1.html:263 templates/article-2.html:53
+#: templates/article-2.html:78 templates/article-2.html:265
+#: templates/articles.html:53 templates/articles.html:78
+#: templates/articles.html:469 templates/contact.html:161
+#: templates/contact.html:179 templates/contact.html:419
+#: templates/event-1.html:53 templates/event-1.html:78
+#: templates/event-1.html:275 templates/event-2.html:53
+#: templates/event-2.html:78 templates/event-7.html:50
+#: templates/event-7.html:73 templates/event-8.html:42
+#: templates/event-8.html:65 templates/event-8.html:222 templates/events.html:6
+#: templates/events.html:107 templates/events.html:125 templates/home.html:74
+#: templates/home.html:99 templates/home.html:839 templates/home.html:855
+#: templates/news-1.html:53 templates/news-1.html:78 templates/news-1.html:268
+#: templates/news-2.html:53 templates/news-2.html:78 templates/news-2.html:268
+#: templates/register.html:76 templates/register.html:94
+#: templates/register.html:205 templates/reviews.html:182
+#: templates/reviews.html:207 templates/reviews.html:975
+#: templates/smart-assistant.html:53 templates/smart-assistant.html:78
+#: templates/smart-assistant.html:399 templates/solutions.html:76
+#: templates/solutions.html:103 templates/solutions.html:688
+#: templates/task-automation.html:41 templates/task-automation.html:60
+#: templates/task-automation.html:229 templates/virtual-work.html:53
+#: templates/virtual-work.html:78 templates/virtual-work.html:315
+msgid "Events"
+msgstr "Eventos"
+
+#: templates/about.html:54 templates/about.html:79 templates/about.html:646
+#: templates/article-1.html:54 templates/article-1.html:79
+#: templates/article-1.html:268 templates/article-2.html:54
+#: templates/article-2.html:79 templates/article-2.html:270
+#: templates/articles.html:54 templates/articles.html:79
+#: templates/articles.html:474 templates/contact.html:162
+#: templates/contact.html:180 templates/contact.html:420
+#: templates/event-1.html:54 templates/event-1.html:79
+#: templates/event-1.html:280 templates/event-2.html:54
+#: templates/event-2.html:79 templates/event-7.html:51
+#: templates/event-7.html:74 templates/event-8.html:43
+#: templates/event-8.html:66 templates/event-8.html:223
+#: templates/events.html:108 templates/events.html:126
+#: templates/events.html:273 templates/home.html:75 templates/home.html:100
+#: templates/home.html:842 templates/home.html:858 templates/news-1.html:54
+#: templates/news-1.html:79 templates/news-1.html:273 templates/news-2.html:54
+#: templates/news-2.html:79 templates/news-2.html:273
+#: templates/privacy-policy.html:201 templates/register.html:77
+#: templates/register.html:95 templates/register.html:208
+#: templates/reviews.html:183 templates/reviews.html:208
+#: templates/reviews.html:978 templates/smart-assistant.html:54
+#: templates/smart-assistant.html:79 templates/smart-assistant.html:402
+#: templates/solutions.html:77 templates/solutions.html:104
+#: templates/solutions.html:693 templates/task-automation.html:42
+#: templates/task-automation.html:61 templates/task-automation.html:230
+#: templates/virtual-work.html:54 templates/virtual-work.html:79
+#: templates/virtual-work.html:318
+msgid "Contact"
+msgstr "Contacto"
+
+#: templates/about.html:90
+msgid "About AI-Solution"
+msgstr "Acerca de AI-Solution"
+
+#: templates/about.html:92
+msgid ""
+"AI-Solution leverages AI to proactively support industries, delivering "
+"solutions that enhance the digital employee experience, accelerate "
+"innovation, and drive growth."
+msgstr ""
+"AI-Solution aprovecha la IA para apoyar proactivamente a las industrias, "
+"entregando soluciones que mejoran la experiencia del empleado digital, "
+"aceleran la innovación e impulsan el crecimiento."
+
+#: templates/about.html:109
+msgid "Company Overview"
+msgstr "Descripción de la Empresa"
+
+#: templates/about.html:111
+msgid ""
+"AI-Solution is a start-up based in Sunderland, specializing in AI-powered"
+" software solutions across multiple industries. Our AI-driven virtual "
+"assistant responds to inquiries and provides affordable prototyping "
+"solutions, setting us apart from competitors."
+msgstr ""
+"AI-Solution es una startup con sede en Sunderland, especializada en "
+"soluciones de software impulsadas por IA en múltiples industrias. Nuestro"
+" asistente virtual impulsado por IA responde a consultas y proporciona "
+"soluciones de prototipado asequibles, distinguiéndonos de la competencia."
+
+#: templates/about.html:114
+msgid ""
+"We focus on addressing issues that impact the digital employee "
+"experience, helping companies accelerate design, engineering, and "
+"innovation processes."
+msgstr ""
+"Nos enfocamos en abordar problemas que impactan la experiencia del "
+"empleado digital, ayudando a las empresas a acelerar los procesos de "
+"diseño, ingeniería e innovación."
+
+#: templates/about.html:122
+msgid "Vision & Mission"
+msgstr "Visión y Misión"
+
+#: templates/about.html:124
+msgid "Guiding principles that define our direction and purpose."
+msgstr "Principios rectores que definen nuestra dirección y propósito."
+
+#: templates/about.html:145
+msgid "Our Vision"
+msgstr "Nuestra Visión"
+
+#: templates/about.html:147
+msgid ""
+"To shape the future of the digital employee experience by enabling "
+"organizations worldwide to work smarter, faster, and more efficiently "
+"through AI-driven innovation."
+msgstr ""
+"Moldear el futuro de la experiencia del empleado digital permitiendo a "
+"las organizaciones de todo el mundo trabajar de manera más inteligente, "
+"rápida y eficiente a través de la innovación impulsada por IA."
+
+#: templates/about.html:165
+msgid "Our Mission"
+msgstr "Nuestra Misión"
+
+#: templates/about.html:167
+msgid ""
+"To design and deliver AI-powered solutions that proactively support "
+"people at work, enhance productivity, and accelerate innovation across "
+"industries."
+msgstr ""
+"Diseñar y entregar soluciones impulsadas por IA que apoyen proactivamente"
+" a las personas en el trabajo, mejoren la productividad y aceleren la "
+"innovación en todas las industrias."
+
+#: templates/about.html:176
+msgid "Our Core Values"
+msgstr "Nuestros Valores Fundamentales"
+
+#: templates/about.html:178
+msgid "The principles that drive our technology, culture, and partnerships."
+msgstr "Los principios que impulsan nuestra tecnología, cultura y alianzas."
+
+#: templates/about.html:195
+msgid "Innovation"
+msgstr "Innovación"
+
+#: templates/about.html:197
+msgid ""
+"Continuously pushing boundaries to deliver intelligent, forward-thinking "
+"AI solutions."
+msgstr ""
+"Impulsando continuamente los límites para entregar soluciones de IA "
+"inteligentes y con visión de futuro."
+
+#: templates/about.html:211
+msgid "Trust & Security"
+msgstr "Confianza y Seguridad"
+
+#: templates/about.html:213
+msgid "Building secure, reliable solutions with transparency at every stage."
+msgstr ""
+"Construyendo soluciones seguras y confiables con transparencia en cada "
+"etapa."
+
+#: templates/about.html:227
+msgid "People First"
+msgstr "Personas Primero"
+
+#: templates/about.html:229
+msgid ""
+"Designing AI that empowers people, enhances work, and supports "
+"collaboration."
+msgstr ""
+"Diseñando IA que empodera a las personas, mejora el trabajo y apoya la "
+"colaboración."
+
+#: templates/about.html:243
+msgid "AI Excellence"
+msgstr "Excelencia en IA"
+
+#: templates/about.html:245
+msgid "Applying deep AI expertise to deliver measurable, real-world impact."
+msgstr ""
+"Aplicando profunda experiencia en IA para entregar impacto medible y del "
+"mundo real."
+
+#: templates/about.html:255
+msgid "Meet Our Team"
+msgstr "Conoce a Nuestro Equipo"
+
+#: templates/about.html:257
+msgid ""
+"A team of AI experts, engineers, and strategists driving innovation and "
+"measurable impact."
+msgstr ""
+"Un equipo de expertos en IA, ingenieros y estrategas impulsando la "
+"innovación y el impacto medible."
+
+#: templates/about.html:264
+msgid "Leadership"
+msgstr "Liderazgo"
+
+#: templates/about.html:284
+msgid "Chief Executive Officer"
+msgstr "Director Ejecutivo"
+
+#: templates/about.html:287
+msgid "Leading AI-driven strategy, growth, and innovation across industries."
+msgstr ""
+"Liderando estrategia, crecimiento e innovación impulsados por IA en todas"
+" las industrias."
+
+#: templates/about.html:311
+msgid "Chief Technology Officer"
+msgstr "Director de Tecnología"
+
+#: templates/about.html:314
+msgid "Architecting scalable, secure AI platforms and engineering excellence."
+msgstr ""
+"Arquitectura de plataformas de IA escalables y seguras y excelencia en "
+"ingeniería."
+
+#: templates/about.html:338
+msgid "Chief AI Officer"
+msgstr "Director de IA"
+
+#: templates/about.html:341
+msgid "Driving AI research, model strategy, and applied intelligence solutions."
+msgstr ""
+"Impulsando investigación de IA, estrategia de modelos y soluciones de "
+"inteligencia aplicada."
+
+#: templates/about.html:365
+msgid "Chief People Officer"
+msgstr "Director de Personas"
+
+#: templates/about.html:368
+msgid ""
+"Leading talent strategy, culture, and employee experience to build high-"
+"performing teams."
+msgstr ""
+"Liderando estrategia de talento, cultura y experiencia del empleado para "
+"construir equipos de alto rendimiento."
+
+#: templates/about.html:381
+msgid "Core Team"
+msgstr "Equipo Principal"
+
+#: templates/about.html:398
+msgid "AI Project Manager"
+msgstr "Gerente de Proyectos de IA"
+
+#: templates/about.html:414
+msgid "Lead AI Engineer"
+msgstr "Ingeniero de IA Principal"
+
+#: templates/about.html:429
+msgid "Product Manager"
+msgstr "Gerente de Producto"
+
+#: templates/about.html:444
+msgid "Head of Growth"
+msgstr "Director de Crecimiento"
+
+#: templates/about.html:459
+msgid "AI Solutions Architect"
+msgstr "Arquitecto de Soluciones de IA"
+
+#: templates/about.html:578
+msgid "Ready to transform your workplace?"
+msgstr "¿Listo para transformar tu lugar de trabajo?"
+
+#: templates/about.html:580
+msgid "Contact us today to discover how AI-Solution can empower your team."
+msgstr ""
+"Contáctanos hoy para descubrir cómo AI-Solution puede empoderar a tu "
+"equipo."
+
+#: templates/about.html:586 templates/contact.html:205
+#: templates/events.html:246
+msgid "Contact Us"
+msgstr "Contáctanos"
+
+#: templates/about.html:606 templates/article-1.html:228
+#: templates/article-2.html:230 templates/articles.html:434
+#: templates/contact.html:400 templates/event-1.html:240
+#: templates/event-2.html:276 templates/event-7.html:284
+#: templates/event-8.html:207 templates/news-1.html:233
+#: templates/news-2.html:233 templates/reviews.html:941
+#: templates/virtual-work.html:287
+msgid ""
+"Innovating the future of the digital employee experience with AI-powered "
+"solutions."
+msgstr ""
+"Innovando el futuro de la experiencia del empleado digital con soluciones"
+" impulsadas por IA."
+
+#: templates/about.html:612 templates/article-1.html:234
+#: templates/article-2.html:236 templates/articles.html:440
+#: templates/contact.html:406 templates/event-1.html:246
+#: templates/event-2.html:280 templates/event-2.html:282
+#: templates/event-7.html:288 templates/event-8.html:211
+#: templates/events.html:262 templates/home.html:824 templates/news-1.html:239
+#: templates/news-2.html:239 templates/privacy-policy.html:190
+#: templates/register.html:183 templates/reviews.html:947
+#: templates/smart-assistant.html:377 templates/solutions.html:659
+#: templates/task-automation.html:213 templates/virtual-work.html:293
+msgid "Quick Links"
+msgstr "Enlaces Rápidos"
+
+#: templates/about.html:637 templates/article-1.html:259
+#: templates/article-2.html:261 templates/articles.html:465
+#: templates/contact.html:417 templates/event-1.html:271
+#: templates/event-2.html:305 templates/event-2.html:307
+#: templates/event-7.html:311 templates/event-8.html:220
+#: templates/events.html:271 templates/home.html:852 templates/news-1.html:264
+#: templates/news-2.html:264 templates/privacy-policy.html:199
+#: templates/register.html:202 templates/reviews.html:972
+#: templates/smart-assistant.html:396 templates/solutions.html:684
+#: templates/task-automation.html:227 templates/virtual-work.html:312
+msgid "Pages"
+msgstr "Páginas"
+
+#: templates/about.html:657 templates/article-1.html:279
+#: templates/article-2.html:281 templates/articles.html:485
+#: templates/contact.html:427 templates/event-1.html:291
+#: templates/event-2.html:327 templates/event-7.html:329
+#: templates/event-8.html:228 templates/events.html:279 templates/home.html:868
+#: templates/news-1.html:284 templates/news-2.html:284
+#: templates/privacy-policy.html:207 templates/register.html:218
+#: templates/reviews.html:988 templates/smart-assistant.html:412
+#: templates/solutions.html:704 templates/task-automation.html:236
+#: templates/virtual-work.html:328
+msgid "Follow Us"
+msgstr "Síguenos"
+
+#: templates/about.html:677 templates/article-1.html:299
+#: templates/article-2.html:301 templates/articles.html:505
+#: templates/contact.html:440 templates/event-1.html:311
+#: templates/event-2.html:347 templates/event-7.html:348
+#: templates/event-8.html:239 templates/home.html:888 templates/news-1.html:304
+#: templates/news-2.html:304 templates/register.html:230
+#: templates/smart-assistant.html:432 templates/solutions.html:724
+#: templates/task-automation.html:247 templates/virtual-work.html:348
+msgid "AI-Solution. All rights reserved."
+msgstr "2025 AI-Solution. Todos los derechos reservados."
+
+#: templates/article-1.html:6 templates/article-1.html:96
+#: templates/article-2.html:173 templates/articles.html:118
+#: templates/articles.html:155
+msgid "AI Transforming Digital Workplaces"
+msgstr "IA Transformando Lugares de Trabajo Digitales"
+
+#: templates/article-1.html:43 templates/article-1.html:223
+#: templates/article-2.html:43 templates/article-2.html:225
+#: templates/news-2.html:43 templates/news-2.html:228
+#: templates/reviews.html:936 templates/solutions.html:648
+msgid "AI-Solution Logo"
+msgstr "Logo AI-Solution"
+
+#: templates/article-1.html:62 templates/article-2.html:62
+#: templates/events.html:113 templates/news-2.html:62
+#: templates/privacy-policy.html:52 templates/reviews.html:191
+msgid "Toggle menu"
+msgstr "Alternar menú"
+
+#: templates/article-1.html:89 templates/article-2.html:89
+msgid "Article Hero"
+msgstr "Héroe del Artículo"
+
+#: templates/article-1.html:98 templates/articles.html:153
+msgid "By John Doe | Jan 12, 2025"
+msgstr "Por John Doe | 12 de enero de 2025"
+
+#: templates/article-1.html:107
+msgid "John Doe"
+msgstr "John Doe"
+
+#: templates/article-2.html:98 templates/articles.html:180
+msgid "By Jane Smith | Feb 5, 2025"
+msgstr "Por Jane Smith | 5 de febrero de 2025"
+
+#: templates/article-2.html:107
+msgid "Jane Smith"
+msgstr "Jane Smith"
+
+#: templates/articles.html:116
+msgid "By John Doe | Dec 15, 2025"
+msgstr "Por John Doe | 15 de diciembre de 2025"
+
+#: templates/articles.html:121
+msgid "John Doe"
+msgstr "John Doe"
+
+#: templates/articles.html:207
+msgid "By Alice Green | Mar 20, 2025"
+msgstr "Por Alice Green | 20 de marzo de 2025"
+
+#: templates/articles.html:212
+msgid "Alice Green"
+msgstr "Alice Green"
+
+#: templates/articles.html:234
+msgid "By Michael Brown | Apr 1, 2025"
+msgstr "Por Michael Brown | 1 de abril de 2025"
+
+#: templates/articles.html:237
+msgid "Michael Brown"
+msgstr "Michael Brown"
+
+#: templates/articles.html:259
+msgid "By Sarah White | May 18, 2025"
+msgstr "Por Sarah White | 18 de mayo de 2025"
+
+#: templates/articles.html:261
+msgid "Sarah White"
+msgstr "Sarah White"
+
+#: templates/articles.html:286
+msgid "By David Lee | Jun 10, 2025"
+msgstr "Por David Lee | 10 de junio de 2025"
+
+#: templates/articles.html:288
+msgid "David Lee"
+msgstr "David Lee"
+
+#: templates/articles.html:123
+msgid "Dec 15, 2025"
+msgstr "15 de diciembre de 2025"
+
+#: templates/articles.html:169
+msgid "Jan 12, 2025"
+msgstr "12 de enero de 2025"
+
+#: templates/articles.html:205
+msgid "Feb 5, 2025"
+msgstr "5 de febrero de 2025"
+
+#: templates/articles.html:241
+msgid "Mar 20, 2025"
+msgstr "20 de marzo de 2025"
+
+#: templates/articles.html:277
+msgid "Apr 1, 2025"
+msgstr "1 de abril de 2025"
+
+#: templates/articles.html:311
+msgid "May 18, 2025"
+msgstr "18 de mayo de 2025"
+
+#: templates/articles.html:347
+msgid "Jun 10, 2025"
+msgstr "10 de junio de 2025"
+
+#: templates/articles.html:388
+msgid "Jan 5, 2025"
+msgstr "5 de enero de 2025"
+
+#: templates/articles.html:412
+msgid "Feb 10, 2025"
+msgstr "10 de febrero de 2025"
+
+#: templates/articles.html:438
+msgid "Mar 22, 2025"
+msgstr "22 de marzo de 2025"
+
+#: templates/articles.html:464
+msgid "Nov 20, 2025"
+msgstr "20 de noviembre de 2025"
+
+#: templates/register.html:121
+msgid "Please fill out the form in English."
+msgstr "Por favor, complete el formulario en inglés."
+msgid ""
+"AI-Solution is revolutionizing how businesses operate by integrating "
+"cutting-edge artificial intelligence into everyday workflows. Our AI-"
+"driven tools empower teams to work smarter, faster, and more efficiently,"
+" while ensuring a seamless digital employee experience."
+msgstr ""
+"AI-Solution está revolucionando cómo operan las empresas al integrar "
+"inteligencia artificial de vanguardia en los flujos de trabajo diarios. "
+"Nuestras herramientas impulsadas por IA capacitan a los equipos a "
+"trabajar de manera más inteligente, rápida y eficiente, mientras "
+"garantizan una experiencia digital fluida para los empleados."
+
+#: templates/article-1.html:112
+msgid "Transforming Workplaces with AI"
+msgstr "Transformando lugares de trabajo con IA"
+
+#: templates/article-1.html:115
+msgid ""
+"Our AI-powered solutions, including smart assistants and proactive issue "
+"resolution tools, help organizations streamline operations, automate "
+"repetitive tasks, and accelerate innovation. By leveraging AI-Solution's "
+"expertise, companies can achieve measurable improvements in productivity "
+"and employee satisfaction."
+msgstr ""
+"Nuestras soluciones impulsadas por IA, incluyendo asistentes inteligentes"
+" y herramientas de resolución proactiva de problemas, ayudan a las "
+"organizaciones a optimizar operaciones, automatizar tareas repetitivas y "
+"acelerar la innovación. Al aprovechar la experiencia de AI-Solution, las "
+"empresas pueden lograr mejoras medibles en productividad y satisfacción "
+"de los empleados."
+
+#: templates/article-1.html:120
+msgid "AI in workplace"
+msgstr "IA en el lugar de trabajo"
+
+#: templates/article-1.html:126
+msgid "Real Success Across Industries"
+msgstr "Éxito real en todas las industrias"
+
+#: templates/article-1.html:129
+msgid ""
+"From education to healthcare, manufacturing to IT, AI-Solution's "
+"innovative tools are already transforming industries. Healthcare "
+"providers reduce patient wait times, manufacturers optimize predictive "
+"maintenance, and IT companies accelerate software prototyping. Our AI "
+"solutions are tailored to each industry's unique challenges."
+msgstr ""
+"Desde educación hasta salud, manufactura hasta TI, las herramientas "
+"innovadoras de AI-Solution ya están transformando industrias. Los "
+"proveedores de salud reducen los tiempos de espera de pacientes, los "
+"fabricantes optimizan el mantenimiento predictivo y las empresas de TI "
+"aceleran el prototipado de software. Nuestras soluciones de IA están "
+"adaptadas a los desafíos únicos de cada industria."
+
+#: templates/article-1.html:134
+msgid "The Future of Intelligent Work"
+msgstr "El futuro del trabajo inteligente"
+
+#: templates/article-1.html:137
+msgid ""
+"As AI continues to evolve, organizations adopting intelligent solutions "
+"will gain a competitive edge. AI-Solution is committed to driving this "
+"transformation, providing affordable and practical AI tools that enhance "
+"decision-making, automate routine tasks, and empower employees to focus "
+"on innovation and creativity."
+msgstr ""
+"A medida que la IA continúa evolucionando, las organizaciones que adopten"
+" soluciones inteligentes ganarán una ventaja competitiva. AI-Solution "
+"está comprometida con impulsar esta transformación, proporcionando "
+"herramientas de IA asequibles y prácticas que mejoran la toma de "
+"decisiones, automatizan tareas rutinarias y capacitan a los empleados a "
+"centrarse en la innovación y creatividad."
+
+#: templates/article-1.html:146 templates/article-2.html:146
+msgid "Discover How AI Can Transform Your Business"
+msgstr "Descubre cómo la IA puede transformar tu negocio"
+
+#: templates/article-1.html:156 templates/article-2.html:156
+msgid "Related Articles"
+msgstr "Artículos Relacionados"
+
+#: templates/article-1.html:167 templates/article-1.html:184
+#: templates/article-1.html:201 templates/article-2.html:167
+#: templates/article-2.html:186 templates/article-2.html:203
+msgid "Related Article"
+msgstr "Artículo Relacionado"
+
+#: templates/article-1.html:172 templates/article-2.html:6
+#: templates/article-2.html:96 templates/articles.html:182
+msgid "Proactive AI Issue Resolution"
+msgstr "Resolución Proactiva de Problemas de IA"
+
+#: templates/article-1.html:189 templates/article-2.html:191
+#: templates/articles.html:209 templates/home.html:326
+#: templates/solutions.html:233
+msgid "Industry-Specific AI Solutions"
+msgstr "Soluciones de IA Específicas por Industria"
+
+#: templates/article-1.html:206 templates/article-2.html:208
+#: templates/articles.html:235
+msgid "AI in Finance Sector"
+msgstr "IA en el Sector Financiero"
+
+#: templates/article-2.html:98 templates/articles.html:180
+msgid "By Jane Smith | Feb 5, 2025"
+msgstr "Por Jane Smith | 5 de febrero de 2025"
+
+#: templates/article-2.html:107
+msgid ""
+"Modern organizations can no longer afford to react to workplace issues "
+"after they disrupt operations. Proactive AI Issue Resolution enables "
+"businesses to identify, predict, and resolve problems before they impact "
+"employees, productivity, or customer experience. At AI-Solution, we "
+"deliver intelligent systems that continuously monitor, analyze, and act "
+"in real time to keep digital workplaces running smoothly."
+msgstr ""
+"Las organizaciones modernas ya no pueden permitirse reaccionar a "
+"problemas del lugar de trabajo después de que interrumpan las "
+"operaciones. La Resolución Proactiva de Problemas de IA permite a las "
+"empresas identificar, predecir y resolver problemas antes de que impacten"
+" a los empleados, productividad o experiencia del cliente. En AI-"
+"Solution, entregamos sistemas inteligentes que monitorean, analizan y "
+"actúan continuamente en tiempo real para mantener los lugares de trabajo "
+"digitales funcionando sin problemas."
+
+#: templates/article-2.html:112
+msgid "What Is Proactive AI Issue Resolution?"
+msgstr "¿Qué es la Resolución Proactiva de Problemas de IA?"
+
+#: templates/article-2.html:115
+msgid ""
+"Proactive AI Issue Resolution leverages machine learning, behavioral "
+"analytics, and system monitoring to detect anomalies and emerging issues "
+"before they escalate. Instead of relying on reactive support tickets, AI-"
+"Solution's platform identifies patterns across applications, "
+"infrastructure, and user interactions to resolve issues automatically or "
+"alert teams with actionable insights."
+msgstr ""
+"La Resolución Proactiva de Problemas de IA aprovecha el aprendizaje "
+"automático, analíticas de comportamiento y monitoreo de sistemas para "
+"detectar anomalías y problemas emergentes antes de que escalen. En lugar "
+"de depender de tickets de soporte reactivo, la plataforma de AI-Solution "
+"identifica patrones en aplicaciones, infraestructura e interacciones de "
+"usuarios para resolver problemas automáticamente o alertar a los equipos "
+"con información procesable."
+
+#: templates/article-2.html:120
+msgid "Proactive AI issue detection and resolution"
+msgstr "Detección y resolución proactiva de problemas de IA"
+
+#: templates/article-2.html:126
+msgid "How AI-Solution Delivers Proactive Resolution"
+msgstr "Cómo AI-Solution entrega resolución proactiva"
+
+#: templates/article-2.html:129
+msgid ""
+"AI-Solution's Proactive Issue Resolution continuously analyzes system "
+"performance, employee behavior, and historical incident data to prevent "
+"recurring problems. From automatically resolving IT service disruptions "
+"to flagging workflow bottlenecks, our solution reduces downtime, improves"
+" employee satisfaction, and lowers operational costs across industries "
+"such as healthcare, finance, manufacturing, and enterprise IT."
+msgstr ""
+"La Resolución Proactiva de Problemas de AI-Solution analiza continuamente"
+" el rendimiento del sistema, el comportamiento de los empleados y datos "
+"de incidentes históricos para prevenir problemas recurrentes. Desde "
+"resolver automáticamente interrupciones de servicios de TI hasta marcar "
+"cuellos de botella en flujos de trabajo, nuestra solución reduce el "
+"tiempo de inactividad, mejora la satisfacción de los empleados y reduce "
+"los costos operativos en industrias como salud, finanzas, manufactura y "
+"TI empresarial."
+
+#: templates/article-2.html:134
+msgid "Why Proactive AI Is the Future of Workplace Support"
+msgstr "Por qué la IA proactiva es el futuro del soporte laboral"
+
+#: templates/article-2.html:137
+msgid ""
+"Reactive support models are no longer sufficient in fast-paced digital "
+"environments. Organizations that adopt proactive AI-driven issue "
+"resolution gain a strategic advantage by minimizing disruptions, "
+"enhancing operational resilience, and empowering employees to focus on "
+"meaningful work. AI-Solution is committed to helping businesses move from"
+" firefighting problems to preventing them altogether."
+msgstr ""
+"Los modelos de soporte reactivo ya no son suficientes en entornos "
+"digitales de rápido ritmo. Las organizaciones que adoptan la resolución "
+"proactiva de problemas impulsada por IA ganan una ventaja estratégica al "
+"minimizar interrupciones, mejorar la resiliencia operativa y capacitar a "
+"los empleados a centrarse en trabajo significativo. AI-Solution está "
+"comprometida con ayudar a las empresas a pasar de apagar fuegos de "
+"problemas a prevenirlos por completo."
+
+#: templates/articles.html:91
+msgid "Latest Articles & Insights"
+msgstr "Últimos Artículos e Perspectivas"
+
+#: templates/articles.html:94
+msgid ""
+"Discover how AI-Solution is transforming workplaces with cutting-edge AI "
+"technology."
+msgstr ""
+"Descubre cómo AI-Solution está transformando los lugares de trabajo con "
+"tecnología de IA de vanguardia."
+
+#: templates/articles.html:103
+msgid "Featured Article"
+msgstr "Artículo Destacado"
+
+#: templates/articles.html:116
+msgid "By John Doe | Dec 15, 2025"
+msgstr "Por John Doe | 15 de diciembre de 2025"
+
+#: templates/articles.html:121
+msgid ""
+"Explore how AI-driven tools enhance productivity, streamline operations, "
+"and improve employee experience across industries."
+msgstr ""
+"Explora cómo las herramientas impulsadas por IA mejoran la productividad,"
+" simplifican operaciones y mejoran la experiencia del empleado en todas "
+"las industrias."
+
+#: templates/articles.html:126 templates/articles.html:163
+#: templates/articles.html:190 templates/articles.html:217
+#: templates/articles.html:242 templates/articles.html:269
+#: templates/articles.html:296 templates/articles.html:333
+#: templates/articles.html:359 templates/articles.html:385
+#: templates/articles.html:411 templates/home.html:765 templates/home.html:779
+#: templates/news-1.html:164 templates/news-1.html:187
+#: templates/news-1.html:210 templates/news-2.html:164
+#: templates/news-2.html:187 templates/news-2.html:210
+msgid "Read More"
+msgstr "Leer Más"
+
+#: templates/articles.html:137 templates/home.html:734
+msgid "Latest Articles"
+msgstr "Últimos Artículos"
+
+#: templates/articles.html:158
+msgid "How AI-driven tools enhance productivity and streamline operations."
+msgstr ""
+"Cómo las herramientas impulsadas por IA mejoran la productividad y "
+"simplifican operaciones."
+
+#: templates/articles.html:185
+msgid "Reducing downtime and optimizing workflow with intelligent AI solutions."
+msgstr ""
+"Reduciendo el tiempo de inactividad y optimizando el flujo de trabajo con"
+" soluciones de IA inteligentes."
+
+#: templates/articles.html:207
+msgid "By Alice Green | Mar 20, 2025"
+msgstr "Por Alice Green | 20 de marzo de 2025"
+
+#: templates/articles.html:212
+msgid "Tailored AI software solutions for healthcare, finance, and IT sectors."
+msgstr ""
+"Soluciones de software de IA adaptadas para los sectores de salud, "
+"finanzas y TI."
+
+#: templates/articles.html:234
+msgid "By Michael Brown | Apr 1, 2025"
+msgstr "Por Michael Brown | 1 de abril de 2025"
+
+#: templates/articles.html:237
+msgid ""
+"Revolutionizing risk management and intelligent decision-making in "
+"finance."
+msgstr ""
+"Revolucionando la gestión de riesgos y la toma de decisiones inteligentes"
+" en finanzas."
+
+#: templates/articles.html:259
+msgid "By Sarah White | May 18, 2025"
+msgstr "Por Sarah White | 18 de mayo de 2025"
+
+#: templates/articles.html:261
+msgid "AI-Powered Learning Platforms"
+msgstr "Plataformas de Aprendizaje Impulsadas por IA"
+
+#: templates/articles.html:264
+msgid "Enhancing education and training experiences with adaptive AI tools."
+msgstr ""
+"Mejorando experiencias de educación y capacitación con herramientas de IA"
+" adaptativas."
+
+#: templates/articles.html:286
+msgid "By David Lee | Jun 10, 2025"
+msgstr "Por David Lee | 10 de junio de 2025"
+
+#: templates/articles.html:288
+msgid "AI Enhancing Workplace Productivity"
+msgstr "IA Mejorando la Productividad Laboral"
+
+#: templates/articles.html:291
+msgid ""
+"How intelligent virtual assistants optimize employee performance across "
+"industries."
+msgstr ""
+"Cómo los asistentes virtuales inteligentes optimizan el rendimiento de "
+"los empleados en todas las industrias."
+
+#: templates/articles.html:308
+msgid "Latest News"
+msgstr "Últimas Noticias"
+
+#: templates/articles.html:323
+msgid "Jan 5, 2025"
+msgstr "5 de enero de 2025"
+
+#: templates/articles.html:325 templates/news-1.html:6 templates/news-1.html:91
+#: templates/news-2.html:159
+msgid "AI-Solution Partners with Leading Tech Firm"
+msgstr "AI-Solution se Asocia con Empresa Tecnológica Líder"
+
+#: templates/articles.html:328
+msgid "A new collaboration aims to accelerate AI adoption across industries."
+msgstr ""
+"Una nueva colaboración tiene como objetivo acelerar la adopción de IA en "
+"todas las industrias."
+
+#: templates/articles.html:349
+msgid "Feb 10, 2025"
+msgstr "10 de febrero de 2025"
+
+#: templates/articles.html:351 templates/news-1.html:159
+#: templates/news-2.html:6 templates/news-2.html:91
+msgid "AI-Solution Launches Smart Assistant Upgrade"
+msgstr "AI-Solution Lanza Actualización de Asistente Inteligente"
+
+#: templates/articles.html:354
+msgid "Enhanced AI capabilities help businesses improve workflow automation."
+msgstr ""
+"Las capacidades de IA mejoradas ayudan a las empresas a mejorar la "
+"automatización del flujo de trabajo."
+
+#: templates/articles.html:375 templates/news-2.html:180
+msgid "Mar 22, 2025"
+msgstr "22 de marzo de 2025"
+
+#: templates/articles.html:377 templates/news-1.html:182
+#: templates/news-2.html:182
+msgid "AI-Solution Recognised as Top AI Innovator"
+msgstr "AI-Solution Reconocida como Innovador de IA Líder"
+
+#: templates/articles.html:380
+msgid "Awarded for driving AI transformation in digital workplaces."
+msgstr ""
+"Premiada por impulsar la transformación de IA en lugares de trabajo "
+"digitales."
+
+#: templates/articles.html:401 templates/news-2.html:203
+msgid "Nov 20, 2025"
+msgstr "20 de noviembre de 2025"
+
+#: templates/articles.html:403 templates/news-1.html:205
+#: templates/news-2.html:205
+msgid "AI - a massive weapon in business growth"
+msgstr "IA - un arma masiva en el crecimiento empresarial"
+
+#: templates/articles.html:406
+msgid "AI has fulfilled the role of business growth in modern era."
+msgstr "IA ha cumplido el rol de crecimiento empresarial en la era moderna."
+
+#: templates/contact.html:7
+msgid "AI-Solution | Contact"
+msgstr "AI-Solution | Contacto"
+
+#: templates/contact.html:189
+msgid "Get in Touch with AI-Solution"
+msgstr "Ponte en contacto con AI-Solution"
+
+#: templates/contact.html:191
+msgid ""
+"Share your requirements or inquiries, and our team will get back to you "
+"promptly."
+msgstr ""
+"Comparta sus requisitos o consultas, y nuestro equipo volverá con usted "
+"rápidamente."
+
+#: templates/contact.html:207
+msgid "Tell us about your inquiry & requirements"
+msgstr "Cuéntenos sobre su consulta o requisitos"
+
+#: templates/contact.html:215 templates/reviews.html:321
+msgid "Please fill out the form in English"
+msgstr "Por favor, rellene el formulario en inglés"
+
+#: templates/contact.html:224
+msgid "Your Contact Details"
+msgstr "Tus Datos de Contacto"
+
+#: templates/contact.html:228 templates/register.html:127
+#: templates/reviews.html:329
+msgid "Full Name"
+msgstr "Nombre Completo"
+
+#: templates/contact.html:229 templates/register.html:128
+#: templates/reviews.html:335
+msgid "Enter your full name"
+msgstr "Ingrese su nombre completo"
+
+#: templates/contact.html:233
+msgid "Business Email"
+msgstr "Correo Electrónico de Negocios"
+
+#: templates/contact.html:234
+msgid "Enter your business email"
+msgstr "Ingrese su correo electrónico de negocios"
+
+#: templates/contact.html:239
+msgid "Phone Number"
+msgstr "Número de Teléfono"
+
+#: templates/contact.html:240
+msgid "Enter your phone number (optional)"
+msgstr "Ingrese su número de teléfono (opcional)"
+
+#: templates/contact.html:242
+msgid "Phone number cannot exceed 20 characters."
+msgstr "El número de teléfono no puede exceder los 20 caracteres."
+
+#: templates/contact.html:257 templates/reviews.html:363
+msgid "Company Name"
+msgstr "Nombre de la Empresa"
+
+#: templates/contact.html:258 templates/reviews.html:368
+msgid "Enter your company name"
+msgstr "Ingrese el nombre de su empresa"
+
+#: templates/contact.html:263 templates/register.html:143
+#: templates/reviews.html:347
+msgid "Job Title"
+msgstr "Cargo Laboral"
+
+#: templates/contact.html:264 templates/register.html:144
+#: templates/reviews.html:352
+msgid "Your role / position"
+msgstr "Su rol / posición"
+
+#: templates/contact.html:270 templates/reviews.html:378
+msgid "Industry"
+msgstr "Industria"
+
+#: templates/contact.html:274 templates/reviews.html:383
+msgid "Select industry"
+msgstr "Seleccionar industria"
+
+#: templates/contact.html:285 templates/reviews.html:408
+msgid "Please specify your industry"
+msgstr "Por favor especifique su industria"
+
+#: templates/contact.html:289
+msgid "Country"
+msgstr "País"
+
+#: templates/contact.html:291
+msgid "Select your country"
+msgstr "Seleccione su país"
+
+#: templates/contact.html:306
+msgid "Job / Requirement Details"
+msgstr "Detalles del Trabajo / Requisito"
+
+#: templates/contact.html:309
+msgid "Requirement Type"
+msgstr "Tipo de Requisito"
+
+#: templates/contact.html:312
+msgid "Select requirement type"
+msgstr "Seleccione tipo de requisito"
+
+#: templates/contact.html:328
+msgid "Please specify your requirement"
+msgstr "Por favor especifique su requisito"
+
+#: templates/contact.html:331
+msgid "Requirement Summary"
+msgstr "Resumen de Requisitos"
+
+#: templates/contact.html:332
+msgid "One sentence describing the goal"
+msgstr "Una oración que describe el objetivo"
+
+#: templates/contact.html:337
+msgid "Brief Description"
+msgstr "Descripción Breve"
+
+#: templates/contact.html:339
+msgid "Describe your business problem, features, and constraints briefly"
+msgstr ""
+"Describa brevemente su problema de negocio, características y "
+"restricciones"
+
+#: templates/contact.html:341
+msgid "Minimum 50 characters."
+msgstr "Mínimo 50 caracteres."
+
+#: templates/contact.html:344
+msgid "Optional Information"
+msgstr "Información Opcional"
+
+#: templates/contact.html:347
+msgid "Expected Timeline"
+msgstr "Plazo Esperado"
+
+#: templates/contact.html:350
+msgid "Flexible"
+msgstr "Flexible"
+
+#: templates/contact.html:361
+msgid "Budget Range"
+msgstr "Rango de Presupuesto"
+
+#: templates/contact.html:364
+msgid "Select budget"
+msgstr "Seleccione presupuesto"
+
+#: templates/contact.html:380
+msgid "Submit"
+msgstr "Enviar"
+
+#: templates/event-1.html:6
+#, fuzzy
+msgid "AI-Solution | Events | AI Transforming Workplaces"
+msgstr "IA Transformando Lugares de Trabajo"
+
+#: templates/event-1.html:99
+msgid "AI Transforming Workplaces"
+msgstr "IA Transformando Lugares de Trabajo"
+
+#: templates/event-1.html:102
+msgid ""
+"Join the exclusive online workshop which will deliver practical insights "
+"and hands-on demonstrations of AI tools transforming modern corporate "
+"work environments."
+msgstr ""
+"Únase al taller online exclusivo que ofrecerá información práctica y "
+"demostraciones prácticas de herramientas de IA que transforman los "
+"entornos laborales corporativos modernos."
+
+
+
+#: templates/event-1.html:106 templates/event-2.html:106
+#: templates/event-7.html:101 templates/event-8.html:91
+#: templates/register.html:108
+#, fuzzy
+msgid "Location"
+msgstr "Educación"
+
+#: templates/event-1.html:106
+msgid "INNSiDE By Melia Newcastle Venue Hire | Newcastle upon Tyne"
+msgstr "INNSiDE By Melia Contratación del Local | Newcastle upon Tyne"
+
+#: templates/event-1.html:112 templates/event-2.html:112
+#: templates/events.html:296
+msgid "Register Now"
+msgstr "Registrarse Ahora"
+
+#: templates/event-1.html:121 templates/event-2.html:121
+#: templates/event-7.html:115 templates/event-8.html:103
+msgid "Event Overview"
+msgstr "Descripción del Evento"
+
+#: templates/event-1.html:124
+msgid ""
+"The AI in Digital Workplaces brings the productivity revolution to your "
+"organization. This exclusive online workshop is designed for "
+"professionals eager to harness the power of AI to enhance workplace "
+"efficiency and employee satisfaction. Attendees will gain hands-on "
+"experience with cutting-edge AI tools that streamline tasks, improve "
+"communication, and foster collaboration in corporate environments."
+msgstr ""
+"La IA en Lugares de Trabajo Digitales trae la revolución de productividad"
+" a su organización. Este taller online exclusivo está diseñado para "
+"profesionales ansiosos por aprovechar el poder de la IA para mejorar la "
+"eficiencia laboral y la satisfacción de los empleados. Los asistentes "
+"obtendrán experiencia práctica con herramientas de IA de vanguardia que "
+"agilizan tareas, mejoran la comunicación y fomentan la colaboración en "
+"entornos corporativos."
+
+#: templates/event-1.html:128 templates/event-2.html:139
+#: templates/event-7.html:122 templates/event-8.html:110
+msgid "Agenda"
+msgstr "Agenda"
+
+#: templates/event-1.html:131
+msgid "09:00 AM - Welcome Session by AI-Solution CEO"
+msgstr "09:00 AM - Sesión de Bienvenida por el CEO de AI-Solution"
+
+#: templates/event-1.html:132
+msgid "10:00 AM - AI Tools Workshop"
+msgstr "10:00 AM - Taller de Herramientas de IA"
+
+#: templates/event-1.html:133
+msgid "11:30 AM - Professional Workspace AI tools Demonstration"
+msgstr ""
+"11:30 AM - Demostración de Herramientas de IA para Espacios de Trabajo "
+"Profesionales"
+
+#: templates/event-1.html:134
+msgid "01:00 PM - Networking & Lunch Break"
+msgstr "01:00 de la tarde - Networking y Pausa para Almorzar"
+
+#: templates/event-1.html:135
+msgid "02:00 PM - AI Use Case Activities"
+msgstr "02:00 de la tarde - Actividades de Casos de Uso de IA"
+
+#: templates/event-1.html:136
+msgid "04:00 PM - Discussion & Q&A"
+msgstr "04:00 de la tarde - Discusión y Preguntas y Respuestas"
+
+#: templates/event-1.html:140 templates/event-2.html:151
+#: templates/event-2.html:305 templates/event-7.html:134
+#: templates/event-8.html:123
+msgid "Resources"
+msgstr "Recursos"
+
+#: templates/event-1.html:143
+msgid "Laptop"
+msgstr "Portátil"
+
+#: templates/event-1.html:147 templates/event-2.html:159
+#: templates/event-7.html:141 templates/event-8.html:130
+msgid "Speakers"
+msgstr "Ponentes"
+
+#: templates/event-1.html:159
+msgid "Michael Brown"
+msgstr "Michael Brown"
+
+#: templates/event-1.html:160
+msgid "Product Manager, AI-Solution"
+msgstr "Gerente de Producto, AI-Solution"
+
+#: templates/event-1.html:171
+msgid "William Johnson"
+msgstr "William Johnson"
+
+#: templates/event-1.html:172
+msgid "AI Product Designer, AI-Solutions"
+msgstr "Diseñador de Productos de IA, AI-Solutions"
+
+#: templates/event-1.html:183 templates/event-2.html:197
+#: templates/event-7.html:164
+msgid "Alice Green"
+msgstr "Alice Green"
+
+#: templates/event-1.html:184 templates/event-2.html:198
+#: templates/event-7.html:165
+msgid "Lead AI Engineer, AI-Solution"
+msgstr "Ingeniero Principal de IA, AI-Solution"
+
+#: templates/event-1.html:194 templates/event-2.html:230
+#: templates/event-7.html:187 templates/event-8.html:158
+msgid "Event Gallery"
+msgstr "Galería de Eventos"
+
+#: templates/event-2.html:6
+#, fuzzy
+msgid "AI-Solution | Events | Corporate AI Summit"
+msgstr "Cumbre Corporativa de IA"
+
+#: templates/event-2.html:99
+msgid "Corporate AI Summit"
+msgstr "Cumbre Corporativa de IA"
+
+#: templates/event-2.html:102
+msgid ""
+"Join AI-Solution in partnership with TechCorp to explore how AI is "
+"transforming business operations across industries."
+msgstr ""
+"Únase a AI-Solution en asociación con TechCorp para explorar cómo la IA "
+"está transformando las operaciones comerciales en todas las industrias."
+
+#: templates/event-2.html:104
+msgid "Feb 6, 2026"
+msgstr "06 feb, 2026"
+
+#: templates/event-2.html:106
+msgid "Manchester Conference Centre | Manchester"
+msgstr "Manchester Conference Centre | Manchester"
+
+#: templates/event-2.html:124
+msgid ""
+"The Corporate AI Summit, hosted by AI-Solution in partnership with "
+"TechCorp, is a one-day executive-focused event exploring real-world "
+"business applications of artificial intelligence. Designed for decision-"
+"makers, managers, and digital leaders, the summit delivers strategic "
+"insights, practical frameworks, and case studies demonstrating how AI is "
+"transforming finance, HR, marketing, operations, and customer experience."
+msgstr ""
+
+#: templates/event-2.html:129
+msgid "In Partnership With TechCorp"
+msgstr "En Asociación Con TechCorp"
+
+#: templates/event-2.html:142
+msgid "09:00 AM – Registration & Welcome Coffee"
+msgstr "09:00 de la mañana – Registro y Café de Bienvenida"
+
+#: templates/event-2.html:143
+msgid "09:30 AM – Opening Keynote: AI in Modern Enterprises"
+msgstr "09:30 de la mañana – Conferencia Inaugural: IA en Empresas Modernas"
+
+#: templates/event-2.html:144
+msgid "10:30 AM – Business Process Automation with AI"
+msgstr "10:30 de la mañana – Automatización de Procesos de Negocio con IA"
+
+#: templates/event-2.html:145 templates/event-7.html:128
+#: templates/event-8.html:116
+msgid "12:00 PM – Lunch & Networking"
+msgstr "12:00 de la tarde – Almuerzo y Networking"
+
+#: templates/event-2.html:146
+msgid "01:30 PM – Industry Case Studies & Success Stories"
+msgstr "01:30 de la tarde – Estudios de Caso de la Industria e Historias de Éxito"
+
+#: templates/event-2.html:147
+msgid "03:30 PM – Panel Discussion & Executive Q&A"
+msgstr "03:30 de la tarde – Panel de Discusión y Preguntas y Respuestas Ejecutivas"
+
+#: templates/event-2.html:154 templates/event-7.html:137
+msgid "Laptop or Tablet"
+msgstr "Portátil o Tablet"
+
+#: templates/event-2.html:155
+msgid "Access to Corporate Email"
+msgstr "Acceso a Correo Corporativo"
+
+#: templates/event-2.html:171
+msgid "Sarah White"
+msgstr "Sarah White"
+
+#: templates/event-2.html:172
+msgid "AI Solutions Architect, AI-Solution"
+msgstr "Arquitecta de Soluciones de IA, AI-Solution"
+
+#: templates/event-2.html:183
+msgid "Rose Mitchell"
+msgstr "Rose Mitchell"
+
+#: templates/event-2.html:185
+msgid "Head of Digital Transformation, TechCorp"
+msgstr "Directora de Transformación Digital, TechCorp"
+
+#: templates/event-2.html:208
+msgid "Emily Ross"
+msgstr "Emily Ross"
+
+#: templates/event-2.html:209
+msgid "AI Business Consultant, TechCorp"
+msgstr "Consultora de Negocios de IA, TechCorp"
+
+#: templates/event-2.html:219
+msgid "Jackson Morello"
+msgstr "Jackson Morello"
+
+#: templates/event-2.html:220
+msgid "AI Strategy Lead, TechCorp"
+msgstr "Líder de Estrategia de IA, TechCorp"
+
+#: templates/event-7.html:6
+#, fuzzy
+msgid "AI-Solution | Events | AI Kickoff Seminar"
+msgstr "Seminario de Lanzamiento de IA"
+
+#: templates/event-7.html:94
+msgid "AI Kickoff Seminar"
+msgstr "Seminario de Lanzamiento de IA"
+
+#: templates/event-7.html:97
+msgid ""
+"An introductory seminar on AI hosted by AI-Solution, covering key "
+"concepts and real-world applications for beginners."
+msgstr ""
+"Un seminario introductorio sobre IA organizado por AI-Solution, cubriendo"
+" conceptos clave y aplicaciones del mundo real para principiantes."
+
+#: templates/event-7.html:99
+msgid "Dec 25, 2025"
+msgstr "25 dic, 2025"
+
+#: templates/event-7.html:101
+msgid "Uncommon | Liverpool Street | London"
+msgstr "Poco común | Liverpool Street | Londres"
+
+#: templates/event-7.html:106 templates/event-8.html:94
+msgid "Past Event"
+msgstr "Evento Pasado"
+
+#: templates/event-7.html:118
+msgid ""
+"The AI Kickoff Seminar was designed for professionals and enthusiasts who"
+" are new to artificial intelligence. Participants learned the basics of "
+"AI, including key concepts, terminology, and introductory applications "
+"across various business functions. The seminar provided an excellent "
+"foundation for future AI initiatives."
+msgstr ""
+"El Seminario de Lanzamiento de IA fue diseñado para profesionales y "
+"entusiastas que son nuevos en la inteligencia artificial. Los "
+"participantes aprendieron los conceptos básicos de IA, incluyendo "
+"conceptos clave, terminología y aplicaciones introductorias en varias "
+"funciones de negocio. El seminario proporcionó una excelente base para "
+"futuras iniciativas de IA."
+
+#: templates/event-7.html:125
+msgid "09:00 AM – Welcome & Introduction"
+msgstr "09:00 de la mañana – Bienvenida e Introducción"
+
+#: templates/event-7.html:126
+msgid "09:30 AM – AI Fundamentals Overview"
+msgstr "09:30 de la mañana – Visión General de Fundamentos de IA"
+
+#: templates/event-7.html:127
+msgid "10:30 AM – Case Studies of AI Applications"
+msgstr "10:30 de la mañana – Estudios de Caso de Aplicaciones de IA"
+
+#: templates/event-7.html:129
+msgid "01:00 PM – Hands-On Demo Session"
+msgstr "01:00 de la tarde – Sesión de Demostración Práctica"
+
+#: templates/event-7.html:130
+msgid "03:00 PM – Q&A and Closing Remarks"
+msgstr "03:00 de la tarde – Preguntas y Respuestas y Comentarios de Cierre"
+
+#: templates/event-7.html:152 templates/event-8.html:141
+msgid "Janah Inido"
+msgstr "Janah Inido"
+
+#: templates/event-7.html:153 templates/event-8.html:142
+msgid "Chief AI Officer, AI-Solution"
+msgstr "Director de IA, AI-Solution"
+
+#: templates/event-7.html:176
+msgid "Nolan Obinou"
+msgstr "Nolan Obinou"
+
+#: templates/event-7.html:177
+msgid "AI Project Manager, AI-Solution"
+msgstr "Gerente de Proyectos de IA, AI-Solution"
+
+#: templates/event-7.html:252 templates/event-8.html:183
+msgid "Load More"
+msgstr "Cargar Más"
+
+#: templates/event-8.html:6
+#, fuzzy
+msgid "AI-Solution | Events | Data Science Bootcamp"
+msgstr "Bootcamp de Ciencia de Datos"
+
+#: templates/event-8.html:84
+msgid "Data Science Bootcamp"
+msgstr "Bootcamp de Ciencia de Datos"
+
+#: templates/event-8.html:87
+msgid ""
+"Practical data science skills workshop hosted by AI-Solution, with hands-"
+"on exercises to build real-world data expertise."
+msgstr ""
+"Taller de habilidades prácticas de ciencia de datos organizado por AI-"
+"Solution, con ejercicios prácticos para construir experiencia en datos "
+"del mundo real."
+
+#: templates/event-8.html:89
+msgid "Dec 20, 2025"
+msgstr "20 dic, 2025"
+
+#: templates/event-8.html:91
+msgid "Innovation Hub | Manchester"
+msgstr "Centro de Innovación | Mánchester"
+
+#: templates/event-8.html:106
+msgid ""
+"The Data Science Bootcamp provided participants with practical skills to "
+"analyze, visualize, and derive insights from data. Attendees worked with "
+"real datasets and learned industry-standard tools to implement effective "
+"data-driven solutions."
+msgstr ""
+"El Bootcamp de Ciencia de Datos proporcionó a los participantes "
+"habilidades prácticas para analizar, visualizar y obtener información de "
+"los datos. Los asistentes trabajaron con conjuntos de datos reales y "
+"aprendieron herramientas estándar de la industria para implementar "
+"soluciones efectivas basadas en datos."
+
+#: templates/event-8.html:113
+msgid "09:00 AM – Registration & Welcome"
+msgstr "09:00 de la mañana – Registro y Bienvenida"
+
+#: templates/event-8.html:114
+msgid "09:30 AM – Introduction to Data Science"
+msgstr "09:30 de la mañana – Introducción a la Ciencia de Datos"
+
+#: templates/event-8.html:115
+msgid "10:30 AM – Hands-On Data Cleaning"
+msgstr "10:30 de la mañana – Limpieza de Datos Práctica"
+
+#: templates/event-8.html:117
+msgid "01:00 PM – Data Analysis & Visualization"
+msgstr "01:00 de la tarde – Análisis y Visualización de Datos"
+
+#: templates/event-8.html:118
+msgid "03:00 PM – Real-World Case Studies"
+msgstr "03:00 de la tarde – Estudios de Caso del Mundo Real"
+
+#: templates/event-8.html:119
+msgid "04:30 PM – Q&A and Closing Remarks"
+msgstr "04:30 de la tarde – Preguntas y Respuestas y Comentarios de Cierre"
+
+#: templates/event-8.html:126
+msgid "Laptop with Python / R installed"
+msgstr "Portátil con Python / R instalado"
+
+#: templates/event-8.html:135
+msgid "Mark Nilen"
+msgstr "Mark Nilen"
+
+#: templates/event-8.html:136
+msgid "Chief Technology Officer, AI-Solution"
+msgstr "Director de Tecnología, AI-Solution"
+
+#: templates/event-8.html:147
+msgid "Robert Wilson"
+msgstr "Robert Wilson"
+
+#: templates/event-8.html:148
+msgid "Senior Data Analyst, AI-Solution"
+msgstr "Analista de Datos Senior, AI-Solution"
+
+#: templates/events.html:151
+msgid "View and Join our events"
+msgstr "Ver y Unirse a nuestros eventos"
+
+#: templates/events.html:155
+msgid ""
+"Join us for workshops, webinars, and conferences on AI solutions and "
+"digital transformation."
+msgstr ""
+"Únase a nosotros para talleres, webinars y conferencias sobre soluciones "
+"de IA y transformación digital."
+
+#: templates/events.html:162
+msgid "Explore Events"
+msgstr "Explorar Eventos"
+
+#: templates/events.html:171 templates/events.html:295
+msgid "Featured Event"
+msgstr "Evento Destacado"
+
+#: templates/events.html:192
+msgid "Upcoming"
+msgstr "Próximos"
+
+#: templates/events.html:202
+msgid "Past"
+msgstr "Pasados"
+
+#: templates/events.html:221 templates/events.html:297
+msgid "Loading events..."
+msgstr "Cargando eventos..."
+
+#: templates/events.html:228 templates/events.html:303
+msgid "Load More Events"
+msgstr "Cargar Más Eventos"
+
+#: templates/events.html:237
+msgid "Learn More About AI-Solution"
+msgstr "Aprende Más Sobre AI-Solution"
+
+#: templates/events.html:239
+msgid ""
+"Discover how AI-Solution can transform your business with innovative AI-"
+"powered solutions and digital workplace enhancements."
+msgstr ""
+"Descubre cómo AI-Solution puede transformar tu negocio con soluciones "
+"innovadoras impulsadas por IA y mejoras del lugar de trabajo digital."
+
+#: templates/events.html:243 templates/events.html:304
+msgid "Learn More"
+msgstr "Aprende Más"
+
+#: templates/events.html:259
+msgid "AI-powered solutions to enhance digital employee experience."
+msgstr ""
+"Soluciones impulsadas por IA para mejorar la experiencia digital de los "
+"empleados."
+
+#: templates/events.html:275 templates/privacy-policy.html:74
+#: templates/privacy-policy.html:203 templates/reviews.html:457
+msgid "Privacy Policy"
+msgstr "Política de Privacidad"
+
+#: templates/events.html:288 templates/privacy-policy.html:216
+msgid "All rights reserved."
+msgstr "Todos los derechos reservados."
+
+#: templates/events.html:298
+msgid "No upcoming events found."
+msgstr "No se encontraron eventos próximos."
+
+#: templates/events.html:299
+msgid "No past events found."
+msgstr "No se encontraron eventos pasados."
+
+#: templates/events.html:300
+msgid "Check back soon for new events and workshops."
+msgstr "Vuelva pronto para ver nuevos eventos y talleres."
+
+#: templates/events.html:301
+msgid "Error loading events. Please try again later."
+msgstr "Error al cargar eventos. Por favor intente más tarde."
+
+#: templates/events.html:302
+msgid "Loading..."
+msgstr "Cargando..."
+
+#: templates/events.html:305
+#, python-format
+msgid "%(count)s upcoming events"
+msgstr "%(count)s próximos eventos"
+
+#: templates/events.html:306
+#, python-format
+msgid "%(count)s past events"
+msgstr "%(count)s eventos pasados"
+
+#: templates/events.html:307
+msgid "TBD"
+msgstr "Por determinar"
+
+#: templates/home.html:117 templates/solutions.html:132
+msgid "AI Solutions for the Future of Work"
+msgstr "Soluciones de IA para el Futuro del Trabajo"
+
+#: templates/home.html:120 templates/solutions.html:136
+msgid ""
+"AI-Solution leverages intelligent software to proactively support "
+"employees, accelerate innovation, and improve digital workplace "
+"experiences."
+msgstr ""
+"AI-Solution aprovecha software inteligente para apoyar proactivamente a "
+"los empleados, acelerar la innovación y mejorar las experiencias del "
+"lugar de trabajo digital."
+
+#: templates/home.html:126 templates/solutions.html:143
+#: templates/task-automation.html:157 templates/virtual-work.html:209
+msgid "Contact us now"
+msgstr "Contáctanos ahora"
+
+#: templates/home.html:145 templates/solutions.html:499
+msgid "Industries We Transform with AI"
+msgstr "Industrias que Transformamos con IA"
+
+#: templates/home.html:162 templates/solutions.html:513
+msgid "Education"
+msgstr "Educación"
+
+#: templates/home.html:163
+msgid "Smarter learning systems"
+msgstr "Sistemas de aprendizaje más inteligentes"
+
+#: templates/home.html:178 templates/solutions.html:521
+msgid "Healthcare"
+msgstr "Sanidad"
+
+#: templates/home.html:179
+msgid "AI-driven patient support"
+msgstr "Soporte de pacientes impulsado por IA"
+
+#: templates/home.html:194 templates/solutions.html:529
+msgid "Manufacturing"
+msgstr "Fabricación"
+
+#: templates/home.html:195
+msgid "Predictive operations"
+msgstr "Operaciones predictivas"
+
+#: templates/home.html:210 templates/solutions.html:537
+msgid "IT & Software"
+msgstr "TI y Software"
+
+#: templates/home.html:211
+msgid "Enhanced digital experience"
+msgstr "Experiencia digital mejorada"
+
+#: templates/home.html:226 templates/solutions.html:545
+msgid "Finance"
+msgstr "Finanzas"
+
+#: templates/home.html:227
+msgid "Secure, intelligent systems"
+msgstr "Sistemas inteligentes y seguros"
+
+#: templates/home.html:238 templates/solutions.html:152
+msgid "Our Solutions"
+msgstr "Nuestras Soluciones"
+
+#: templates/home.html:253 templates/smart-assistant.html:6
+#: templates/smart-assistant.html:98 templates/solutions.html:172
+msgid "Smart Assistant"
+msgstr "Asistente Inteligente"
+
+#: templates/home.html:255 templates/solutions.html:174
+msgid "Enhances employee productivity with AI-driven assistance."
+msgstr "Mejora la productividad de los empleados con asistencia impulsada por IA."
+
+#: templates/home.html:260 templates/home.html:284 templates/home.html:308
+#: templates/home.html:332 templates/solutions.html:177
+#: templates/solutions.html:197 templates/solutions.html:217
+#: templates/solutions.html:239
+msgid "Explore more"
+msgstr "Explorar más"
+
+#: templates/home.html:277 templates/solutions.html:192
+#: templates/solutions.html:375
+msgid "Proactive Issue Resolution"
+msgstr "Resolución Proactiva de Problemas"
+
+#: templates/home.html:279 templates/solutions.html:194
+msgid "Identify and resolve workplace issues before they impact operations."
+msgstr ""
+"Identificar y resolver problemas laborales antes de que impacten las "
+"operaciones."
+
+#: templates/home.html:301 templates/solutions.html:212
+msgid "AI Prototyping Solutions"
+msgstr "Soluciones de Prototipado de IA"
+
+#: templates/home.html:303 templates/solutions.html:214
+msgid "Rapid and affordable prototyping for innovative software solutions."
+msgstr "Prototipado rápido y asequible de soluciones de software innovadoras."
+
+#: templates/home.html:329 templates/solutions.html:236
+msgid "Tailored AI solutions for sectors like healthcare, finance, and IT."
+msgstr "Soluciones de IA adaptadas para sectores como salud, finanzas y TI."
+
+#: templates/home.html:354
+msgid "Customer Trust"
+msgstr "Confianza del Cliente"
+
+#: templates/home.html:357
+msgid "Trusted by professionals across industries"
+msgstr "Confiado por profesionales en diversas industrias"
+
+#: templates/home.html:360
+msgid "Verified feedback from customers who use AI-Solution in real workflows."
+msgstr ""
+"Comentarios verificados de clientes que usan AI-Solution en flujos de "
+"trabajo reales."
+
+#: templates/home.html:371
+msgid "Average customer rating"
+msgstr "Calificación promedio de clientes"
+
+#: templates/home.html:393
+msgid "Based on"
+msgstr "Basado en"
+
+#: templates/home.html:393
+msgid "verified reviews"
+msgstr "reseñas verificadas"
+
+#: templates/home.html:398
+msgid "Reviews collected from verified professionals across multiple industries."
+msgstr "Reseñas recopiladas de profesionales verificados de múltiples industrias."
+
+#: templates/home.html:431
+msgid "Verified customer"
+msgstr "Cliente verificado"
+
+#: templates/home.html:753
+msgid "No articles available."
+msgstr "No hay artículos disponibles."
+
+#: templates/home.html:818 templates/smart-assistant.html:371
+#: templates/solutions.html:653
+msgid ""
+"Innovating the future of digital employee experience with AI-powered "
+"solutions."
+msgstr ""
+"Innovando el futuro de la experiencia del empleado digital con soluciones"
+" impulsadas por IA."
+
+#: templates/news-1.html:6 templates/news-2.html:6
+#, fuzzy
+msgid "News"
+msgstr "Noticias 4"
+
+#: templates/news-1.html:94
+msgid "Published on Dec 15, 2025 | Reported by TechRadar"
+msgstr "Publicado el 15 de diciembre de 2025 | Reportado por TechRadar"
+
+#: templates/news-1.html:104
+msgid ""
+"AI-Solution has formed a strategic partnership with a leading technology "
+"firm to drive adoption of advanced AI tools across industries. This "
+"collaboration will deliver intelligent solutions that boost efficiency, "
+"enhance productivity, and elevate employee experiences in modern digital "
+"workplaces."
+msgstr ""
+"AI-Solution ha formado una asociación estratégica con una empresa "
+"tecnológica líder para impulsar la adopción de herramientas de IA "
+"avanzadas en todas las industrias. Esta colaboración entregará soluciones"
+" inteligentes que aumentarán la eficiencia, mejorarán la productividad y "
+"elevarán las experiencias de los empleados en los lugares de trabajo "
+"digitales modernos."
+
+#: templates/news-1.html:109
+msgid "Collaboration Overview"
+msgstr "Resumen de la Colaboración"
+
+#: templates/news-1.html:112
+msgid ""
+"The partnership focuses on deploying AI-powered assistants, proactive "
+"issue resolution tools, and industry-specific solutions within enterprise"
+" workflows. Both companies aim to deliver seamless and scalable AI "
+"experiences that enhance operational efficiency and empower employees to "
+"focus on strategic initiatives."
+msgstr ""
+"La asociación se centra en implementar asistentes potenciados por IA, "
+"herramientas de resolución proactiva de problemas y soluciones "
+"específicas de la industria dentro de los flujos de trabajo "
+"empresariales. Ambas empresas buscan entregar experiencias de IA fluidas "
+"y escalables que mejoren la eficiencia operativa y capaciten a los "
+"empleados para centrarse en iniciativas estratégicas."
+
+#: templates/news-1.html:123
+msgid "Impact on Businesses"
+msgstr "Impacto en las Empresas"
+
+#: templates/news-1.html:126
+msgid ""
+"Companies adopting these AI solutions can expect faster task automation, "
+"reduced errors, and improved employee engagement. Solutions are tailored "
+"for industries including healthcare, finance, manufacturing, and IT, "
+"ensuring measurable results and meaningful transformation."
+msgstr ""
+"Las empresas que adoptan estas soluciones de IA pueden esperar "
+"automatización más rápida de tareas, reducción de errores y mejora del "
+"compromiso de los empleados. Las soluciones están adaptadas para "
+"industrias incluyendo salud, finanzas, manufactura e TI, asegurando "
+"resultados medibles y transformación significativa."
+
+#: templates/news-1.html:131
+msgid "Future Prospects"
+msgstr "Perspectivas Futuras"
+
+#: templates/news-1.html:134
+msgid ""
+"As artificial intelligence continues to evolve, organizations will "
+"increasingly rely on intelligent solutions to drive digital "
+"transformation. AI-Solution remains dedicated to innovation, delivering "
+"practical, cutting-edge AI tools that empower companies to stay "
+"competitive and forward-thinking."
+msgstr ""
+"A medida que la inteligencia artificial continúa evolucionando, las "
+"organizaciones dependerán cada vez más de soluciones inteligentes para "
+"impulsar la transformación digital. AI-Solution permanece dedicada a la "
+"innovación, entregando herramientas de IA prácticas y de vanguardia que "
+"capacitan a las empresas a mantenerse competitivas y con visión de "
+"futuro."
+
+#: templates/news-1.html:143 templates/news-2.html:143
+msgid "Other News"
+msgstr "Otras Noticias"
+
+#: templates/news-2.html:94
+msgid "Published on Feb 10, 2025 | Reported by AI-Solution News Team"
+msgstr ""
+"Publicado el 10 de febrero de 2025 | Reportado por el equipo de noticias "
+"de AI-Solution"
+
+#: templates/news-2.html:104
+msgid ""
+"AI-Solution has officially launched a major upgrade to its Smart "
+"Assistant platform, delivering enhanced intelligence, faster response "
+"times, and deeper integration across enterprise workflows. This upgrade "
+"reinforces AI-Solution's commitment to building practical, scalable AI "
+"tools that elevate the digital employee experience."
+msgstr ""
+"AI-Solution ha lanzado oficialmente una actualización importante de su "
+"plataforma de Asistente Inteligente, entregando inteligencia mejorada, "
+"tiempos de respuesta más rápidos y una integración más profunda en los "
+"flujos de trabajo empresariales. Esta actualización refuerza el "
+"compromiso de AI-Solution de construir herramientas de IA prácticas y "
+"escalables que elevan la experiencia del empleado digital."
+
+#: templates/news-2.html:109
+msgid "What's New in Smart Assistant Upgrade"
+msgstr "Qué hay de nuevo en la actualización del asistente inteligente"
+
+#: templates/news-2.html:112
+msgid ""
+"The upgraded Smart Assistant introduces advanced natural language "
+"understanding, improved contextual awareness, and seamless integration "
+"with internal systems such as HR platforms, IT service tools, and "
+"enterprise knowledge bases. These enhancements allow employees to "
+"complete tasks, retrieve information, and resolve issues faster than ever"
+" before."
+msgstr ""
+"El Asistente Inteligente actualizado introduce comprensión avanzada del "
+"lenguaje natural, conciencia contextual mejorada e integración fluida con"
+" sistemas internos como plataformas de RRHH, herramientas de servicios de"
+" TI y bases de conocimiento empresariales. Estas mejoras permiten a los "
+"empleados completar tareas, recuperar información y resolver problemas "
+"más rápido que nunca."
+
+#: templates/news-2.html:117
+msgid "AI-Solution Smart Assistant Upgrade Interface"
+msgstr "Interfaz de actualización del asistente inteligente de AI-Solution"
+
+#: templates/news-2.html:123
+msgid "How Businesses Benefit from Upgrade"
+msgstr "Cómo se benefician las empresas de la actualización"
+
+#: templates/news-2.html:126
+msgid ""
+"Organizations using the upgraded Smart Assistant benefit from faster "
+"issue resolution, reduced manual workload, and improved employee "
+"productivity. By automating repetitive interactions and providing real-"
+"time assistance, AI-Solution helps teams focus on strategic work while "
+"maintaining consistent and reliable support across departments."
+msgstr ""
+"Las organizaciones que usan el Asistente Inteligente actualizado se "
+"benefician de resolución más rápida de problemas, reducción de carga de "
+"trabajo manual y mejora de la productividad de los empleados. Al "
+"automatizar interacciones repetitivas y proporcionar asistencia en tiempo"
+" real, AI-Solution ayuda a los equipos a centrarse en el trabajo "
+"estratégico mientras mantiene soporte consistente y confiable entre "
+"departamentos."
+
+#: templates/news-2.html:131
+msgid "AI-Solution's Vision for Intelligent Assistance"
+msgstr "Visión de AI-Solution para asistencia inteligente"
+
+#: templates/news-2.html:134
+msgid ""
+"This Smart Assistant upgrade represents another step in AI-Solution's "
+"long-term vision to deliver proactive, intelligent workplace support. As "
+"AI capabilities continue to advance, AI-Solution remains focused on "
+"developing user-centric solutions that adapt to business needs, scale "
+"with growth, and enable smarter ways of working."
+msgstr ""
+"Esta actualización del Asistente Inteligente representa otro paso en la "
+"visión a largo plazo de AI-Solution de entregar soporte proactivo e "
+"inteligente en el lugar de trabajo. A medida que las capacidades de IA "
+"continúan avanzando, AI-Solution permanece enfocada en desarrollar "
+"soluciones centradas en el usuario que se adaptan a las necesidades "
+"empresariales, escalan con el crecimiento y permiten formas más "
+"inteligentes de trabajar."
+
+#: templates/news-2.html:153
+msgid "News 1"
+msgstr "Noticias 1"
+
+#: templates/news-2.html:157
+msgid "Dec 15, 2025"
+msgstr "15 de diciembre de 2025"
+
+#: templates/news-2.html:176
+msgid "News 3"
+msgstr "Noticias 3"
+
+#: templates/news-2.html:199
+msgid "News 4"
+msgstr "Noticias 4"
+
+#: templates/privacy-policy.html:7
+#, fuzzy
+msgid "AI-Solution | Privacy Policy"
+msgstr "AI-Solution | Reseñas"
+
+#: templates/privacy-policy.html:76
+msgid ""
+"At AI-Solution, we value your privacy and are committed to protecting "
+"your personal information."
+msgstr ""
+"En AI-Solution, valoramos su privacidad y estamos comprometidos a "
+"proteger su información personal."
+
+#: templates/privacy-policy.html:77
+msgid ""
+"This page explains how we collect, use, and safeguard data you provide, "
+"including reviews."
+msgstr ""
+"Esta página explica cómo recopilamos, utilizamos y protegemos los datos "
+"que usted proporciona, incluyendo reseñas."
+
+#: templates/privacy-policy.html:87
+msgid "1. Overview"
+msgstr "1. Resumen"
+
+#: templates/privacy-policy.html:89
+msgid ""
+"This Privacy Policy explains how AI-Solution collects, processes, and "
+"protects your personal data,"
+msgstr ""
+"Esta Política de Privacidad explica cómo AI-Solution recopila, procesa y "
+"protege sus datos personales,"
+
+#: templates/privacy-policy.html:90
+msgid ""
+"including information you provide when submitting reviews, inquiries, or "
+"registrations."
+msgstr ""
+"incluyendo la información que usted proporciona al enviar reseñas, "
+"consultas o registros."
+
+#: templates/privacy-policy.html:96
+msgid "2. Information We Collect"
+msgstr "2. Información que Recopilamos"
+
+#: templates/privacy-policy.html:98
+msgid "Personal details like name, email, job title, and company."
+msgstr "Detalles personales como nombre, correo electrónico, cargo y empresa."
+
+#: templates/privacy-policy.html:99
+msgid "Review content, rating, and industry information."
+msgstr "Contenido de reseña, calificación e información de industria."
+
+#: templates/privacy-policy.html:100
+msgid "Usage data and analytics to improve our website and services."
+msgstr "Datos de uso y análisis para mejorar nuestro sitio web y servicios."
+
+#: templates/privacy-policy.html:101
+msgid "Consent records when you agree to data processing."
+msgstr "Registros de consentimiento cuando usted acepta el procesamiento de datos."
+
+#: templates/privacy-policy.html:107
+msgid "3. How We Use Your Data"
+msgstr "3. Cómo Usamos Sus Datos"
+
+#: templates/privacy-policy.html:109
+msgid "To display and manage customer reviews on our website."
+msgstr "Para mostrar y gestionar reseñas de clientes en nuestro sitio web."
+
+#: templates/privacy-policy.html:110
+msgid "To respond to inquiries and provide requested services."
+msgstr "Para responder a consultas y proporcionar servicios solicitados."
+
+#: templates/privacy-policy.html:111
+msgid "To improve our products, services, and website functionality."
+msgstr "Para mejorar nuestros productos, servicios y funcionalidad del sitio web."
+
+#: templates/privacy-policy.html:112
+msgid "To comply with legal obligations and protect our rights."
+msgstr "Para cumplir con las obligaciones legales y proteger nuestros derechos."
+
+#: templates/privacy-policy.html:118
+msgid "4. Review Submissions"
+msgstr "4. Envío de Reseñas"
+
+#: templates/privacy-policy.html:120
+msgid ""
+"When you submit a review, you may choose to display your personal "
+"information or submit anonymously."
+msgstr ""
+"Cuando envía una reseña, puede elegir mostrar su información personal o "
+"enviarla de forma anónima."
+
+#: templates/privacy-policy.html:121
+msgid "Your review content, rating, and industry may be published on our website."
+msgstr ""
+"El contenido de su reseña, calificación e industria pueden ser publicados"
+" en nuestro sitio web."
+
+#: templates/privacy-policy.html:124
+msgid ""
+"By checking consent box when submitting a review, you explicitly agree to"
+" the processing and"
+msgstr ""
+"Al marcar la casilla de consentimiento al enviar una reseña, usted acepta"
+" explícitamente el procesamiento y"
+
+#: templates/privacy-policy.html:125
+msgid "display of your review in accordance with this Privacy Policy."
+msgstr "visualización de su reseña de acuerdo con esta Política de Privacidad."
+
+#: templates/privacy-policy.html:128
+msgid ""
+"You can submit your review anonymously, in which case your personal "
+"details will not be displayed."
+msgstr ""
+"Puede enviar su reseña de forma anónima, en cuyo caso sus detalles "
+"personales no serán mostrados."
+
+#: templates/privacy-policy.html:129
+msgid ""
+"Your review may be used for testimonials, analytics, and marketing "
+"purposes."
+msgstr ""
+"Su reseña puede ser utilizada para testimonios, análisis y fines de "
+"marketing."
+
+#: templates/privacy-policy.html:130
+msgid "You can contact us to request deletion of your review at any time."
+msgstr ""
+"Puede contactarnos para solicitar la eliminación de su reseña en "
+"cualquier momento."
+
+#: templates/privacy-policy.html:136
+msgid "5. Sharing Your Information"
+msgstr "5. Compartir su Información"
+
+#: templates/privacy-policy.html:138
+msgid ""
+"We do not sell your personal data. Information may be shared with trusted"
+" service providers for website"
+msgstr ""
+"No vendemos sus datos personales. La información puede ser compartida con"
+" proveedores de servicios de confianza para el sitio web"
+
+#: templates/privacy-policy.html:139
+msgid "management or legal compliance purposes only."
+msgstr "gestión o cumplimiento legal únicamente."
+
+#: templates/privacy-policy.html:145
+msgid "6. Data Retention"
+msgstr "6. Retención de Datos"
+
+#: templates/privacy-policy.html:147
+msgid ""
+"Personal information and reviews are retained only as long as necessary "
+"to fulfill the purposes outlined"
+msgstr ""
+"La información personal y las reseñas se conservan solo mientras sea "
+"necesario para cumplir los propósitos descritos"
+
+#: templates/privacy-policy.html:148
+msgid "above or as required by law."
+msgstr "anterior o según lo requiera la ley."
+
+#: templates/privacy-policy.html:154
+msgid "7. Your Rights"
+msgstr "7. Sus Derechos"
+
+#: templates/privacy-policy.html:156
+msgid "You can request access, correction, or deletion of your personal data."
+msgstr "Puede solicitar acceso, corrección o eliminación de sus datos personales."
+
+#: templates/privacy-policy.html:157
+msgid "You can withdraw consent for review processing at any time."
+msgstr ""
+"Puede retirar el consentimiento para el procesamiento de reseñas en "
+"cualquier momento."
+
+#: templates/privacy-policy.html:158
+msgid "Contact us at"
+msgstr "Contáctenos en"
+
+#: templates/privacy-policy.html:159
+msgid "for privacy-related requests."
+msgstr "para solicitudes relacionadas con la privacidad."
+
+#: templates/privacy-policy.html:165
+msgid "8. Updates to This Policy"
+msgstr "8. Actualizaciones de esta Política"
+
+#: templates/privacy-policy.html:167
+msgid ""
+"We may update this Privacy Policy periodically. We recommend checking "
+"this page regularly to stay"
+msgstr ""
+"Podemos actualizar esta Política de Privacidad periódicamente. "
+"Recomendamos verificar esta página regularmente para mantenerse"
+
+#: templates/privacy-policy.html:168
+msgid "informed"
+msgstr "informado"
+
+#: templates/privacy-policy.html:169
+msgid "about how we process your data."
+msgstr "sobre cómo procesamos sus datos."
+
+#: templates/privacy-policy.html:176
+msgid "Back to Reviews"
+msgstr "Volver a Reseñas"
+
+#: templates/privacy-policy.html:187
+msgid "AI-powered solutions to enhance the digital employee experience."
+msgstr ""
+"Soluciones impulsadas por IA para mejorar la experiencia del empleado "
+"digital."
+
+#: templates/register.html:105
+msgid "Join"
+msgstr "Únase a"
+
+#: templates/register.html:108
+msgid "Date"
+msgstr "Fecha"
+
+#: templates/register.html:108
+msgid "Location"
+msgstr "Ubicación"
+
+#: templates/register.html:118
+msgid "Event Registration"
+msgstr "Registro de Evento"
+
+#: templates/register.html:176
+msgid "Innovating the future of digital employee experience with"
+msgstr "Innovando el futuro de la experiencia del empleado digital con"
+
+#: templates/register.html:177
+msgid "AI-powered solutions."
+msgstr "soluciones impulsadas por IA."
+
+#: templates/register.html:131
+msgid "Email"
+msgstr "Correo Electrónico"
+
+#: templates/register.html:132
+msgid "Enter your email"
+msgstr "Ingrese su correo electrónico"
+
+#: templates/register.html:139
+msgid "Company"
+msgstr "Empresa"
+
+#: templates/register.html:140
+msgid "Enter your company name"
+msgstr "Ingrese el nombre de su empresa"
+
+#: templates/register.html:150
+msgid "Message"
+msgstr "Mensaje"
+
+#: templates/register.html:151
+msgid "Any questions or expectations?"
+msgstr "¿Alguna pregunta o expectativa?"
+
+#: templates/register.html:159
+msgid "Confirm Registration"
+msgstr "Confirmar Registro"
+
+#: templates/register.html:176
+msgid "Innovating the future of digital employee experience with"
+msgstr "Innovando el futuro de la experiencia del empleado digital con"
+
+#: templates/register.html:177
+msgid "AI-powered solutions."
+msgstr "soluciones impulsadas por IA."
+
+#: templates/reviews.html:6
+msgid "AI-Solution | Reviews"
+msgstr "AI-Solution | Reseñas"
+
+#: templates/reviews.html:222
+msgid "Customer Reviews & Feedback"
+msgstr "Reseñas y Comentarios de Clientes"
+
+#: templates/reviews.html:225
+msgid ""
+"See how AI-Solution transforms workplaces with intelligent AI tools. View"
+" customer experiences or share your own feedback."
+msgstr ""
+"Descubra cómo AI-Solution transforma los lugares de trabajo con "
+"herramientas de IA inteligentes. Vea las experiencias de los clientes o "
+"comparta sus propios comentarios."
+
+#: templates/reviews.html:231
+msgid "Give a Review"
+msgstr "Dejar una Reseña"
+
+#: templates/reviews.html:239
+msgid "Reviews Hero"
+msgstr "Héroe de Reseñas"
+
+#: templates/reviews.html:250
+msgid "Customer Reviews"
+msgstr "Reseñas de Clientes"
+
+#: templates/reviews.html:262
+msgid "Load More Reviews"
+msgstr "Cargar Más Reseñas"
+
+#: templates/reviews.html:275
+msgid "Submit Your Review"
+msgstr "Enviar su Reseña"
+
+#: templates/reviews.html:278
+msgid "Share your experience with AI-Solution"
+msgstr "Comparta su experiencia con AI-Solution"
+
+#: templates/reviews.html:287
+msgid "Review Visibility"
+msgstr "Visibilidad de la Reseña"
+
+#: templates/reviews.html:299
+msgid "Public"
+msgstr "Público"
+
+#: templates/reviews.html:309
+msgid "Anonymous"
+msgstr "Anónimo"
+
+#: templates/reviews.html:316
+msgid "Your name and job title will be displayed."
+msgstr "Su nombre y cargo serán mostrados."
+
+#: templates/reviews.html:414
+msgid "Rating"
+msgstr "Calificación"
+
+#: templates/reviews.html:431
+msgid "Feedback"
+msgstr "Comentarios"
+
+#: templates/reviews.html:438
+msgid "Please share how your experience with AI-Solution has been"
+msgstr "Por favor comparta cómo ha sido su experiencia con AI-Solution"
+
+#: templates/reviews.html:441
+msgid "Minimum 30 characters."
+msgstr "Mínimo 30 caracteres."
+
+#: templates/reviews.html:452
+msgid "I consent to the processing of my review in accordance with the"
+msgstr "Consiento el procesamiento de mi reseña de acuerdo con la"
+
+#: templates/reviews.html:467
+msgid "Submit Feedback"
+msgstr "Enviar Comentarios"
+
+#: templates/reviews.html:636
+msgid "Your identity will not be displayed with this review."
+msgstr "Su identidad no será mostrada con esta reseña."
+
+#: templates/reviews.html:639
+msgid "Your name, job title, and company name will be displayed."
+msgstr "Su nombre, cargo y nombre de empresa serán mostrados."
+
+#: templates/smart-assistant.html:100
+msgid "Smart Assistant Solutions"
+msgstr "Soluciones de Asistente Inteligente"
+
+#: templates/smart-assistant.html:103
+msgid ""
+"Intelligent AI assistants designed to support employees, automate tasks, "
+"and improve productivity across digital workplaces."
+msgstr ""
+"Asistentes de IA inteligentes diseñados para apoyar a los empleados, "
+"automatizar tareas y mejorar la productividad en lugares de trabajo "
+"digitales."
+
+#: templates/smart-assistant.html:112
+msgid "What Are Smart Assistant Solutions?"
+msgstr "¿Qué Son las Soluciones de Asistente Inteligente?"
+
+#: templates/smart-assistant.html:115
+msgid ""
+"Our Smart Assistant solutions use artificial intelligence to proactively "
+"support employees in their daily workflows. These tools reduce manual "
+"effort, streamline communication, and enhance the overall digital "
+"employee experience."
+msgstr ""
+"Nuestras soluciones de Asistente Inteligente utilizan inteligencia "
+"artificial para apoyar proactivamente a los empleados en sus flujos de "
+"trabajo diarios. Estas herramientas reducen el esfuerzo manual, agilizan "
+"la comunicación y mejoran la experiencia general del empleado digital."
+
+#: templates/smart-assistant.html:125
+msgid "Available Smart Assistant Solutions"
+msgstr "Soluciones de Asistente Inteligente Disponibles"
+
+#: templates/smart-assistant.html:128
+msgid "Explore our AI-powered assistant solutions designed for modern teams."
+msgstr ""
+"Explora nuestras soluciones de asistente impulsadas por IA diseñadas para"
+" equipos modernos."
+
+#: templates/smart-assistant.html:146 templates/task-automation.html:173
+#: templates/virtual-work.html:6 templates/virtual-work.html:95
+msgid "Virtual Work Assistant"
+msgstr "Asistente de Trabajo Virtual"
+
+#: templates/smart-assistant.html:148
+msgid "AI assistant for managing tasks, schedules, and workplace queries."
+msgstr "Asistente de IA para gestionar tareas, horarios y consultas laborales."
+
+#: templates/smart-assistant.html:166 templates/task-automation.html:7
+#: templates/task-automation.html:73 templates/virtual-work.html:231
+msgid "Task Automation Assistant"
+msgstr "Asistente de Automatización de Tareas"
+
+#: templates/smart-assistant.html:168
+msgid "Automates repetitive workflows to focus on high-value work."
+msgstr ""
+"Automatiza flujos de trabajo repetitivos para centrarse en trabajo de "
+"alto valor."
+
+#: templates/smart-assistant.html:186 templates/task-automation.html:184
+#: templates/virtual-work.html:248
+msgid "Knowledge Assistant"
+msgstr "Asistente de Conocimiento"
+
+#: templates/smart-assistant.html:188
+msgid "Provides instant access to company knowledge and documentation."
+msgstr ""
+"Proporciona acceso instantáneo al conocimiento y documentación de la "
+"empresa."
+
+#: templates/smart-assistant.html:206 templates/task-automation.html:194
+#: templates/virtual-work.html:265
+msgid "Email Assistant"
+msgstr "Asistente de Correo Electrónico"
+
+#: templates/smart-assistant.html:208
+msgid "AI-powered email triage and response suggestions to save time."
+msgstr ""
+"Clasificación de correo electrónico impulsada por IA y sugerencias de "
+"respuesta para ahorrar tiempo."
+
+#: templates/smart-assistant.html:226
+msgid "Meeting Assistant"
+msgstr "Asistente de Reuniones"
+
+#: templates/smart-assistant.html:228
+msgid "AI summarizes meetings, tracks action items, and sends reminders."
+msgstr "La IA resume reuniones, rastrea elementos de acción y envía recordatorios."
+
+#: templates/smart-assistant.html:246
+msgid "Personal Coach Assistant"
+msgstr "Asistente de Entrenador Personal"
+
+#: templates/smart-assistant.html:248
+msgid ""
+"Provides AI-driven tips for productivity, skill improvement, and workflow"
+" optimization."
+msgstr ""
+"Proporciona consejos impulsados por IA para productividad, mejora de "
+"habilidades y optimización de flujos de trabajo."
+
+#: templates/smart-assistant.html:266
+msgid "AI Scheduler Assistant"
+msgstr "Asistente de Programador IA"
+
+#: templates/smart-assistant.html:268
+msgid ""
+"Intelligently schedules meetings, tasks, and reminders to optimize "
+"workflow."
+msgstr ""
+"Programa inteligentemente reuniones, tareas y recordatorios para "
+"optimizar el flujo de trabajo."
+
+#: templates/smart-assistant.html:286
+msgid "Voice Assistant"
+msgstr "Asistente de Voz"
+
+#: templates/smart-assistant.html:288
+msgid ""
+"Hands-free AI assistant that manages tasks and commands via voice "
+"interaction."
+msgstr ""
+"Asistente de IA manos libres que gestiona tareas y comandos mediante "
+"interacción de voz."
+
+#: templates/smart-assistant.html:306
+msgid "Analytics Assistant"
+msgstr "Asistente de Análisis"
+
+#: templates/smart-assistant.html:308
+msgid "AI-powered insights and recommendations to optimize business processes."
+msgstr ""
+"Perspectivas y recomendaciones impulsadas por IA para optimizar procesos "
+"comerciales."
+
+#: templates/smart-assistant.html:321
+msgid "Benefits of Smart Assistant Solutions"
+msgstr "Beneficios de las Soluciones de Asistente Inteligente"
+
+#: templates/smart-assistant.html:328
+msgid "Increased Productivity"
+msgstr "Productividad Aumentada"
+
+#: templates/smart-assistant.html:331 templates/task-automation.html:208
+msgid ""
+"Reduce time spent on repetitive tasks and enable employees to focus on "
+"meaningful work."
+msgstr ""
+"Reduce el tiempo dedicado a tareas repetitivas y permite a los empleados "
+"centrarse en trabajo significativo."
+
+#: templates/smart-assistant.html:337
+msgid "Proactive Support"
+msgstr "Soporte Proactivo"
+
+#: templates/smart-assistant.html:340
+msgid ""
+"AI-driven assistance that anticipates needs and provides support before "
+"issues arise."
+msgstr ""
+"Asistencia impulsada por IA que anticipa necesidades y proporciona "
+"soporte antes de que surjan problemas."
+
+#: templates/smart-assistant.html:346
+msgid "Improved Employee Experience"
+msgstr "Experiencia del Empleado Mejorada"
+
+#: templates/smart-assistant.html:349
+msgid ""
+"Create a smoother, more intuitive digital workplace for employees across "
+"teams."
+msgstr ""
+"Crea un lugar de trabajo digital más fluido e intuitivo para empleados en"
+" todos los equipos."
+
+#: templates/solutions.html:155
+msgid "Click on a category to explore more specific solutions."
+msgstr "Haz clic en una categoría para explorar soluciones más específicas."
+
+#: templates/solutions.html:250
+msgid "How Our Solutions Work"
+msgstr "Cómo Funcionan Nuestras Soluciones"
+
+#: templates/solutions.html:253
+msgid "A structured, AI-driven approach to solving digital workplace challenges."
+msgstr ""
+"Un enfoque estructurado y impulsado por IA para resolver desafíos del "
+"lugar de trabajo digital."
+
+#: templates/solutions.html:266
+msgid "Understand Challenge"
+msgstr "Comprender el Desafío"
+
+#: templates/solutions.html:269
+msgid ""
+"We analyse digital workplace challenges and identify opportunities for "
+"AI-driven improvement."
+msgstr ""
+"Analizamos los desafíos del lugar de trabajo digital e identificamos "
+"oportunidades de mejora impulsadas por IA."
+
+#: templates/solutions.html:279
+msgid "Design Intelligent Solutions"
+msgstr "Diseñar Soluciones Inteligentes"
+
+#: templates/solutions.html:282
+msgid ""
+"AI-powered solutions are designed to proactively support employees and "
+"systems."
+msgstr ""
+"Las soluciones impulsadas por IA están diseñadas para respaldar "
+"proactivamente a los empleados y los sistemas."
+
+#: templates/solutions.html:292
+msgid "Rapid Prototyping"
+msgstr "Prototipado Rápido"
+
+#: templates/solutions.html:295
+msgid ""
+"Affordable and fast AI prototyping validates ideas before full-scale "
+"implementation."
+msgstr ""
+"El prototipado de IA rápido y asequible valida ideas antes de la "
+"implementación a gran escala."
+
+#: templates/solutions.html:305
+msgid "Continuous Improvement"
+msgstr "Mejora Continua"
+
+#: templates/solutions.html:308
+msgid "Solutions evolve through feedback, monitoring, and AI-driven insights."
+msgstr ""
+"Las soluciones evolucionan a través de comentarios, monitoreo e ideas "
+"impulsadas por IA."
+
+#: templates/solutions.html:317
+msgid "Why Choose AI-Solution"
+msgstr "¿Por Qué Elegir AI-Solution?"
+
+#: templates/solutions.html:319
+msgid ""
+"Our AI solutions are designed to deliver measurable value for your "
+"business."
+msgstr ""
+"Nuestras soluciones de IA están diseñadas para entregar valor medible "
+"para tu negocio."
+
+#: templates/solutions.html:347
+msgid "Enhanced Employee Experience"
+msgstr "Experiencia de Empleado Mejorada"
+
+#: templates/solutions.html:350
+msgid "AI-driven tools proactively support employees in their daily workflows."
+msgstr ""
+"Las herramientas impulsadas por IA respaldan proactivamente a los "
+"empleados en sus flujos de trabajo diarios."
+
+#: templates/solutions.html:378
+msgid "Identify and resolve issues before they impact productivity or operations."
+msgstr ""
+"Identificar y resolver problemas antes de que impacten la productividad o"
+" las operaciones."
+
+#: templates/solutions.html:403
+msgid "Rapid Innovation"
+msgstr "Innovación Rápida"
+
+#: templates/solutions.html:406
+msgid "Affordable AI prototyping accelerates design, engineering, and innovation."
+msgstr ""
+"El prototipado de IA asequible acelera el diseño, la ingeniería y la "
+"innovación."
+
+#: templates/solutions.html:431
+msgid "Scalable Architecture"
+msgstr "Arquitectura Escalable"
+
+#: templates/solutions.html:434
+msgid "Solutions that grow with your organization and evolving digital needs."
+msgstr ""
+"Soluciones que crecen con tu organización y las necesidades digitales "
+"evolutivas."
+
+#: templates/solutions.html:459
+msgid "Industry-Focused Design"
+msgstr "Diseño Enfocado en la Industria"
+
+#: templates/solutions.html:462
+msgid "Tailored AI solutions aligned with industry-specific requirements."
+msgstr ""
+"Soluciones de IA personalizadas alineadas con requisitos específicos de "
+"la industria."
+
+#: templates/solutions.html:487
+msgid "Secure & Reliable"
+msgstr "Seguro y Confiable"
+
+#: templates/solutions.html:490
+msgid "Built with security, reliability, and data protection at core."
+msgstr ""
+"Construido con seguridad, confiabilidad y protección de datos en el "
+"núcleo."
+
+#: templates/solutions.html:501
+msgid "Our AI solutions are adaptable across multiple industries."
+msgstr "Nuestras soluciones de IA son adaptables a múltiples industrias."
+
+#: templates/solutions.html:554
+msgid "Built on Trust & Expertise"
+msgstr "Construido en Confianza y Experiencia"
+
+#: templates/solutions.html:557
+msgid ""
+"Our solutions are designed with reliability, transparency, and real-world"
+" impact in mind."
+msgstr ""
+"Nuestras soluciones están diseñadas con confiabilidad, transparencia e "
+"impacto del mundo real en mente."
+
+#: templates/solutions.html:579
+msgid "Human-Centered AI"
+msgstr "IA Centrada en Humanos"
+
+#: templates/solutions.html:582
+msgid "Solutions built to support people at work, not replace them."
+msgstr ""
+"Soluciones construidas para respaldar a las personas en el trabajo, no "
+"reemplazarlas."
+
+#: templates/solutions.html:603
+msgid "Security by Design"
+msgstr "Seguridad por Diseño"
+
+#: templates/solutions.html:606
+msgid "Data protection and secure architecture are embedded at every stage."
+msgstr ""
+"La protección de datos y la arquitectura segura están integradas en cada "
+"etapa."
+
+#: templates/solutions.html:627
+msgid "Scalable & Future-Ready"
+msgstr "Escalable y Preparado para el Futuro"
+
+#: templates/solutions.html:630
+msgid "AI solutions designed to grow alongside evolving business needs."
+msgstr ""
+"Soluciones de IA diseñadas para crecer junto con las necesidades "
+"comerciales evolutivas."
+
+#: templates/task-automation.html:76
+msgid ""
+"Automate repetitive workflows and operational tasks with intelligent AI "
+"agents."
+msgstr ""
+"Automatiza flujos de trabajo repetitivos y tareas operativas con agentes "
+"de IA inteligentes."
+
+#: templates/task-automation.html:87 templates/virtual-work.html:113
+msgid "Overview"
+msgstr "Descripción General"
+
+#: templates/task-automation.html:89
+msgid ""
+"The Task Automation Assistant is designed to eliminate manual, repetitive"
+" work by automating routine business processes across departments."
+msgstr ""
+"El Asistente de Automatización de Tareas está diseñado para eliminar el "
+"trabajo manual y repetitivo automatizando procesos comerciales rutinarios"
+" en todos los departamentos."
+
+#: templates/task-automation.html:92
+msgid ""
+"From approvals and data entry to workflow orchestration, it enables teams"
+" to operate faster, reduce errors, and focus on high-value initiatives."
+msgstr ""
+"Desde aprobaciones y entrada de datos hasta orquestación de flujos de "
+"trabajo, permite a los equipos operar más rápido, reducir errores y "
+"centrarse en iniciativas de alto valor."
+
+#: templates/task-automation.html:101 templates/virtual-work.html:126
+msgid "Key Features"
+msgstr "Características Clave"
+
+#: templates/task-automation.html:111
+msgid "Workflow Automation"
+msgstr "Automatización de Flujos de Trabajo"
+
+#: templates/task-automation.html:113
+msgid ""
+"Automates end-to-end workflows including approvals, escalations, and "
+"notifications."
+msgstr ""
+"Automatiza flujos de trabajo de extremo a extremo incluyendo "
+"aprobaciones, escalaciones y notificaciones."
+
+#: templates/task-automation.html:124
+msgid "System Integration"
+msgstr "Integración de Sistemas"
+
+#: templates/task-automation.html:126
+msgid ""
+"Seamlessly integrates with enterprise systems, CRMs, ERPs, and internal "
+"tools."
+msgstr ""
+"Se integra perfectamente con sistemas empresariales, CRMs, ERPs y "
+"herramientas internas."
+
+#: templates/task-automation.html:137
+msgid "Intelligent Rule Engine"
+msgstr "Motor de Reglas Inteligente"
+
+#: templates/task-automation.html:139
+msgid ""
+"Executes business rules dynamically based on conditions, priorities, and "
+"data inputs."
+msgstr ""
+"Ejecuta reglas comerciales dinámicamente basadas en condiciones, "
+"prioridades y entradas de datos."
+
+#: templates/task-automation.html:149
+msgid "Automate More. Work Smarter."
+msgstr "Automatiza Más. Trabaja Más Inteligentemente."
+
+#: templates/task-automation.html:152
+msgid ""
+"Discover how task automation can streamline operations and scale "
+"productivity."
+msgstr ""
+"Descubre cómo la automatización de tareas puede agilizar operaciones y "
+"escalar la productividad."
+
+#: templates/task-automation.html:163 templates/virtual-work.html:215
+msgid "Explore Other Smart Assistant Solutions"
+msgstr "Explora Otras Soluciones de Asistente Inteligente"
+
+#: templates/virtual-work.html:98
+msgid ""
+"Streamline tasks, schedules, and queries with an AI-powered virtual "
+"assistant."
+msgstr ""
+"Agiliza tareas, horarios y consultas con un asistente virtual impulsado "
+"por IA."
+
+#: templates/virtual-work.html:115
+msgid ""
+"The Virtual Work Assistant helps employees manage their daily tasks, "
+"schedule meetings, and retrieve company knowledge efficiently using AI-"
+"powered tools."
+msgstr ""
+"El Asistente de Trabajo Virtual ayuda a los empleados a gestionar sus "
+"tareas diarias, programar reuniones y recuperar conocimiento empresarial "
+"de manera eficiente utilizando herramientas impulsadas por IA."
+
+#: templates/virtual-work.html:118
+msgid ""
+"It increases productivity, reduces errors, and automates repetitive tasks"
+" to free up valuable time for strategic work."
+msgstr ""
+"Aumenta la productividad, reduce errores y automatiza tareas repetitivas "
+"para liberar tiempo valioso para trabajo estratégico."
+
+#: templates/virtual-work.html:144
+msgid "Task Management"
+msgstr "Gestión de Tareas"
+
+#: templates/virtual-work.html:146
+msgid ""
+"Automates daily task assignments and tracking to save time and improve "
+"efficiency."
+msgstr ""
+"Automatiza asignaciones y seguimiento de tareas diarias para ahorrar "
+"tiempo y mejorar la eficiencia."
+
+#: templates/virtual-work.html:163
+msgid "Scheduling"
+msgstr "Programación"
+
+#: templates/virtual-work.html:165
+msgid ""
+"Optimizes meetings and appointments, integrating with calendars "
+"automatically."
+msgstr "Optimiza reuniones y citas, integrándose con calendarios automáticamente."
+
+#: templates/virtual-work.html:182
+msgid "Knowledge Retrieval"
+msgstr "Recuperación de Conocimiento"
+
+#: templates/virtual-work.html:184
+msgid "Instantly retrieves company documentation and guidelines using AI search."
+msgstr ""
+"Recupera instantáneamente documentación y directrices de la empresa "
+"utilizando búsqueda de IA."
+
+#: templates/virtual-work.html:197
+msgid "Ready to Transform Your Workplace?"
+msgstr "¿Listo para Transformar tu Lugar de Trabajo?"
+
+#: templates/virtual-work.html:200
+msgid ""
+"Contact us today to implement this AI solution and boost productivity in "
+"your organization."
+msgstr ""
+"Contáctanos hoy para implementar esta solución de IA y aumentar la "
+"productividad en tu organización."
+
+#~ msgid "Based on 0 verified reviews →"
+#~ msgstr "Basado en 0 reseñas verificadas →"
+
+#~ msgid "AI Solutions Built for Future of Work"
+#~ msgstr "Soluciones de IA Construidas para el Futuro del Trabajo"
+
+#~ msgid ""
+#~ "Discover intelligent, scalable AI solutions"
+#~ " designed to enhance productivity, resolve"
+#~ " issues proactively, and support digital"
+#~ " employees across industries."
+#~ msgstr ""
+#~ "Descubre soluciones de IA inteligentes y"
+#~ " escalables diseñadas para mejorar la "
+#~ "productividad, resolver problemas proactivamente "
+#~ "y respaldar a los empleados digitales"
+#~ " en diversas industrias."
+
+#~ msgid "Contact us"
+#~ msgstr "Contáctanos"
+
+#~ msgid "Our Solution Categories"
+#~ msgstr "Nuestras Categorías de Soluciones"
+
+#~ msgid "AI tools to streamline daily tasks and enhance productivity."
+#~ msgstr ""
+#~ "Herramientas de IA para optimizar tareas"
+#~ " diarias y mejorar la productividad."
+
+#~ msgid "Prevent and resolve issues before they impact your operations."
+#~ msgstr "Prevenir y resolver problemas antes de que impacten tus operaciones."
+
+#~ msgid "Rapid and affordable prototyping for innovative AI software."
+#~ msgstr "Prototipado rápido y asequible para software de IA innovador."
+
+#~ msgid "Customized AI solutions tailored for your industry needs."
+#~ msgstr ""
+#~ "Soluciones de IA personalizadas adaptadas "
+#~ "a las necesidades de tu industria."
+
+#~ msgid "Industries We Support"
+#~ msgstr "Industrias que Apoyamos"
+
+#~ msgid "No reviews yet."
+#~ msgstr "No hay reseñas aún."
+
+#~ msgid "review"
+#~ msgstr "reseña"
+
+#~ msgid "s"
+#~ msgstr "s"
+
+#~ msgid "→"
+#~ msgstr ""
+
+#~ msgid "Benefits of Task Automation Solutions"
+#~ msgstr "Beneficios de las Soluciones de Automatización de Tareas"
+
+#~ msgid "Improved Accuracy"
+#~ msgstr "Precisión Mejorada"
+
+#~ msgid "Enhanced Customer Experience"
+#~ msgstr "Experiencia del Cliente Mejorada"
+
+#~ msgid "Partnership AI"
+#~ msgstr "IA de Asociación"
+
+#~ msgid "News 2"
+#~ msgstr "Noticias 2"
+
+#~ msgid "No reviews yet. Be the first to share your experience!"
+#~ msgstr "¡Aún no hay reseñas. ¡Sé el primero en compartir tu experiencia!"
+
+#~ msgid "verified review"
+#~ msgstr "reseña verificada"
+
+#~ msgid "January"
+#~ msgstr "enero"
+
+#~ msgid "February"
+#~ msgstr "febrero"
+
+#~ msgid "March"
+#~ msgstr "marzo"
+
+#~ msgid "April"
+#~ msgstr "abril"
+
+#~ msgid "May"
+#~ msgstr "mayo"
+
+#~ msgid "June"
+#~ msgstr "junio"
+
+#~ msgid "July"
+#~ msgstr "julio"
+
+#~ msgid "August"
+#~ msgstr "agosto"
+
+#~ msgid "September"
+#~ msgstr "septiembre"
+
+#~ msgid "October"
+#~ msgstr "octubre"
+
+#~ msgid "November"
+#~ msgstr "noviembre"
+
+#~ msgid "December"
+#~ msgstr "diciembre"
+
+#~ msgid ""
+#~ "Join AI-Solution for an exciting "
+#~ "kickoff seminar introducing the latest "
+#~ "AI innovations for digital workplaces."
+#~ msgstr ""
+#~ "Únase a AI-Solution para un "
+#~ "emocionante seminario de lanzamiento "
+#~ "presentando las últimas innovaciones de "
+#~ "IA para lugares de trabajo digitales."
+
+#~ msgid ""
+#~ "Join AI-Solution for an intensive "
+#~ "hands-on bootcamp covering essential data"
+#~ " science techniques and AI applications."
+#~ msgstr ""
+#~ "Únase a AI-Solution para un "
+#~ "bootcamp intensivo y práctico que cubre"
+#~ " técnicas esenciales de ciencia de "
+#~ "datos y aplicaciones de IA."
+
+#~ msgid "09:00 AM - Registration & Welcome Coffee"
+#~ msgstr "09:00 de la mañana - Registro y Café de Bienvenida"
+
+#~ msgid "09:30 AM - Opening Keynote: AI in Modern Enterprises"
+#~ msgstr "09:30 de la mañana - Conferencia Inaugural: IA en Empresas Modernas"
+
+#~ msgid "10:30 AM - Business Process Automation with AI"
+#~ msgstr "10:30 de la mañana - Automatización de Procesos de Negocio con IA"
+
+#~ msgid "12:00 PM - Lunch & Networking"
+#~ msgstr "12:00 de la tarde - Almuerzo y Networking"
+
+#~ msgid "01:30 PM - Industry Case Studies & Success Stories"
+#~ msgstr ""
+#~ "01:30 de la tarde - Estudios de"
+#~ " Casos de la Industria e Historias"
+#~ " de Éxito"
+
+#~ msgid "CEO, AI-Solution"
+#~ msgstr "CEO, AI-Solution"
+
+#~ msgid "Michael Chen"
+#~ msgstr "Michael Chen"
+
+#~ msgid "CTO, TechCorp"
+#~ msgstr "CTO, TechCorp"
+
+#~ msgid "Emily Rodriguez"
+#~ msgstr "Emily Rodriguez"
+
+#~ msgid "VP of Operations, AI-Solution"
+#~ msgstr "VP de Operaciones, AI-Solution"
+
+#~ msgid "David Kim"
+#~ msgstr "David Kim"
+
+#~ msgid "Head of AI Research, TechCorp"
+#~ msgstr "Jefe de Investigación de IA, TechCorp"
+
+#~ msgid "Lisa Thompson"
+#~ msgstr "Lisa Thompson"
+
+msgid "Please specify your industry."
+msgstr "Por favor especifique su industria."
+
+msgid "Please specify your requirement."
+msgstr "Por favor especifique su requisito."
+
+msgid "Thanks for your inquiry! We will get back to you within 4 working days."
+msgstr "¡Gracias por su consulta! Nos pondremos en contacto con usted dentro de 4 días hábiles."
+
+msgid "Registration successful! You will be informed with event details in your email. Thank you."
+msgstr "¡Registro exitoso! Se le informará con los detalles del evento en su correo electrónico. Gracias."
+
+msgid "Oops! Something went wrong. Please try again later."
+msgstr "¡Ups! Algo salió mal. Por favor inténtelo de nuevo más tarde."
+
+msgid "Please provide your consent to submit a review."
+msgstr "Por favor proporcione su consentimiento para enviar una reseña."
+
+msgid "Please select a rating."
+msgstr "Por favor seleccione una calificación."
+
+msgid "Our Location"
+msgstr "Nuestra Ubicación"
+
+msgid "Visit our headquarters in Sunderland, where innovation meets excellence."
+msgstr "Visita nuestra sede en Sunderland, donde la innovación se encuentra con la excelencia."
+
+msgid "Headquarters"
+msgstr "Sede Principal"
+
+msgid "Sunderland, United Kingdom"
+msgstr "Sunderland, Reino Unido"
+
+msgid "Strategically located in heart of Sunderland's innovation district."
+msgstr "Estratégicamente ubicada en el corazón del distrito de innovación de Sunderland."
+
+msgid "Office Hours"
+msgstr "Horario de Oficina"
+
+msgid "Monday - Friday"
+msgstr "Lunes - Viernes"
+
+msgid "Saturday"
+msgstr "Sábado"
+
+msgid "Sunday"
+msgstr "Domingo"
+
+msgid "Closed"
+msgstr "Cerrado"
+
+msgid "Find Us in Sunderland"
+msgstr "Encuéntrenos en Sunderland"
+
+msgid "Our modern office space is designed to foster collaboration and innovation."
+msgstr "Nuestro espacio de oficina moderno está diseñado para fomentar la colaboración y la innovación."
+
+msgid "Get Directions"
+msgstr "Obtener Direcciones"
+
+msgid "9:00 AM"
+msgstr "9:00 de la mañana"
+
+msgid "6:00 PM"
+msgstr "6:00 de la tarde"
+
+msgid "10:00 AM"
+msgstr "10:00 de la mañana"
+
+msgid "2:00 PM"
+msgstr "2:00 de la tarde"
+
+msgid "Failed to submit review."
+msgstr "Error al enviar la reseña."
+
+msgid "¡Gracias por su reseña! Ha sido enviada exitosamente."
+msgstr "¡Gracias por su reseña! Ha sido enviada exitosamente."
+
+msgid "Feb 10, 2025"
+msgstr "10 de feb. de 2025"
+
+msgid "Mar 22, 2025"
+msgstr "22 de mar. de 2025"
+
+msgid "Jan 21, 2026"
+msgstr "21 de ene. de 2026"
+
+msgid "Product Manager, AI-Solution"
+msgstr "Gerente de Producto, AI-Solution"
+
+msgid "AI Product Designer, AI-Solutions"
+msgstr "Diseñador de Producto de IA, AI-Solutions"
+
+msgid "Lead AI Engineer, AI-Solution"
+msgstr "Ingeniero Principal de IA, AI-Solution"
+
+msgid "Software Engineer"
+msgstr "Ingeniero de Software"
+
+msgid "UX/UI Designer"
+msgstr "Diseñador UX/UI"
+
+msgid "Senior Data Analyst"
+msgstr "Analista de Datos Senior"
+
+msgid "Marketing Lead"
+msgstr "Líder de Marketing"
+
+msgid "Business Analyst"
+msgstr "Analista de Negocios"
+
+msgid "HR Manager"
+msgstr "Gerente de RRHH"
+
+msgid "AI Product Designer"
+msgstr "Diseñador de Producto de IA"
+
+#~ msgid "Director of Digital Transformation"
+#~ msgstr "Directora de Transformación Digital"
+
+#~ msgid "James Wilson"
+#~ msgstr "James Wilson"
+
+#~ msgid "Senior Data Scientist"
+#~ msgstr "Científico de Datos Senior"
+
+#~ msgid "Sarah Chen"
+#~ msgstr "Sarah Chen"
+
+#~ msgid "Robert Martinez"
+#~ msgstr "Robert Martinez"
+
+#~ msgid "Emily Davis"
+#~ msgstr "Emily Davis"
+
+#~ msgid "Liam Roberts"
+#~ msgstr "Liam Roberts"
+
+#~ msgid "Sophia Martinez"
+#~ msgstr "Sophia Martinez"
+
+#~ msgid "Data Science Lead, TechCorp"
+#~ msgstr "Líder de Ciencia de Datos, TechCorp"
+
+#~ msgid "Senior AI Consultant"
+#~ msgstr "Consultor Senior de IA"
+
+#~ msgid "Machine Learning Engineer"
+#~ msgstr "Ingeniero de Machine Learning"
+
+#~ msgid "Data Scientist, AI-Solution"
+#~ msgstr "Científico de Datos, AI-Solution"
+
+#~ msgid "Machine Learning Engineer, AI-Solution"
+#~ msgstr "Ingeniero de Machine Learning, AI-Solution"
+
+#~ msgid "A certain company"
+#~ msgstr "Una cierta empresa"
+
+#~ msgid "Data Analyst"
+#~ msgstr "Analista de Datos"
+
+#~ msgid "HR Specialist"
+#~ msgstr "Especialista en RRHH"
+
+#~ msgid "IT Manager"
+#~ msgstr "Gerente de TI"
+
+#~ msgid "Marketing Lead"
+#~ msgstr "Líder de Marketing"
+
+#~ msgid "Operations Manager"
+#~ msgstr "Gerente de Operaciones"
+
+#~ msgid "Sales Executive"
+#~ msgstr "Ejecutivo de Ventas"
+
+#~ msgid "Senior HR Officer"
+#~ msgstr "Oficial Superior de RRHH"
+
+#~ msgid "Software Engineer"
+#~ msgstr "Ingeniero de Software"
+
+#~ msgid "Someone"
+#~ msgstr "Alguien"
+
+#~ msgid "Logistics & Supply Chain"
+#~ msgstr "Logística y Cadena de Suministro"
+
+#~ msgid "Retail & E-commerce"
+#~ msgstr "Minorista y Comercio Electrónico"
+
+#~ msgid "Technology"
+#~ msgstr "Tecnología"
+

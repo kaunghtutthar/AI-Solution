@@ -1,0 +1,93 @@
+<!-- Language Switcher Component - Floating top-right -->
+<div id="language-switcher" class="fixed top-24 right-6 z-[60]">
+  <div class="relative">
+    <button id="language-switcher-btn" class="bg-white text-gray-700 p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 border border-gray-200 hover:border-primary cursor-pointer pointer-events-auto">
+      <img id="current-lang-flag" src="/static/images/flags/us.svg" alt="English" class="w-5 h-3.5 rounded-sm object-cover">
+      <span id="current-lang-text" class="text-sm font-medium">English</span>
+      <svg class="w-4 h-4 transition-transform" id="lang-dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </button>
+    
+    <!-- Language Dropdown Menu -->
+    <div id="language-dropdown-menu" class="hidden absolute top-full right-0 mt-2 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden min-w-[140px] z-[60]">
+    <div class="py-1">
+      <a href="/set_language/en" class="language-option w-full px-3 py-2 text-left hover:bg-gray-100 transition-colors duration-150 flex items-center gap-3 text-gray-800 no-underline">
+        <img src="/static/images/flags/us.svg" alt="English" class="w-6 h-4 rounded-sm object-cover">
+        <span class="text-sm font-medium">English</span>
+      </a>
+      <a href="/set_language/es" class="language-option w-full px-3 py-2 text-left hover:bg-gray-100 transition-colors duration-150 flex items-center gap-3 text-gray-800 no-underline">
+        <img src="/static/images/flags/es.svg" alt="Español" class="w-6 h-4 rounded-sm object-cover">
+        <span class="text-sm font-medium">Español</span>
+      </a>
+      <a href="/set_language/zh" class="language-option w-full px-3 py-2 text-left hover:bg-gray-100 transition-colors duration-150 flex items-center gap-3 text-gray-800 no-underline">
+        <img src="/static/images/flags/cn.svg" alt="中文" class="w-6 h-4 rounded-sm object-cover">
+        <span class="text-sm font-medium">中文</span>
+      </a>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const switcherBtn = document.getElementById('language-switcher-btn');
+  const dropdown = document.getElementById('language-dropdown-menu');
+  const dropdownArrow = document.getElementById('lang-dropdown-arrow');
+  const currentFlag = document.getElementById('current-lang-flag');
+  const currentLangText = document.getElementById('current-lang-text');
+  
+  // Update display based on current page language
+  function updateCurrentLanguageDisplay() {
+    const currentLang = document.documentElement.lang || 'en';
+    const langConfig = {
+      'en': { flag: '/static/images/flags/us.svg', text: 'English' },
+      'es': { flag: '/static/images/flags/es.svg', text: 'Español' },
+      'zh': { flag: '/static/images/flags/cn.svg', text: '中文' }
+    };
+    
+    if (langConfig[currentLang]) {
+      currentFlag.src = langConfig[currentLang].flag;
+      currentFlag.alt = langConfig[currentLang].text;
+      currentLangText.textContent = langConfig[currentLang].text;
+    }
+  }
+  
+  // Initial update
+  updateCurrentLanguageDisplay();
+  
+  if (switcherBtn && dropdown) {
+    // Toggle dropdown
+    switcherBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const isOpen = !dropdown.classList.contains('hidden');
+      if (isOpen) {
+        dropdown.classList.add('hidden');
+        dropdownArrow.style.transform = 'rotate(0deg)';
+      } else {
+        dropdown.classList.remove('hidden');
+        dropdownArrow.style.transform = 'rotate(180deg)';
+      }
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!switcherBtn.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.add('hidden');
+        dropdownArrow.style.transform = 'rotate(0deg)';
+      }
+    });
+  }
+  
+  // Also update when language changes (for dynamic pages)
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'lang') {
+        setTimeout(updateCurrentLanguageDisplay, 50);
+      }
+    });
+  });
+  
+  observer.observe(document.documentElement, { attributes: true });
+});
+</script>

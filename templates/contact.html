@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="{{ get_locale() }}">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ _('AI-Solution | Contact') }}</title>
+
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#015486",
+            secondary: "#EF3451",
+          },
+        },
+      },
+    };
+  </script>
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  
+  <style>
+    .input-modern {
+      width: 100%;
+      border: 1px solid #d1d5db;
+      border-radius: 1rem;
+      padding: 0.75rem 1rem;
+      transition: box-shadow 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .input-modern::placeholder {
+      font-size: 0.875rem;
+      color: #9ca3af;
+    }
+
+    .country-option {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .input-modern:focus {
+      outline: none;
+      border-color: #015486;
+      box-shadow: 0 0 0 2px rgba(1, 84, 134, 0.25);
+    }
+
+    select.input-modern {
+      appearance: none;
+      background-image: url('data:image/svg+xml,<svg fill="%239ca3af" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      background-size: 1em;
+    }
+  </style>
+</head>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
+    form.addEventListener("submit", (e) => {
+      let valid = true;
+
+      
+      document.querySelectorAll(".error-msg").forEach(el => el.remove());
+
+      function showError(input, message) {
+        const msg = document.createElement("p");
+        msg.className = "error-msg text-red-500 text-sm mt-1";
+
+        
+        const errorMessages = {
+          'en': 'This field is required.',
+          'es': 'Este campo es requerido.',
+          'zh': '此字段为必填项。'
+        };
+        
+        const currentLang = document.documentElement.lang || 'en';
+        const errorMessage = errorMessages[currentLang] || errorMessages['en'];
+        
+        msg.innerText = errorMessage;
+        input.parentNode.appendChild(msg);
+        valid = false;
+      }
+
+      
+      const name = form.querySelector("input[name='name']");
+      if (!name.value.trim()) showError(name, "Full Name is required.");
+
+      const email = form.querySelector("input[name='email']");
+      const emailPattern = /^[^@]+@[^@]+\.[^@]+$/;
+      if (!email.value.trim()) showError(email, "Email is required.");
+      else if (!emailPattern.test(email.value.trim())) showError(email, "Enter a valid email.");
+
+      const company = form.querySelector("input[name='company']");
+      if (!company.value.trim()) showError(company, "Company is required.");
+
+      const job = form.querySelector("input[name='job_title']");
+      if (!job.value.trim()) showError(job, "Job Title is required.");
+
+      const countryValue = form.querySelector("input[name='country']");
+      if (!countryValue.value) showError(form.querySelector("#country-field"), "Country is required.");
+
+      const requirementTypeValue = form.querySelector("input[name='requirement_type']");
+      if (!requirementTypeValue.value) showError(form.querySelector("#requirement-type-field"), "Requirement Type is required.");
+
+      const requirementSummary = form.querySelector("input[name='requirement_summary']");
+      if (!requirementSummary.value.trim()) showError(requirementSummary, "Requirement Summary is required.");
+
+      const detailedDesc = form.querySelector("textarea[name='detailed_requirements']");
+      if (!detailedDesc.value.trim() || detailedDesc.value.trim().length < 50)
+        showError(detailedDesc, "Detailed Description must be at least 50 characters.");
+
+      const industryValue = form.querySelector("input[name='industry']");
+      const otherIndustry = form.querySelector("#other-industry-input");
+      if (!industryValue.value) showError(form.querySelector("#industry-field"), "Industry is required.");
+      else if (industryValue.value === "Other" && otherIndustry && !otherIndustry.value.trim())
+        showError(otherIndustry, "Please specify your industry.");
+
+      if (!valid) e.preventDefault();
+    });
+  });
+</script>
+
+<body class="bg-white text-[#383838] font-sans">
+  
+  <div id="toast-container" class="fixed inset-0 flex items-center justify-center z-50 pointer-events-none"></div>
+
+  
+  <div id="flash-messages" class="hidden">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+    <div data-type="{{ category }}">{{ message }}</div>
+    {% endfor %}
+    {% endwith %}
+  </div>
+
+  
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      
+      <img src="/static/images/logo-fit.png" alt="AI-Solution Logo" class="h-10" />
+
+      
+      <nav class="hidden md:flex space-x-8 font-medium">
+        <a href="/" class="hover:text-secondary">{{ _('Home') }}</a>
+        <a href="/solutions" class="hover:text-secondary">{{ _('Solutions') }}</a>
+        <a href="/articles" class="hover:text-secondary">{{ _('Articles') }}</a>
+        <a href="/reviews" class="hover:text-secondary">{{ _('Reviews') }}</a>
+        <a href="/events" class="hover:text-secondary">{{ _('Events') }}</a>
+        <a href="/contact" class="text-secondary font-semibold">{{ _('Contact') }}</a>
+        <a href="/about" class="hover:text-secondary">{{ _('About') }}</a>
+      </nav>
+
+      
+      <button id="menu-btn" class="md:hidden text-2xl text-gray-700 focus:outline-none" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    
+    <nav id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t z-50">
+      <div class="flex flex-col px-6 py-6 space-y-4 font-medium">
+        <a href="/" class="hover:text-secondary">{{ _('Home') }}</a>
+        <a href="/solutions" class="hover:text-secondary">{{ _('Solutions') }}</a>
+        <a href="/articles" class="hover:text-secondary">{{ _('Articles') }}</a>
+        <a href="/reviews" class="hover:text-secondary">{{ _('Reviews') }}</a>
+        <a href="/events" class="hover:text-secondary">{{ _('Events') }}</a>
+        <a href="/contact" class="text-secondary font-semibold">{{ _('Contact') }}</a>
+        <a href="/about" class="hover:text-secondary">{{ _('About') }}</a>
+      </div>
+    </nav>
+  </header>
+
+  
+  <section class="py-24 bg-gradient-to-r from-[#015486] to-[#EF3451] text-white text-center">
+    <div class="max-w-3xl mx-auto px-6 space-y-6">
+      <h1 class="text-5xl font-bold">{{ _('Get in Touch with AI-Solution') }}</h1>
+      <p class="text-lg md:text-xl">
+        {{ _('Share your requirements or inquiries, and our team will get back to you promptly.') }}
+      </p>
+    </div>
+  </section>
+
+  
+  <section id="contact-card" class="py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="relative bg-white rounded-3xl shadow-xl">
+
+        
+        <div class="p-12">
+          
+          <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-primary mb-2">{{ _('Contact Us') }}</h1>
+            <p class="text-gray-600 text-sm">
+              {{ _('Tell us about your inquiry & requirements') }}
+            </p>
+          </div>
+
+          <div class="w-full h-px bg-gray-200 mb-8"></div>
+
+          
+          <div class="text-center mb-8">
+            <p class="text-gray-600 text-sm">{{ _('Please fill out the form in English') }}</p>
+          </div>
+
+          
+          <form action="{{ url_for('submit_contact') }}" method="POST">
+            <div class="flex flex-col lg:flex-row gap-8 items-stretch">
+
+              
+              <div class="flex-1 flex flex-col gap-6">
+                <h2 class="text-2xl font-semibold text-primary">{{ _('Your Contact Details') }}</h2>
+
+                <div class="space-y-4">
+                  <label class="block space-y-1">
+                    <span class="text-gray-700 font-medium">{{ _('Full Name') }} <span class="text-red-500">*</span></span>
+                    <input type="text" name="name" placeholder="{{ _('Enter your full name') }}" class="input-modern" required>
+                  </label>
+
+                  <label class="block space-y-1">
+                    <span class="text-gray-700 font-medium">{{ _('Business Email') }} <span class="text-red-500">*</span></span>
+                    <input type="email" name="email" placeholder="{{ _('Enter your business email') }}" class="input-modern"
+                      required>
+                  </label>
+
+                  <label class="block space-y-1">
+                    <span class="text-gray-700 font-medium">{{ _('Phone Number') }}</span>
+                    <input type="tel" name="phone" id="phone" placeholder="{{ _('Enter your phone number (optional)') }}"
+                      class="input-modern" maxlength="20" oninput="validatePhone(this)">
+                    <p id="phone-error" class="text-red-500 text-sm mt-1 hidden">{{ _('Phone number cannot exceed 20 characters.') }}</p>
+                  </label>
+
+                  <script>
+                    function validatePhone(input) {
+                      const errorMsg = document.getElementById("phone-error");
+                      if (input.value.length > 20) {
+                        errorMsg.classList.remove("hidden");
+                      } else {
+                        errorMsg.classList.add("hidden");
+                      }
+                    }
+                  </script>
+
+                  <label class="block space-y-1">
+                    <span class="text-gray-700 font-medium">{{ _('Company Name') }} <span class="text-red-500">*</span></span>
+                    <input type="text" name="company" placeholder="{{ _('Enter your company name') }}" class="input-modern"
+                      required>
+                  </label>
+
+                  <label class="block space-y-1">
+                    <span class="text-gray-700 font-medium">{{ _('Job Title') }} <span class="text-red-500">*</span></span>
+                    <input type="text" name="job_title" placeholder="{{ _('Your role / position') }}" class="input-modern"
+                      required>
+                  </label>
+
+                  <div class="relative">
+                    <label class="block text-sm font-medium text-gray-700">
+                      {{ _('Industry') }} <span class="text-red-500">*</span>
+                    </label>
+                    <div class="relative">
+                      <div id="industry-field" class="input cursor-pointer flex justify-between items-center">
+                        <span id="selected-industry" class="text-gray-500">{{ _('Select industry') }}</span>
+                        <i class="fas fa-chevron-down text-gray-400"></i>
+                      </div>
+                      <ul id="industry-options"
+                        class="absolute left-0 right-0 mt-1 bg-white border border-gray-200 rounded-xl shadow-lg max-h-60 overflow-y-auto hidden z-50">
+                      </ul>
+                      <input type="hidden" name="industry" id="industry-value">
+                    </div>
+                  </div>
+                  
+                  <input type="text" id="other-industry-input" name="other_industry"
+                    placeholder="{{ _('Please specify your industry') }}" class="input-modern mt-2 hidden">
+
+                  
+                  <div class="relative">
+                    <label class="block font-medium mb-1">{{ _('Country') }} <span class="text-red-500">*</span></label>
+                    <div id="country-field" class="input cursor-pointer flex justify-between items-center">
+                      <span id="selected-country" class="text-gray-500">{{ _('Select your country') }}</span>
+                      <i class="fas fa-chevron-down text-gray-400"></i>
+                    </div>
+                    <ul id="country-options"
+                      class="absolute z-50 mt-1 w-full bg-white border rounded-xl shadow-lg max-h-60 overflow-auto hidden">
+                      
+                    </ul>
+                    <input type="hidden" name="country" id="country-value" required>
+                  </div>
+                  <div class="flex-grow"></div>
+                </div>
+              </div>
+
+              
+              <div class="flex-1 flex flex-col justify-between space-y-6">
+                <h2 class="text-2xl font-semibold text-primary">{{ _('Job / Requirement Details') }}</h2>
+
+                <div class="relative">
+                  <label class="block font-medium mb-1">{{ _('Requirement Type') }} <span class="text-red-500">*</span></label>
+                  <div class="relative">
+                    <div id="requirement-type-field" class="input cursor-pointer flex justify-between items-center">
+                      <span id="selected-requirement-type" class="text-gray-500">{{ _('Select requirement type') }}</span>
+                      <i class="fas fa-chevron-down text-gray-400"></i>
+                    </div>
+                    <ul id="requirement-type-options"
+                      class="absolute left-0 right-0 mt-1 bg-white border border-gray-200 rounded-xl shadow-lg max-h-60 overflow-y-auto hidden z-50">
+                    </ul>
+                    <input type="hidden" name="requirement_type" id="requirement-type-value" required>
+                  </div>
+                </div>
+                <ul id="requirement-type-options"
+                  class="absolute left-0 right-0 mt-1 bg-white border border-gray-200 rounded-xl shadow-lg max-h-60 overflow-y-auto hidden z-50">
+                </ul>
+                <input type="hidden" name="requirement_type" id="requirement-type-value" required>
+
+                
+                <input type="text" id="other-requirement-input" name="other_requirement"
+                  placeholder="{{ _('Please specify your requirement') }}" class="input-modern hidden mt-2">
+
+                <label class="block space-y-1">
+                  <span class="text-gray-700 font-medium">{{ _('Requirement Summary') }} <span class="text-red-500">*</span></span>
+                  <input type="text" name="requirement_summary" placeholder="{{ _('One sentence describing the goal') }}"
+                    class="input-modern" required>
+                </label>
+
+                <label class="block space-y-1">
+                  <span class="text-gray-700 font-medium">{{ _('Brief Description') }} <span class="text-red-500">*</span></span>
+                  <textarea name="detailed_requirements" rows="5"
+                    placeholder="{{ _('Describe your business problem, features, and constraints briefly') }}"
+                    class="input-modern resize-none" minlength="50" required></textarea>
+                  <p class="text-sm text-gray-500 mt-1">{{ _('Minimum 50 characters.') }}</p>
+                </label>
+
+                <h2 class="text-2xl font-bold text-primary mb-4">{{ _('Optional Information') }}</h2>
+
+                <div class="relative">
+                  <label class="block font-medium mb-1">{{ _('Expected Timeline') }}</label>
+                  <div class="relative">
+                    <div id="timeline-field" class="input cursor-pointer flex justify-between items-center">
+                      <span id="selected-timeline" class="text-gray-500">{{ _('Flexible') }}</span>
+                      <i class="fas fa-chevron-down text-gray-400"></i>
+                    </div>
+                    <ul id="timeline-options"
+                      class="absolute left-0 right-0 mt-1 bg-white border border-gray-200 rounded-xl shadow-lg max-h-60 overflow-y-auto hidden z-50">
+                    </ul>
+                    <input type="hidden" name="timeline" id="timeline-value">
+                  </div>
+                </div>
+
+                <div class="relative">
+                  <label class="block font-medium mb-1">{{ _('Budget Range') }}</label>
+                  <div class="relative">
+                    <div id="budget-field" class="input cursor-pointer flex justify-between items-center">
+                      <span id="selected-budget" class="text-gray-500">{{ _('Select budget') }}</span>
+                      <i class="fas fa-chevron-down text-gray-400"></i>
+                    </div>
+                    <ul id="budget-options"
+                      class="absolute left-0 right-0 mt-1 bg-white border border-gray-200 rounded-xl shadow-lg max-h-60 overflow-y-auto hidden z-50">
+                    </ul>
+                    <input type="hidden" name="budget_range" id="budget-value">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="text-center mt-8">
+              <button type="submit"
+                class="bg-gradient-to-r from-primary to-secondary text-white px-16 py-4 rounded-2xl font-semibold hover:opacity-90 transition">
+                {{ _('Submit') }}
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <footer class="bg-gray-100 py-20">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+
+      
+      <div>
+        <h3 class="mb-4 flex items-start">
+          <img src="/static/images/logo-transparent-bg-fit.png" alt="AI-Solution Logo" class="h-12">
+        </h3>
+        <p class="text-gray-600">
+          {{ _('Innovating the future of the digital employee experience with AI-powered solutions.') }}
+        </p>
+      </div>
+
+      
+      <div>
+        <h3 class="text-[#015486] font-bold mb-4">{{ _('Quick Links') }}</h3>
+        <ul class="text-gray-700 space-y-2">
+          <li><a href="/" class="hover:text-[#EF3451] transition">{{ _('Home') }}</a></li>
+          <li><a href="/solutions" class="hover:text-[#EF3451] transition">{{ _('Solutions') }}</a></li>
+          <li><a href="/articles" class="hover:text-[#EF3451] transition">{{ _('Articles') }}</a></li>
+          <li><a href="/reviews" class="hover:text-[#EF3451] transition">{{ _('Reviews') }}</a></li>
+        </ul>
+      </div>
+
+      
+      <div>
+        <h3 class="text-[#015486] font-bold mb-4">{{ _('Pages') }}</h3>
+        <ul class="text-gray-700 space-y-2">
+          <li><a href="/events" class="hover:text-[#EF3451] transition">{{ _('Events') }}</a></li>
+          <li><a href="/contact" class="hover:text-[#EF3451] transition">{{ _('Contact') }}</a></li>
+          <li><a href="/about" class="hover:text-[#EF3451] transition">{{ _('About') }}</a></li>
+        </ul>
+      </div>
+
+      
+      <div>
+        <h3 class="text-[#015486] font-bold mb-4">{{ _('Follow Us') }}</h3>
+        <div class="flex gap-4 text-gray-700">
+          <a href="#" class="text-2xl hover:text-[#EF3451] transition"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-2xl hover:text-[#EF3451] transition"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-2xl hover:text-[#EF3451] transition"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="text-2xl hover:text-[#EF3451] transition"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    
+    <div class="text-center text-gray-500 mt-10">
+      © 2025 {{ _('AI-Solution. All rights reserved.') }}
+    </div>
+  </footer>
+
+</body>
+
+</html>
+
+
+<script>
+  const countryField = document.getElementById("country-field");
+  const countryOptions = document.getElementById("country-options");
+  const selectedCountry = document.getElementById("selected-country");
+  const countryValue = document.getElementById("country-value");
+
+  
+  const countries = [
+    { code: "AF", name: "Afghanistan" },
+    { code: "AL", name: "Albania" },
+    { code: "DZ", name: "Algeria" },
+    { code: "AO", name: "Angola" },
+    { code: "AR", name: "Argentina" },
+    { code: "AM", name: "Armenia" },
+    { code: "AU", name: "Australia" },
+    { code: "AT", name: "Austria" },
+    { code: "AZ", name: "Azerbaijan" },
+    { code: "BD", name: "Bangladesh" },
+    { code: "BY", name: "Belarus" },
+    { code: "BE", name: "Belgium" },
+    { code: "BZ", name: "Belize" },
+    { code: "BJ", name: "Benin" },
+    { code: "BT", name: "Bhutan" },
+    { code: "BO", name: "Bolivia" },
+    { code: "BA", name: "Bosnia and Herzegovina" },
+    { code: "BW", name: "Botswana" },
+    { code: "BR", name: "Brazil" },
+    { code: "BN", name: "Brunei" },
+    { code: "BG", name: "Bulgaria" },
+    { code: "BF", name: "Burkina Faso" },
+    { code: "BI", name: "Burundi" },
+    { code: "KH", name: "Cambodia" },
+    { code: "CM", name: "Cameroon" },
+    { code: "CA", name: "Canada" },
+    { code: "CV", name: "Cape Verde" },
+    { code: "CF", name: "Central African Republic" },
+    { code: "TD", name: "Chad" },
+    { code: "CL", name: "Chile" },
+    { code: "CN", name: "China" },
+    { code: "CO", name: "Colombia" },
+    { code: "KM", name: "Comoros" },
+    { code: "CR", name: "Costa Rica" },
+    { code: "CI", name: "Côte d'Ivoire" },
+    { code: "HR", name: "Croatia" },
+    { code: "CU", name: "Cuba" },
+    { code: "CY", name: "Cyprus" },
+    { code: "CZ", name: "Czech Republic" },
+    { code: "DK", name: "Denmark" },
+    { code: "DJ", name: "Djibouti" },
+    { code: "DO", name: "Dominican Republic" },
+    { code: "EC", name: "Ecuador" },
+    { code: "EG", name: "Egypt" },
+    { code: "SV", name: "El Salvador" },
+    { code: "GQ", name: "Equatorial Guinea" },
+    { code: "ER", name: "Eritrea" },
+    { code: "EE", name: "Estonia" },
+    { code: "ET", name: "Ethiopia" },
+    { code: "FJ", name: "Fiji" },
+    { code: "FI", name: "Finland" },
+    { code: "FR", name: "France" },
+    { code: "GA", name: "Gabon" },
+    { code: "GM", name: "Gambia" },
+    { code: "GE", name: "Georgia" },
+    { code: "DE", name: "Germany" },
+    { code: "GH", name: "Ghana" },
+    { code: "GR", name: "Greece" },
+    { code: "GT", name: "Guatemala" },
+    { code: "GN", name: "Guinea" },
+    { code: "GW", name: "Guinea‑Bissau" },
+    { code: "GY", name: "Guyana" },
+    { code: "HT", name: "Haiti" },
+    { code: "HN", name: "Honduras" },
+    { code: "HU", name: "Hungary" },
+    { code: "IS", name: "Iceland" },
+    { code: "IN", name: "India" },
+    { code: "ID", name: "Indonesia" },
+    { code: "IR", name: "Iran" },
+    { code: "IQ", name: "Iraq" },
+    { code: "IE", name: "Ireland" },
+    { code: "IL", name: "Israel" },
+    { code: "IT", name: "Italy" },
+    { code: "JM", name: "Jamaica" },
+    { code: "JP", name: "Japan" },
+    { code: "JO", name: "Jordan" },
+    { code: "KZ", name: "Kazakhstan" },
+    { code: "KE", name: "Kenya" },
+    { code: "KI", name: "Kiribati" },
+    { code: "KW", name: "Kuwait" },
+    { code: "KG", name: "Kyrgyzstan" },
+    { code: "LA", name: "Laos" },
+    { code: "LV", name: "Latvia" },
+    { code: "LB", name: "Lebanon" },
+    { code: "LS", name: "Lesotho" },
+    { code: "LR", name: "Liberia" },
+    { code: "LY", name: "Libya" },
+    { code: "LI", name: "Liechtenstein" },
+    { code: "LT", name: "Lithuania" },
+    { code: "LU", name: "Luxembourg" },
+    { code: "MG", name: "Madagascar" },
+    { code: "MW", name: "Malawi" },
+    { code: "MY", name: "Malaysia" },
+    { code: "MV", name: "Maldives" },
+    { code: "ML", name: "Mali" },
+    { code: "MT", name: "Malta" },
+    { code: "MH", name: "Marshall Islands" },
+    { code: "MR", name: "Mauritania" },
+    { code: "MU", name: "Mauritius" },
+    { code: "MX", name: "Mexico" },
+    { code: "FM", name: "Micronesia" },
+    { code: "MD", name: "Moldova" },
+    { code: "MC", name: "Monaco" },
+    { code: "MN", name: "Mongolia" },
+    { code: "ME", name: "Montenegro" },
+    { code: "MA", name: "Morocco" },
+    { code: "MZ", name: "Mozambique" },
+    { code: "MM", name: "Myanmar" },
+    { code: "NA", name: "Namibia" },
+    { code: "NR", name: "Nauru" },
+    { code: "NP", name: "Nepal" },
+    { code: "NL", name: "Netherlands" },
+    { code: "NZ", name: "New Zealand" },
+    { code: "NI", name: "Nicaragua" },
+    { code: "NE", name: "Niger" },
+    { code: "NG", name: "Nigeria" },
+    { code: "NO", name: "Norway" },
+    { code: "OM", name: "Oman" },
+    { code: "PK", name: "Pakistan" },
+    { code: "PW", name: "Palau" },
+    { code: "PA", name: "Panama" },
+    { code: "PG", name: "Papua New Guinea" },
+    { code: "PY", name: "Paraguay" },
+    { code: "PE", name: "Peru" },
+    { code: "PH", name: "Philippines" },
+    { code: "PL", name: "Poland" },
+    { code: "PT", name: "Portugal" },
+    { code: "QA", name: "Qatar" },
+    { code: "RO", name: "Romania" },
+    { code: "RU", name: "Russia" },
+    { code: "RW", name: "Rwanda" },
+    { code: "KN", name: "Saint Kitts and Nevis" },
+    { code: "LC", name: "Saint Lucia" },
+    { code: "VC", name: "Saint Vincent and the Grenadines" },
+    { code: "WS", name: "Samoa" },
+    { code: "SM", name: "San Marino" },
+    { code: "ST", name: "Sao Tome and Principe" },
+    { code: "SA", name: "Saudi Arabia" },
+    { code: "SN", name: "Senegal" },
+    { code: "RS", name: "Serbia" },
+    { code: "SC", name: "Seychelles" },
+    { code: "SL", name: "Sierra Leone" },
+    { code: "SG", name: "Singapore" },
+    { code: "SK", name: "Slovakia" },
+    { code: "SI", name: "Slovenia" },
+    { code: "SB", name: "Solomon Islands" },
+    { code: "SO", name: "Somalia" },
+    { code: "ZA", name: "South Africa" },
+    { code: "KR", name: "South Korea" },
+    { code: "ES", name: "Spain" },
+    { code: "LK", name: "Sri Lanka" },
+    { code: "SD", name: "Sudan" },
+    { code: "SR", name: "Suriname" },
+    { code: "SE", name: "Sweden" },
+    { code: "CH", name: "Switzerland" },
+    { code: "SY", name: "Syria" },
+    { code: "TW", name: "Taiwan" },
+    { code: "TJ", name: "Tajikistan" },
+    { code: "TZ", name: "Tanzania" },
+    { code: "TH", name: "Thailand" },
+    { code: "TL", name: "Timor‑Leste" },
+    { code: "TG", name: "Togo" },
+    { code: "TO", name: "Tonga" },
+    { code: "TT", name: "Trinidad and Tobago" },
+    { code: "TN", name: "Tunisia" },
+    { code: "TR", name: "Turkey" },
+    { code: "TM", name: "Turkmenistan" },
+    { code: "TV", name: "Tuvalu" },
+    { code: "UG", name: "Uganda" },
+    { code: "UA", name: "Ukraine" },
+    { code: "AE", name: "United Arab Emirates" },
+    { code: "GB", name: "United Kingdom" },
+    { code: "US", name: "United States" },
+    { code: "UY", name: "Uruguay" },
+    { code: "UZ", name: "Uzbekistan" },
+    { code: "VU", name: "Vanuatu" },
+    { code: "VA", name: "Vatican City" },
+    { code: "VE", name: "Venezuela" },
+    { code: "VN", name: "Vietnam" },
+    { code: "YE", name: "Yemen" },
+    { code: "ZM", name: "Zambia" },
+    { code: "ZW", name: "Zimbabwe" }
+  ];
+
+  countries.forEach(country => {
+    const li = document.createElement("li");
+    li.className = "country-option flex items-center gap-2 px-4 py-2 hover:bg-gray-100 cursor-pointer";
+    li.dataset.value = country.code;
+    li.innerHTML = `
+    <img src="https://flagcdn.com/24x18/${country.code.toLowerCase()}.png" alt="${country.name}" class="w-6 h-4 rounded-sm object-cover">
+    <span>${country.name}</span>
+  `;
+    countryOptions.appendChild(li);
+  });
+
+  countryField.addEventListener("click", () => {
+    countryOptions.classList.toggle("hidden");
+  });
+
+  
+  document.querySelectorAll(".country-option").forEach(option => {
+    option.addEventListener("click", () => {
+      
+      const img = option.querySelector("img").src;
+      const name = option.querySelector("span").innerText;
+
+      
+      selectedCountry.innerHTML = `
+      <img src="${img}" alt="${name} flag" class="w-5 h-auto mr-2 inline-block">
+      <span>${name}</span>
+    `;
+
+      selectedCountry.classList.remove("text-gray-500");
+      selectedCountry.classList.add("text-gray-800");
+      countryValue.value = option.dataset.value;
+      countryOptions.classList.add("hidden");
+    });
+  });
+
+  
+  document.addEventListener("click", (e) => {
+    if (!countryField.contains(e.target) && !countryOptions.contains(e.target)) {
+      countryOptions.classList.add("hidden");
+    }
+  });
+
+  const form = document.querySelector("form");
+  const industryValue = document.getElementById("industry-value");
+
+  form.addEventListener("submit", function (e) {
+    if (!industryValue.value.trim()) {
+      e.preventDefault();
+      alert("Please select an industry.");
+      document.getElementById("industry-field").classList.add("ring-2", "ring-red-500");
+    }
+  });
+
+  industryValue.addEventListener("change", () => {
+    document.getElementById("industry-field")
+      .classList.remove("ring-2", "ring-red-500");
+  });
+
+  function setupCustomDropdown(fieldId, optionsId, selectedId, valueId, optionsArray, otherInputId = null) {
+    const field = document.getElementById(fieldId);
+    const optionsContainer = document.getElementById(optionsId);
+    const selected = document.getElementById(selectedId);
+    const hiddenValue = document.getElementById(valueId);
+    const otherInput = otherInputId ? document.getElementById(otherInputId) : null;
+
+    
+    optionsArray.forEach(option => {
+      const li = document.createElement("li");
+      li.className = "px-4 py-2 hover:bg-gray-100 cursor-pointer";
+      li.innerText = option;
+
+      li.addEventListener("click", () => {
+        selected.innerText = option;
+        hiddenValue.value = option;
+        optionsContainer.classList.add("hidden");
+        selected.classList.remove("text-gray-500");
+        selected.classList.add("text-gray-800");
+
+        
+        if (otherInput) {
+          if (option === "Other") {
+            otherInput.classList.remove("hidden");
+            otherInput.required = true;
+          } else {
+            otherInput.classList.add("hidden");
+            otherInput.required = false;
+            otherInput.value = "";
+          }
+        }
+      });
+
+      optionsContainer.appendChild(li);
+    });
+
+    
+    field.addEventListener("click", () => {
+      optionsContainer.classList.toggle("hidden");
+    });
+
+    
+    document.addEventListener("click", (e) => {
+      if (!field.contains(e.target) && !optionsContainer.contains(e.target)) {
+        optionsContainer.classList.add("hidden");
+      }
+    });
+  }
+
+  
+  setupCustomDropdown(
+    "requirement-type-field", "requirement-type-options",
+    "selected-requirement-type", "requirement-type-value",
+    [
+      "AI Chatbots / Virtual Assistants",
+      "Predictive Analytics",
+      "Natural Language Processing",
+      "Computer Vision",
+      "AI-Powered Automation",
+      "Recommendation Systems",
+      "Custom AI Solution",
+      "Other"
+    ],
+    "other-requirement-input" 
+  );
+
+  setupCustomDropdown(
+    "timeline-field", "timeline-options", "selected-timeline", "timeline-value",
+    ["Immediate (Within 1 month)", "Short-term (1-3 months)", "Medium-term (3-6 months)", "Flexible / Long-term"]
+  );
+
+  setupCustomDropdown(
+    "industry-field", "industry-options", "selected-industry", "industry-value",
+    ["Healthcare", "Finance", "Retail & E-commerce", "Education & EdTech", "Manufacturing", "Logistics & Supply Chain", "Technology", "Other"],
+    "other-industry-input"
+  );
+
+  setupCustomDropdown(
+    "budget-field", "budget-options", "selected-budget", "budget-value",
+    ["Less than $25k", "$25k to $100k", "$100k to $250k", "More than $250k"]
+  );
+  document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("toast-container");
+    const messages = document.querySelectorAll("#flash-messages div");
+
+    messages.forEach(msg => {
+      const text = msg.textContent;
+      const type = msg.dataset.type;
+
+      
+      const toast = document.createElement("div");
+      toast.className = `
+      flex items-center justify-between px-8 py-4 rounded-xl shadow-xl text-white
+      transform scale-90 opacity-0 transition-all duration-300 pointer-events-auto
+      ${type === 'success' ? 'bg-green-500' : 'bg-red-500'}
+    `;
+
+      toast.innerHTML = `
+      <span class="text-center">${text}</span>
+      <button class="ml-4 text-white font-bold">&times;</button>
+    `;
+
+      
+      container.appendChild(toast);
+
+      
+      requestAnimationFrame(() => {
+        toast.style.opacity = 1;
+        toast.style.transform = 'scale(1)';
+      });
+
+      
+      toast.querySelector("button").addEventListener("click", () => {
+        toast.style.opacity = 0;
+        toast.style.transform = 'scale(0.9)';
+        toast.addEventListener("transitionend", () => toast.remove());
+      });
+
+      
+      setTimeout(() => {
+        toast.style.opacity = 0;
+        toast.style.transform = 'scale(0.9)';
+        toast.addEventListener("transitionend", () => toast.remove());
+      }, 4000);
+    });
+  });
+</script>
+
+</body>
+
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const icon = menuBtn.querySelector("i");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+    icon.classList.toggle("fa-bars");
+    icon.classList.toggle("fa-times");
+  });
+</script>
+
+  
+  {% include 'components/language-switcher.html' %}
+  {% include 'components/chatbot.html' %}
+  <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+</html>

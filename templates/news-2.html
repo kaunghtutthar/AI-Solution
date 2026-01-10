@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="{{ get_locale() }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-Solution | {{ _('Articles') }} | {{ _('News') }} | {{ _('AI-Solution Launches Smart Assistant Upgrade') }}</title>
+
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#015486",
+              secondary: "#EF3451",
+            },
+          },
+        },
+      };
+    </script>
+
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body class="bg-white text-[#383838] font-sans">
+    <header class="bg-white shadow sticky top-0 z-50">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        
+        <img
+          src="/static/images/logo-fit.png"
+          alt="{{ _('AI-Solution Logo') }}"
+          class="h-10"
+        />
+
+        
+        <nav class="hidden md:flex space-x-8 font-medium">
+          <a href="/" class="hover:text-secondary">{{ _('Home') }}</a>
+          <a href="/solutions" class="hover:text-secondary">{{ _('Solutions') }}</a>
+          <a href="/articles" class="text-secondary font-semibold">{{ _('Articles') }}</a>
+          <a href="/reviews" class="hover:text-secondary">{{ _('Reviews') }}</a>
+          <a href="/events" class="hover:text-secondary">{{ _('Events') }}</a>
+          <a href="/contact" class="hover:text-secondary">{{ _('Contact') }}</a>
+          <a href="/about" class="hover:text-secondary">{{ _('About') }}</a>
+        </nav>
+
+        
+        <button
+          id="menu-btn"
+          class="md:hidden text-2xl text-gray-700 focus:outline-none"
+          aria-label="{{ _('Toggle menu') }}"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      
+      <nav
+        id="mobile-menu"
+        class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t z-50"
+      >
+        <div class="flex flex-col px-6 py-6 space-y-4 font-medium">
+          <a href="/" class="hover:text-secondary">{{ _('Home') }}</a>
+          <a href="/solutions" class="hover:text-secondary">{{ _('Solutions') }}</a>
+          <a href="/articles" class="text-secondary font-semibold">{{ _('Articles') }}</a>
+          <a href="/reviews" class="hover:text-secondary">{{ _('Reviews') }}</a>
+          <a href="/events" class="hover:text-secondary">{{ _('Events') }}</a>
+          <a href="/contact" class="hover:text-secondary">{{ _('Contact') }}</a>
+          <a href="/about" class="hover:text-secondary">{{ _('About') }}</a>
+        </div>
+      </nav>
+    </header>
+
+    <section
+      class="relative bg-gradient-to-r from-[#015486] to-[#EF3451] text-white py-32 text-center"
+    >
+      <div class="max-w-3xl mx-auto px-6">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          {{ _('AI-Solution Launches Smart Assistant Upgrade') }}
+        </h1>
+        <p class="text-sm md:text-base">
+          {{ _('Published on Feb 10, 2025 | Reported by AI-Solution News Team') }}
+        </p>
+      </div>
+    </section>
+
+    <section class="py-20 max-w-5xl mx-auto px-6">
+      <div class="mx-auto text-gray-700 space-y-10">
+        
+        <p class="text-lg leading-relaxed">
+          {{ _('AI-Solution has officially launched a major upgrade to its Smart Assistant platform, delivering enhanced intelligence, faster response times, and deeper integration across enterprise workflows. This upgrade reinforces AI-Solution\'s commitment to building practical, scalable AI tools that elevate the digital employee experience.') }}
+        </p>
+
+        
+        <h2 class="text-3xl md:text-4xl font-bold text-[#015486] mt-12 mb-4">
+          {{ _('What\'s New in Smart Assistant Upgrade') }}
+        </h2>
+        <p class="text-lg leading-relaxed">
+          {{ _('The upgraded Smart Assistant introduces advanced natural language understanding, improved contextual awareness, and seamless integration with internal systems such as HR platforms, IT service tools, and enterprise knowledge bases. These enhancements allow employees to complete tasks, retrieve information, and resolve issues faster than ever before.') }}
+        </p>
+
+        <img
+          src="/static/images/articles-news-image-2.jpg"
+          alt="{{ _('AI-Solution Smart Assistant Upgrade Interface') }}"
+          class="w-full rounded-3xl my-8 shadow-lg"
+        />
+
+        
+        <h2 class="text-3xl md:text-4xl font-bold text-[#015486] mt-12 mb-4">
+          {{ _('How Businesses Benefit from Upgrade') }}
+        </h2>
+        <p class="text-lg leading-relaxed">
+          {{ _('Organizations using the upgraded Smart Assistant benefit from faster issue resolution, reduced manual workload, and improved employee productivity. By automating repetitive interactions and providing real-time assistance, AI-Solution helps teams focus on strategic work while maintaining consistent and reliable support across departments.') }}
+        </p>
+
+        
+        <h2 class="text-3xl md:text-4xl font-bold text-[#015486] mt-12 mb-4">
+          {{ _('AI-Solution\'s Vision for Intelligent Assistance') }}
+        </h2>
+        <p class="text-lg leading-relaxed">
+          {{ _('This Smart Assistant upgrade represents another step in AI-Solution\'s long-term vision to deliver proactive, intelligent workplace support. As AI capabilities continue to advance, AI-Solution remains focused on developing user-centric solutions that adapt to business needs, scale with growth, and enable smarter ways of working.') }}
+        </p>
+      </div>
+    </section>
+
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <h3 class="text-3xl font-bold text-[#015486] mb-12 text-center">
+          {{ _('Other News') }}
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <article
+            class="relative rounded-3xl overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+          >
+            <img
+              src="/static/images/articles-news-image-1.jpg"
+              class="w-full h-64 object-cover"
+              alt="{{ _('News 1') }}"
+            />
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="absolute bottom-0 left-0 p-6 w-full text-white">
+              <p class="text-sm mb-1">{{ _('Dec 15, 2025') }}</p>
+              <h3 class="text-xl font-bold mb-2">
+                {{ _('AI-Solution Partners with Leading Tech Firm') }}
+              </h3>
+              <a
+                href="/articles/news-1"
+                class="underline text-[#EF3451] mt-2 inline-block"
+                >{{ _('Read More') }}</a
+              >
+            </div>
+          </article>
+
+          
+          <article
+            class="relative rounded-3xl overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+          >
+            <img
+              src="/static/images/articles-news-image-3.jpg"
+              class="w-full h-64 object-cover"
+              alt="{{ _('News 3') }}"
+            />
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="absolute bottom-0 left-0 p-6 w-full text-white">
+              <p class="text-sm mb-1">{{ _('Mar 22, 2025') }}</p>
+              <h3 class="text-xl font-bold mb-2">
+                {{ _('AI-Solution Recognised as Top AI Innovator') }}
+              </h3>
+              <a
+                href="/articles/news-3"
+                class="underline text-[#EF3451] mt-2 inline-block"
+                >{{ _('Read More') }}</a
+              >
+            </div>
+          </article>
+
+          
+          <article
+            class="relative rounded-3xl overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+          >
+            <img
+              src="/static/images/articles-news-image-4.jpg"
+              class="w-full h-64 object-cover"
+              alt="{{ _('News 4') }}"
+            />
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="absolute bottom-0 left-0 p-6 w-full text-white">
+              <p class="text-sm mb-1">{{ _('Nov 20, 2025') }}</p>
+              <h3 class="text-xl font-bold mb-2">
+                {{ _('AI - a massive weapon in business growth') }}
+              </h3>
+              <a
+                href="/articles/news-4"
+                class="underline text-[#EF3451] mt-2 inline-block"
+                >{{ _('Read More') }}</a
+              >
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-100 py-20">
+      <div
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10"
+      >
+        
+        <div>
+          <h3 class="mb-4 flex items-start">
+            <img
+              src="/static/images/logo-transparent-bg-fit.png"
+              alt="{{ _('AI-Solution Logo') }}"
+              class="h-12"
+            />
+          </h3>
+          <p class="text-gray-600">
+            {{ _('Innovating the future of the digital employee experience with AI-powered solutions.') }}
+          </p>
+        </div>
+
+        
+        <div>
+          <h3 class="text-[#015486] font-bold mb-4">{{ _('Quick Links') }}</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li>
+              <a href="/" class="hover:text-[#EF3451] transition">{{ _('Home') }}</a>
+            </li>
+            <li>
+              <a href="/solutions" class="hover:text-[#EF3451] transition"
+                >{{ _('Solutions') }}</a
+              >
+            </li>
+            <li>
+              <a href="/articles" class="hover:text-[#EF3451] transition"
+                >{{ _('Articles') }}</a
+              >
+            </li>
+            <li>
+              <a href="/reviews" class="hover:text-[#EF3451] transition"
+                >{{ _('Reviews') }}</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        
+        <div>
+          <h3 class="text-[#015486] font-bold mb-4">{{ _('Pages') }}</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li>
+              <a href="/events" class="hover:text-[#EF3451] transition"
+                >{{ _('Events') }}</a
+              >
+            </li>
+            <li>
+              <a href="/contact" class="hover:text-[#EF3451] transition"
+                >{{ _('Contact') }}</a
+              >
+            </li>
+            <li>
+              <a href="/about" class="hover:text-[#EF3451] transition">{{ _('About') }}</a>
+            </li>
+          </ul>
+        </div>
+
+        
+        <div>
+          <h3 class="text-[#015486] font-bold mb-4">{{ _('Follow Us') }}</h3>
+          <div class="flex gap-4 text-gray-700">
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="text-center text-gray-500 mt-10">
+        © 2025 {{ _('AI-Solution. All rights reserved.') }}
+      </div>
+    </footer>
+  </body>
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const icon = menuBtn.querySelector("i");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      icon.classList.toggle("fa-bars");
+      icon.classList.toggle("fa-times");
+    });
+  </script>
+
+  
+  {% include 'components/language-switcher.html' %}
+  {% include 'components/chatbot.html' %}
+  <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+</html>

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="{{ get_locale() }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-Solution | {{ _('Events') }}</title>
+
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#015486",
+              secondary: "#EF3451",
+            },
+          },
+        },
+      };
+    </script>
+
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      
+      .mode-switch {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background: #f1f5f9;
+        border-radius: 0.75rem;
+        padding: 2px;
+        width: 280px;
+      }
+
+      .mode-switch input {
+        display: none;
+      }
+
+      .mode-switch label {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: 8px 4px;
+        font-weight: 600;
+        font-size: 0.85rem;
+        color: #64748b;
+        cursor: pointer;
+        transition: color 0.2s ease;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .mode-switch input:checked + label {
+        color: #0f172a;
+      }
+
+      .mode-switch .mode-indicator {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: calc(50% - 2px);
+        height: calc(100% - 4px);
+        background: #ffffff;
+        border-radius: 0.6rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        transition: transform 0.25s ease;
+      }
+
+      .mode-switch input#filter-past:checked ~ .mode-indicator {
+        transform: translateX(100%);
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-[#383838] font-sans">
+    <header class="bg-white shadow sticky top-0 z-50">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        
+        <img
+          src="/static/images/logo-fit.png"
+          alt="AI-Solution Logo"
+          class="h-10"
+        />
+
+        
+        {% include 'components/language-switcher.html' %}
+
+        
+        <nav class="hidden md:flex space-x-8 font-medium">
+          <a href="/" class="hover:text-secondary">{{ _('Home') }}</a>
+          <a href="/solutions" class="hover:text-secondary">{{ _('Solutions') }}</a>
+          <a href="/articles" class="hover:text-secondary">{{ _('Articles') }}</a>
+          <a href="/reviews" class="hover:text-secondary">{{ _('Reviews') }}</a>
+          <a href="/events" class="text-secondary font-semibold">{{ _('Events') }}</a>
+          <a href="/contact" class="hover:text-secondary">{{ _('Contact') }}</a>
+          <a href="/about" class="hover:text-secondary">{{ _('About') }}</a>
+        </nav>
+
+        
+        <button id="menu-btn" class="md:hidden text-2xl text-gray-700 focus:outline-none" aria-label="{{ _('Toggle menu') }}">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      
+      <nav id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t z-50">
+        <div class="flex flex-col px-6 py-6 space-y-4 font-medium">
+          <a href="/" class="hover:text-secondary">{{ _('Home') }}</a>
+          <a href="/solutions" class="hover:text-secondary">{{ _('Solutions') }}</a>
+          <a href="/articles" class="hover:text-secondary">{{ _('Articles') }}</a>
+          <a href="/reviews" class="hover:text-secondary">{{ _('Reviews') }}</a>
+          <a href="/events" class="text-secondary font-semibold">{{ _('Events') }}</a>
+          <a href="/contact" class="hover:text-secondary">{{ _('Contact') }}</a>
+          <a href="/about" class="hover:text-secondary">{{ _('About') }}</a>
+        </div>
+      </nav>
+    </header>
+
+    <section
+      class="relative h-[75vh] min-h-[500px] flex items-center justify-center"
+    >
+      
+      <img
+        src="/static/images/events-hero-image.jpg"
+        alt="Events"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+
+      
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"
+      ></div>
+
+      
+      <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          {{ _('View and Join our events') }}
+        </h1>
+
+        <p class="text-lg md:text-xl text-gray-200 mb-8">
+          {{ _('Join us for workshops, webinars, and conferences on AI solutions and digital transformation.') }}
+        </p>
+
+        <a
+          href="#featured-event"
+          class="inline-block bg-gradient-to-r from-[#015486] to-[#EF3451] px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition"
+        >
+          {{ _('Explore Events') }}
+        </a>
+      </div>
+    </section>
+
+    <section class="py-24 bg-white" id="featured-event-section">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-[#015486] mb-12 text-center">
+          {{ _('Featured Event') }}
+        </h2>
+        <div id="featured-event" class="hidden">
+          
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+          <div class="mode-switch">
+            <input
+              type="radio"
+              name="event_filter"
+              id="filter-upcoming"
+              value="upcoming"
+              checked
+            />
+            <label for="filter-upcoming">
+              <i class="far fa-calendar-alt mr-2"></i> {{ _('Upcoming') }}
+            </label>
+
+            <input
+              type="radio"
+              name="event_filter"
+              id="filter-past"
+              value="past"
+            />
+            <label for="filter-past">
+              <i class="fas fa-history mr-2"></i> {{ _('Past') }}
+            </label>
+
+            <span class="mode-indicator"></span>
+          </div>
+          <div id="events-count" class="text-gray-600">
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div id="events-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div class="col-span-full text-center py-12">
+            <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-r-2 border-primary"></div>
+            <p class="mt-4 text-gray-600">{{ _('Loading events...') }}</p>
+          </div>
+        </div>
+        
+        
+        <div id="load-more-container" class="hidden text-center mt-12">
+          <button id="load-more-btn" class="bg-gradient-to-r from-[#015486] to-[#EF3451] text-white px-8 py-3 rounded-2xl font-semibold hover:opacity-90 transition">
+            {{ _('Load More Events') }}
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-primary mb-4">{{ _('Learn More About AI-Solution') }}</h2>
+        <p class="text-gray-600 mb-8">
+          {{ _('Discover how AI-Solution can transform your business with innovative AI-powered solutions and digital workplace enhancements.') }}
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/about" class="bg-gradient-to-r from-[#015486] to-[#EF3451] text-white px-8 py-3 rounded-2xl font-semibold hover:opacity-90 transition">
+            {{ _('Learn More') }}
+          </a>
+          <a href="/contact" class="border-2 border-primary text-primary px-8 py-3 rounded-2xl font-semibold hover:bg-primary hover:text-white transition">
+            {{ _('Contact Us') }}
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-100 py-16 mt-16">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div>
+          <h3 class="mb-4 flex items-start">
+            <img src="/static/images/logo-transparent-bg-fit.png" alt="AI-Solution Logo" class="h-12" />
+          </h3>
+          <p class="text-gray-600">{{ _('AI-powered solutions to enhance digital employee experience.') }}</p>
+        </div>
+        <div>
+          <h3 class="text-primary font-bold mb-4">{{ _('Quick Links') }}</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li><a href="/" class="hover:text-secondary transition">{{ _('Home') }}</a></li>
+            <li><a href="/solutions" class="hover:text-secondary transition">{{ _('Solutions') }}</a></li>
+            <li><a href="/articles" class="hover:text-secondary transition">{{ _('Articles') }}</a></li>
+            <li><a href="/reviews" class="hover:text-secondary transition">{{ _('Reviews') }}</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-primary font-bold mb-4">{{ _('Pages') }}</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li><a href="/contact" class="hover:text-secondary transition">{{ _('Contact') }}</a></li>
+            <li><a href="/about" class="hover:text-secondary transition">{{ _('About') }}</a></li>
+            <li><a href="/privacy-policy" class="hover:text-secondary transition">{{ _('Privacy Policy') }}</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-primary font-bold mb-4">{{ _('Follow Us') }}</h3>
+          <div class="flex gap-4 text-gray-700">
+            <a href="#" class="text-2xl hover:text-secondary transition"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-2xl hover:text-secondary transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-2xl hover:text-secondary transition"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="text-2xl hover:text-secondary transition"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center text-gray-500 mt-10"> 2025 AI-Solution. {{ _('All rights reserved.') }}</div>
+    </footer>
+
+    
+    <script>
+      
+      const translations = {
+        featuredEvent: '{{ _("Featured Event") }}',
+        registerNow: '{{ _("Register Now") }}',
+        loadingEvents: '{{ _("Loading events...") }}',
+        noUpcomingEvents: '{{ _("No upcoming events found.") }}',
+        noPastEvents: '{{ _("No past events found.") }}',
+        checkBackSoon: '{{ _("Check back soon for new events and workshops.") }}',
+        errorLoadingEvents: '{{ _("Error loading events. Please try again later.") }}',
+        loading: '{{ _("Loading...") }}',
+        loadMoreEvents: '{{ _("Load More Events") }}',
+        learnMore: '{{ _("Learn More") }}',
+        upcomingEventsCount: '{{ _("%(count)s upcoming events") }}',
+        pastEventsCount: '{{ _("%(count)s past events") }}',
+        tbd: '{{ _("TBD") }}'
+      };
+
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const filterUpcoming = document.getElementById('filter-upcoming');
+      const filterPast = document.getElementById('filter-past');
+      const eventsGrid = document.getElementById('events-grid');
+      const featuredEvent = document.getElementById('featured-event');
+      const eventsCount = document.getElementById('events-count');
+      const loadMoreContainer = document.getElementById('load-more-container');
+      const loadMoreBtn = document.getElementById('load-more-btn');
+
+      let currentFilter = 'upcoming';
+      let currentOffset = 0;
+      let totalEvents = 0;
+      let isLoading = false;
+
+      
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+          mobileMenu.classList.add('hidden');
+        }
+      });
+
+      
+      filterUpcoming.addEventListener('change', () => {
+        if (filterUpcoming.checked && currentFilter !== 'upcoming') {
+          currentFilter = 'upcoming';
+          currentOffset = 0;
+          loadEvents();
+        }
+      });
+
+      filterPast.addEventListener('change', () => {
+        if (filterPast.checked && currentFilter !== 'past') {
+          currentFilter = 'past';
+          currentOffset = 0;
+          loadEvents();
+        }
+      });
+
+      
+      loadMoreBtn.addEventListener('click', () => {
+        if (!isLoading && currentOffset + 6 < totalEvents) {
+          currentOffset += 6;
+          loadMoreEvents();
+        }
+      });
+
+      function updateFilterButtons() {
+        if (currentFilter === 'upcoming') {
+          filterUpcoming.className = 'px-6 py-2 rounded-md font-medium transition-all duration-200 bg-white text-primary shadow-sm';
+          filterPast.className = 'px-6 py-2 rounded-md font-medium transition-all duration-200 text-gray-600 hover:text-gray-800';
+        } else {
+          filterUpcoming.className = 'px-6 py-2 rounded-md font-medium transition-all duration-200 text-gray-600 hover:text-gray-800';
+          filterPast.className = 'px-6 py-2 rounded-md font-medium transition-all duration-200 bg-white text-primary shadow-sm';
+        }
+      }
+
+      
+      async function loadFeaturedEvent() {
+        try {
+          const currentLang = document.documentElement.lang || 'en';
+          const response = await fetch(`/api/events/featured?language=${currentLang}`);
+          const data = await response.json();
+          
+          if (data.event) {
+            const locationText = data.event.location || translations.tbd;
+            const featuredHtml = 
+              '<div class="relative rounded-3xl overflow-hidden shadow-2xl hover:scale-105 transform transition duration-500">' +
+                '<img src="' + (data.event.image || '/static/images/events/default-event.jpg') + '" class="w-full h-96 object-cover" alt="Featured Event">' +
+                '<div class="absolute bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent p-8 w-full text-white">' +
+                  '<div class="flex items-center gap-4 text-sm mb-2">' +
+                    '<div class="flex items-center gap-2">' +
+                      '<i class="far fa-calendar"></i>' +
+                      '<span>' + data.event.date + '</span>' +
+                    '</div>' +
+                    '<div class="flex items-center gap-2">' +
+                      '<i class="fas fa-map-marker-alt"></i>' +
+                      '<span>' + locationText + '</span>' +
+                    '</div>' +
+                  '</div>' +
+                  '<h3 class="text-2xl font-bold mb-2">' + data.event.title + '</h3>' +
+                  '<p class="mb-4 text-gray-200">' + data.event.description + '</p>' +
+                  '<a href="' + data.event.detail_url + '" class="inline-block bg-[#EF3451] px-6 py-2 rounded-xl font-semibold hover:opacity-90 transition">' + translations.registerNow + '</a>' +
+                '</div>' +
+              '</div>';
+            
+            featuredEvent.innerHTML = featuredHtml;
+            featuredEvent.classList.remove('hidden');
+          }
+        } catch (error) {
+          console.error('Error loading featured event:', error);
+        }
+      }
+
+      
+      async function loadEvents() {
+        if (isLoading) return;
+        isLoading = true;
+
+        try {
+          
+          const loadingHtml = 
+            '<div class="col-span-full text-center py-12">' +
+              '<div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-r-2 border-primary"></div>' +
+              '<p class="mt-4 text-gray-600">' + translations.loadingEvents + '</p>' +
+            '</div>';
+          
+          eventsGrid.innerHTML = loadingHtml;
+
+          const response = await fetch(`/api/events?filter=${currentFilter}&limit=6&offset=${currentOffset}&language=${document.documentElement.lang || 'en'}`);
+          const data = await response.json();
+          
+          totalEvents = data.total;
+          updateEventsCount();
+          
+          if (data.events && data.events.length > 0) {
+            eventsGrid.innerHTML = data.events.map(event => createEventCard(event)).join('');
+            loadMoreContainer.classList.toggle('hidden', data.events.length >= totalEvents);
+          } else {
+            const noEventsText = currentFilter === 'upcoming' ? translations.noUpcomingEvents : translations.noPastEvents;
+            const noEventsHtml = 
+              '<div class="col-span-full text-center py-12">' +
+                '<p class="text-gray-600 text-lg">' + noEventsText + '</p>' +
+                '<p class="text-gray-500 mt-2">' + translations.checkBackSoon + '</p>' +
+              '</div>';
+            
+            eventsGrid.innerHTML = noEventsHtml;
+            loadMoreContainer.classList.add('hidden');
+          }
+        } catch (error) {
+          console.error('Error loading events:', error);
+          const errorHtml = 
+            '<div class="col-span-full text-center py-12">' +
+              '<p class="text-red-600 text-lg">' + translations.errorLoadingEvents + '</p>' +
+            '</div>';
+          
+          eventsGrid.innerHTML = errorHtml;
+          loadMoreContainer.classList.add('hidden');
+        } finally {
+          isLoading = false;
+        }
+      }
+
+      
+      async function loadMoreEvents() {
+        if (isLoading) return;
+        isLoading = true;
+        loadMoreBtn.disabled = true;
+        loadMoreBtn.innerHTML = translations.loading;
+
+        try {
+          const response = await fetch(`/api/events?filter=${currentFilter}&limit=6&offset=${currentOffset}&language=${document.documentElement.lang || 'en'}`);
+          const data = await response.json();
+          
+          if (data.events && data.events.length > 0) {
+            const newEvents = data.events.map(event => createEventCard(event)).join('');
+            eventsGrid.insertAdjacentHTML('beforeend', newEvents);
+            
+            
+            if (currentOffset + 6 >= totalEvents) {
+              loadMoreContainer.classList.add('hidden');
+            }
+          }
+        } catch (error) {
+          console.error('Error loading more events:', error);
+        } finally {
+          isLoading = false;
+          loadMoreBtn.disabled = false;
+          loadMoreBtn.innerHTML = translations.loadMoreEvents;
+        }
+      }
+
+      function createEventCard(event) {
+        const cardHtml = 
+          '<article class="relative rounded-3xl overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">' +
+            '<img src="' + (event.image || '/static/images/events/default-event.jpg') + '" class="w-full h-64 object-cover" alt="' + event.title + '">' +
+            '<div class="absolute bottom-0 left-0 bg-gradient-to-t from-black/60 to-transparent p-6 w-full text-white opacity-90 hover:opacity-100 transition">' +
+              '<div class="flex items-center gap-4 text-sm mb-1">' +
+                '<div class="flex items-center gap-2">' +
+                  '<i class="far fa-calendar"></i>' +
+                  '<span>' + event.date + '</span>' +
+                '</div>' +
+                '<div class="flex items-center gap-2">' +
+                  '<i class="fas fa-map-marker-alt"></i>' +
+                  '<span>' + (event.location || translations.tbd) + '</span>' +
+                '</div>' +
+              '</div>' +
+              '<h3 class="text-xl font-bold mb-2">' + event.title + '</h3>' +
+              '<p class="text-gray-200 text-sm">' + event.description + '</p>' +
+              '<a href="' + event.detail_url + '" class="underline text-[#EF3451] mt-2 inline-block">' + translations.learnMore + '</a>' +
+            '</div>' +
+          '</article>';
+        
+        return cardHtml;
+      }
+
+      function updateEventsCount() {
+        const countText = currentFilter === 'upcoming' 
+          ? translations.upcomingEventsCount.replace('%(count)s', totalEvents)
+          : translations.pastEventsCount.replace('%(count)s', totalEvents);
+        eventsCount.textContent = countText;
+      }
+
+      
+      document.addEventListener('DOMContentLoaded', () => {
+        loadFeaturedEvent();
+        loadEvents();
+      });
+    </script>
+
+  
+  {% include 'components/chatbot.html' %}
+  <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+</html>

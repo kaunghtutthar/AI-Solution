@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="{{ get_locale() }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ _('AI-Solution | Events | AI Transforming Workplaces') }}</title>
+
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#015486",
+              secondary: "#EF3451",
+            },
+          },
+        },
+      };
+    </script>
+
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body class="bg-white text-[#383838] font-sans">
+    
+    <header class="bg-white shadow sticky top-0 z-50">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        
+        <img
+          src="/static/images/logo-fit.png"
+          alt="AI-Solution Logo"
+          class="h-10"
+        />
+
+        
+        <nav class="hidden md:flex space-x-8 font-medium">
+          <a href="/" class="hover:text-secondary">{{ _('Home') }}</a>
+          <a href="/solutions" class="hover:text-secondary">{{ _('Solutions') }}</a>
+          <a href="/articles" class="hover:text-secondary">{{ _('Articles') }}</a>
+          <a href="/reviews" class="hover:text-secondary">{{ _('Reviews') }}</a>
+          <a href="/events" class="text-secondary font-semibold">{{ _('Events') }}</a>
+          <a href="/contact" class="hover:text-secondary">{{ _('Contact') }}</a>
+          <a href="/about" class="hover:text-secondary">{{ _('About') }}</a>
+        </nav>
+
+        
+        <button
+          id="menu-btn"
+          class="md:hidden text-2xl text-gray-700 focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      
+      <nav
+        id="mobile-menu"
+        class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t z-50"
+      >
+        <div class="flex flex-col px-6 py-6 space-y-4 font-medium">
+          <a href="/" class="hover:text-secondary">{{ _('Home') }}</a>
+          <a href="/solutions" class="hover:text-secondary">{{ _('Solutions') }}</a>
+          <a href="/articles" class="hover:text-secondary">{{ _('Articles') }}</a>
+          <a href="/reviews" class="hover:text-secondary">{{ _('Reviews') }}</a>
+          <a href="/events" class="text-secondary font-semibold">{{ _('Events') }}</a>
+          <a href="/contact" class="hover:text-secondary">{{ _('Contact') }}</a>
+          <a href="/about" class="hover:text-secondary">{{ _('About') }}</a>
+        </div>
+      </nav>
+    </header>
+
+    
+    <section class="relative h-[500px] md:h-[600px]">
+      <img
+        src="/static/images/event-image-1.jpg"
+        alt="Event Hero"
+        class="w-full h-full object-cover"
+      />
+
+      <div class="absolute inset-0 bg-black/40"></div>
+
+      <div
+        class="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
+      >
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+          {{ _('AI Transforming Workplaces') }}
+        </h1>
+        <p class="text-white text-lg md:text-xl mb-4 max-w-3xl">
+          {{ _('Join the exclusive online workshop which will deliver practical insights and hands-on demonstrations of AI tools transforming modern corporate work environments.') }}
+        </p>
+        <p class="text-white mb-2"><strong>{{ _('Date') }}:</strong> {{ _('Jan 21, 2026') }}</p>
+        <p class="text-white mb-6">
+          <strong>{{ _('Location') }}:</strong> {{ _('INNSiDE By Melia Newcastle Venue Hire | Newcastle upon Tyne') }}
+        </p>
+        <a
+          href="/register?event_id=1"
+          class="bg-gradient-to-r from-[#015486] to-[#EF3451] text-white px-10 py-4 rounded-2xl font-semibold hover:opacity-90 transition"
+        >
+          {{ _('Register Now') }}
+        </a>
+      </div>
+    </section>
+
+    
+    <section class="py-20 max-w-5xl mx-auto px-6">
+      <div class="mx-auto text-gray-700 space-y-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#015486] mt-12 mb-4">
+          {{ _('Event Overview') }}
+        </h2>
+        <p class="text-lg leading-relaxed">
+          {{ _('The AI in Digital Workplaces brings the productivity revolution to your organization. This exclusive online workshop is designed for professionals eager to harness the power of AI to enhance workplace efficiency and employee satisfaction. Attendees will gain hands-on experience with cutting-edge AI tools that streamline tasks, improve communication, and foster collaboration in corporate environments.') }}
+        </p>
+
+        <h2 class="text-3xl md:text-4xl font-bold text-[#015486] mt-12 mb-4">
+          {{ _('Agenda') }}
+        </h2>
+        <ul class="list-disc list-inside text-lg leading-relaxed space-y-2">
+          <li>{{ _('09:00 AM - Welcome Session by AI-Solution CEO') }}</li>
+          <li>{{ _('10:00 AM - AI Tools Workshop') }}</li>
+          <li>{{ _('11:30 AM - Professional Workspace AI tools Demonstration') }}</li>
+          <li>{{ _('01:00 PM - Networking & Lunch Break') }}</li>
+          <li>{{ _('02:00 PM - AI Use Case Activities') }}</li>
+          <li>{{ _('04:00 PM - Discussion & Q&A') }}</li>
+        </ul>
+
+        <h2 class="text-3xl md:text-4xl font-bold text-[#015486] mt-12 mb-4">
+          {{ _('Resources') }}
+        </h2>
+        <ul class="list-disc list-inside text-lg leading-relaxed space-y-2">
+          <li>{{ _('Laptop') }}</li>
+        </ul>
+
+        <h2 class="text-3xl md:text-4xl font-bold text-[#015486] mt-12 mb-4">
+          {{ _('Speakers') }}
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          
+          <div
+            class="bg-white rounded-3xl shadow-lg p-6 text-center hover:shadow-2xl transition"
+          >
+            <img
+              src="/static/images/michael-brown.jpg"
+              alt="Speaker 1"
+              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+            />
+            <h3 class="font-bold text-lg">{{ _('Michael Brown') }}</h3>
+            <p class="text-gray-600 text-sm">{{ _('Product Manager, AI-Solution') }}</p>
+          </div>
+          
+          <div
+            class="bg-white rounded-3xl shadow-lg p-6 text-center hover:shadow-2xl transition"
+          >
+            <img
+              src="/static/images/william-johnson.jpg"
+              alt="Speaker 2"
+              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+            />
+            <h3 class="font-bold text-lg">{{ _('William Johnson') }}</h3>
+            <p class="text-gray-600 text-sm">{{ _('AI Product Designer, AI-Solutions') }}</p>
+          </div>
+          
+          <div
+            class="bg-white rounded-3xl shadow-lg p-6 text-center hover:shadow-2xl transition"
+          >
+            <img
+              src="/static/images/alice-green.jpg"
+              alt="Speaker 3"
+              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+            />
+            <h3 class="font-bold text-lg">{{ _('Alice Green') }}</h3>
+            <p class="text-gray-600 text-sm">{{ _('Lead AI Engineer, AI-Solution') }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-[#015486] mb-12 text-center">
+          {{ _('Event Gallery') }}
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <img
+            src="/static/images/event-1-gallery-1.jpg"
+            class="rounded-2xl shadow-lg object-cover w-full h-64"
+          />
+          <img
+            src="/static/images/event-1-gallery-2.jpg"
+            class="rounded-2xl shadow-lg object-cover w-full h-64"
+          />
+          <img
+            src="/static/images/event-1-gallery-3.jpg"
+            class="rounded-2xl shadow-lg object-cover w-full h-64"
+          />
+          <img
+            src="/static/images/event-1-gallery-4.jpg"
+            class="rounded-2xl shadow-lg object-cover w-full h-64"
+          />
+          <img
+            src="/static/images/event-1-gallery-5.jpg"
+            class="rounded-2xl shadow-lg object-cover w-full h-64"
+          />
+          <img
+            src="/static/images/event-1-gallery-6.jpg"
+            class="rounded-2xl shadow-lg object-cover w-full h-64"
+          />
+        </div>
+      </div>
+    </section>
+
+    
+    <footer class="bg-gray-100 py-20">
+      <div
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10"
+      >
+        
+        <div>
+          <h3 class="mb-4 flex items-start">
+            <img
+              src="/static/images/logo-transparent-bg-fit.png"
+              alt="AI-Solution Logo"
+              class="h-12"
+            />
+          </h3>
+          <p class="text-gray-600">
+            {{ _('Innovating the future of the digital employee experience with AI-powered solutions.') }}
+          </p>
+        </div>
+
+        
+        <div>
+          <h3 class="text-[#015486] font-bold mb-4">{{ _('Quick Links') }}</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li>
+              <a href="/" class="hover:text-[#EF3451] transition">{{ _('Home') }}</a>
+            </li>
+            <li>
+              <a href="/solutions" class="hover:text-[#EF3451] transition"
+                >{{ _('Solutions') }}</a
+              >
+            </li>
+            <li>
+              <a href="/articles" class="hover:text-[#EF3451] transition"
+                >{{ _('Articles') }}</a
+              >
+            </li>
+            <li>
+              <a href="/reviews" class="hover:text-[#EF3451] transition"
+                >{{ _('Reviews') }}</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        
+        <div>
+          <h3 class="text-[#015486] font-bold mb-4">{{ _('Pages') }}</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li>
+              <a href="/events" class="hover:text-[#EF3451] transition"
+                >{{ _('Events') }}</a
+              >
+            </li>
+            <li>
+              <a href="/contact" class="hover:text-[#EF3451] transition"
+                >{{ _('Contact') }}</a
+              >
+            </li>
+            <li>
+              <a href="/about" class="hover:text-[#EF3451] transition">{{ _('About') }}</a>
+            </li>
+          </ul>
+        </div>
+
+        
+        <div>
+          <h3 class="text-[#015486] font-bold mb-4">{{ _('Follow Us') }}</h3>
+          <div class="flex gap-4 text-gray-700">
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="text-center text-gray-500 mt-10">
+        © 2025 {{ _('AI-Solution. All rights reserved.') }}
+      </div>
+    </footer>
+
+    
+    {% include 'components/language-switcher.html' %}
+
+    
+  {% include 'components/chatbot.html' %}
+  <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+  </body>
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const icon = menuBtn.querySelector("i");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      icon.classList.toggle("fa-bars");
+      icon.classList.toggle("fa-times");
+    });
+  </script>
+</html>

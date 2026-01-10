@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="{{ get_locale() }}">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Solution | Event Registration</title>
+
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#015486",
+            secondary: "#EF3451",
+          },
+        },
+      },
+    };
+  </script>
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    
+    .input-modern {
+      width: 100%;
+      border: 1px solid #d1d5db;
+      border-radius: 1rem;
+      padding: 0.75rem 1rem;
+      background-color: #ffffff;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .input-modern::placeholder {
+      font-size: 0.875rem;
+      color: #9ca3af;
+    }
+
+    .input-modern:focus {
+      outline: none;
+      border-color: #015486;
+      box-shadow: 0 0 0 2px rgba(1, 84, 134, 0.25);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-[#383838] font-sans">
+  
+  <div id="toast-container" class="fixed inset-0 flex items-center justify-center z-50 pointer-events-none"></div>
+
+  
+  <div id="flash-messages" class="hidden">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+    <div data-type="{{ category }}">{{ message }}</div>
+    {% endfor %}
+    {% endwith %}
+  </div>
+
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      
+      <img src="/static/images/logo-fit.png" alt="AI-Solution Logo" class="h-10" />
+
+      
+      <nav class="hidden md:flex space-x-8 font-medium">
+        <a href="/" class="hover:text-secondary">{{ _('Home') }}</a>
+        <a href="/solutions" class="hover:text-secondary">{{ _('Solutions') }}</a>
+        <a href="/articles" class="hover:text-secondary">{{ _('Articles') }}</a>
+        <a href="/reviews" class="hover:text-secondary">{{ _('Reviews') }}</a>
+        <a href="/events" class="text-secondary font-semibold">{{ _('Events') }}</a>
+        <a href="/contact" class="hover:text-secondary">{{ _('Contact') }}</a>
+        <a href="/about" class="hover:text-secondary">{{ _('About') }}</a>
+      </nav>
+
+      
+      <button id="menu-btn" class="md:hidden text-2xl text-gray-700 focus:outline-none" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    
+    <nav id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t z-50">
+      <div class="flex flex-col px-6 py-6 space-y-4 font-medium">
+        <a href="/" class="hover:text-secondary">{{ _('Home') }}</a>
+        <a href="/solutions" class="hover:text-secondary">{{ _('Solutions') }}</a>
+        <a href="/articles" class="hover:text-secondary">{{ _('Articles') }}</a>
+        <a href="/reviews" class="hover:text-secondary">{{ _('Reviews') }}</a>
+        <a href="/events" class="text-secondary font-semibold">{{ _('Events') }}</a>
+        <a href="/contact" class="hover:text-secondary">{{ _('Contact') }}</a>
+        <a href="/about" class="hover:text-secondary">{{ _('About') }}</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="bg-gradient-to-r from-[#015486] to-[#003b60] py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        {{ _('Join') }} {{ event.title }}
+      </h1>
+      <p class="text-lg opacity-90">
+        {{ _('Date') }}: {{ event.date }} | {{ _('Location') }}: {{ event.location }}
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="relative bg-white rounded-3xl shadow-xl p-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#015486] mb-10 text-center">
+          {{ _('Event Registration') }}
+        </h2>
+        <div class="w-full h-px bg-gray-200 mb-8"></div>
+        <p class="text-center text-gray-600 text-sm mb-8">
+          {{ _('Please fill out the form in English') }}
+        </p>
+
+        <form action="/submit-event-registration" method="POST" class="space-y-6">
+          <input type="hidden" name="event_id" value="{{ request.args.get('event_id') }}" />
+
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <label class="block space-y-1">
+              <span class="text-gray-700 font-medium">{{ _('Full Name') }} <span class="text-red-500">*</span></span>
+              <input type="text" name="name" placeholder="{{ _('Enter your full name') }}" required class="input-modern" />
+            </label>
+            <label class="block space-y-1">
+              <span class="text-gray-700 font-medium">{{ _('Email') }} <span class="text-red-500">*</span></span>
+              <input type="email" name="email" placeholder="{{ _('Enter your email') }}" required class="input-modern" />
+            </label>
+          </div>
+
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <label class="block space-y-1">
+              <span class="text-gray-700 font-medium">{{ _('Company') }}</span>
+              <input type="text" name="company" placeholder="{{ _('Enter your company name') }}" class="input-modern" />
+            </label>
+            <label class="block space-y-1">
+              <span class="text-gray-700 font-medium">{{ _('Job Title') }}</span>
+              <input type="text" name="job_title" placeholder="{{ _('Your role / position') }}" class="input-modern" />
+            </label>
+          </div>
+
+          
+          <label class="block space-y-1">
+            <span class="text-gray-700 font-medium">{{ _('Message') }}</span>
+            <textarea name="message" rows="4" placeholder="{{ _('Any questions or expectations?') }}"
+              class="input-modern resize-none"></textarea>
+          </label>
+
+          
+          <div class="text-center">
+            <button type="submit"
+              class="bg-gradient-to-r from-[#015486] to-[#EF3451] text-white font-semibold px-12 py-4 rounded-2xl shadow-lg hover:opacity-90 transition">
+              {{ _('Confirm Registration') }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-100 py-20">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+      
+      <div>
+        <h3 class="mb-4 flex items-start">
+          <img src="/static/images/logo-transparent-bg-fit.png" alt="AI-Solution Logo" class="h-12" />
+        </h3>
+        <p class="text-gray-600">
+          {{ _('Innovating the future of digital employee experience with') }}
+          {{ _('AI-powered solutions.') }}
+        </p>
+      </div>
+
+      
+      <div>
+        <h3 class="text-[#015486] font-bold mb-4">{{ _('Quick Links') }}</h3>
+        <ul class="text-gray-700 space-y-2">
+          <li>
+            <a href="/" class="hover:text-[#EF3451] transition">{{ _('Home') }}</a>
+          </li>
+          <li>
+            <a href="/solutions" class="hover:text-[#EF3451] transition">{{ _('Solutions') }}</a>
+          </li>
+          <li>
+            <a href="/articles" class="hover:text-[#EF3451] transition">{{ _('Articles') }}</a>
+          </li>
+          <li>
+            <a href="/reviews" class="hover:text-[#EF3451] transition">{{ _('Reviews') }}</a>
+          </li>
+        </ul>
+      </div>
+
+      
+      <div>
+        <h3 class="text-[#015486] font-bold mb-4">{{ _('Pages') }}</h3>
+        <ul class="text-gray-700 space-y-2">
+          <li>
+            <a href="/events" class="hover:text-[#EF3451] transition">{{ _('Events') }}</a>
+          </li>
+          <li>
+            <a href="/contact" class="hover:text-[#EF3451] transition">{{ _('Contact') }}</a>
+          </li>
+          <li>
+            <a href="/about" class="hover:text-[#EF3451] transition">{{ _('About') }}</a>
+          </li>
+        </ul>
+      </div>
+
+      
+      <div>
+        <h3 class="text-[#015486] font-bold mb-4">{{ _('Follow Us') }}</h3>
+        <div class="flex gap-4 text-gray-700">
+          <a href="#" class="text-2xl hover:text-[#EF3451] transition"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-2xl hover:text-[#EF3451] transition"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-2xl hover:text-[#EF3451] transition"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="text-2xl hover:text-[#EF3451] transition"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="text-center text-gray-500 mt-10">
+      © {{ current_year }} {{ _('AI-Solution. All rights reserved.') }}
+    </div>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.getElementById("toast-container");
+      const messages = document.querySelectorAll("#flash-messages div");
+
+      messages.forEach(msg => {
+        const text = msg.textContent;
+        const type = msg.dataset.type;
+
+        const toast = document.createElement("div");
+        toast.className = `
+      flex items-center justify-between px-8 py-4 rounded-xl shadow-xl text-white
+      transform scale-90 opacity-0 transition-all duration-300 pointer-events-auto
+      ${type === 'success' ? 'bg-green-500' : 'bg-red-500'}
+    `;
+
+        toast.innerHTML = `
+      <span class="text-center">${text}</span>
+      <button class="ml-4 text-white font-bold">&times;</button>
+    `;
+
+        container.appendChild(toast);
+
+        
+        requestAnimationFrame(() => {
+          toast.style.opacity = 1;
+          toast.style.transform = 'scale(1)';
+        });
+
+        
+        toast.querySelector("button").addEventListener("click", () => {
+          toast.style.opacity = 0;
+          toast.style.transform = 'scale(0.9)';
+          toast.addEventListener("transitionend", () => toast.remove());
+        });
+
+        
+        setTimeout(() => {
+          toast.style.opacity = 0;
+          toast.style.transform = 'scale(0.9)';
+          toast.addEventListener("transitionend", () => toast.remove());
+        }, 4000);
+      });
+    });
+  </script>
+
+</body>
+
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const icon = menuBtn.querySelector("i");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+    icon.classList.toggle("fa-bars");
+    icon.classList.toggle("fa-times");
+  });
+</script>
+
+  
+  {% include 'components/language-switcher.html' %}
+  {% include 'components/chatbot.html' %}
+  <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+</html>

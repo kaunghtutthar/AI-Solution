@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="{{ get_locale() }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ _('AI-Solution | Events | AI Kickoff Seminar') }}</title>
+
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#015486",
+              secondary: "#EF3451",
+            },
+          },
+        },
+      };
+    </script>
+
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body class="bg-white text-[#383838] font-sans">
+    
+    <header class="bg-white shadow sticky top-0 z-50">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <img
+          src="/static/images/logo-fit.png"
+          alt="AI-Solution Logo"
+          class="h-10"
+        />
+
+        <nav class="hidden md:flex space-x-8 font-medium">
+          <a href="/" class="hover:text-secondary">{{ _('Home') }}</a>
+          <a href="/solutions" class="hover:text-secondary">{{ _('Solutions') }}</a>
+          <a href="/articles" class="hover:text-secondary">{{ _('Articles') }}</a>
+          <a href="/reviews" class="hover:text-secondary">{{ _('Reviews') }}</a>
+          <a href="/events" class="text-secondary font-semibold">{{ _('Events') }}</a>
+          <a href="/contact" class="hover:text-secondary">{{ _('Contact') }}</a>
+          <a href="/about" class="hover:text-secondary">{{ _('About') }}</a>
+        </nav>
+
+        <button
+          id="menu-btn"
+          class="md:hidden text-2xl text-gray-700 focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <nav
+        id="mobile-menu"
+        class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t z-50"
+      >
+        <div class="flex flex-col px-6 py-6 space-y-4 font-medium">
+          <a href="/" class="hover:text-secondary">{{ _('Home') }}</a>
+          <a href="/solutions" class="hover:text-secondary">{{ _('Solutions') }}</a>
+          <a href="/articles" class="hover:text-secondary">{{ _('Articles') }}</a>
+          <a href="/reviews" class="hover:text-secondary">{{ _('Reviews') }}</a>
+          <a href="/events" class="text-secondary font-semibold">{{ _('Events') }}</a>
+          <a href="/contact" class="hover:text-secondary">{{ _('Contact') }}</a>
+          <a href="/about" class="hover:text-secondary">{{ _('About') }}</a>
+        </div>
+      </nav>
+    </header>
+
+    
+    <section class="relative h-[500px] md:h-[600px]">
+      <img
+        src="/static/images/event-image-7.jpg"
+        alt="AI Kickoff Seminar"
+        class="w-full h-full object-cover"
+      />
+
+      <div class="absolute inset-0 bg-black/40"></div>
+
+      <div
+        class="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
+      >
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+          {{ _('AI Kickoff Seminar') }}
+        </h1>
+        <p class="text-white text-lg md:text-xl mb-4 max-w-3xl">
+          {{ _('An introductory seminar on AI hosted by AI-Solution, covering key concepts and real-world applications for beginners.') }}
+        </p>
+        <p class="text-white mb-2"><strong>{{ _('Date') }}:</strong> {{ _('Dec 25, 2025') }}</p>
+        <p class="text-white mb-6">
+          <strong>{{ _('Location') }}:</strong> {{ _('Uncommon | Liverpool Street | London') }}
+        </p>
+        <span
+          class="bg-gray-500 text-white px-6 py-3 rounded-2xl font-semibold cursor-not-allowed"
+        >
+          {{ _('Past Event') }}
+        </span>
+      </div>
+    </section>
+
+    
+    <section class="py-20 max-w-5xl mx-auto px-6">
+      <div class="mx-auto text-gray-700 space-y-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#015486] mt-12 mb-4">
+          {{ _('Event Overview') }}
+        </h2>
+        <p class="text-lg leading-relaxed">
+          {{ _('The AI Kickoff Seminar was designed for professionals and enthusiasts who are new to artificial intelligence. Participants learned the basics of AI, including key concepts, terminology, and introductory applications across various business functions. The seminar provided an excellent foundation for future AI initiatives.') }}
+        </p>
+
+        <h2 class="text-3xl md:text-4xl font-bold text-[#015486] mt-12 mb-4">
+          {{ _('Agenda') }}
+        </h2>
+        <ul class="list-disc list-inside text-lg leading-relaxed space-y-2">
+          <li>{{ _('09:00 AM – Welcome & Introduction') }}</li>
+          <li>{{ _('09:30 AM – AI Fundamentals Overview') }}</li>
+          <li>{{ _('10:30 AM – Case Studies of AI Applications') }}</li>
+          <li>{{ _('12:00 PM – Lunch & Networking') }}</li>
+          <li>{{ _('01:00 PM – Hands-On Demo Session') }}</li>
+          <li>{{ _('03:00 PM – Q&A and Closing Remarks') }}</li>
+        </ul>
+
+        <h2 class="text-3xl md:text-4xl font-bold text-[#015486] mt-12 mb-4">
+          {{ _('Resources') }}
+        </h2>
+        <ul class="list-disc list-inside text-lg leading-relaxed space-y-2">
+          <li>{{ _('Laptop or Tablet') }}</li>
+        </ul>
+
+        <h2 class="text-3xl md:text-4xl font-bold text-[#015486] mt-12 mb-4">
+          {{ _('Speakers') }}
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div
+            class="bg-white rounded-3xl shadow-lg p-6 text-center hover:shadow-2xl transition"
+          >
+            <img
+              src="/static/images/janah-inido.jpg"
+              alt="Speaker"
+              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+            />
+            <h3 class="font-bold text-lg">{{ _('Janah Inido') }}</h3>
+            <p class="text-gray-600 text-sm">{{ _('Chief AI Officer, AI-Solution') }}</p>
+          </div>
+
+          <div
+            class="bg-white rounded-3xl shadow-lg p-6 text-center hover:shadow-2xl transition"
+          >
+            <img
+              src="/static/images/alice-green.jpg"
+              alt="Speaker"
+              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+            />
+            <h3 class="font-bold text-lg">{{ _('Alice Green') }}</h3>
+            <p class="text-gray-600 text-sm">{{ _('Lead AI Engineer, AI-Solution') }}</p>
+          </div>
+
+          <div
+            class="bg-white rounded-3xl shadow-lg p-6 text-center hover:shadow-2xl transition"
+          >
+            <img
+              src="/static/images/nolan-obinou.jpg"
+              alt="Speaker"
+              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+            />
+            <h3 class="font-bold text-lg">{{ _('Nolan Obinou') }}</h3>
+            <p class="text-gray-600 text-sm">{{ _('AI Project Manager, AI-Solution') }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-[#015486] mb-12 text-center">
+          {{ _('Event Gallery') }}
+        </h2>
+        <div
+          id="gallery-grid"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+        >
+          
+          <img
+            src="/static/images/event-7-gallery-1.jpg"
+            class="rounded-2xl shadow-lg object-cover w-full h-64"
+          />
+          <img
+            src="/static/images/event-7-gallery-2.jpg"
+            class="rounded-2xl shadow-lg object-cover w-full h-64"
+          />
+          <img
+            src="/static/images/event-7-gallery-3.jpg"
+            class="rounded-2xl shadow-lg object-cover w-full h-64"
+          />
+          <img
+            src="/static/images/event-7-gallery-4.jpg"
+            class="rounded-2xl shadow-lg object-cover w-full h-64"
+          />
+          <img
+            src="/static/images/event-7-gallery-5.jpg"
+            class="rounded-2xl shadow-lg object-cover w-full h-64"
+          />
+          <img
+            src="/static/images/event-7-gallery-6.jpg"
+            class="rounded-2xl shadow-lg object-cover w-full h-64"
+          />
+
+          
+          <img
+            src="/static/images/event-7-gallery-7.jpg"
+            class="rounded-2xl shadow-lg object-cover w-full h-64 hidden"
+          />
+          <img
+            src="/static/images/event-7-gallery-8.jpg"
+            class="rounded-2xl shadow-lg object-cover w-full h-64 hidden"
+          />
+          <img
+            src="/static/images/event-7-gallery-9.jpg"
+            class="rounded-2xl shadow-lg object-cover w-full h-64 hidden"
+          />
+          <img
+            src="/static/images/event-7-gallery-10.jpg"
+            class="rounded-2xl shadow-lg object-cover w-full h-64 hidden"
+          />
+          <img
+            src="/static/images/event-7-gallery-11.jpg"
+            class="rounded-2xl shadow-lg object-cover w-full h-64 hidden"
+          />
+          <img
+            src="/static/images/event-7-gallery-12.jpg"
+            class="rounded-2xl shadow-lg object-cover w-full h-64 hidden"
+          />
+        </div>
+
+        
+        <div class="text-center mt-8">
+          <button
+            id="load-more-btn"
+            class="bg-primary text-white px-6 py-3 rounded-2xl font-semibold hover:opacity-90 transition"
+          >
+            {{ _('Load More') }}
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const loadMoreBtn = document.getElementById("load-more-btn");
+      const hiddenImages = document.querySelectorAll(
+        "#gallery-grid img.hidden"
+      );
+
+      loadMoreBtn.addEventListener("click", () => {
+        hiddenImages.forEach((img) => img.classList.remove("hidden"));
+        loadMoreBtn.style.display = "none"; 
+      });
+    </script>
+
+    
+    <footer class="bg-gray-100 py-20">
+      <div
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10"
+      >
+        <div>
+          <h3 class="mb-4 flex items-start">
+            <img
+              src="/static/images/logo-transparent-bg-fit.png"
+              alt="AI-Solution Logo"
+              class="h-12"
+            />
+          </h3>
+          <p class="text-gray-600">
+            {{ _('Innovating the future of the digital employee experience with AI-powered solutions.') }}
+          </p>
+        </div>
+        <div>
+          <h3 class="text-[#015486] font-bold mb-4">{{ _('Quick Links') }}</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li>
+              <a href="/" class="hover:text-[#EF3451] transition">{{ _('Home') }}</a>
+            </li>
+            <li>
+              <a href="/solutions" class="hover:text-[#EF3451] transition"
+                >Solutions</a
+              >
+            </li>
+            <li>
+              <a href="/articles" class="hover:text-[#EF3451] transition"
+                >Articles</a
+              >
+            </li>
+            <li>
+              <a href="/reviews" class="hover:text-[#EF3451] transition"
+                >Reviews</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-[#015486] font-bold mb-4">{{ _('Pages') }}</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li>
+              <a href="/events" class="hover:text-[#EF3451] transition"
+                >Events</a
+              >
+            </li>
+            <li>
+              <a href="/contact" class="hover:text-[#EF3451] transition"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a href="/about" class="hover:text-[#EF3451] transition">{{ _('About') }}</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-[#015486] font-bold mb-4">{{ _('Follow Us') }}</h3>
+          <div class="flex gap-4 text-gray-700">
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center text-gray-500 mt-10">
+        © 2025 {{ _('AI-Solution. All rights reserved.') }}
+      </div>
+    </footer>
+
+    
+    {% include 'components/language-switcher.html' %}
+
+    
+    {% include 'components/chatbot.html' %}
+    <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+  </body>

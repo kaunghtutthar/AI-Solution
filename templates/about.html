@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="{{ get_locale() }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-Solution | {{ _('About') }}</title>
+
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#015486",
+              secondary: "#EF3451",
+            },
+          },
+        },
+      };
+    </script>
+
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body class="bg-white text-gray-700 font-sans">
+    
+    <header class="bg-white shadow sticky top-0 z-50">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        
+        <img
+          src="/static/images/logo-fit.png"
+          alt="AI-Solution Logo"
+          class="h-10"
+        />
+
+        
+        <nav class="hidden md:flex space-x-8 font-medium">
+          <a href="/" class="hover:text-secondary">{{ _('Home') }}</a>
+          <a href="/solutions" class="hover:text-secondary">{{ _('Solutions') }}</a>
+          <a href="/articles" class="hover:text-secondary">{{ _('Articles') }}</a>
+          <a href="/reviews" class="hover:text-secondary">{{ _('Reviews') }}</a>
+          <a href="/events" class="hover:text-secondary">{{ _('Events') }}</a>
+          <a href="/contact" class="hover:text-secondary">{{ _('Contact') }}</a>
+          <a href="/about" class="text-secondary font-semibold">{{ _('About') }}</a>
+        </nav>
+
+        
+        <button
+          id="menu-btn"
+          class="md:hidden text-2xl text-gray-700 focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      
+      <nav
+        id="mobile-menu"
+        class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t z-50"
+      >
+        <div class="flex flex-col px-6 py-6 space-y-4 font-medium">
+          <a href="/" class="hover:text-secondary">{{ _('Home') }}</a>
+          <a href="/solutions" class="hover:text-secondary">{{ _('Solutions') }}</a>
+          <a href="/articles" class="hover:text-secondary">{{ _('Articles') }}</a>
+          <a href="/reviews" class="hover:text-secondary">{{ _('Reviews') }}</a>
+          <a href="/events" class="hover:text-secondary">{{ _('Events') }}</a>
+          <a href="/contact" class="hover:text-secondary">{{ _('Contact') }}</a>
+          <a href="/about" class="text-secondary font-semibold">{{ _('About') }}</a>
+        </div>
+      </nav>
+    </header>
+
+    
+    <section
+      class="py-32 bg-gradient-to-r from-[#015486] to-[#EF3451] text-white text-center"
+    >
+      <div class="max-w-3xl mx-auto px-6 space-y-6">
+        <h1 class="text-5xl font-bold">{{ _('About AI-Solution') }}</h1>
+        <p class="text-lg md:text-xl">
+          {{ _('AI-Solution leverages AI to proactively support industries, delivering solutions that enhance the digital employee experience, accelerate innovation, and drive growth.') }}
+        </p>
+      </div>
+    </section>
+
+    
+    <section
+      class="py-24 max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-12"
+    >
+      <div class="lg:w-1/2">
+        <img
+          src="/static/images/company.jpg"
+          alt="Company Overview"
+          class="rounded-3xl shadow-xl w-full"
+        />
+      </div>
+      <div class="lg:w-1/2 space-y-6">
+        <h2 class="text-4xl font-bold text-primary">{{ _('Company Overview') }}</h2>
+        <p class="text-lg leading-relaxed">
+          {{ _('AI-Solution is a start-up based in Sunderland, specializing in AI-powered software solutions across multiple industries. Our AI-driven virtual assistant responds to inquiries and provides affordable prototyping solutions, setting us apart from competitors.') }}
+        </p>
+        <p class="text-lg leading-relaxed">
+          {{ _('We focus on addressing issues that impact the digital employee experience, helping companies accelerate design, engineering, and innovation processes.') }}
+        </p>
+      </div>
+    </section>
+
+    
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 text-center mb-14">
+        <h2 class="text-3xl font-bold text-primary">{{ _('Vision & Mission') }}</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          {{ _('Guiding principles that define our direction and purpose.') }}
+        </p>
+      </div>
+
+      <div
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12"
+      >
+        
+        <div
+          class="relative bg-white/80 backdrop-blur p-12 rounded-3xl text-center shadow-[0_20px_50px_rgba(1,84,134,0.15)] hover:shadow-[0_30px_70px_rgba(239,52,81,0.3)] hover:-translate-y-2 transition-all duration-500 overflow-hidden"
+        >
+          <div
+            class="absolute -top-10 -right-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl"
+          ></div>
+
+          <div
+            class="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-secondary text-white text-2xl shadow-lg"
+          >
+            <i class="fas fa-eye"></i>
+          </div>
+
+          <h3 class="text-2xl font-bold mb-3 text-primary">{{ _('Our Vision') }}</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            {{ _('To shape the future of the digital employee experience by enabling organizations worldwide to work smarter, faster, and more efficiently through AI-driven innovation.') }}
+          </p>
+        </div>
+
+        
+        <div
+          class="relative bg-white/80 backdrop-blur p-12 rounded-3xl text-center shadow-[0_20px_50px_rgba(1,84,134,0.15)] hover:shadow-[0_30px_70px_rgba(239,52,81,0.3)] hover:-translate-y-2 transition-all duration-500 overflow-hidden"
+        >
+          <div
+            class="absolute -top-10 -left-10 w-32 h-32 bg-secondary/20 rounded-full blur-3xl"
+          ></div>
+
+          <div
+            class="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-secondary text-white text-2xl shadow-lg"
+          >
+            <i class="fas fa-bullseye"></i>
+          </div>
+
+          <h3 class="text-2xl font-bold mb-3 text-primary">{{ _('Our Mission') }}</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            {{ _('To design and deliver AI-powered solutions that proactively support people at work, enhance productivity, and accelerate innovation across industries.') }}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 text-center mb-14">
+        <h2 class="text-3xl font-bold text-primary">{{ _('Our Core Values') }}</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          {{ _('The principles that drive our technology, culture, and partnerships.') }}
+        </p>
+      </div>
+
+      <div
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+      >
+        
+        <div
+          class="group bg-white rounded-3xl p-8 text-center shadow-[0_15px_40px_rgba(1,84,134,0.12)] hover:shadow-[0_25px_60px_rgba(239,52,81,0.25)] hover:-translate-y-2 transition-all duration-500"
+        >
+          <div
+            class="w-14 h-14 mx-auto mb-5 flex items-center justify-center rounded-xl bg-primary/10 text-primary text-2xl group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-secondary group-hover:text-white transition-all duration-500"
+          >
+            <i class="fas fa-lightbulb"></i>
+          </div>
+
+          <h3 class="text-lg font-bold mb-2">{{ _('Innovation') }}</h3>
+          <p class="text-gray-600 text-sm">
+            {{ _('Continuously pushing boundaries to deliver intelligent, forward-thinking AI solutions.') }}
+          </p>
+        </div>
+
+        
+        <div
+          class="group bg-white rounded-3xl p-8 text-center shadow-[0_15px_40px_rgba(1,84,134,0.12)] hover:shadow-[0_25px_60px_rgba(239,52,81,0.25)] hover:-translate-y-2 transition-all duration-500"
+        >
+          <div
+            class="w-14 h-14 mx-auto mb-5 flex items-center justify-center rounded-xl bg-primary/10 text-primary text-2xl group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-secondary group-hover:text-white transition-all duration-500"
+          >
+            <i class="fas fa-shield-alt"></i>
+          </div>
+
+          <h3 class="text-lg font-bold mb-2">{{ _('Trust & Security') }}</h3>
+          <p class="text-gray-600 text-sm">
+            {{ _('Building secure, reliable solutions with transparency at every stage.') }}
+          </p>
+        </div>
+
+        
+        <div
+          class="group bg-white rounded-3xl p-8 text-center shadow-[0_15px_40px_rgba(1,84,134,0.12)] hover:shadow-[0_25px_60px_rgba(239,52,81,0.25)] hover:-translate-y-2 transition-all duration-500"
+        >
+          <div
+            class="w-14 h-14 mx-auto mb-5 flex items-center justify-center rounded-xl bg-primary/10 text-primary text-2xl group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-secondary group-hover:text-white transition-all duration-500"
+          >
+            <i class="fas fa-users"></i>
+          </div>
+
+          <h3 class="text-lg font-bold mb-2">{{ _('People First') }}</h3>
+          <p class="text-gray-600 text-sm">
+            {{ _('Designing AI that empowers people, enhances work, and supports collaboration.') }}
+          </p>
+        </div>
+
+        
+        <div
+          class="group bg-white rounded-3xl p-8 text-center shadow-[0_15px_40px_rgba(1,84,134,0.12)] hover:shadow-[0_25px_60px_rgba(239,52,81,0.25)] hover:-translate-y-2 transition-all duration-500"
+        >
+          <div
+            class="w-14 h-14 mx-auto mb-5 flex items-center justify-center rounded-xl bg-primary/10 text-primary text-2xl group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-secondary group-hover:text-white transition-all duration-500"
+          >
+            <i class="fas fa-robot"></i>
+          </div>
+
+          <h3 class="text-lg font-bold mb-2">{{ _('AI Excellence') }}</h3>
+          <p class="text-gray-600 text-sm">
+            {{ _('Applying deep AI expertise to deliver measurable, real-world impact.') }}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 text-center mb-14">
+        <h2 class="text-3xl font-bold text-primary">{{ _('Our Location') }}</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          {{ _('Visit our headquarters in Sunderland, where innovation meets excellence.') }}
+        </p>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+          
+          <div class="flex flex-col space-y-8 h-full">
+            <div class="bg-white rounded-3xl p-8 shadow-[0_20px_50px_rgba(1,84,134,0.15)] hover:shadow-[0_30px_70px_rgba(239,52,81,0.3)] hover:-translate-y-2 transition-all duration-500 flex-1">
+              <div class="flex items-center mb-6">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4">
+                  <i class="fas fa-map-marker-alt text-primary text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-primary">{{ _('Headquarters') }}</h3>
+              </div>
+              <div class="space-y-4 text-gray-700">
+                <p class="font-semibold">AI-Solution</p>
+                <p>{{ _('Sunderland, United Kingdom') }}</p>
+                <p class="text-sm text-gray-600">{{ _('Strategically located in heart of Sunderland\'s innovation district.') }}</p>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 shadow-[0_20px_50px_rgba(1,84,134,0.15)] hover:shadow-[0_30px_70px_rgba(239,52,81,0.3)] hover:-translate-y-2 transition-all duration-500 flex-1">
+              <div class="flex items-center mb-6">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4">
+                  <i class="fas fa-clock text-primary text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-primary">{{ _('Office Hours') }}</h3>
+              </div>
+              <div class="space-y-2 text-gray-700">
+                <p><span class="font-semibold">{{ _('Monday - Friday') }}:</span> {{ _('9:00 AM') }} - {{ _('6:00 PM') }}</p>
+                <p><span class="font-semibold">{{ _('Saturday') }}:</span> {{ _('10:00 AM') }} - {{ _('2:00 PM') }}</p>
+                <p><span class="font-semibold">{{ _('Sunday') }}:</span> {{ _('Closed') }}</p>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="relative bg-white rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(1,84,134,0.15)] hover:shadow-[0_30px_70px_rgba(239,52,81,0.3)] hover:-translate-y-2 transition-all duration-500">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5"></div>
+            <div class="relative p-8 h-full min-h-[400px] flex items-center justify-center">
+              <div class="text-center space-y-4">
+                <div class="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto">
+                  <i class="fas fa-map-marked-alt text-white text-3xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-primary">{{ _('Find Us in Sunderland') }}</h4>
+                <p class="text-gray-600">{{ _('Our modern office space is designed to foster collaboration and innovation.') }}</p>
+                <a href="/contact" class="inline-flex items-center text-primary hover:text-secondary font-semibold transition">
+                  <i class="fas fa-directions mr-2"></i>
+                  {{ _('Get Directions') }}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="py-24 bg-gray-50">
+      
+      <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+        <h2 class="text-3xl font-bold text-primary">{{ _('Meet Our Team') }}</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          {{ _('A team of AI experts, engineers, and strategists driving innovation and measurable impact.') }}
+        </p>
+      </div>
+
+      
+      <div class="max-w-7xl mx-auto px-6 mb-24">
+        <h3 class="text-xl font-semibold text-primary mb-10 text-center">
+          {{ _('Leadership') }}
+        </h3>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          
+          <div
+            class="group relative bg-white rounded-3xl p-8 text-center overflow-hidden shadow-[0_20px_50px_rgba(1,84,134,0.15)] hover:shadow-[0_30px_70px_rgba(239,52,81,0.3)] hover:-translate-y-2 transition-all duration-500"
+          >
+            <div
+              class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-secondary"
+            ></div>
+
+            <img
+              src="/static/images/john-doe.jpg"
+              alt="John Doe"
+              class="w-32 h-32 rounded-full mx-auto mb-6 object-cover ring-4 ring-primary/20"
+            />
+
+            <h4 class="text-xl font-bold">John Doe</h4>
+            <p class="text-sm font-medium text-primary mb-3">
+              {{ _('Chief Executive Officer') }}
+            </p>
+            <p class="text-gray-600 text-sm mb-4">
+              {{ _('Leading AI-driven strategy, growth, and innovation across industries.') }}
+            </p>
+
+            <a href="#" class="text-primary hover:text-secondary transition">
+              <i class="fab fa-linkedin text-xl"></i>
+            </a>
+          </div>
+
+          
+          <div
+            class="group relative bg-white rounded-3xl p-8 text-center overflow-hidden shadow-[0_20px_50px_rgba(1,84,134,0.15)] hover:shadow-[0_30px_70px_rgba(239,52,81,0.3)] hover:-translate-y-2 transition-all duration-500"
+          >
+            <div
+              class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-secondary"
+            ></div>
+
+            <img
+              src="/static/images/mark-nilen.jpg"
+              alt="Mark Nilen"
+              class="w-32 h-32 rounded-full mx-auto mb-6 object-cover ring-4 ring-primary/20"
+            />
+
+            <h4 class="text-xl font-bold">Mark Nilen</h4>
+            <p class="text-sm font-medium text-primary mb-3">
+              {{ _('Chief Technology Officer') }}
+            </p>
+            <p class="text-gray-600 text-sm mb-4">
+              {{ _('Architecting scalable, secure AI platforms and engineering excellence.') }}
+            </p>
+
+            <a href="#" class="text-primary hover:text-secondary transition">
+              <i class="fab fa-linkedin text-xl"></i>
+            </a>
+          </div>
+
+          
+          <div
+            class="group relative bg-white rounded-3xl p-8 text-center overflow-hidden shadow-[0_20px_50px_rgba(1,84,134,0.15)] hover:shadow-[0_30px_70px_rgba(239,52,81,0.3)] hover:-translate-y-2 transition-all duration-500"
+          >
+            <div
+              class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-secondary"
+            ></div>
+
+            <img
+              src="/static/images/janah-inido.jpg"
+              alt="Janah Inido"
+              class="w-32 h-32 rounded-full mx-auto mb-6 object-cover ring-4 ring-primary/20"
+            />
+
+            <h4 class="text-xl font-bold">Janah Inido</h4>
+            <p class="text-sm font-medium text-primary mb-3">
+              {{ _('Chief AI Officer') }}
+            </p>
+            <p class="text-gray-600 text-sm mb-4">
+              {{ _('Driving AI research, model strategy, and applied intelligence solutions.') }}
+            </p>
+
+            <a href="#" class="text-primary hover:text-secondary transition">
+              <i class="fab fa-linkedin text-xl"></i>
+            </a>
+          </div>
+
+          
+          <div
+            class="group relative bg-white rounded-3xl p-8 text-center overflow-hidden shadow-[0_20px_50px_rgba(1,84,134,0.15)] hover:shadow-[0_30px_70px_rgba(239,52,81,0.3)] hover:-translate-y-2 transition-all duration-500"
+          >
+            <div
+              class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-secondary"
+            ></div>
+
+            <img
+              src="/static/images/jane-smith.jpg"
+              alt="Jane Smith"
+              class="w-32 h-32 rounded-full mx-auto mb-6 object-cover ring-4 ring-primary/20"
+            />
+
+            <h4 class="text-xl font-bold">Jane Smith</h4>
+            <p class="text-sm font-medium text-primary mb-3">
+              {{ _('Chief People Officer') }}
+            </p>
+            <p class="text-gray-600 text-sm mb-4">
+              {{ _('Leading talent strategy, culture, and employee experience to build high-performing teams.') }}
+            </p>
+
+            <a href="#" class="text-primary hover:text-secondary transition">
+              <i class="fab fa-linkedin text-xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="max-w-7xl mx-auto px-6">
+        <h3 class="text-xl font-semibold text-primary mb-8 text-center">
+          {{ _('Core Team') }}
+        </h3>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+        >
+          
+          <div
+            class="group bg-white rounded-3xl p-6 text-center shadow-[0_15px_40px_rgba(1,84,134,0.12)] hover:shadow-[0_25px_60px_rgba(239,52,81,0.25)] hover:-translate-y-1 transition-all duration-500"
+          >
+            <img
+              src="/static/images/nolan-obinou.jpg"
+              alt="Nolan Obinou"
+              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+            />
+
+            <h4 class="text-lg font-semibold">Nolan Obinou</h4>
+            <p class="text-sm text-gray-500 mb-3">{{ _('AI Project Manager') }}</p>
+
+            <a href="#" class="text-gray-400 hover:text-primary transition">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+
+          <div
+            class="group bg-white rounded-3xl p-6 text-center shadow-[0_15px_40px_rgba(1,84,134,0.12)] hover:shadow-[0_25px_60px_rgba(239,52,81,0.25)] hover:-translate-y-1 transition-all duration-500"
+          >
+            <img
+              src="/static/images/alice-green.jpg"
+              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+              alt=""
+            />
+            <h4 class="text-lg font-semibold">Alice Green</h4>
+            <p class="text-sm text-gray-500 mb-3">{{ _('Lead AI Engineer') }}</p>
+            <a href="#" class="text-gray-400 hover:text-primary transition"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+
+          <div
+            class="group bg-white rounded-3xl p-6 text-center shadow-[0_15px_40px_rgba(1,84,134,0.12)] hover:shadow-[0_25px_60px_rgba(239,52,81,0.25)] hover:-translate-y-1 transition-all duration-500"
+          >
+            <img
+              src="/static/images/michael-brown.jpg"
+              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+              alt=""
+            />
+            <h4 class="text-lg font-semibold">Michael Brown</h4>
+            <p class="text-sm text-gray-500 mb-3">{{ _('Product Manager') }}</p>
+            <a href="#" class="text-gray-400 hover:text-primary transition"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+
+          <div
+            class="group bg-white rounded-3xl p-6 text-center shadow-[0_15px_40px_rgba(1,84,134,0.12)] hover:shadow-[0_25px_60px_rgba(239,52,81,0.25)] hover:-translate-y-1 transition-all duration-500"
+          >
+            <img
+              src="/static/images/daniel-carter.jpg"
+              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+              alt=""
+            />
+            <h4 class="text-lg font-semibold">Daniel Carter</h4>
+            <p class="text-sm text-gray-500 mb-3">{{ _('Head of Growth') }}</p>
+            <a href="#" class="text-gray-400 hover:text-primary transition"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+
+          <div
+            class="group bg-white rounded-3xl p-6 text-center shadow-[0_15px_40px_rgba(1,84,134,0.12)] hover:shadow-[0_25px_60px_rgba(239,52,81,0.25)] hover:-translate-y-1 transition-all duration-500"
+          >
+            <img
+              src="/static/images/sarah-white.jpg"
+              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+              alt=""
+            />
+            <h4 class="text-lg font-semibold">Sarah White</h4>
+            <p class="text-sm text-gray-500 mb-3">{{ _('AI Solutions Architect') }}</p>
+            <a href="#" class="text-gray-400 hover:text-primary transition"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+
+          <div
+            class="group bg-white rounded-3xl p-6 text-center shadow-[0_15px_40px_rgba(1,84,134,0.12)] hover:shadow-[0_25px_60px_rgba(239,52,81,0.25)] hover:-translate-y-1 transition-all duration-500"
+          >
+            <img
+              src="/static/images/david-alloren.jpg"
+              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+              alt=""
+            />
+            <h4 class="text-lg font-semibold">David Alloren</h4>
+            <p class="text-sm text-gray-500 mb-3">{{ _('Software Engineer') }}</p>
+            <a href="#" class="text-gray-400 hover:text-primary transition"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+
+          <div
+            class="group bg-white rounded-3xl p-6 text-center shadow-[0_15px_40px_rgba(1,84,134,0.12)] hover:shadow-[0_25px_60px_rgba(239,52,81,0.25)] hover:-translate-y-1 transition-all duration-500"
+          >
+            <img
+              src="/static/images/emily-davis.jpg"
+              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+              alt=""
+            />
+            <h4 class="text-lg font-semibold">Emily Davis</h4>
+            <p class="text-sm text-gray-500 mb-3">{{ _('UX/UI Designer') }}</p>
+            <a href="#" class="text-gray-400 hover:text-primary transition"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+
+          <div
+            class="group bg-white rounded-3xl p-6 text-center shadow-[0_15px_40px_rgba(1,84,134,0.12)] hover:shadow-[0_25px_60px_rgba(239,52,81,0.25)] hover:-translate-y-1 transition-all duration-500"
+          >
+            <img
+              src="/static/images/robert-wilson.jpg"
+              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+              alt=""
+            />
+            <h4 class="text-lg font-semibold">Robert Wilson</h4>
+            <p class="text-sm text-gray-500 mb-3">{{ _('Senior Data Analyst') }}</p>
+            <a href="#" class="text-gray-400 hover:text-primary transition"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+
+          <div
+            class="group bg-white rounded-3xl p-6 text-center shadow-[0_15px_40px_rgba(1,84,134,0.12)] hover:shadow-[0_25px_60px_rgba(239,52,81,0.25)] hover:-translate-y-1 transition-all duration-500"
+          >
+            <img
+              src="/static/images/olivia-martinez.jpg"
+              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+              alt=""
+            />
+            <h4 class="text-lg font-semibold">Olivia Martinez</h4>
+            <p class="text-sm text-gray-500 mb-3">{{ _('Marketing Lead') }}</p>
+            <a href="#" class="text-gray-400 hover:text-primary transition"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+
+          <div
+            class="group bg-white rounded-3xl p-6 text-center shadow-[0_15px_40px_rgba(1,84,134,0.12)] hover:shadow-[0_25px_60px_rgba(239,52,81,0.25)] hover:-translate-y-1 transition-all duration-500"
+          >
+            <img
+              src="/static/images/james-taylor.jpg"
+              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+              alt=""
+            />
+            <h4 class="text-lg font-semibold">James Taylor</h4>
+            <p class="text-sm text-gray-500 mb-3">{{ _('Business Analyst') }}</p>
+            <a href="#" class="text-gray-400 hover:text-primary transition"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+
+          <div
+            class="group bg-white rounded-3xl p-6 text-center shadow-[0_15px_40px_rgba(1,84,134,0.12)] hover:shadow-[0_25px_60px_rgba(239,52,81,0.25)] hover:-translate-y-1 transition-all duration-500"
+          >
+            <img
+              src="/static/images/sophia-king.jpg"
+              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+              alt=""
+            />
+            <h4 class="text-lg font-semibold">Sophia King</h4>
+            <p class="text-sm text-gray-500 mb-3">{{ _('HR Manager') }}</p>
+            <a href="#" class="text-gray-400 hover:text-primary transition"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+
+          <div
+            class="group bg-white rounded-3xl p-6 text-center shadow-[0_15px_40px_rgba(1,84,134,0.12)] hover:shadow-[0_25px_60px_rgba(239,52,81,0.25)] hover:-translate-y-1 transition-all duration-500"
+          >
+            <img
+              src="/static/images/william-johnson.jpg"
+              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+              alt=""
+            />
+            <h4 class="text-lg font-semibold">William Johnson</h4>
+            <p class="text-sm text-gray-500 mb-3">{{ _('AI Product Designer') }}</p>
+            <a href="#" class="text-gray-400 hover:text-primary transition"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section
+      class="py-24 bg-gradient-to-r from-[#015486] to-[#EF3451] text-white text-center"
+    >
+      <div class="max-w-3xl mx-auto px-6 space-y-6">
+        <h2 class="text-4xl font-bold">{{ _('Ready to transform your workplace?') }}</h2>
+        <p class="text-lg md:text-xl">
+          {{ _('Contact us today to discover how AI-Solution can empower your team.') }}
+        </p>
+        <a
+          href="/contact"
+          class="bg-white text-primary px-10 py-4 rounded-2xl font-semibold hover:opacity-90 transition inline-block"
+        >
+          {{ _('Contact Us') }}
+        </a>
+      </div>
+    </section>
+
+    
+    <footer class="bg-gray-100 py-20">
+      <div
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10"
+      >
+        
+        <div>
+          <h3 class="mb-4 flex items-start">
+            <img
+              src="/static/images/logo-transparent-bg-fit.png"
+              alt="AI-Solution Logo"
+              class="h-12"
+            />
+          </h3>
+          <p class="text-gray-600">
+            {{ _('Innovating the future of the digital employee experience with AI-powered solutions.') }}
+          </p>
+        </div>
+
+        
+        <div>
+          <h3 class="text-[#015486] font-bold mb-4">{{ _('Quick Links') }}</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li>
+              <a href="/" class="hover:text-[#EF3451] transition">{{ _('Home') }}</a>
+            </li>
+            <li>
+              <a href="/solutions" class="hover:text-[#EF3451] transition"
+                >{{ _('Solutions') }}</a
+              >
+            </li>
+            <li>
+              <a href="/articles" class="hover:text-[#EF3451] transition"
+                >{{ _('Articles') }}</a
+              >
+            </li>
+            <li>
+              <a href="/reviews" class="hover:text-[#EF3451] transition"
+                >{{ _('Reviews') }}</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        
+        <div>
+          <h3 class="text-[#015486] font-bold mb-4">{{ _('Pages') }}</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li>
+              <a href="/events" class="hover:text-[#EF3451] transition"
+                >{{ _('Events') }}</a
+              >
+            </li>
+            <li>
+              <a href="/contact" class="hover:text-[#EF3451] transition"
+                >{{ _('Contact') }}</a
+              >
+            </li>
+            <li>
+              <a href="/about" class="hover:text-[#EF3451] transition">{{ _('About') }}</a>
+            </li>
+          </ul>
+        </div>
+
+        
+        <div>
+          <h3 class="text-[#015486] font-bold mb-4">{{ _('Follow Us') }}</h3>
+          <div class="flex gap-4 text-gray-700">
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="text-center text-gray-500 mt-10">
+        © 2025 {{ _('AI-Solution. All rights reserved.') }}
+      </div>
+    </footer>
+  </body>
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const icon = menuBtn.querySelector("i");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      icon.classList.toggle("fa-bars");
+      icon.classList.toggle("fa-times");
+    });
+  </script>
+
+  
+  {% include 'components/language-switcher.html' %}
+  {% include 'components/chatbot.html' %}
+  <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+</html>

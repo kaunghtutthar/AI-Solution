@@ -1,0 +1,399 @@
+# Translations template for PROJECT.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-01-07 13:34+0630\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: templates/about.html:6 templates/about.html:55 templates/home.html:58
+#: templates/home.html:83 templates/home.html:615 templates/home.html:631
+#: templates/solutions.html:60 templates/solutions.html:87
+#: templates/solutions.html:670
+msgid "About"
+msgstr ""
+
+#: templates/about.html:49 templates/home.html:6 templates/home.html:52
+#: templates/home.html:77 templates/home.html:597 templates/solutions.html:52
+#: templates/solutions.html:79 templates/solutions.html:635
+msgid "Home"
+msgstr ""
+
+#: templates/about.html:50 templates/home.html:53 templates/home.html:78
+#: templates/home.html:600 templates/solutions.html:6
+#: templates/solutions.html:54 templates/solutions.html:81
+#: templates/solutions.html:639
+msgid "Solutions"
+msgstr ""
+
+#: templates/about.html:51 templates/home.html:54 templates/home.html:79
+#: templates/home.html:603 templates/solutions.html:56
+#: templates/solutions.html:83 templates/solutions.html:644
+msgid "Articles"
+msgstr ""
+
+#: templates/about.html:52 templates/home.html:55 templates/home.html:80
+#: templates/home.html:606 templates/solutions.html:57
+#: templates/solutions.html:84 templates/solutions.html:649
+msgid "Reviews"
+msgstr ""
+
+#: templates/about.html:53 templates/home.html:56 templates/home.html:81
+#: templates/home.html:609 templates/home.html:625 templates/solutions.html:58
+#: templates/solutions.html:85 templates/solutions.html:661
+msgid "Events"
+msgstr ""
+
+#: templates/about.html:54 templates/home.html:57 templates/home.html:82
+#: templates/home.html:612 templates/home.html:628 templates/solutions.html:59
+#: templates/solutions.html:86 templates/solutions.html:666
+msgid "Contact"
+msgstr ""
+
+#: templates/home.html:96
+msgid "AI Solutions for the Future of Work"
+msgstr ""
+
+#: templates/home.html:99
+msgid ""
+"AI-Solution leverages intelligent software to proactively support "
+"employees, accelerate innovation, and improve digital workplace "
+"experiences."
+msgstr ""
+
+#: templates/home.html:105
+msgid "Contact us now"
+msgstr ""
+
+#: templates/home.html:124
+msgid "Industries We Transform with AI"
+msgstr ""
+
+#: templates/home.html:141 templates/solutions.html:488
+msgid "Education"
+msgstr ""
+
+#: templates/home.html:142
+msgid "Smarter learning systems"
+msgstr ""
+
+#: templates/home.html:157 templates/solutions.html:496
+msgid "Healthcare"
+msgstr ""
+
+#: templates/home.html:158
+msgid "AI-driven patient support"
+msgstr ""
+
+#: templates/home.html:173 templates/solutions.html:504
+msgid "Manufacturing"
+msgstr ""
+
+#: templates/home.html:174
+msgid "Predictive operations"
+msgstr ""
+
+#: templates/home.html:189 templates/solutions.html:512
+msgid "IT & Software"
+msgstr ""
+
+#: templates/home.html:190
+msgid "Enhanced digital experience"
+msgstr ""
+
+#: templates/home.html:205 templates/solutions.html:520
+msgid "Finance"
+msgstr ""
+
+#: templates/home.html:206
+msgid "Secure, intelligent systems"
+msgstr ""
+
+#: templates/home.html:217
+msgid "Our Solutions"
+msgstr ""
+
+#: templates/home.html:232 templates/solutions.html:154
+msgid "Smart Assistant"
+msgstr ""
+
+#: templates/home.html:234
+msgid "Enhances employee productivity with AI-driven assistance."
+msgstr ""
+
+#: templates/home.html:239 templates/home.html:263 templates/home.html:287
+#: templates/home.html:311
+msgid "Explore more"
+msgstr ""
+
+#: templates/home.html:256 templates/solutions.html:174
+#: templates/solutions.html:350
+msgid "Proactive Issue Resolution"
+msgstr ""
+
+#: templates/home.html:258
+msgid "Identify and resolve workplace issues before they impact operations."
+msgstr ""
+
+#: templates/home.html:280 templates/solutions.html:194
+msgid "AI Prototyping Solutions"
+msgstr ""
+
+#: templates/home.html:282
+msgid "Rapid and affordable prototyping for innovative software solutions."
+msgstr ""
+
+#: templates/home.html:305 templates/solutions.html:215
+msgid "Industry-Specific AI Solutions"
+msgstr ""
+
+#: templates/home.html:308
+msgid "Tailored AI solutions for sectors like healthcare, finance, and IT."
+msgstr ""
+
+#: templates/home.html:333
+msgid "Customer Trust"
+msgstr ""
+
+#: templates/home.html:336
+msgid "Trusted by professionals across industries"
+msgstr ""
+
+#: templates/home.html:339
+msgid "Verified feedback from customers who use AI-Solution in real workflows."
+msgstr ""
+
+#: templates/home.html:350
+msgid "Average customer rating"
+msgstr ""
+
+#: templates/home.html:372
+msgid "Based on 0 verified reviews →"
+msgstr ""
+
+#: templates/home.html:377
+msgid "Reviews collected from verified professionals across multiple industries."
+msgstr ""
+
+#: templates/home.html:565
+msgid "Latest Articles"
+msgstr ""
+
+#: templates/home.html:588 templates/solutions.html:626
+msgid ""
+"Innovating the future of digital employee experience with AI-powered "
+"solutions."
+msgstr ""
+
+#: templates/home.html:594 templates/solutions.html:632
+msgid "Quick Links"
+msgstr ""
+
+#: templates/home.html:622 templates/solutions.html:657
+msgid "Pages"
+msgstr ""
+
+#: templates/home.html:638 templates/solutions.html:677
+msgid "Follow Us"
+msgstr ""
+
+#: templates/home.html:658 templates/solutions.html:697
+msgid "AI-Solution. All rights reserved."
+msgstr ""
+
+#: templates/solutions.html:111
+msgid "AI Solutions Built for Future of Work"
+msgstr ""
+
+#: templates/solutions.html:115
+msgid ""
+"Discover intelligent, scalable AI solutions designed to enhance "
+"productivity, resolve issues proactively, and support digital employees "
+"across industries."
+msgstr ""
+
+#: templates/solutions.html:122
+msgid "Contact us"
+msgstr ""
+
+#: templates/solutions.html:131
+msgid "Our Solution Categories"
+msgstr ""
+
+#: templates/solutions.html:134
+msgid "Click on a category to explore more specific solutions."
+msgstr ""
+
+#: templates/solutions.html:156
+msgid "AI tools to streamline daily tasks and enhance productivity."
+msgstr ""
+
+#: templates/solutions.html:176
+msgid "Prevent and resolve issues before they impact your operations."
+msgstr ""
+
+#: templates/solutions.html:196
+msgid "Rapid and affordable prototyping for innovative AI software."
+msgstr ""
+
+#: templates/solutions.html:218
+msgid "Customized AI solutions tailored for your industry needs."
+msgstr ""
+
+#: templates/solutions.html:229
+msgid "How Our Solutions Work"
+msgstr ""
+
+#: templates/solutions.html:232
+msgid "A structured, AI-driven approach to solving digital workplace challenges."
+msgstr ""
+
+#: templates/solutions.html:244
+msgid "Understand Challenge"
+msgstr ""
+
+#: templates/solutions.html:247
+msgid ""
+"We analyse digital workplace challenges and identify opportunities for "
+"AI-driven improvement."
+msgstr ""
+
+#: templates/solutions.html:256
+msgid "Design Intelligent Solutions"
+msgstr ""
+
+#: templates/solutions.html:259
+msgid ""
+"AI-powered solutions are designed to proactively support employees and "
+"systems."
+msgstr ""
+
+#: templates/solutions.html:268
+msgid "Rapid Prototyping"
+msgstr ""
+
+#: templates/solutions.html:271
+msgid ""
+"Affordable and fast AI prototyping validates ideas before full-scale "
+"implementation."
+msgstr ""
+
+#: templates/solutions.html:280
+msgid "Continuous Improvement"
+msgstr ""
+
+#: templates/solutions.html:283
+msgid "Solutions evolve through feedback, monitoring, and AI-driven insights."
+msgstr ""
+
+#: templates/solutions.html:292
+msgid "Why Choose AI-Solution"
+msgstr ""
+
+#: templates/solutions.html:294
+msgid ""
+"Our AI solutions are designed to deliver measurable value for your "
+"business."
+msgstr ""
+
+#: templates/solutions.html:322
+msgid "Enhanced Employee Experience"
+msgstr ""
+
+#: templates/solutions.html:325
+msgid "AI-driven tools proactively support employees in their daily workflows."
+msgstr ""
+
+#: templates/solutions.html:353
+msgid "Identify and resolve issues before they impact productivity or operations."
+msgstr ""
+
+#: templates/solutions.html:378
+msgid "Rapid Innovation"
+msgstr ""
+
+#: templates/solutions.html:381
+msgid "Affordable AI prototyping accelerates design, engineering, and innovation."
+msgstr ""
+
+#: templates/solutions.html:406
+msgid "Scalable Architecture"
+msgstr ""
+
+#: templates/solutions.html:409
+msgid "Solutions that grow with your organization and evolving digital needs."
+msgstr ""
+
+#: templates/solutions.html:434
+msgid "Industry-Focused Design"
+msgstr ""
+
+#: templates/solutions.html:437
+msgid "Tailored AI solutions aligned with industry-specific requirements."
+msgstr ""
+
+#: templates/solutions.html:462
+msgid "Secure & Reliable"
+msgstr ""
+
+#: templates/solutions.html:465
+msgid "Built with security, reliability, and data protection at core."
+msgstr ""
+
+#: templates/solutions.html:474
+msgid "Industries We Support"
+msgstr ""
+
+#: templates/solutions.html:476
+msgid "Our AI solutions are adaptable across multiple industries."
+msgstr ""
+
+#: templates/solutions.html:529
+msgid "Built on Trust & Expertise"
+msgstr ""
+
+#: templates/solutions.html:532
+msgid ""
+"Our solutions are designed with reliability, transparency, and real-world"
+" impact in mind."
+msgstr ""
+
+#: templates/solutions.html:554
+msgid "Human-Centered AI"
+msgstr ""
+
+#: templates/solutions.html:557
+msgid "Solutions built to support people at work, not replace them."
+msgstr ""
+
+#: templates/solutions.html:578
+msgid "Security by Design"
+msgstr ""
+
+#: templates/solutions.html:581
+msgid "Data protection and secure architecture are embedded at every stage."
+msgstr ""
+
+#: templates/solutions.html:602
+msgid "Scalable & Future-Ready"
+msgstr ""
+
+#: templates/solutions.html:605
+msgid "AI solutions designed to grow alongside evolving business needs."
+msgstr ""
+
+#: templates/solutions.html:621
+msgid "AI-Solution Logo"
+msgstr ""
+

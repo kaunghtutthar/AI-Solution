@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="{{ get_locale() }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-Solution | {{ _('Solutions') }} | {{ _('Smart Assistant') }}</title>
+
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#015486",
+              secondary: "#EF3451",
+            },
+          },
+        },
+      };
+    </script>
+
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body class="bg-white text-[#383838] font-sans">
+    <header class="bg-white shadow sticky top-0 z-50">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        
+        <img
+          src="/static/images/logo-fit.png"
+          alt="AI-Solution Logo"
+          class="h-10"
+        />
+
+        
+        <nav class="hidden md:flex space-x-8 font-medium">
+          <a href="/" class="hover:text-secondary">{{ _('Home') }}</a>
+          <a href="/solutions" class="text-secondary font-semibold">{{ _('Solutions') }}</a>
+          <a href="/articles" class="hover:text-secondary">{{ _('Articles') }}</a>
+          <a href="/reviews" class="hover:text-secondary">{{ _('Reviews') }}</a>
+          <a href="/events" class="hover:text-secondary">{{ _('Events') }}</a>
+          <a href="/contact" class="hover:text-secondary">{{ _('Contact') }}</a>
+          <a href="/about" class="hover:text-secondary">{{ _('About') }}</a>
+        </nav>
+
+        
+        <button
+          id="menu-btn"
+          class="md:hidden text-2xl text-gray-700 focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      
+      <nav
+        id="mobile-menu"
+        class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t z-50"
+      >
+        <div class="flex flex-col px-6 py-6 space-y-4 font-medium">
+          <a href="/" class="hover:text-secondary">{{ _('Home') }}</a>
+          <a href="/solutions" class="text-secondary font-semibold">{{ _('Solutions') }}</a>
+          <a href="/articles" class="hover:text-secondary">{{ _('Articles') }}</a>
+          <a href="/reviews" class="hover:text-secondary">{{ _('Reviews') }}</a>
+          <a href="/events" class="hover:text-secondary">{{ _('Events') }}</a>
+          <a href="/contact" class="hover:text-secondary">{{ _('Contact') }}</a>
+          <a href="/about" class="hover:text-secondary">{{ _('About') }}</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="relative h-[70vh] min-h-[500px] flex items-center">
+      <img
+        src="/static/images/smart-assistant.jpg"
+        alt="Smart Assistant AI"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"
+      ></div>
+
+      <div class="relative z-10 max-w-5xl mx-auto px-6 text-white">
+        <p class="text-sm text-gray-300 mb-4">{{ _('Solutions') }} / {{ _('Smart Assistant') }}</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          {{ _('Smart Assistant Solutions') }}
+        </h1>
+        <p class="text-lg md:text-xl text-gray-200 max-w-3xl">
+          {{ _('Intelligent AI assistants designed to support employees, automate tasks, and improve productivity across digital workplaces.') }}
+        </p>
+      </div>
+    </section>
+
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-[#015486] mb-6">
+          {{ _('What Are Smart Assistant Solutions?') }}
+        </h2>
+        <p class="text-gray-600 max-w-3xl mx-auto text-lg">
+          {{ _('Our Smart Assistant solutions use artificial intelligence to proactively support employees in their daily workflows. These tools reduce manual effort, streamline communication, and enhance the overall digital employee experience.') }}
+        </p>
+      </div>
+    </section>
+
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-[#015486]">
+            {{ _('Available Smart Assistant Solutions') }}
+          </h2>
+          <p class="text-gray-600 mt-4">
+            {{ _('Explore our AI-powered assistant solutions designed for modern teams.') }}
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <a
+            href="{{ url_for('virtual_work') }}"
+            class="group relative rounded-3xl overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+          >
+            <img
+              src="/static/images/virtual-work-assistant.jpg"
+              class="w-full h-64 object-cover"
+              alt="Virtual Work Assistant"
+            />
+            <div
+              class="absolute bottom-0 left-0 bg-gradient-to-t from-black/60 to-transparent p-6 w-full text-white group-hover:opacity-100 transition"
+            >
+              <h3 class="text-xl font-bold mb-1">{{ _('Virtual Work Assistant') }}</h3>
+              <p class="text-sm">
+                {{ _('AI assistant for managing tasks, schedules, and workplace queries.') }}
+              </p>
+            </div>
+          </a>
+
+          
+          <a
+            href="{{ url_for('task_automation') }}"
+            class="group relative rounded-3xl overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+          >
+            <img
+              src="/static/images/task-automation-assistant.jpg"
+              class="w-full h-64 object-cover"
+              alt="Task Automation Assistant"
+            />
+            <div
+              class="absolute bottom-0 left-0 bg-gradient-to-t from-black/60 to-transparent p-6 w-full text-white group-hover:opacity-100 transition"
+            >
+              <h3 class="text-xl font-bold mb-1">{{ _('Task Automation Assistant') }}</h3>
+              <p class="text-sm">
+                {{ _('Automates repetitive workflows to focus on high-value work.') }}
+              </p>
+            </div>
+          </a>
+
+          
+          <a
+            href="/solutions/smart-assistant/knowledge-assistant"
+            class="group relative rounded-3xl overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+          >
+            <img
+              src="/static/images/knowledge-assistant.jpg"
+              class="w-full h-64 object-cover"
+              alt="Knowledge Assistant"
+            />
+            <div
+              class="absolute bottom-0 left-0 bg-gradient-to-t from-black/60 to-transparent p-6 w-full text-white group-hover:opacity-100 transition"
+            >
+              <h3 class="text-xl font-bold mb-1">{{ _('Knowledge Assistant') }}</h3>
+              <p class="text-sm">
+                {{ _('Provides instant access to company knowledge and documentation.') }}
+              </p>
+            </div>
+          </a>
+
+          
+          <a
+            href="/solutions/smart-assistant/email-assistant"
+            class="group relative rounded-3xl overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+          >
+            <img
+              src="/static/images/email-assistant.jpg"
+              class="w-full h-64 object-cover"
+              alt="Email Assistant"
+            />
+            <div
+              class="absolute bottom-0 left-0 bg-gradient-to-t from-black/60 to-transparent p-6 w-full text-white group-hover:opacity-100 transition"
+            >
+              <h3 class="text-xl font-bold mb-1">{{ _('Email Assistant') }}</h3>
+              <p class="text-sm">
+                {{ _('AI-powered email triage and response suggestions to save time.') }}
+              </p>
+            </div>
+          </a>
+
+          
+          <a
+            href="/solutions/smart-assistant/meeting-assistant"
+            class="group relative rounded-3xl overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+          >
+            <img
+              src="/static/images/meeting-assistant.jpg"
+              class="w-full h-64 object-cover"
+              alt="Meeting Assistant"
+            />
+            <div
+              class="absolute bottom-0 left-0 bg-gradient-to-t from-black/60 to-transparent p-6 w-full text-white group-hover:opacity-100 transition"
+            >
+              <h3 class="text-xl font-bold mb-1">{{ _('Meeting Assistant') }}</h3>
+              <p class="text-sm">
+                {{ _('AI summarizes meetings, tracks action items, and sends reminders.') }}
+              </p>
+            </div>
+          </a>
+
+          
+          <a
+            href="/solutions/smart-assistant/personal-coach"
+            class="group relative rounded-3xl overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+          >
+            <img
+              src="/static/images/personal-coach-assistant.jpg"
+              class="w-full h-64 object-cover"
+              alt="Personal Coach Assistant"
+            />
+            <div
+              class="absolute bottom-0 left-0 bg-gradient-to-t from-black/60 to-transparent p-6 w-full text-white group-hover:opacity-100 transition"
+            >
+              <h3 class="text-xl font-bold mb-1">{{ _('Personal Coach Assistant') }}</h3>
+              <p class="text-sm">
+                {{ _('Provides AI-driven tips for productivity, skill improvement, and workflow optimization.') }}
+              </p>
+            </div>
+          </a>
+
+          
+          <a
+            href="/solutions/smart-assistant/ai-scheduler"
+            class="group relative rounded-3xl overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+          >
+            <img
+              src="/static/images/ai-scheduler.jpg"
+              class="w-full h-64 object-cover"
+              alt="AI Scheduler Assistant"
+            />
+            <div
+              class="absolute bottom-0 left-0 bg-gradient-to-t from-black/60 to-transparent p-6 w-full text-white group-hover:opacity-100 transition"
+            >
+              <h3 class="text-xl font-bold mb-1">{{ _('AI Scheduler Assistant') }}</h3>
+              <p class="text-sm">
+                {{ _('Intelligently schedules meetings, tasks, and reminders to optimize workflow.') }}
+              </p>
+            </div>
+          </a>
+
+          
+          <a
+            href="/solutions/smart-assistant/voice-assistant"
+            class="group relative rounded-3xl overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+          >
+            <img
+              src="/static/images/voice-assistant.jpg"
+              class="w-full h-64 object-cover"
+              alt="Voice Assistant"
+            />
+            <div
+              class="absolute bottom-0 left-0 bg-gradient-to-t from-black/60 to-transparent p-6 w-full text-white group-hover:opacity-100 transition"
+            >
+              <h3 class="text-xl font-bold mb-1">{{ _('Voice Assistant') }}</h3>
+              <p class="text-sm">
+                {{ _('Hands-free AI assistant that manages tasks and commands via voice interaction.') }}
+              </p>
+            </div>
+          </a>
+
+          
+          <a
+            href="/solutions/smart-assistant/analytics-assistant"
+            class="group relative rounded-3xl overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+          >
+            <img
+              src="/static/images/analytics-assistant.jpg"
+              class="w-full h-64 object-cover"
+              alt="Analytics Assistant"
+            />
+            <div
+              class="absolute bottom-0 left-0 bg-gradient-to-t from-black/60 to-transparent p-6 w-full text-white group-hover:opacity-100 transition"
+            >
+              <h3 class="text-xl font-bold mb-1">{{ _('Analytics Assistant') }}</h3>
+              <p class="text-sm">
+                {{ _('AI-powered insights and recommendations to optimize business processes.') }}
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-[#015486]">
+            {{ _('Benefits of Smart Assistant Solutions') }}
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div class="bg-white rounded-3xl p-8 shadow-sm">
+            <h3 class="text-xl font-bold text-[#015486] mb-3">
+              {{ _('Increased Productivity') }}
+            </h3>
+            <p class="text-gray-600 text-sm">
+              {{ _('Reduce time spent on repetitive tasks and enable employees to focus on meaningful work.') }}
+            </p>
+          </div>
+
+          <div class="bg-white rounded-3xl p-8 shadow-sm">
+            <h3 class="text-xl font-bold text-[#015486] mb-3">
+              {{ _('Proactive Support') }}
+            </h3>
+            <p class="text-gray-600 text-sm">
+              {{ _('AI-driven assistance that anticipates needs and provides support before issues arise.') }}
+            </p>
+          </div>
+
+          <div class="bg-white rounded-3xl p-8 shadow-sm">
+            <h3 class="text-xl font-bold text-[#015486] mb-3">
+              {{ _('Improved Employee Experience') }}
+            </h3>
+            <p class="text-gray-600 text-sm">
+              {{ _('Create a smoother, more intuitive digital workplace for employees across teams.') }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-100 py-20">
+      <div
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10"
+      >
+        
+        <div>
+          <h3 class="mb-4 flex items-start">
+            <img
+              src="/static/images/logo-transparent-bg-fit.png"
+              alt="AI-Solution Logo"
+              class="h-12"
+            />
+          </h3>
+          <p class="text-gray-600">
+            {{ _('Innovating the future of digital employee experience with AI-powered solutions.') }}
+          </p>
+        </div>
+
+        
+        <div>
+          <h3 class="text-[#015486] font-bold mb-4">{{ _('Quick Links') }}</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li>
+              <a href="/" class="hover:text-[#EF3451] transition">{{ _('Home') }}</a>
+            </li>
+            <li>
+              <a href="/solutions" class="hover:text-[#EF3451] transition">{{ _('Solutions') }}</a>
+            </li>
+            <li>
+              <a href="/articles" class="hover:text-[#EF3451] transition">{{ _('Articles') }}</a>
+            </li>
+            <li>
+              <a href="/reviews" class="hover:text-[#EF3451] transition">{{ _('Reviews') }}</a>
+            </li>
+          </ul>
+        </div>
+
+        
+        <div>
+          <h3 class="text-[#015486] font-bold mb-4">{{ _('Pages') }}</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li>
+              <a href="/events" class="hover:text-[#EF3451] transition">{{ _('Events') }}</a>
+            </li>
+            <li>
+              <a href="/contact" class="hover:text-[#EF3451] transition">{{ _('Contact') }}</a>
+            </li>
+            <li>
+              <a href="/about" class="hover:text-[#EF3451] transition">{{ _('About') }}</a>
+            </li>
+          </ul>
+        </div>
+
+        
+        <div>
+          <h3 class="text-[#015486] font-bold mb-4">{{ _('Follow Us') }}</h3>
+          <div class="flex gap-4 text-gray-700">
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="text-center text-gray-500 mt-10">
+        © 2025 {{ _('AI-Solution. All rights reserved.') }}
+      </div>
+    </footer>
+  </body>
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const icon = menuBtn.querySelector("i");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      icon.classList.toggle("fa-bars");
+      icon.classList.toggle("fa-times");
+    });
+  </script>
+
+  
+  {% include 'components/language-switcher.html' %}
+  {% include 'components/chatbot.html' %}
+  <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+</html>

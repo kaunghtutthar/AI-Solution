@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="{{ get_locale() }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ _('AI-Solution | Reviews') }}</title>
+
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#015486",
+              secondary: "#EF3451",
+            },
+          },
+        },
+      };
+    </script>
+
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      
+      .input-modern {
+        width: 100%;
+        border: 1px solid #d1d5db;
+        border-radius: 1rem;
+        padding: 0.75rem 1rem;
+        background-color: #ffffff;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .input-modern::placeholder {
+        font-size: 0.875rem;
+        color: #9ca3af;
+      }
+
+      .input-modern:focus {
+        outline: none;
+        border-color: #015486;
+        box-shadow: 0 0 0 2px rgba(1, 84, 134, 0.25);
+      }
+
+      
+      #industry-options li {
+        padding: 0.75rem 1rem;
+        cursor: pointer;
+        font-size: 0.875rem;
+      }
+
+      #industry-options li:hover {
+        background-color: #f3f4f6;
+      }
+
+      
+      #rating-stars {
+        display: flex;
+        gap: 0.75rem;
+        justify-content: flex-start;
+        text-align: left;
+      }
+
+      #rating-stars .star {
+        font-size: 2.5rem;
+        cursor: pointer;
+        color: #e5e7eb;
+        transition: transform 0.2s ease, color 0.2s ease;
+      }
+
+      #rating-stars .star.hovered,
+      #rating-stars .star.selected {
+        color: #fbbf24;
+        transform: scale(1.15);
+      }
+
+      
+      .select-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 0;
+        cursor: pointer;
+        font-size: 0.95rem;
+        color: #374151;
+      }
+
+      .select-row .placeholder {
+        color: #9ca3af;
+      }
+
+      .select-row .value {
+        color: #111827;
+        font-weight: 500;
+      }
+
+      
+      .mode-switch {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background: #f1f5f9;
+        border-radius: 0.75rem;
+        
+        padding: 2px;
+        width: 220px;
+        margin: 0 auto;
+      }
+
+      .mode-switch input {
+        display: none;
+      }
+
+      .mode-switch label {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: 6px 0;
+        font-weight: 600;
+        font-size: 0.8rem;
+        color: #64748b;
+        cursor: pointer;
+        transition: color 0.2s ease;
+      }
+
+      .mode-switch input:checked + label {
+        color: #0f172a;
+      }
+
+      .mode-switch .mode-indicator {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: calc(50% - 2px);
+        height: calc(100% - 4px);
+        background: #ffffff;
+        border-radius: 0.6rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        transition: transform 0.25s ease;
+      }
+
+      .mode-switch input#mode-anonymous:checked ~ .mode-indicator {
+        transform: translateX(100%);
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-[#383838] font-sans">
+    
+    <div
+      id="toast-container"
+      class="fixed top-6 left-1/2 -translate-x-1/2 z-[9999] space-y-4 pointer-events-none"
+    ></div>
+
+    <header class="bg-white shadow sticky top-0 z-50">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        
+        <img
+          src="/static/images/logo-fit.png"
+          alt="AI-Solution Logo"
+          class="h-10"
+        />
+
+        
+        <nav class="hidden md:flex space-x-8 font-medium">
+          <a href="/" class="hover:text-secondary">{{ _('Home') }}</a>
+          <a href="/solutions" class="hover:text-secondary">{{ _('Solutions') }}</a>
+          <a href="/articles" class="hover:text-secondary">{{ _('Articles') }}</a>
+          <a href="/reviews" class="text-secondary font-semibold">{{ _('Reviews') }}</a>
+          <a href="/events" class="hover:text-secondary">{{ _('Events') }}</a>
+          <a href="/contact" class="hover:text-secondary">{{ _('Contact') }}</a>
+          <a href="/about" class="hover:text-secondary">{{ _('About') }}</a>
+        </nav>
+
+        
+        <button
+          id="menu-btn"
+          class="md:hidden text-2xl text-gray-700 focus:outline-none"
+          aria-label="{{ _('Toggle menu') }}"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      
+      <nav
+        id="mobile-menu"
+        class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t z-50"
+      >
+        <div class="flex flex-col px-6 py-6 space-y-4 font-medium">
+          <a href="/" class="hover:text-secondary">{{ _('Home') }}</a>
+          <a href="/solutions" class="hover:text-secondary">{{ _('Solutions') }}</a>
+          <a href="/articles" class="hover:text-secondary">{{ _('Articles') }}</a>
+          <a href="/reviews" class="text-secondary font-semibold">{{ _('Reviews') }}</a>
+          <a href="/events" class="hover:text-secondary">{{ _('Events') }}</a>
+          <a href="/contact" class="hover:text-secondary">{{ _('Contact') }}</a>
+          <a href="/about" class="hover:text-secondary">{{ _('About') }}</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="py-20 bg-[#f9f9f9]">
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-10"
+      >
+        
+        <div class="lg:w-1/2">
+          <h1 class="text-5xl font-bold text-[#015486] mb-6">
+            {{ _('Customer Reviews & Feedback') }}
+          </h1>
+          <p class="text-gray-700 mb-6 text-lg">
+            {{ _('See how AI-Solution transforms workplaces with intelligent AI tools. View customer experiences or share your own feedback.') }}
+          </p>
+          <a
+            href="#review-form"
+            class="bg-gradient-to-r from-[#015486] to-[#EF3451] text-white px-8 py-4 rounded-2xl font-semibold hover:opacity-90 transition inline-block"
+          >
+            {{ _('Give a Review') }}
+          </a>
+        </div>
+
+        
+        <div class="lg:w-1/2">
+          <img
+            src="/static/images/reviews-hero-image.jpg"
+            alt="{{ _('Reviews Hero') }}"
+            class="rounded-2xl shadow-xl w-full"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-[#015486] mb-12 text-center">
+          {{ _('Customer Reviews') }}
+        </h2>
+
+        <div id="reviews-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+        </div>
+      </div>
+      <div class="text-center mt-8">
+        <button
+          id="load-more-btn"
+          class="bg-primary text-white px-6 py-3 rounded-2xl font-semibold hover:opacity-90 transition"
+        >
+          {{ _('Load More Reviews') }}
+        </button>
+      </div>
+    </section>
+
+    <section id="submit-review" class="py-24 bg-gray-50">
+      <div class="max-w-xl mx-auto px-6">
+        <div
+          class="relative bg-white rounded-3xl shadow-xl p-12 overflow-visible"
+        >
+          <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-primary mb-2">
+              {{ _('Submit Your Review') }}
+            </h2>
+            <p class="text-gray-600 text-sm">
+              {{ _('Share your experience with AI-Solution') }}
+            </p>
+          </div>
+          <div class="w-full h-px bg-gray-200 mb-8"></div>
+
+          <form id="review-form" class="space-y-4">
+            
+            <div class="toggle-container text-center mb-6 space-y-1">
+              <span class="text-gray-700 font-medium text-sm block">
+                {{ _('Review Visibility') }} <span class="text-red-500">*</span>
+              </span>
+
+              <div class="mode-switch mx-auto">
+                <input
+                  type="radio"
+                  name="review_mode"
+                  id="mode-public"
+                  value="public"
+                  checked
+                />
+                <label for="mode-public">
+                  <i class="fas fa-user mr-1"></i> {{ _('Public') }}
+                </label>
+
+                <input
+                  type="radio"
+                  name="review_mode"
+                  id="mode-anonymous"
+                  value="anonymous"
+                />
+                <label for="mode-anonymous">
+                  <i class="fas fa-user-secret mr-1"></i> {{ _('Anonymous') }}
+                </label>
+
+                <span class="mode-indicator"></span>
+              </div>
+
+              <p class="text-xs text-gray-500 mt-1" id="mode-description">
+                {{ _('Your name and job title will be displayed.') }}
+              </p>
+            </div>
+
+            <div class="text-left mb-4">
+              <p class="text-sm text-gray-600">{{ _('Please fill out the form in English') }}</p>
+            </div>
+
+            <div id="name-field">
+              
+              <div class="block">
+                <label class="block space-y-1">
+                  <span class="text-gray-700 font-medium">
+                    {{ _('Full Name') }} <span class="text-red-500">*</span>
+                  </span>
+                  <input
+                    type="text"
+                    name="name"
+                    id="review-name"
+                    placeholder="{{ _('Enter your full name') }}"
+                    class="input-modern"
+                    required
+                  />
+                </label>
+              </div>
+            </div>
+
+            <div id="job-title-field">
+              
+              <label class="block space-y-1">
+                <span class="text-gray-700 font-medium">
+                  {{ _('Job Title') }} <span class="text-red-500">*</span>
+                </span>
+                <input
+                  type="text"
+                  name="job_title"
+                  placeholder="{{ _('Your role / position') }}"
+                  class="input-modern"
+                  required
+                />
+              </label>
+            </div>
+
+            <div id="company-field">
+              
+              <label class="block space-y-1">
+                <span class="text-gray-700 font-medium">
+                  {{ _('Company Name') }} <span class="text-red-500">*</span>
+                </span>
+                <input
+                  type="text"
+                  name="company"
+                  placeholder="{{ _('Enter your company name') }}"
+                  class="input-modern"
+                  required
+                />
+              </label>
+            </div>
+
+            
+            <div class="relative">
+              <label class="block text-gray-700 font-medium">
+                {{ _('Industry') }} <span class="text-red-500">*</span>
+              </label>
+
+              <div id="industry-field" class="select-row">
+                <span id="selected-industry" class="placeholder"
+                  >{{ _('Select industry') }}</span
+                >
+                <i class="fas fa-chevron-down text-gray-400 text-sm"></i>
+              </div>
+
+              <ul
+                id="industry-options"
+                class="absolute left-0 right-0 mt-1 bg-white border border-gray-200 rounded-xl shadow-lg max-h-60 overflow-y-auto hidden z-50"
+              >
+                
+              </ul>
+
+              <input
+                type="hidden"
+                name="industry"
+                id="industry-value"
+                required
+              />
+            </div>
+
+            
+            <input
+              type="text"
+              id="other-industry-input"
+              class="input-modern hidden"
+              placeholder="{{ _('Please specify your industry') }}"
+            />
+
+            
+            <label class="block space-y-1">
+              <span class="text-gray-700 font-medium text-sm">
+                {{ _('Rating') }} <span class="text-red-500">*</span>
+              </span>
+
+              <div id="rating-stars" class="flex gap-2">
+                <i class="fas fa-star star" data-value="1"></i>
+                <i class="fas fa-star star" data-value="2"></i>
+                <i class="fas fa-star star" data-value="3"></i>
+                <i class="fas fa-star star" data-value="4"></i>
+                <i class="fas fa-star star" data-value="5"></i>
+              </div>
+
+              <input type="hidden" name="rating" id="rating-value" required />
+            </label>
+
+            
+            <label class="block space-y-1">
+              <span class="text-gray-700 font-medium">
+                {{ _('Feedback') }} <span class="text-red-500">*</span>
+              </span>
+              <textarea
+                name="feedback"
+                rows="5"
+                minlength="30"
+                class="input-modern resize-none"
+                placeholder="{{ _('Please share how your experience with AI-Solution has been') }}"
+                required
+              ></textarea>
+              <p class="text-sm text-gray-500">{{ _('Minimum 30 characters.') }}</p>
+            </label>
+
+            <div class="flex items-start gap-2">
+              <input
+                type="checkbox"
+                id="consent-checkbox"
+                class="mt-1 rounded border-gray-300 text-primary focus:ring-primary"
+                required
+              />
+              <label for="consent-checkbox" class="text-gray-700 text-sm">
+                {{ _('I consent to the processing of my review in accordance with the') }}
+                <a
+                  href="{{ url_for('privacy_policy') }}"
+                  class="text-primary underline hover:text-secondary"
+                >
+                  {{ _('Privacy Policy') }} </a
+                >.
+              </label>
+            </div>
+
+            
+            <button
+              type="submit"
+              class="w-full bg-gradient-to-r from-primary to-secondary text-white py-4 rounded-2xl font-semibold hover:opacity-90 transition"
+            >
+              {{ _('Submit Feedback') }}
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      
+      const translations = {
+        en: {
+          anonymous: "Anonymous",
+          certainCompany: "A certain company",
+          fillFormInEnglish: "Please fill out the form in English",
+          
+          jobTitles: {
+            "Data Analyst": "Data Analyst",
+            "HR Specialist": "HR Specialist",
+            "IT Manager": "IT Manager",
+            "Marketing Lead": "Marketing Lead",
+            "Operations Manager": "Operations Manager",
+            "Product Manager": "Product Manager",
+            "Sales Executive": "Sales Executive",
+            "Senior HR Oficer": "Senior HR Officer",
+            "Software Engineer": "Software Engineer",
+            "Someone": "Someone",
+            "Technology Director": "Technology Director",
+            "Head of software engineering": "Head of software engineering",
+            "Head of Software Engineering": "Head of Software Engineering",
+            "Nature protection director": "Nature protection director",
+            "Nature Protection Director": "Nature Protection Director",
+            "UX designer": "UX designer",
+            "UX Designer": "UX Designer",
+            "IT director": "IT director",
+            "IT Director": "IT Director",
+            "Head of business intelligence": "Head of business intelligence",
+            "Head of Business Intelligence": "Head of Business Intelligence"
+          },
+          
+          industries: {
+            "Education": "Education",
+            "Finance": "Finance",
+            "Healthcare": "Healthcare",
+            "Logistics & Supply Chain": "Logistics & Supply Chain",
+            "Manufacturing": "Manufacturing",
+            "Retail": "Retail",
+            "Retail & E-commerce": "Retail & E-commerce",
+            "Technology": "Technology",
+            "Food supply chain": "Food supply chain",
+            "Education and EdYTech": "Education and EdYTech",
+            "Education & EdTech": "Education & EdTech",
+            "Nature and environment": "Nature and environment",
+            "Nature and Environment": "Nature and Environment"
+          },
+          
+          toastMessages: {
+            consentRequired: "Please provide your consent to submit a review.",
+            ratingRequired: "Please select a rating.",
+            industryRequired: "Please specify your industry.",
+            submitFailed: "Failed to submit review.",
+            submitSuccess: "Thank you for your review! It has been submitted successfully."
+          }
+        },
+        es: {
+          anonymous: "Anónimo",
+          certainCompany: "Una cierta empresa",
+          fillFormInEnglish: "Por favor complete el formulario en inglés",
+          jobTitles: {
+            "Data Analyst": "Analista de Datos",
+            "HR Specialist": "Especialista en RRHH",
+            "IT Manager": "Gerente de TI",
+            "Marketing Lead": "Líder de Marketing",
+            "Operations Manager": "Gerente de Operaciones",
+            "Product Manager": "Gerente de Producto",
+            "Sales Executive": "Ejecutivo de Ventas",
+            "Senior HR Oficer": "Oficial Superior de RRHH",
+            "Software Engineer": "Ingeniero de Software",
+            "Someone": "Alguien",
+            "Technology Director": "Director de Tecnología",
+            "Head of software engineering": "Jefe de ingeniería de software",
+            "Head of Software Engineering": "Jefe de Ingeniería de Software",
+            "Nature protection director": "Director de protección de la naturaleza",
+            "Nature Protection Director": "Director de Protección de la Naturaleza",
+            "UX designer": "Diseñador UX",
+            "UX Designer": "Diseñador UX",
+            "IT director": "Director de TI",
+            "IT Director": "Director de TI",
+            "Head of business intelligence": "Jefe de inteligencia de negocio",
+            "Head of Business Intelligence": "Jefe de Inteligencia de Negocio"
+          },
+          industries: {
+            "Education": "Educación",
+            "Finance": "Finanzas",
+            "Healthcare": "Salud",
+            "Logistics & Supply Chain": "Logística y Cadena de Suministro",
+            "Manufacturing": "Manufactura",
+            "Retail": "Minorista",
+            "Retail & E-commerce": "Minorista y Comercio Electrónico",
+            "Technology": "Tecnología",
+            "Food supply chain": "Cadena de suministro de alimentos",
+            "Education and EdYTech": "Educación y EdYTech",
+            "Education & EdTech": "Educación y EdTech",
+            "Nature and environment": "Naturaleza y medio ambiente",
+            "Nature and Environment": "Naturaleza y Medio Ambiente"
+          },
+          
+          toastMessages: {
+            consentRequired: "Por favor proporcione su consentimiento para enviar una reseña.",
+            ratingRequired: "Por favor seleccione una calificación.",
+            industryRequired: "Por favor especifique su industria.",
+            submitFailed: "Error al enviar la reseña.",
+            submitSuccess: "¡Gracias por su reseña! Ha sido enviada exitosamente."
+          }
+        },
+        zh: {
+          anonymous: "匿名",
+          certainCompany: "某家公司",
+          fillFormInEnglish: "请用英文填写表格",
+          jobTitles: {
+            "Data Analyst": "数据分析师",
+            "HR Specialist": "人力资源专员",
+            "IT Manager": "IT经理",
+            "Marketing Lead": "营销主管",
+            "Operations Manager": "运营经理",
+            "Product Manager": "产品经理",
+            "Sales Executive": "销售主管",
+            "Senior HR Oficer": "高级人力资源官员",
+            "Software Engineer": "软件工程师",
+            "Someone": "某人",
+            "Technology Director": "技术总监",
+            "Head of software engineering": "软件工程主管",
+            "Head of Software Engineering": "软件工程主管",
+            "Nature protection director": "自然保护总监",
+            "Nature Protection Director": "自然保护总监",
+            "UX designer": "UX设计师",
+            "UX Designer": "UX设计师",
+            "IT director": "IT总监",
+            "IT Director": "IT总监",
+            "Head of business intelligence": "商业智能主管",
+            "Head of Business Intelligence": "商业智能主管"
+          },
+          industries: {
+            "Education": "教育",
+            "Finance": "金融",
+            "Healthcare": "医疗保健",
+            "Logistics & Supply Chain": "物流与供应链",
+            "Manufacturing": "制造业",
+            "Retail": "零售",
+            "Retail & E-commerce": "零售与电子商务",
+            "Technology": "技术",
+            "Food supply chain": "食品供应链",
+            "Education and EdYTech": "教育与教育科技",
+            "Education & EdTech": "教育与教育科技",
+            "Nature and environment": "自然与环境",
+            "Nature and Environment": "自然与环境"
+          },
+          
+          toastMessages: {
+            consentRequired: "请提供您的同意以提交评论。",
+            ratingRequired: "请选择评分。",
+            industryRequired: "请指定您的行业。",
+            submitFailed: "提交评论失败。",
+            submitSuccess: "感谢您的评论！已成功提交。"
+          }
+        }
+      };
+
+      
+      function getCurrentLanguage() {
+        return document.documentElement.lang || 'en';
+      }
+
+      
+      function translateText(text, lang) {
+        const t = translations[lang];
+        if (!t) return text;
+        
+        
+        if (t.jobTitles[text]) return t.jobTitles[text];
+        
+        if (t.industries[text]) return t.industries[text];
+        
+        if (t[text]) return t[text];
+        
+        return text;
+      }
+
+      
+      function formatDate(dateString, lang) {
+        const date = new Date(dateString);
+        const options = { 
+          en: { year: 'numeric', month: 'long', day: 'numeric' },
+          es: { year: 'numeric', month: 'long', day: 'numeric' },
+          zh: { year: 'numeric', month: 'long', day: 'numeric' }
+        };
+        return date.toLocaleDateString(lang === 'zh' ? 'zh-CN' : lang, options[lang] || options.en);
+      }
+
+      
+      function getInitials(name) {
+        if (!name || name.trim() === '') {
+          const lang = getCurrentLanguage();
+          return translations[lang].anonymous.charAt(0);
+        }
+        return name
+          .split(' ')
+          .map(word => word.charAt(0))
+          .join('')
+          .toUpperCase()
+          .slice(0, 2);
+      }
+
+      const form = document.getElementById("review-form");
+
+      const nameField = document.getElementById("name-field");
+      const jobTitleField = document.getElementById("job-title-field");
+      const companyField = document.getElementById("company-field");
+
+      const modeInputs = document.querySelectorAll('input[name="review_mode"]');
+
+      const modeDescription = document.getElementById("mode-description");
+
+      modeInputs.forEach((input) => {
+        input.addEventListener("change", () => {
+          const isAnonymous =
+            document.querySelector('input[name="review_mode"]:checked')
+              .value === "anonymous";
+
+          nameField.style.display = isAnonymous ? "none" : "block";
+          jobTitleField.style.display = isAnonymous ? "none" : "block";
+          companyField.style.display = isAnonymous ? "none" : "block";
+
+          form.name.required = !isAnonymous;
+          form.job_title.required = !isAnonymous;
+          form.company.required = !isAnonymous;
+
+          if (isAnonymous) {
+            form.name.value = "";
+            form.job_title.value = "";
+            form.company.value = "";
+            modeDescription.textContent =
+              "{{ _('Your identity will not be displayed with this review.') }}";
+          } else {
+            modeDescription.textContent =
+              "{{ _('Your name, job title, and company name will be displayed.') }}";
+          }
+        });
+      });
+
+      
+      document
+        .querySelector('input[name="review_mode"]:checked')
+        .dispatchEvent(new Event("change"));
+
+      
+      const industryField = document.getElementById("industry-field");
+      const industryOptions = document.getElementById("industry-options");
+      const selectedIndustry = document.getElementById("selected-industry");
+      const industryValue = document.getElementById("industry-value");
+      const otherIndustryInput = document.getElementById(
+        "other-industry-input"
+      );
+
+      const industries = [
+        "Healthcare",
+        "Finance",
+        "Retail & E-commerce",
+        "Education & EdTech",
+        "Manufacturing",
+        "Logistics & Supply Chain",
+        "Technology",
+        "Other",
+      ];
+
+      industries.forEach((industry) => {
+        const li = document.createElement("li");
+        li.textContent = industry;
+        li.classList.add("dropdown-item");
+
+        li.addEventListener("click", () => {
+          selectedIndustry.textContent = industry;
+          selectedIndustry.classList.remove("placeholder");
+          selectedIndustry.classList.add("value");
+          industryValue.value = industry;
+
+          industryOptions.classList.add("hidden");
+
+          if (industry === "Other") {
+            otherIndustryInput.classList.remove("hidden");
+            otherIndustryInput.focus();
+          } else {
+            otherIndustryInput.classList.add("hidden");
+            otherIndustryInput.value = "";
+          }
+        });
+
+        industryOptions.appendChild(li);
+      });
+
+      industryField.addEventListener("click", (e) => {
+        e.stopPropagation();
+        industryOptions.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", () => {
+        industryOptions.classList.add("hidden");
+      });
+
+      
+      const stars = document.querySelectorAll("#rating-stars .star");
+      const ratingValue = document.getElementById("rating-value");
+      let selectedRating = 0;
+
+      stars.forEach((star) => {
+        const value = parseInt(star.dataset.value);
+
+        star.addEventListener("mouseenter", () => {
+          stars.forEach((s) =>
+            s.classList.toggle("hovered", parseInt(s.dataset.value) <= value)
+          );
+        });
+
+        star.addEventListener("mouseleave", () => {
+          stars.forEach((s) => s.classList.remove("hovered"));
+        });
+
+        star.addEventListener("click", () => {
+          selectedRating = value;
+          ratingValue.value = value;
+
+          stars.forEach((s) =>
+            s.classList.toggle("selected", parseInt(s.dataset.value) <= value)
+          );
+        });
+      });
+
+      
+      const reviewsGrid = document.getElementById("reviews-grid");
+      const loadMoreBtn = document.getElementById("load-more-btn");
+
+      let offset = 0;
+      const limit = 9;
+      let totalReviews = 0;
+
+      
+      function getInitials(name) {
+        if (!name) return "?";
+        const parts = name.trim().split(" ");
+        if (parts.length === 1) return parts[0][0].toUpperCase();
+        return (parts[0][0] + parts[1][0]).toUpperCase();
+      }
+
+      async function fetchReviews() {
+        try {
+          const res = await fetch(
+            `/api/public-reviews?limit=${limit}&offset=${offset}`
+          );
+          const data = await res.json();
+
+          totalReviews = data.total;
+
+          data.reviews.forEach((review) => {
+            const card = document.createElement("div");
+            card.className =
+              "bg-white p-6 rounded-3xl shadow-md hover:shadow-2xl transition-transform transform hover:-translate-y-1 flex flex-col justify-between border border-gray-100";
+
+            const lang = getCurrentLanguage();
+            const t = translations[lang];
+
+            card.innerHTML = `
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-2">
+            <div class="flex text-yellow-400 gap-0.5">
+              ${"★".repeat(review.rating)}${"☆".repeat(5 - review.rating)}
+            </div>
+            <span class="text-gray-400 text-sm">${formatDate(review.created_at, lang)}</span>
+          </div>
+        </div>
+
+        <p class="text-gray-700 mb-6 line-clamp-4">
+          ${review.feedback}
+        </p>
+
+        <div class="flex items-center gap-3 mt-auto">
+          <div class="flex-shrink-0">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-lg">
+              ${getInitials(review.name)}
+            </div>
+          </div>
+          <div>
+            <h3 class="font-semibold text-primary">${review.name || (translations[lang] ? translations[lang].anonymous : 'Anonymous')}</h3>
+            <p class="text-gray-500 text-sm">${translateText(review.job_title, lang)} · ${
+              review.company || (translations[lang] ? translations[lang].certainCompany : 'A certain company')
+            }</p>
+            <p class="text-xs text-gray-400">${translateText(review.industry, lang)}</p>
+          </div>
+        </div>
+      `;
+
+            reviewsGrid.appendChild(card);
+          });
+
+          offset += data.reviews.length;
+
+          if (offset >= totalReviews) {
+            loadMoreBtn.style.display = "none";
+          }
+        } catch (err) {
+          console.error("Failed to fetch reviews:", err);
+        }
+      }
+
+      
+      fetchReviews();
+
+      
+      loadMoreBtn.addEventListener("click", fetchReviews);
+
+      function showToast(message, type = "success") {
+        const container = document.getElementById("toast-container");
+
+        const toast = document.createElement("div");
+        toast.className = `
+      flex items-center justify-between px-8 py-4 rounded-xl shadow-xl text-white
+      transform scale-90 opacity-0 transition-all duration-300 pointer-events-auto
+      ${type === "success" ? "bg-green-500" : "bg-red-500"}
+    `;
+
+        toast.innerHTML = `
+      <span>${message}</span>
+      <button class="ml-4 font-bold">&times;</button>
+    `;
+
+        container.appendChild(toast);
+
+        
+        requestAnimationFrame(() => {
+          toast.style.opacity = "1";
+          toast.style.transform = "scale(1)";
+        });
+
+        
+        toast.querySelector("button").addEventListener("click", () => {
+          toast.remove();
+        });
+
+        
+        setTimeout(() => {
+          toast.style.opacity = "0";
+          toast.style.transform = "scale(0.9)";
+          toast.addEventListener("transitionend", () => toast.remove());
+        }, 4000);
+      }
+
+      
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const consentCheckbox = document.getElementById("consent-checkbox");
+        if (!consentCheckbox.checked) {
+          const lang = getCurrentLanguage();
+          showToast(
+            translations[lang].toastMessages.consentRequired,
+            "error"
+          );
+          return;
+        }
+
+        if (!ratingValue.value) {
+          const lang = getCurrentLanguage();
+          showToast(translations[lang].toastMessages.ratingRequired, "error");
+          return;
+        }
+
+        const finalIndustry =
+          industryValue.value === "Other"
+            ? otherIndustryInput.value.trim()
+            : industryValue.value;
+
+        if (
+          industryValue.value === "Other" &&
+          !otherIndustryInput.value.trim()
+        ) {
+          const lang = getCurrentLanguage();
+          showToast(translations[lang].toastMessages.industryRequired, "error");
+          return;
+        }
+
+        const reviewMode = document.querySelector(
+          'input[name="review_mode"]:checked'
+        ).value;
+
+        const reviewData = {
+          review_mode: reviewMode,
+          name: form.name.value.trim(),
+          job_title: form.job_title.value.trim(),
+          company: form.company.value.trim(),
+          industry: finalIndustry,
+          rating: ratingValue.value,
+          feedback: form.feedback.value.trim(),
+        };
+
+        const res = await fetch("/api/submit-review", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(reviewData),
+        });
+
+        if (!res.ok) {
+          const err = await res.json();
+          const lang = getCurrentLanguage();
+          showToast(err.error || translations[lang].toastMessages.submitFailed, "error");
+          return;
+        }
+
+        const lang = getCurrentLanguage();
+        showToast(
+          translations[lang].toastMessages.submitSuccess,
+          "success"
+        );
+
+        form.reset();
+        selectedIndustry.textContent = "Select industry";
+        selectedIndustry.classList.remove("value");
+        selectedIndustry.classList.add("placeholder");
+        otherIndustryInput.classList.add("hidden");
+        ratingValue.value = "";
+        stars.forEach((s) => s.classList.remove("selected", "hovered"));
+
+        offset = 0;
+        reviewsGrid.innerHTML = "";
+        fetchReviews();
+      });
+    </script>
+
+    <footer class="bg-gray-100 py-20">
+      <div
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10"
+      >
+        
+        <div>
+          <h3 class="mb-4 flex items-start">
+            <img
+              src="/static/images/logo-transparent-bg-fit.png"
+              alt="{{ _('AI-Solution Logo') }}"
+              class="h-12"
+            />
+          </h3>
+          <p class="text-gray-600">
+            {{ _('Innovating the future of the digital employee experience with AI-powered solutions.') }}
+          </p>
+        </div>
+
+        
+        <div>
+          <h3 class="text-[#015486] font-bold mb-4">{{ _('Quick Links') }}</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li>
+              <a href="/" class="hover:text-[#EF3451] transition">{{ _('Home') }}</a>
+            </li>
+            <li>
+              <a href="/solutions" class="hover:text-[#EF3451] transition"
+                >{{ _('Solutions') }}</a
+              >
+            </li>
+            <li>
+              <a href="/articles" class="hover:text-[#EF3451] transition"
+                >{{ _('Articles') }}</a
+              >
+            </li>
+            <li>
+              <a href="/reviews" class="hover:text-[#EF3451] transition"
+                >{{ _('Reviews') }}</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        
+        <div>
+          <h3 class="text-[#015486] font-bold mb-4">{{ _('Pages') }}</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li>
+              <a href="/events" class="hover:text-[#EF3451] transition">{{ _('Events') }}</a>
+            </li>
+            <li>
+              <a href="/contact" class="hover:text-[#EF3451] transition">{{ _('Contact') }}</a>
+            </li>
+            <li>
+              <a href="/about" class="hover:text-[#EF3451] transition">{{ _('About') }}</a>
+            </li>
+          </ul>
+        </div>
+
+        
+        <div>
+          <h3 class="text-[#015486] font-bold mb-4">{{ _('Follow Us') }}</h3>
+          <div class="flex gap-4 text-gray-700">
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="#" class="text-2xl hover:text-[#EF3451] transition"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="text-center text-gray-500 mt-10">
+        © 2025 AI-Solution. All rights reserved.
+      </div>
+    </footer>
+  </body>
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const icon = menuBtn.querySelector("i");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      icon.classList.toggle("fa-bars");
+      icon.classList.toggle("fa-times");
+    });
+  </script>
+
+  
+  {% include 'components/language-switcher.html' %}
+  {% include 'components/chatbot.html' %}
+  <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+</html>
