@@ -371,6 +371,7 @@ def create_app():
         return render_template("admin-login.html")
 
     @app.route("/admin-dashboard")
+    @admin_login_required
     def admin_dashboard():
         inquiries = Inquiry.query.order_by(Inquiry.created_at.desc()).all()
         reviews = Review.query.order_by(Review.created_at.desc()).all()
@@ -423,6 +424,7 @@ def create_app():
         )
         
     @app.route("/admin/inquiries")
+    @admin_login_required
     def admin_all_inquiries():
         all_inquiries = Inquiry.query.order_by(Inquiry.created_at.desc()).all()
         all_inquiries_dict = [inquiry_to_dict(q) for q in all_inquiries]
@@ -441,6 +443,7 @@ def create_app():
         )
 
     @app.route("/admin/inquiry/<int:inquiry_id>/status", methods=["POST"])
+    @admin_login_required
     def update_inquiry_status(inquiry_id):
         inquiry = Inquiry.query.get_or_404(inquiry_id)
         new_status = request.form.get("status")
@@ -491,6 +494,7 @@ def create_app():
         return render_template(f"event-{event_id}.html")
     
     @app.route("/api/inquiries")
+    @admin_login_required
     def api_inquiries():
         offset = int(request.args.get("offset", 0))
         limit = int(request.args.get("limit", 10))
@@ -503,6 +507,7 @@ def create_app():
         })
 
     @app.route("/api/reviews")
+    @admin_login_required
     def api_reviews():
         offset = int(request.args.get("offset", 0))
         limit = int(request.args.get("limit", 10))
@@ -515,6 +520,7 @@ def create_app():
         })
 
     @app.route("/api/industries")
+    @admin_login_required
     def api_industries():
         """Get all unique industries from inquiries and reviews"""
         from sqlalchemy import distinct
@@ -536,6 +542,7 @@ def create_app():
         })
 
     @app.route("/api/inquiry-industries")
+    @admin_login_required
     def api_inquiry_industries():
         """Get industries from inquiries only"""
         from sqlalchemy import distinct
@@ -549,6 +556,7 @@ def create_app():
         })
 
     @app.route("/api/review-industries")
+    @admin_login_required
     def api_review_industries():
         """Get industries from reviews only"""
         from sqlalchemy import distinct
@@ -562,6 +570,7 @@ def create_app():
         })
 
     @app.route("/api/registered-events")
+    @admin_login_required
     def api_registered_events():
         """Get events that have registrations (only events with actual registrations)"""
         from sqlalchemy import distinct
@@ -596,6 +605,7 @@ def create_app():
         })
 
     @app.route("/api/admin/events")
+    @admin_login_required
     def api_admin_events():
         offset = int(request.args.get("offset", 0))
         limit = int(request.args.get("limit", 10))
